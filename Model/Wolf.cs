@@ -15,6 +15,7 @@ namespace Twisted_Treeline.Model
             Speed = 5;
             Damage = 10;
             Dead = false;
+            Image = "Images/wolf.gif";
         }
 
         public override int Attack() {

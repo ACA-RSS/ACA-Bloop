@@ -8,6 +8,8 @@ namespace Twisted_Treeline.Model
 {
     public abstract class WorldObject
     {
+        public string Image {get; set;}
+        public Location Spot {get; set;}
 
     }
 }
