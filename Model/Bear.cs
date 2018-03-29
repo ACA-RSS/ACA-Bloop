@@ -16,7 +16,6 @@ namespace Twisted_Treeline.Model
             Damage = 15;
             Dead = false;
             Speed = 0;
-            
             Image = "Images/bigber.gif"
         }
 
