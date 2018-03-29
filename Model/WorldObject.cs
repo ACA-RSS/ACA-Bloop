@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    class WorldObject
+    public abstract class WorldObject
     {
+
     }
 }

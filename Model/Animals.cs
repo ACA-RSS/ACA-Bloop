@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    class Animals
+    public abstract class Animals : Animate
     {
+        
     }
 }

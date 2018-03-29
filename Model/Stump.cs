@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    class Stump
+    public class Stump : Terrain
     {
+        public int HitPoints {get; set;}
+        public SquareState Object {get; set;}
+
+        public Stump(){
+
+
+        }
     }
 }
