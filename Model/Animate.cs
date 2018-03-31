@@ -20,7 +20,8 @@ namespace Twisted_Treeline.Model
 
         public void TakeDamage(int damage)
         {
-            HitPoints = -damage;
+            HitPoints -= damage;
+
             if (HitPoints <= 0)
             {
                 Dead = true;
