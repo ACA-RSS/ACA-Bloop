@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    public abstract class Animals : Animate
+    public class Stick : WorldObject
     {
-        public double AttackSpeed { get; set; }
+        public int Damage { get; set; }
+
+        public Stick(int hurt)
+        {
+            Damage = hurt;
+        }
     }
 }

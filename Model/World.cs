@@ -29,7 +29,7 @@ namespace Twisted_Treeline.Model
         }
 
         public void Configure(){
-            throw NotImplementedError();
+            throw new NotImplementedException();
         }
 
     }

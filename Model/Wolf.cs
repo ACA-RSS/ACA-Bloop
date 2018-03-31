@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    public class Wolf: Animals
+    public class Wolf : Animals
     {
-        public Wolf(){
+        public Wolf()
+        {
 
             HitPoints = 20;
             AttackSpeed = 1;
@@ -18,21 +19,19 @@ namespace Twisted_Treeline.Model
             Image = "Images/wolf.gif";
         }
 
-        public override int Attack() {
+        public override int Attack()
+        {
 
-            throw NotImplemetedError();
-            
-        }
-
-        public override Location Move(){
-
-            throw NotImplemetedError();
+            throw new NotImplementedException();
 
         }
 
-        public override TakeDamage(int damage){
-            
-            throw NotImplemetedError();
+        public override Location Move()
+        {
+
+            throw new NotImplementedException();
+
         }
+
     }
 }

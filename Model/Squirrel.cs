@@ -8,7 +8,8 @@ namespace Twisted_Treeline.Model
 {
     class Squirrel : Animals
     {
-        public Squirrel() {
+        public Squirrel()
+        {
 
             HitPoints = 5;
             AttackSpeed = 0.5;
@@ -17,21 +18,19 @@ namespace Twisted_Treeline.Model
             Dead = false;
         }
 
-        public override int Attack() {
+        public override int Attack()
+        {
 
-            throw NotImplemetedError();
-            
-        }
-
-        public override Location Move(){
-
-            throw NotImplemetedError();
+            throw new NotImplementedException();
 
         }
 
-        public override TakeDamage(int damage){
-            
-            throw NotImplemetedError();
+        public override Location Move()
+        {
+
+            throw new NotImplementedException();
+
         }
+
     }
 }

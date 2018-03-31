@@ -1,0 +1,15 @@
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\MainWindow.g.cs
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\App.g.cs
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline_MarkupCompile.cache
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline_MarkupCompile.lref
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\bin\Debug\Twisted Treeline.exe.config
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\bin\Debug\Twisted Treeline.exe
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\bin\Debug\Twisted Treeline.pdb
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\MainWindow.baml
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.g.resources
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted_Treeline.Properties.Resources.resources
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.csproj.GenerateResource.Cache
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.csproj.CoreCompileInputs.cache
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.exe
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.pdb
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.csprojResolveAssemblyReference.cache

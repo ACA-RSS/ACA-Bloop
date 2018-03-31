@@ -20,15 +20,15 @@ namespace Twisted_Treeline.Model
         }
 
         public void isGameOver(){
-            throw NotImplementedError();
+            throw new NotImplementedException();
         }
 
         public void Save(){
-            throw NotImplementedError();
+            throw new NotImplementedException();
         }
 
         public void Load(){
-            throw NotImplementedError();
+            throw new NotImplementedException();
         }
 
 

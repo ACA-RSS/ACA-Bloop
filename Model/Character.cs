@@ -8,7 +8,29 @@ namespace Twisted_Treeline.Model
 {
     public class Character : Animate
     {
-        
-        public Character();
+        public Stick Stick;
+
+        public Character()
+        {
+            HitPoints = 100;
+            Stick = new Stick(5);
+            Damage = Stick.Damage;
+            Dead = false;
+        }
+
+        public override int Attack()
+        {
+
+            throw new NotImplementedException();
+
+        }
+
+        public override Location Move()
+        {
+
+            throw new NotImplementedException();
+
+        }
+
     }
 }
