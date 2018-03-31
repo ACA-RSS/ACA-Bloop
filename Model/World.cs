@@ -15,6 +15,8 @@ namespace Twisted_Treeline.Model
         public int Size { get; set; }
         public int Difficulty { get; set; }
 
+        public List<WorldObject> WorldObj { get; set; }
+
         public World() {
             Size = 200;
 
@@ -26,6 +28,8 @@ namespace Twisted_Treeline.Model
                 }
 
             }
+
+            WorldObj = new List<WorldObject>();
         }
 
         public void Configure(){

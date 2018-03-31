@@ -13,3 +13,4 @@ C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treelin
 C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.exe
 C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.pdb
 C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\obj\Debug\Twisted Treeline.csprojResolveAssemblyReference.cache
+C:\Users\Caroline\Documents\CpS209\VidyaGame\ACA-Bloop\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

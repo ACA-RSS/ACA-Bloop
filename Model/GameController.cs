@@ -9,14 +9,21 @@ namespace Twisted_Treeline.Model
     public class GameController
     {
         public string UserName { get; set; }
+
         public World Level {get; set;}
+
         public int Points {get; set;}
+
         public int Stars {get; set;}
+
+        public Character Player { get; set; }
 
         public GameController(){
             Level = new World();
             Points = 0;
             Stars = 0;
+
+
         }
 
         public void isGameOver(){
@@ -28,6 +35,12 @@ namespace Twisted_Treeline.Model
         }
 
         public void Load(){
+            throw new NotImplementedException();
+        }
+
+        //Updates Model based on Timer and user actions
+        public void Update()
+        {
             throw new NotImplementedException();
         }
 

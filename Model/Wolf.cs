@@ -8,6 +8,8 @@ namespace Twisted_Treeline.Model
 {
     public class Wolf : Animals
     {
+        public bool EyeContact { get; set; }
+
         public Wolf()
         {
 
@@ -17,19 +19,37 @@ namespace Twisted_Treeline.Model
             Damage = 10;
             Dead = false;
             Image = "Images/wolf.gif";
-        }
-
-        public override int Attack()
-        {
-
-            throw new NotImplementedException();
-
+            AttackTime = 0;
+            EyeContact = false;
         }
 
         public override Location Move()
         {
 
             throw new NotImplementedException();
+            
+            // Rough draft of tracking characteristic of wolves
+           /*
+            if (EyeContact) {
+                double dist = Math.Pow((Math.Pow((Spot.Row - wan.X), 2) + Math.Pow((Spot.Column - wan.Y), 2)), 0.5);
+                if (wan.X > Spot.Row)
+                {
+                    Spot.Row += Speed;
+                }
+                else
+                {
+                    Spot.Row -= Speed;
+                }
+                if (wan.Y > Spot.Column)
+                {
+                    Spot.Column += Speed;
+                }
+                else
+                {
+                    Spot.Column -= Speed;
+                }
+            }
+            else return Spot;*/
 
         }
 

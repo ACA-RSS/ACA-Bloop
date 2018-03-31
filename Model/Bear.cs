@@ -18,14 +18,9 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Speed = 0;
             Image = "Images/bigber.gif";
+            AttackTime = 0;
         }
 
-        public override int Attack()
-        {
-
-            throw new NotImplementedException();
-
-        }
 
         public override Location Move()
         {

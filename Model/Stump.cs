@@ -9,10 +9,11 @@ namespace Twisted_Treeline.Model
     public class Stump : Terrain
     {
         public int HitPoints {get; set;}
-        public SquareState Object {get; set;}
+        public WorldObject Object {get; set;}
 
-        public Stump(){
-
+        public Stump(WorldObject obj, int hp){
+            Object = obj;
+            HitPoints = hp;
 
         }
     }

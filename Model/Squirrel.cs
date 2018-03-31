@@ -16,13 +16,7 @@ namespace Twisted_Treeline.Model
             Speed = 5;
             Damage = 5;
             Dead = false;
-        }
-
-        public override int Attack()
-        {
-
-            throw new NotImplementedException();
-
+            AttackTime = 0;
         }
 
         public override Location Move()
