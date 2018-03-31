@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    class GameController
+    public class GameController
     {
+        public string UserName { get; set; }
+        public World Level {get; set;}
+        public int Points {get; set;}
+        public int Stars {get; set;}
+
+        public GameController(){
+            Level = new World();
+            Points = 0;
+            Stars = 0;
+        }
+
+        public void isGameOver(){
+            throw NotImplementedError();
+        }
+
+        public void Save(){
+            throw NotImplementedError();
+        }
+
+        public void Load(){
+            throw NotImplementedError();
+        }
+
+
     }
 }
