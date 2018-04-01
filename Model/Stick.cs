@@ -14,5 +14,19 @@ namespace Twisted_Treeline.Model
         {
             Damage = hurt;
         }
+
+        public Stick(string statsStr)
+        {
+            string[] stats = statsStr.Split(',');
+            Damage = Convert.ToInt32(stats[1]);
+           // Spot.Row = stats[1];
+           // Spot.Column = stats[2];
+            
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Stick,{0},{1}", Damage, Spot);
+        }
     }
 }

@@ -16,5 +16,17 @@ namespace Twisted_Treeline.Model
             HitPoints = hp;
 
         }
+        public Stump(string statsStr)
+        {
+            string[] stats = statsStr.Split(',');
+            HitPoints = Convert.ToInt32(stats[1]);
+            
+            //Spot = however we want to save spot
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Stump,{0},{1}", HitPoints, Spot);
+        }
     }
 }

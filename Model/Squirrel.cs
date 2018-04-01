@@ -26,5 +26,17 @@ namespace Twisted_Treeline.Model
 
         }
 
+        public Squirrel(string statsStr)
+        {
+            string[] stats = statsStr.Split(',');
+            HitPoints = Convert.ToInt32(stats[1]);
+            Dead = Convert.ToBoolean(stats[2]);
+            //Spot = however we want to save spot
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Squirrel,{0},{1},{2}", HitPoints, Dead, Spot);
+        }
     }
 }
