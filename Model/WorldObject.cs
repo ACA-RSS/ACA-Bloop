@@ -11,6 +11,10 @@ namespace Twisted_Treeline.Model
         public string Image {get; set;}
         public Location Spot {get; set;}
 
+        public abstract string Save();
+
+        public abstract WorldObject Load(string s);
+
     }
 
     

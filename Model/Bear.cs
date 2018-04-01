@@ -27,15 +27,17 @@ namespace Twisted_Treeline.Model
             return Spot;
         }
 
-        public Bear(string statsStr)
+        public override WorldObject Load(string statsStr)
         {
+            Bear b = new Bear();
             string[] stats = statsStr.Split(',');
-            HitPoints = Convert.ToInt32(stats[0]);
-            Dead = Convert.ToBoolean(stats[0]);
+            b.HitPoints = Convert.ToInt32(stats[0]);
+            b.Dead = Convert.ToBoolean(stats[0]);
+            return b;
             //Spot = however we want to save spot
         }
 
-        public override string ToString()
+        public override string Save()
         {
             return string.Format("Bear,{0},{1},{2}", HitPoints, Dead, Spot);
         }
