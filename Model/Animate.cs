@@ -12,6 +12,7 @@ namespace Twisted_Treeline.Model
         public int HitPoints { get; set; }
         public int Damage { get; set; }
         public bool Dead { get; set; }
+        public int PointValue { get; set; }
 
 
         public abstract Location Move();
