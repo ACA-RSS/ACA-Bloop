@@ -20,5 +20,15 @@ namespace Twisted_Treeline.Model
             Assert.IsTrue(gc.Stars == 0);
 
         }
+        [TestMethod]
+        public void Save_Succes()
+        {
+            GameController gc = new GameController();
+            gc.Save();
+            gc.Load("TTLSave.txt");
+            Assert.IsTrue(gc.Player.HitPoints == 100);
+            Assert.IsTrue(gc.Stars == 0);
+
+        }
     }
 }
