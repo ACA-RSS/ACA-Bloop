@@ -36,7 +36,7 @@ namespace Twisted_Treeline.Model
         {
             return string.Format("Wolf,{0},{1},{2}", HitPoints, Dead, Spot);
         }
-    }
+    
 
     public override Location Move()
         {
@@ -70,3 +70,4 @@ namespace Twisted_Treeline.Model
 
     }
 }
+
