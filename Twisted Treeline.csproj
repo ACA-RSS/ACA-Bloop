@@ -63,7 +63,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -75,6 +74,7 @@
     <Compile Include="Model\Bear.cs" />
     <Compile Include="Model\Character.cs" />
     <Compile Include="Model\GameController.cs" />
+    <Compile Include="Model\SaveLoadTest.cs" />
     <Compile Include="Model\Squirrel.cs" />
     <Compile Include="Model\Stick.cs" />
     <Compile Include="Model\Stump.cs" />
