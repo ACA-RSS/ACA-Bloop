@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Twisted_Treeline.Model
 {
@@ -31,11 +32,30 @@ namespace Twisted_Treeline.Model
         }
 
         public void Save(){
-            throw new NotImplementedException();
+            string saveData = "TwistedTLine";
+            //adds highscores at the beginning of the file
+
+
+            saveData += Player.Save();
+            using (StreamWriter writer = new StreamWriter("TTLSave.txt"))
+            {
+                writer.WriteLine(Player.Save());
+                foreach (WorldObject obj in Level.WorldObj)
+                {
+                    writer.WriteLine(obj.Save());
+                }
+            }
+                
+
         }
 
-        public void Load(){
-            throw new NotImplementedException();
+        public void Load(string fileName)
+        {
+            using (StreamReader rd = new StreamReader("TTLSave.txt"))
+            {
+                //splits the file based on new line characters 
+                //uses each of the remaining parts of the array to create all the objects 
+            }
         }
 
         //Updates Model based on Timer and user actions

@@ -14,5 +14,23 @@ namespace Twisted_Treeline.Model
         {
             Damage = hurt;
         }
+
+        public override WorldObject Load(string statsStr)
+        {
+
+            //string[] stats = statsStr.Split(',');
+            //Stick s = new Stick();
+            //Damage = Convert.ToInt32(stats[1]);
+            // Spot.Row = stats[1];
+            // Spot.Column = stats[2];
+            Bear x = new Bear();
+            return x;
+
+        }
+
+        public override string Save()
+        {
+            return string.Format("Stick,{0},{1}", Damage, Spot);
+        }
     }
 }

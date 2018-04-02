@@ -48,5 +48,10 @@ namespace Twisted_Treeline.Model
             Row = int.Parse(rowCol[0]);
             Column = int.Parse(rowCol[1]);
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0},{1}", Row, Column);
+        }
     }
 }

@@ -16,5 +16,18 @@ namespace Twisted_Treeline.Model
             HitPoints = hp;
 
         }
+        public override WorldObject Load(string statsStr)
+        {
+            Bear s = new Bear();
+            string[] stats = statsStr.Split(',');
+            HitPoints = Convert.ToInt32(stats[1]);
+            return s;
+            //Spot = however we want to save spot
+        }
+
+        public override string Save()
+        {
+            return string.Format("Stump,{0},{1}", HitPoints, Spot);
+        }
     }
 }

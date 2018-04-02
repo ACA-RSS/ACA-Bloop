@@ -22,8 +22,23 @@ namespace Twisted_Treeline.Model
             AttackTime = 0;
             EyeContact = false;
         }
+        public override WorldObject Load(string statsStr)
+        {
+            Wolf w = new Wolf();
+            string[] stats = statsStr.Split(',');
+            w.HitPoints = Convert.ToInt32(stats[1]);
+            w.Dead = Convert.ToBoolean(stats[2]);
+            return w;
+            //Spot = however we want to save spot
+        }
 
-        public override Location Move()
+        public override string Save()
+        {
+            return string.Format("Wolf,{0},{1},{2}", HitPoints, Dead, Spot);
+        }
+    }
+
+    public override Location Move()
         {
 
             throw new NotImplementedException();

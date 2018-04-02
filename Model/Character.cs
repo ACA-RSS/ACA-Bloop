@@ -32,5 +32,19 @@ namespace Twisted_Treeline.Model
 
         }
 
+        public override WorldObject Load(string statsStr)
+        {
+            Character c = new Character();
+            string[] stats = statsStr.Split(',');
+            HitPoints = Convert.ToInt32(stats[1]);
+            Dead = Convert.ToBoolean(stats[2]);
+            return c;
+            //Spot = however we want to save spot
+        }
+
+        public override string Save()
+        {
+            return string.Format("Character,{0},{1},{2}", HitPoints, Dead, Spot);
+        }
     }
 }

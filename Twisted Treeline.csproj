@@ -74,6 +74,7 @@
     <Compile Include="Model\Bear.cs" />
     <Compile Include="Model\Character.cs" />
     <Compile Include="Model\GameController.cs" />
+    <Compile Include="Model\SaveLoadTest.cs" />
     <Compile Include="Model\Squirrel.cs" />
     <Compile Include="Model\Stick.cs" />
     <Compile Include="Model\Stump.cs" />

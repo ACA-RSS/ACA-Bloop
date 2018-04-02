@@ -26,5 +26,19 @@ namespace Twisted_Treeline.Model
 
         }
 
+        public override WorldObject Load(string statsStr)
+        {
+            Squirrel s = new Squirrel();
+            string[] stats = statsStr.Split(',');
+            HitPoints = Convert.ToInt32(stats[1]);
+            Dead = Convert.ToBoolean(stats[2]);
+            return s;
+            //Spot = however we want to save spot
+        }
+
+        public override string Save()
+        {
+            return string.Format("Squirrel,{0},{1},{2}", HitPoints, Dead, Spot);
+        }
     }
 }
