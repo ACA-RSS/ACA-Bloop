@@ -35,10 +35,10 @@ namespace Twisted_Treeline.Model
             string saveData = "TwistedTLine";
             //adds highscores at the beginning of the file
 
-
-            saveData += Player.Save();
+            //Saves the player info
             using (StreamWriter writer = new StreamWriter("TTLSave.txt"))
             {
+                writer.WriteLine(saveData);
                 writer.WriteLine(Player.Save());
                 foreach (WorldObject obj in Level.WorldObj)
                 {
