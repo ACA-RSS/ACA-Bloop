@@ -11,49 +11,33 @@ namespace Twisted_Treeline.Model
 {
     class Highscore
     {
-        public StreamWriter writer = new StreamWriter("HighScoreList.txt");
-        public StreamReader reader = new StreamReader("HighScoreList.txt");
+        public static StreamReader Reader = new StreamReader("HighScoreList.txt");
+        public static List<Highscore> Highscores = new List<Highscore>();
 
         public int Score;
         public string Name;
+        public int Rank;
 
         public Highscore(string nickname, int score)
         {
-           Name = nickname;
-           Score = score;
-           AddToList(this);
+            Name = nickname;
+            Score = score;
+            Rank = GetRank(score);
+            Highscores.Add(this);
+            StreamWriter Writer = new StreamWriter("HighScoreList.txt");
+            //add to list
+            Writer.Flush();
+            Writer.Close();
+
         }
         /// <summary>
-        /// 
+        /// Searches Highscores for the location to insert `score`
         /// </summary>
         /// <param name="score"></param>
-        /// <returns>index</returns>
+        /// <returns>index in Highscores where to insert Highscore with score `score`. -1 if less than all scores</returns>
         public int GetRank(int score)
         {
             return 0;
-        }
-        public void AddToList(Highscore highscore)
-        {
-            using (reader)
-            {
-                int score = 999999999;
-                int rank = 0;
-                while(score > highscore.Score)
-                {
-                        //read rank
-                        reader.ReadLine();
-                        //read score
-                        score = Convert.ToInt32(reader.ReadLine());
-                        //read nickname
-                        reader.ReadLine();
-
-                    
-                }
-            }
-            using (writer)
-            {
-                writer.WriteLine("highscore.Rank.ToString()" + "\n" + highscore.Score.ToString() + "\n" + highscore.Name + "\n");
-            }
         }
     }
 }
