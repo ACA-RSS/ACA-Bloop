@@ -45,17 +45,5 @@ namespace Twisted_Treeline.Model
             Assert.IsTrue(thirdHit == 0);
 
         }
-
-       /* [TestMethod]
-        public void CreateCommand_Success()
-        {
-
-        }
-
-        [TestMethod]
-        public void CreateCommand_Success()
-        {
-
-        }*/
     }
 } 
