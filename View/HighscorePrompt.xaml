@@ -1,0 +1,13 @@
+﻿<Window x:Class="Twisted_Treeline.View.HighscorePrompt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Twisted_Treeline.View"
+        mc:Ignorable="d"
+        Title="HighscorePrompt" Height="300" Width="300">
+    <Grid>
+        <TextBox x:Name="Name" TextChanged="Name_TextChanged">Your name here</TextBox>
+        <Button x:Name="Submit" Click="Submit_Click">Submit</Button>
+    </Grid>
+</Window>
