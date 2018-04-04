@@ -11,33 +11,40 @@ namespace Twisted_Treeline.Model
 {
     class Highscore
     {
-        public static StreamReader Reader = new StreamReader("HighScoreList.txt");
-        public static List<Highscore> Highscores = new List<Highscore>();
-
+        HighscoreManager manager = new HighscoreManager();
         public int Score;
         public string Name;
-        public int Rank;
 
         public Highscore(string nickname, int score)
         {
             Name = nickname;
             Score = score;
-            Rank = GetRank(score);
-            Highscores.Add(this);
+            manager.HighscoreList.Add(this);
             StreamWriter Writer = new StreamWriter("HighScoreList.txt");
             //add to list
             Writer.Flush();
             Writer.Close();
 
         }
+
+        private object GetRank()
+        {
+            int max = 0;
+            foreach (Highscore hscore in manager.HighscoreList)
+            {
+                if (hscore.Score> max)
+                {
+                    max = hscore.Score;
+                }
+            }
+            return max;
+        }
+
         /// <summary>
         /// Searches Highscores for the location to insert `score`
         /// </summary>
         /// <param name="score"></param>
         /// <returns>index in Highscores where to insert Highscore with score `score`. -1 if less than all scores</returns>
-        public int GetRank(int score)
-        {
-            return 0;
-        }
+
     }
 }
