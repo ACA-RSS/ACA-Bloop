@@ -15,7 +15,7 @@ namespace Twisted_Treeline.Model
             Damage = hurt;
         }
 
-        public override WorldObject Load(string statsStr)
+        public override WorldObject Deserialize(string statsStr)
         {
 
             //string[] stats = statsStr.Split(',');
@@ -28,7 +28,7 @@ namespace Twisted_Treeline.Model
 
         }
 
-        public override string Save()
+        public override string Serialize()
         {
             return string.Format("Stick,{0},{1}", Damage, Spot);
         }

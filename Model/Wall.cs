@@ -8,14 +8,14 @@ namespace Twisted_Treeline.Model
 {
     public class Wall : Terrain
     {
-        public override WorldObject Load(string statsStr)
+        public override WorldObject Deserialize(string statsStr)
         {
             string[] stats = statsStr.Split(',');
             return new Wolf();
             //Spot = however we want to save spot
         }
 
-        public override string Save()
+        public override string Serialize()
         {
             return string.Format("Wall,{0}", Spot);
         }

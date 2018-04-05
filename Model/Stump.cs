@@ -16,7 +16,7 @@ namespace Twisted_Treeline.Model
             HitPoints = hp;
 
         }
-        public override WorldObject Load(string statsStr)
+        public override WorldObject Deserialize(string statsStr)
         {
             Bear s = new Bear();
             string[] stats = statsStr.Split(',');
@@ -25,7 +25,7 @@ namespace Twisted_Treeline.Model
             //Spot = however we want to save spot
         }
 
-        public override string Save()
+        public override string Serialize()
         {
             return string.Format("Stump,{0},{1}", HitPoints, Spot);
         }

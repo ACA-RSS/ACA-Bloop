@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    public abstract class WorldObject
+    public abstract class WorldObject: ISerializable
     {
         public string Image {get; set;}
         public Location Spot {get; set;}
 
-        public abstract string Save();
+        public abstract string Serialize();
 
-        public abstract WorldObject Load(string s);
+        public abstract WorldObject Deserialize(string s);
 
     }
 

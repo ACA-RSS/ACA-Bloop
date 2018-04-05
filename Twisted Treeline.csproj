@@ -60,6 +60,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Highscore_Test.cs" />
+    <Compile Include="ISerializable.cs" />
     <Compile Include="Model\Highscore.cs" />
     <Compile Include="Model\HighscoreManager.cs" />
     <Compile Include="View\HighscorePrompt.xaml.cs">

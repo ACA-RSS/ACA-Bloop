@@ -22,7 +22,7 @@ namespace Twisted_Treeline.Model
             AttackTime = 0;
             EyeContact = false;
         }
-        public override WorldObject Load(string statsStr)
+        public override WorldObject Deserialize(string statsStr)
         {
             Wolf w = new Wolf();
             string[] stats = statsStr.Split(',');
@@ -32,7 +32,7 @@ namespace Twisted_Treeline.Model
             //Spot = however we want to save spot
         }
 
-        public override string Save()
+        public override string Serialize()
         {
             return string.Format("Wolf,{0},{1},{2}", HitPoints, Dead, Spot);
         }
