@@ -19,6 +19,7 @@ namespace Twisted_Treeline.Model
             Speed = 0;
             Image = "Images/bigber.gif";
             AttackTime = 0;
+            Type = "Animals";
         }
 
 

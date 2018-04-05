@@ -11,7 +11,9 @@ namespace Twisted_Treeline.Model
 
     public class World
     {
-        public SquareState[,] Squares { get; set; }
+       // public SquareState[,] Squares { get; set; }
+
+        public WorldObject[,] Squares { get; set; }
         public int Size { get; set; }
         public int Difficulty { get; set; }
 
@@ -24,7 +26,7 @@ namespace Twisted_Treeline.Model
             {
                 for (int col = 0; col < Size; ++col)
                 {
-                    Squares[row, col] = SquareState.Grass;
+                    Squares[row, col] = null;
                 }
 
             }

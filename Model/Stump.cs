@@ -14,6 +14,7 @@ namespace Twisted_Treeline.Model
         public Stump(WorldObject obj, int hp){
             Object = obj;
             HitPoints = hp;
+            Type = "Stump";
 
         }
         public override WorldObject Deserialize(string statsStr)

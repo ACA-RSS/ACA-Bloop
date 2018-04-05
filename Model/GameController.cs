@@ -36,6 +36,11 @@ namespace Twisted_Treeline.Model
             Stars = 0;
         }
 
+        public void SetUpLevelOne()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Save(){
             string saveData = "TwistedTLine";
             //adds highscores at the beginning of the file

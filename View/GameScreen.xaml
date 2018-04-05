@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="GameScreen" Height="300" Width="300" Loaded="Window_Loaded">
-    <Grid x:Name="World_Grid" MouseUp="World_Grid_MouseUp" MouseMove="World_Grid_MouseMove">
-        
+        Title="GameScreen" Height="500" Width="700" Loaded="Window_Loaded">
+    <Grid x:Name="World_Grid" MouseUp="World_Grid_MouseUp" >
+        <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="563,10,0,0" VerticalAlignment="Top" Width="75" Click="btnMenu_Click"/>
+        <TextBlock x:Name="txtHealth" HorizontalAlignment="Left" Margin="188,10,0,0" TextWrapping="Wrap" Text="Health Bar" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtStars" HorizontalAlignment="Left" Margin="436,10,0,0" TextWrapping="Wrap" Text="Stars" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Margin="315,10,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="71,10,0,0" TextWrapping="Wrap" Text="Level Indicator" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

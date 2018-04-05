@@ -30,5 +30,38 @@ namespace Twisted_Treeline
         {
             GameController.Instance.Reset();
         }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.W)
+            {
+                GameController.Instance.Player.PlayerMove("Up");
+            }
+            else if (e.Key == Key.A)
+            {
+                GameController.Instance.Player.PlayerMove("Left");
+            }
+            else if (e.Key == Key.S)
+            {
+                GameController.Instance.Player.PlayerMove("Down");
+            }
+            else if (e.Key == Key.D)
+            {
+                GameController.Instance.Player.PlayerMove("Right");
+            }
+            else if (e.Key == Key.Space)
+            {
+                GameController.Instance.Player.Attack();
+            }
+
+            GameController.Instance.Update();
+        }
+
+        private void btnMenu_Click(object sender, KeyEventArgs e)
+        {
+
+        }
+
     }
 }
+

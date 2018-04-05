@@ -17,12 +17,39 @@ namespace Twisted_Treeline.Model
             Damage = 5;
             Dead = false;
             AttackTime = 0;
+            Type = "Animals";
         }
 
         public override Location Move()
         {
+            Location potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column };
 
-            throw new NotImplementedException();
+            if (GameController.Instance.Player.Spot.Column > Spot.Column)
+            {
+                potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column + Speed };
+            }
+
+            else
+            {
+                potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column - Speed };
+            }
+
+            if (GameController.Instance.Player.Spot.Row > Spot.Row)
+            {
+                potentialSpot = new Location { Row = Spot.Row + Speed, Column = Spot.Column };
+            }
+
+            else
+            {
+                potentialSpot = new Location { Row = Spot.Row - Speed, Column = Spot.Column };
+            }
+
+            if (GameController.Instance.Level.Squares[potentialSpot.Row, potentialSpot.Column] == null)
+            {
+                Spot = potentialSpot;
+            }
+
+            return Spot;
 
         }
 

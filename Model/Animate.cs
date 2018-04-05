@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
+    public enum Direction { Up, Down, Left, Right}
     public abstract class Animate : WorldObject
     {
         public int Speed { get; set; }
@@ -13,9 +14,8 @@ namespace Twisted_Treeline.Model
         public int Damage { get; set; }
         public bool Dead { get; set; }
         public int PointValue { get; set; }
+        public Direction DirFacing { get; set; }
 
-
-        public abstract Location Move();
 
         public abstract int Attack();
 

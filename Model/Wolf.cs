@@ -21,6 +21,7 @@ namespace Twisted_Treeline.Model
             Image = "Images/wolf.gif";
             AttackTime = 0;
             EyeContact = false;
+            Type = "Animals";
         }
         public override WorldObject Deserialize(string statsStr)
         {
@@ -36,35 +37,40 @@ namespace Twisted_Treeline.Model
         {
             return string.Format("Wolf,{0},{1},{2}", HitPoints, Dead, Spot);
         }
-    
 
-    public override Location Move()
+
+        public override Location Move()
         {
+            Location potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column };
+            if (EyeContact)
+            {
 
-            throw new NotImplementedException();
-            
-            // Rough draft of tracking characteristic of wolves
-           /*
-            if (EyeContact) {
-                double dist = Math.Pow((Math.Pow((Spot.Row - wan.X), 2) + Math.Pow((Spot.Column - wan.Y), 2)), 0.5);
-                if (wan.X > Spot.Row)
+                if (GameController.Instance.Player.Spot.Column > Spot.Column)
                 {
-                    Spot.Row += Speed;
+                    potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column + Speed };
                 }
+
                 else
                 {
-                    Spot.Row -= Speed;
+                    potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column - Speed };
                 }
-                if (wan.Y > Spot.Column)
+
+                if (GameController.Instance.Player.Spot.Row > Spot.Row)
                 {
-                    Spot.Column += Speed;
+                    potentialSpot = new Location { Row = Spot.Row + Speed, Column = Spot.Column };
                 }
+
                 else
                 {
-                    Spot.Column -= Speed;
+                    potentialSpot = new Location { Row = Spot.Row - Speed, Column = Spot.Column };
+                }
+
+                if (GameController.Instance.Level.Squares[potentialSpot.Row, potentialSpot.Column] == null)
+                {
+                    Spot = potentialSpot;
                 }
             }
-            else return Spot;*/
+            return Spot;
 
         }
 

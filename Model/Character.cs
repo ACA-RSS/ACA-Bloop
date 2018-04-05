@@ -16,19 +16,86 @@ namespace Twisted_Treeline.Model
             Stick = new Stick(5);
             Damage = Stick.Damage;
             Dead = false;
+            Spot = new Location { Row = 0, Column = 0 };
+            Type = "Character";
+        }
+
+        public void doDamage(Animals toAttack)
+        {
+            if (!toAttack.Dead)
+                toAttack.TakeDamage(Damage);
         }
 
         public override int Attack()
         {
+            switch (DirFacing)
+            {
+                case Direction.Up:
+                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Animals")
+                    {
+                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Animals);
+                    }
+                    break;
+
+                case Direction.Down:
+                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Animals")
+                    {
+                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Animals);
+                    }
+
+                    break;
+
+                case Direction.Left:
+                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Animals")
+                    {
+                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Animals);
+                    }
+                    break;
+
+                case Direction.Right:
+                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Animals")
+                    {
+                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Animals);
+                    }
+                    break;
+
+            }
 
             return Damage;
-
         }
 
-        public override Location Move()
+        public Location PlayerMove(string Dir)
         {
+            if (Dir == "Up")
+            {
+                if (Spot.Row - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column] == null)
+                {
+                    Spot = new Location { Row = Spot.Row - 1, Column = Spot.Column };
+                }
+            }
+            else if (Dir == "Down" && GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null)
+            {
+                if (Spot.Row + 1 <= GameController.Instance.Level.Size)
+                {
+                    Spot = new Location { Row = Spot.Row + 1, Column = Spot.Column };
+                }
+            }
+            else if (Dir == "Left")
+            {   
+                if (Spot.Column - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1] == null)
+                {
+                    Spot = new Location { Row = Spot.Row, Column = Spot.Column - 1 };
+                }
+            }
+            else if (Dir == "Right" && GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null)
+            {
+                if (Spot.Row + 1 <= GameController.Instance.Level.Size)
+                {
+                    Spot = new Location { Row = Spot.Row, Column = Spot.Column + 1 };
+                }
+            }
 
-            throw new NotImplementedException();
+            return Spot;
 
         }
 

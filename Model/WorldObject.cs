@@ -11,6 +11,8 @@ namespace Twisted_Treeline.Model
         public string Image {get; set;}
         public Location Spot {get; set;}
 
+        public string Type { get; set; }
+
         public abstract string Serialize();
 
         public abstract WorldObject Deserialize(string s);
