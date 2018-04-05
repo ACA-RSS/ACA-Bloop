@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="GameScreen" Height="300" Width="300">
-    <Grid>
+        Title="GameScreen" Height="300" Width="300" Loaded="Window_Loaded">
+    <Grid x:Name="World_Grid" MouseUp="World_Grid_MouseUp" MouseMove="World_Grid_MouseMove">
         
     </Grid>
 </Window>

@@ -21,7 +21,7 @@ namespace Twisted_Treeline.Model
         public override int Attack()
         {
 
-            throw new NotImplementedException();
+            return Damage;
 
         }
 
