@@ -26,6 +26,7 @@ namespace Twisted_Treeline.Model
             if (HitPoints <= 0)
             {
                 Dead = true;
+                GameController.Instance.Points += PointValue;
             }
         }
     }

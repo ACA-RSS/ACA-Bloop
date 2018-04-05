@@ -19,12 +19,10 @@ namespace Twisted_Treeline.Model
 
         public Character Player { get; set; }
 
-        public GameController(){
+        private GameController(){
             Level = new World();
             Points = 0;
             Stars = 0;
-
-
         }
 
         public void isGameOver(){
@@ -62,6 +60,12 @@ namespace Twisted_Treeline.Model
         public void Update()
         {
             throw new NotImplementedException();
+        }
+
+        private static GameController instance = new GameController();
+        public static GameController Instance
+        {
+            get { return instance; }
         }
 
 
