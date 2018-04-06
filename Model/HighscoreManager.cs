@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO
 
 namespace Twisted_Treeline.Model
 {
@@ -23,11 +24,15 @@ namespace Twisted_Treeline.Model
 
         }
         /// <summary>
-        /// Updates the txt file to reflect scores, names and ranks in `HighscoreList`
+        /// Updates the txt file to reflect scores and names in `HighscoreList`
         /// </summary>
-        public void SaveList()
+        public void SaveList(Highscore score)
         {
-            this.HighscoreList
+            using (StreamWriter writer = new StreamWriter("HighScores.txt"))
+            {
+                writer.WriteLine(score.Score + "," + score.Name);
+                writer.Flush();
+            }
         }
     }
 }
