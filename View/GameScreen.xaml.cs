@@ -57,7 +57,7 @@ namespace Twisted_Treeline
             GameController.Instance.Update();
         }
 
-        private void btnMenu_Click(object sender, KeyEventArgs e)
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
 
         }

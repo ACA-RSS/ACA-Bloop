@@ -14,7 +14,8 @@ namespace Twisted_Treeline.Model
         [TestMethod]
         public void Load_Succes()
         {
-            GameController gc = new GameController();
+            GameController gc = GameController.Instance;
+            gc.Reset();
             gc.Load("TTLSave.txt");
             Assert.IsTrue(gc.Player.HitPoints == 100);
             Assert.IsTrue(gc.Stars == 0);
@@ -23,7 +24,8 @@ namespace Twisted_Treeline.Model
         [TestMethod]
         public void Save_Succes()
         {
-            GameController gc = new GameController();
+            GameController gc = GameController.Instance;
+            gc.Reset();
             gc.Save();
             gc.Load("TTLSave.txt");
             Assert.IsTrue(gc.Player.HitPoints == 100);
