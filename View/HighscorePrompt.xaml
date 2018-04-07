@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="HighscorePrompt" Height="300" Width="300">
     <Grid>
-        <TextBox x:Name="Name" TextChanged="Name_TextChanged">Your name here</TextBox>
+        <TextBox x:Name="Name">Your name here</TextBox>
         <Button x:Name="Submit" Click="Submit_Click">Submit</Button>
     </Grid>
 </Window>

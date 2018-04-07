@@ -59,7 +59,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Highscore_Test.cs" />
+    <Compile Include="Model\Highscore_Test.cs" />
     <Compile Include="ISerializable.cs" />
     <Compile Include="Model\Highscore.cs" />
     <Compile Include="Model\HighscoreManager.cs" />
@@ -166,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="HighScores.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HighScores_Test.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

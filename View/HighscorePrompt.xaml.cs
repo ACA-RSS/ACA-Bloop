@@ -21,6 +21,7 @@ namespace Twisted_Treeline.View
     /// </summary>
     public partial class HighscorePrompt : Window
     {
+        HighscoreManager manager = new HighscoreManager("Highscores.txt");
         public HighscorePrompt()
         {
             InitializeComponent();
@@ -29,7 +30,8 @@ namespace Twisted_Treeline.View
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             string name = Name.Text;
-            new Highscore(name).AddToList();
+            manager.SaveList(new Highscore(0,name));
+
 
         }
     }
