@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Twisted_Treeline.Model;
+using System.Windows.Threading;
 
 namespace Twisted_Treeline
 {
@@ -21,6 +22,7 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class GameScreen : Window
     {
+
         public GameScreen()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace Twisted_Treeline
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Reset();
+            GameController.Instance.SetUpLevelOne();
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
@@ -53,8 +56,7 @@ namespace Twisted_Treeline
             {
                 GameController.Instance.Player.Attack();
             }
-
-            GameController.Instance.Update();
+            
         }
 
         private void btnMenu_Click(object sender, RoutedEventArgs e)

@@ -12,6 +12,7 @@
         <TextBlock x:Name="txtStars" HorizontalAlignment="Left" Margin="436,10,0,0" TextWrapping="Wrap" Text="Stars" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Margin="315,10,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="71,10,0,0" TextWrapping="Wrap" Text="Level Indicator" VerticalAlignment="Top"/>
-
+        <Canvas x:Name="WorldCanvas" HorizontalAlignment="Left" Width="672" Margin="10,35,0,10" Background="LightGreen" >
+        </Canvas>
     </Grid>
 </Window>

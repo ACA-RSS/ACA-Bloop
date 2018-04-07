@@ -21,7 +21,7 @@ namespace Twisted_Treeline.Model
             Image = "Images/wolf.gif";
             AttackTime = 0;
             EyeContact = false;
-            Type = "Animals";
+            Type = "Hittable";
         }
         public override WorldObject Deserialize(string statsStr)
         {

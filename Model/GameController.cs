@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Threading;
 
 namespace Twisted_Treeline.Model
 {
@@ -18,6 +19,8 @@ namespace Twisted_Treeline.Model
         public int Stars {get; set;}
 
         public Character Player { get; set; }
+
+        DispatcherTimer Timer;
 
         private GameController(){
             Level = new World();
@@ -34,11 +37,43 @@ namespace Twisted_Treeline.Model
             Level = new World();
             Points = 0;
             Stars = 0;
+
+            Timer = new DispatcherTimer();
+            Timer.Tick += Timer_Tick;
+            Timer.Interval = new TimeSpan(100000);
+            Timer.Start();
+        }
+
+        private void Timer_Tick(object sender, object e)
+        {
+            foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
+            {
+                if (obj.Type == "Animals")
+                {
+                    Animals a = obj as Animals;
+                    a.CheckState();
+                }
+
+                GameController.Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = obj;
+            }
         }
 
         public void SetUpLevelOne()
         {
-            throw new NotImplementedException();
+            Player = new Character();
+            Player.Stick = new Stick(5);
+
+            Bear fuzzy = new Bear() { Spot = new Location { Row = 1, Column = 1 } };
+            Bear wuzzy = new Bear() { Spot = new Location { Row = 1, Column = 1 } };
+            Bear buzzy = new Bear() { Spot = new Location { Row = 1, Column = 1 } };
+
+            GameController.Instance.Level.WorldObj.Add(fuzzy);
+            GameController.Instance.Level.WorldObj.Add(wuzzy);
+            GameController.Instance.Level.WorldObj.Add(buzzy);
+
+
+
+
         }
 
         public void Save(){

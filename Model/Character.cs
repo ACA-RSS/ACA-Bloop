@@ -20,7 +20,7 @@ namespace Twisted_Treeline.Model
             Type = "Character";
         }
 
-        public void doDamage(Animals toAttack)
+        public void doDamage(Hittable toAttack)
         {
             if (!toAttack.Dead)
                 toAttack.TakeDamage(Damage);
@@ -31,31 +31,31 @@ namespace Twisted_Treeline.Model
             switch (DirFacing)
             {
                 case Direction.Up:
-                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Animals")
+                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Hittable")
                     {
-                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Animals);
+                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
                     }
                     break;
 
                 case Direction.Down:
-                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Animals")
+                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Hittable")
                     {
-                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Animals);
+                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
                     }
 
                     break;
 
                 case Direction.Left:
-                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Animals")
+                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Hittable")
                     {
-                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Animals);
+                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
                     }
                     break;
 
                 case Direction.Right:
-                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Animals")
+                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Hittable")
                     {
-                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Animals);
+                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
                     }
                     break;
 
@@ -68,6 +68,7 @@ namespace Twisted_Treeline.Model
         {
             if (Dir == "Up")
             {
+                DirFacing = Direction.Up;
                 if (Spot.Row - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column] == null)
                 {
                     Spot = new Location { Row = Spot.Row - 1, Column = Spot.Column };
@@ -75,13 +76,15 @@ namespace Twisted_Treeline.Model
             }
             else if (Dir == "Down" && GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null)
             {
-                if (Spot.Row + 1 <= GameController.Instance.Level.Size)
+                DirFacing = Direction.Down;
+                if (Spot.Row + 1 <= GameController.Instance.Level.Height)
                 {
                     Spot = new Location { Row = Spot.Row + 1, Column = Spot.Column };
                 }
             }
             else if (Dir == "Left")
-            {   
+            {
+                DirFacing = Direction.Left;
                 if (Spot.Column - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1] == null)
                 {
                     Spot = new Location { Row = Spot.Row, Column = Spot.Column - 1 };
@@ -89,7 +92,8 @@ namespace Twisted_Treeline.Model
             }
             else if (Dir == "Right" && GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null)
             {
-                if (Spot.Row + 1 <= GameController.Instance.Level.Size)
+                DirFacing = Direction.Right;
+                if (Spot.Column + 1 <= GameController.Instance.Level.Width)
                 {
                     Spot = new Location { Row = Spot.Row, Column = Spot.Column + 1 };
                 }

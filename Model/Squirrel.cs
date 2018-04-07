@@ -17,7 +17,7 @@ namespace Twisted_Treeline.Model
             Damage = 5;
             Dead = false;
             AttackTime = 0;
-            Type = "Animals";
+            Type = "Hittable";
         }
 
         public override Location Move()
