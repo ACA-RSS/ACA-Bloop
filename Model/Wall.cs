@@ -37,8 +37,9 @@ namespace Twisted_Treeline.Model
         public override WorldObject Deserialize(string statsStr)
         {
             string[] stats = statsStr.Split(',');
-            return new Wolf();
-            //Spot = however we want to save spot
+            Wall walle = new Wall();
+            walle.Spot = new Location(string.Format("{0},{1}", stats[3], stats[4]));
+            return walle;
         }
 
         public override string Serialize()

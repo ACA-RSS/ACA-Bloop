@@ -18,13 +18,10 @@ namespace Twisted_Treeline.Model
         public override WorldObject Deserialize(string statsStr)
         {
 
-            //string[] stats = statsStr.Split(',');
-            //Stick s = new Stick();
-            //Damage = Convert.ToInt32(stats[1]);
-            // Spot.Row = stats[1];
-            // Spot.Column = stats[2];
-            Bear x = new Bear();
-            return x;
+            string[] stats = statsStr.Split(',');
+            Stick s = new Stick(Convert.ToInt32(stats[1]));
+            s.Spot = new Location(string.Format("{0},{1}", stats[2], stats[3]));
+            return s;
 
         }
 
