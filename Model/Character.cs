@@ -17,6 +17,7 @@ namespace Twisted_Treeline.Model
             Damage = Stick.Damage;
             Dead = false;
             Spot = new Location { Row = 0, Column = 0 };
+            Image = "Graphics/Scotty.gif";
             Type = "Character";
         }
 
