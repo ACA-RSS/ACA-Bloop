@@ -21,7 +21,7 @@ namespace Twisted_Treeline.Model
             Image = "Images/wolf.gif";
             AttackTime = 0;
             EyeContact = false;
-            Type = "Animals";
+            Type = "Hittable";
         }
         public override WorldObject Deserialize(string statsStr)
         {
@@ -29,17 +29,19 @@ namespace Twisted_Treeline.Model
             string[] stats = statsStr.Split(',');
             w.HitPoints = Convert.ToInt32(stats[1]);
             w.Dead = Convert.ToBoolean(stats[2]);
+            w.EyeContact = Convert.ToBoolean(stats[3]);
+            w.Spot = new Location(string.Format("{0},{1}", stats[4], stats[5]));
             return w;
-            //Spot = however we want to save spot
+            
         }
 
         public override string Serialize()
         {
-            return string.Format("Wolf,{0},{1},{2}", HitPoints, Dead, Spot);
+            return string.Format("Wolf,{0},{1},{2},{3}", HitPoints, Dead, EyeContact, Spot);
         }
 
 
-        public override Location Move()
+        public Location Track()
         {
             Location potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column };
             if (EyeContact)
@@ -70,6 +72,35 @@ namespace Twisted_Treeline.Model
                     Spot = potentialSpot;
                 }
             }
+            return Spot;
+
+        }
+
+        public override Location Move()
+        {
+
+            if (!EyeContact)
+            {
+                if (Spot.Row == GameController.Instance.Player.Spot.Row)
+                {
+                    bool isWall = false;
+                    for (int i = Spot.Column; i < GameController.Instance.Player.Spot.Column; i++)
+                    {
+                        if (GameController.Instance.Level.Squares[Spot.Row, i].Type == "Wall")
+                        {
+                            isWall = true;
+                        }
+                    }
+
+                    if (!isWall)
+                    {
+                        EyeContact = true;
+                    }
+                }
+            }
+
+            Track();
+
             return Spot;
 
         }

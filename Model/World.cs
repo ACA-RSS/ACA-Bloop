@@ -14,17 +14,19 @@ namespace Twisted_Treeline.Model
        // public SquareState[,] Squares { get; set; }
 
         public WorldObject[,] Squares { get; set; }
-        public int Size { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
         public int Difficulty { get; set; }
 
         public List<WorldObject> WorldObj { get; set; }
 
         public World() {
-            Size = 200;
+            Height = 14;
+            Width = 21;
 
-            for (int row = 0; row < Size; ++row)
+            for (int row = 0; row < Height; ++row)
             {
-                for (int col = 0; col < Size; ++col)
+                for (int col = 0; col < Width; ++col)
                 {
                     Squares[row, col] = null;
                 }

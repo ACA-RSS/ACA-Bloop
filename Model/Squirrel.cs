@@ -17,7 +17,7 @@ namespace Twisted_Treeline.Model
             Damage = 5;
             Dead = false;
             AttackTime = 0;
-            Type = "Animals";
+            Type = "Hittable";
         }
 
         public override Location Move()
@@ -59,8 +59,8 @@ namespace Twisted_Treeline.Model
             string[] stats = statsStr.Split(',');
             HitPoints = Convert.ToInt32(stats[1]);
             Dead = Convert.ToBoolean(stats[2]);
+            s.Spot = new Location(string.Format("{0},{1}", stats[3], stats[4]));
             return s;
-            //Spot = however we want to save spot
         }
 
         public override string Serialize()

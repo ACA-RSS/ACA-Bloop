@@ -19,7 +19,7 @@ namespace Twisted_Treeline.Model
             Speed = 0;
             Image = "Images/bigber.gif";
             AttackTime = 0;
-            Type = "Animals";
+            Type = "Hittable";
         }
 
 
@@ -32,10 +32,12 @@ namespace Twisted_Treeline.Model
         {
             Bear b = new Bear();
             string[] stats = statsStr.Split(',');
-            b.HitPoints = Convert.ToInt32(stats[0]);
-            b.Dead = Convert.ToBoolean(stats[0]);
+            b.HitPoints = Convert.ToInt32(stats[1]);
+            b.Dead = Convert.ToBoolean(stats[2]);
+            Location l = new Location(string.Format("{0},{1}", stats[3], stats[4]));
+            b.Spot = l;
             return b;
-            //Spot = however we want to save spot
+           
         }
 
         public override string Serialize()

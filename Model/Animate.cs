@@ -6,20 +6,18 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    public enum Direction { Up, Down, Left, Right}
-    public abstract class Animate : WorldObject
+    public enum Direction { Up, Down, Left, Right }
+    public abstract class Animate : Hittable
     {
         public int Speed { get; set; }
-        public int HitPoints { get; set; }
         public int Damage { get; set; }
-        public bool Dead { get; set; }
         public int PointValue { get; set; }
         public Direction DirFacing { get; set; }
 
 
         public abstract int Attack();
 
-        public void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
             HitPoints -= damage;
 
