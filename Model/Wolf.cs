@@ -39,7 +39,7 @@ namespace Twisted_Treeline.Model
         }
 
 
-        public override Location Move()
+        public Location Track()
         {
             Location potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column };
             if (EyeContact)
@@ -70,6 +70,35 @@ namespace Twisted_Treeline.Model
                     Spot = potentialSpot;
                 }
             }
+            return Spot;
+
+        }
+
+        public override Location Move()
+        {
+
+            if (!EyeContact)
+            {
+                if (Spot.Row == GameController.Instance.Player.Spot.Row)
+                {
+                    bool isWall = false;
+                    for (int i = Spot.Column; i < GameController.Instance.Player.Spot.Column; i++)
+                    {
+                        if (GameController.Instance.Level.Squares[Spot.Row, i].Type == "Wall")
+                        {
+                            isWall = true;
+                        }
+                    }
+
+                    if (!isWall)
+                    {
+                        EyeContact = true;
+                    }
+                }
+            }
+
+            Track();
+
             return Spot;
 
         }

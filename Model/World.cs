@@ -21,8 +21,8 @@ namespace Twisted_Treeline.Model
         public List<WorldObject> WorldObj { get; set; }
 
         public World() {
-            Height = 30;
-            Width = 50;
+            Height = 14;
+            Width = 21;
 
             for (int row = 0; row < Height; ++row)
             {
