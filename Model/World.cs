@@ -16,7 +16,8 @@ namespace Twisted_Treeline.Model
         public WorldObject[,] Squares { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
-        public int Difficulty { get; set; }
+        
+        public int Stars { get; set; }
 
         public List<WorldObject> WorldObj { get; set; }
 

@@ -18,7 +18,7 @@ namespace Twisted_Treeline.Model
             gc.Reset();
             gc.Load("TTLSave.txt");
             Assert.IsTrue(gc.Player.HitPoints == 100);
-            Assert.IsTrue(gc.Stars == 0);
+            Assert.IsTrue(gc.Level.Stars == 0);
 
         }
         [TestMethod]
@@ -29,7 +29,7 @@ namespace Twisted_Treeline.Model
             gc.Save();
             gc.Load("TTLSave.txt");
             Assert.IsTrue(gc.Player.HitPoints == 100);
-            Assert.IsTrue(gc.Stars == 0);
+            Assert.IsTrue(gc.Level.Stars == 0);
 
         }
     }

@@ -9,7 +9,7 @@
     <Grid x:Name="World_Grid" KeyUp="Window_KeyUp" >
         <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="563,10,0,0" VerticalAlignment="Top" Width="75" Click="btnMenu_Click"/>
         <TextBlock x:Name="txtHealth" HorizontalAlignment="Left" Margin="188,10,0,0" TextWrapping="Wrap" Text="Health Bar" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txtStars" HorizontalAlignment="Left" Margin="436,10,0,0" TextWrapping="Wrap" Text="Stars" VerticalAlignment="Top"/>
+        <Image x:Name="imgStars" HorizontalAlignment="Left" Margin="436,10,0,0" VerticalAlignment="Top" Width=" 80"/>
         <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Margin="315,10,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="71,10,0,0" TextWrapping="Wrap" Text="Level Indicator" VerticalAlignment="Top"/>
         <Canvas x:Name="WorldCanvas" HorizontalAlignment="Left" Width="672" Margin="10,35,0,10" Background="LightGreen" >
