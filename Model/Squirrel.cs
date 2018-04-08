@@ -18,6 +18,7 @@ namespace Twisted_Treeline.Model
             Dead = false;
             AttackTime = 0;
             Type = "Hittable";
+            Image = "Graphics/squirrel.png";
         }
 
         public override Location Move()
