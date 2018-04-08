@@ -18,8 +18,8 @@ namespace Twisted_Treeline.Model
         public override void TakeDamage(int damage)
         {
             Dead = true;
-            GameController.Instance.Stars += 1;
-            GameController.Instance.Points += 100 * GameController.Instance.Level.Difficulty;
+            GameController.Instance.Level.Stars += 1;
+            GameController.Instance.Points += 100 * GameController.Instance.Difficulty;
         }
 
         public override WorldObject Deserialize(string s)

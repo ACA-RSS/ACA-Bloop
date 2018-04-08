@@ -13,10 +13,10 @@ namespace Twisted_Treeline.Model
         public Wolf()
         {
 
-            HitPoints = 20;
+            HitPoints = 20 * GameController.Instance.Difficulty;
             AttackSpeed = 1;
             Speed = 5;
-            Damage = 10;
+            Damage = 10 * GameController.Instance.Difficulty;
             Dead = false;
             Image = "Images/wolf.gif";
             AttackTime = 0;
@@ -98,8 +98,10 @@ namespace Twisted_Treeline.Model
             }
 
             Track();
+            
 
             return Spot;
+
 
         }
 
