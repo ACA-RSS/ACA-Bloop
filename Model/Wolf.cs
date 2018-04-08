@@ -29,13 +29,15 @@ namespace Twisted_Treeline.Model
             string[] stats = statsStr.Split(',');
             w.HitPoints = Convert.ToInt32(stats[1]);
             w.Dead = Convert.ToBoolean(stats[2]);
+            w.EyeContact = Convert.ToBoolean(stats[3]);
+            w.Spot = new Location(string.Format("{0},{1}", stats[4], stats[5]));
             return w;
-            //Spot = however we want to save spot
+            
         }
 
         public override string Serialize()
         {
-            return string.Format("Wolf,{0},{1},{2}", HitPoints, Dead, Spot);
+            return string.Format("Wolf,{0},{1},{2},{3}", HitPoints, Dead, EyeContact, Spot);
         }
 
 

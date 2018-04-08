@@ -110,8 +110,9 @@ namespace Twisted_Treeline.Model
             string[] stats = statsStr.Split(',');
             HitPoints = Convert.ToInt32(stats[1]);
             Dead = Convert.ToBoolean(stats[2]);
+            Location l = new Location(string.Format("{0},{1}", stats[3], stats[4]));
+            c.Spot = l;
             return c;
-            //Spot = however we want to save spot
         }
 
         public override string Serialize()
