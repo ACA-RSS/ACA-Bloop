@@ -64,6 +64,7 @@
     <Compile Include="Model\Highscore.cs" />
     <Compile Include="Model\HighscoreManager.cs" />
     <Compile Include="Model\Hittable.cs" />
+    <Compile Include="Model\Star.cs" />
     <Compile Include="View\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
