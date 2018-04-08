@@ -22,6 +22,8 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class GameScreen : Window
     {
+        DispatcherTimer Ticky { get; set; }
+
         public GameScreen()
         {
             InitializeComponent();
@@ -29,9 +31,21 @@ namespace Twisted_Treeline
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Ticky = new DispatcherTimer(){ Interval = new TimeSpan(100000) };
+            Ticky.Tick += Ticky_Tick;
+
             GameController.Instance.Reset();
             GameController.Instance.SetUpLevelOne();
             BuildTheWall();
+            UpdateScreen();
+
+            GameController.Instance.Timer.Start();
+            Ticky.Start();
+
+        }
+
+        public void Ticky_Tick(object sender, object e)
+        {
             UpdateScreen();
         }
 

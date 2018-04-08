@@ -40,7 +40,6 @@ namespace Twisted_Treeline.Model
             Timer = new DispatcherTimer();
             Timer.Tick += Timer_Tick;
             Timer.Interval = new TimeSpan(100000);
-            Timer.Start();
         }
 
         private void Timer_Tick(object sender, object e)
