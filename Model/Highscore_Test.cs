@@ -10,22 +10,29 @@ namespace Twisted_Treeline.Model
 [TestClass]
     public class Highscore_Test
     {
+            HighscoreManager manager = new HighscoreManager("HighScores_Test.txt");
 
         [TestMethod]
-        public void Test_Highscores()
+        public void Test_Highscore()
         {
-            HighscoreManager manager = new HighscoreManager("HighScores_Test.txt");
+            Highscore highscore = new Highscore(5609, "amy");
+            manager.SaveList(highscore);
+            manager.LoadList();
+            //test first highscore
+            int score = manager.HighscoreList[0].Score;
+            Assert.IsTrue(score == 5609);
+            string nickname = manager.HighscoreList[0].Name;
+            Assert.IsTrue(nickname == "amy");
+
+        }
+        [TestMethod]
+        public void Test_Multiple_Highscores()
+        {
             Highscore highscore = new Highscore(5609, "amy");
             manager.SaveList(highscore);
             Highscore highscore2 = new Highscore(60, "2ndplace");
             manager.SaveList(highscore2);
             manager.LoadList();
-            //test first highscore
-            int score = manager.HighscoreList[0].Score;
-            //Assert.IsTrue(score == 5609);
-            string nickname = manager.HighscoreList[0].Name;
-            Assert.IsTrue(nickname == "amy");
-            //test second highscore
             int score2 = manager.HighscoreList[1].Score;
             Assert.IsTrue(score2 == 60);
             string nickname2 = manager.HighscoreList[1].Name;
