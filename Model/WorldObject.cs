@@ -17,6 +17,8 @@ namespace Twisted_Treeline.Model
 
         public abstract WorldObject Deserialize(string s);
 
+        public event EventHandler<int> ObjectMovedEvent;
+
     }
 
     

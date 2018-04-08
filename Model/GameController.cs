@@ -12,20 +12,20 @@ namespace Twisted_Treeline.Model
     {
         public string UserName { get; set; }
 
+        public int Difficulty { get; set; }
+
         public World Level {get; set;}
 
         public int Points {get; set;}
 
-        public int Stars {get; set;}
 
         public Character Player { get; set; }
 
-        DispatcherTimer Timer;
+        public DispatcherTimer Timer;
 
         private GameController(){
             Level = new World();
             Points = 0;
-            Stars = 0;
         }
 
         public void isGameOver(){
@@ -36,12 +36,10 @@ namespace Twisted_Treeline.Model
         {
             Level = new World();
             Points = 0;
-            Stars = 0;
 
             Timer = new DispatcherTimer();
             Timer.Tick += Timer_Tick;
             Timer.Interval = new TimeSpan(100000);
-            Timer.Start();
         }
 
         private void Timer_Tick(object sender, object e)

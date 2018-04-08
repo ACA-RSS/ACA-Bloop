@@ -11,11 +11,13 @@ namespace Twisted_Treeline.Model
     {
         public List<Highscore> HighscoreList;
         public string Filename;
+        StreamWriter Writer;
 
         public HighscoreManager(string filename)
         {
             HighscoreList = new List<Highscore>();
             Filename = filename;
+            Writer = new StreamWriter(Filename);
         }
 
         /// <summary>
@@ -23,11 +25,10 @@ namespace Twisted_Treeline.Model
         /// </summary>
         public void LoadList()
         {
-            this.HighscoreList = new List<Highscore>();
 
             using (StreamReader reader = new StreamReader(Filename))
             {
-                if (!reader.EndOfStream)
+                while (!reader.EndOfStream)
                 {
                     string scoreString = reader.ReadLine();
                     string[] scoreArray = scoreString.Split(',');
@@ -40,11 +41,8 @@ namespace Twisted_Treeline.Model
         /// </summary>
         public void SaveList(Highscore hscore)
         {
-            using (StreamWriter writer = new StreamWriter(Filename))
-            {
-                writer.WriteLine(hscore.Score + "," + hscore.Name);
-                writer.Flush();
-            }
+            Writer.WriteLine(hscore.Score + "," + hscore.Name);
+            Writer.Flush();
         }
     }
 }
