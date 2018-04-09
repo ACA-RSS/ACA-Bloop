@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    public class Wall : Terrain
+    public class Wall : WorldObject
     {
         public Wall()
         {

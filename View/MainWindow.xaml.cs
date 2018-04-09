@@ -24,5 +24,13 @@ namespace Twisted_Treeline
         {
             InitializeComponent();
         }
+
+        private void DifficultyLstBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DifficultyLstBox.Items.Add("Cheat");
+            DifficultyLstBox.Items.Add("Hard");
+            DifficultyLstBox.Items.Add("More Harder");
+            DifficultyLstBox.Items.Add("Downright Impossible");
+        }
     }
 }

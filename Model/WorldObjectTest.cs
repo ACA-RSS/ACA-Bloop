@@ -11,6 +11,7 @@ namespace Twisted_Treeline.Model
         [TestMethod]
         public void Animal_TakeDamage_Success()
         {
+            GameController.Instance.Reset();
             Wolf wolfy = new Wolf();
             wolfy.TakeDamage(5);
             Assert.IsTrue(wolfy.HitPoints == 15);
@@ -20,6 +21,7 @@ namespace Twisted_Treeline.Model
         [TestMethod]
         public void Animal_Death_Success()
         {
+            GameController.Instance.Reset();
             Wolf wolfy = new Wolf();
             Assert.IsTrue(wolfy.Dead == false);
             wolfy.TakeDamage(5);
@@ -29,13 +31,14 @@ namespace Twisted_Treeline.Model
 
             Wolf fuzzy = new Wolf();
             Assert.IsTrue(fuzzy.Dead == false);
-            wolfy.TakeDamage(20);
+            fuzzy.TakeDamage(20);
             Assert.IsTrue(fuzzy.Dead == true);
         }
 
         [TestMethod]
         public void Bear_Attack_Sucess()
         {
+            GameController.Instance.Reset();
             Bear beary = new Bear();
             int firstHit = beary.Attack();
             int secondHit = beary.Attack();

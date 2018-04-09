@@ -11,8 +11,8 @@
         <TextBlock x:Name="txtHealth" HorizontalAlignment="Left" Margin="188,10,0,0" TextWrapping="Wrap" Text="Health Bar" VerticalAlignment="Top"/>
         <Image x:Name="imgStars" HorizontalAlignment="Left" Margin="436,10,0,0" VerticalAlignment="Top" Width=" 80"/>
         <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Margin="315,10,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="71,10,0,0" TextWrapping="Wrap" Text="Level Indicator" VerticalAlignment="Top"/>
-        <Canvas x:Name="WorldCanvas" HorizontalAlignment="Left" Width="672" Margin="10,35,0,10" Background="LightGreen" >
+        <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="71,10,0,0" TextWrapping="Wrap" Text="Level 1" VerticalAlignment="Top"/>
+        <Canvas x:Name="WorldCanvas" HorizontalAlignment="Left" Width="672" Margin="10,35,0,10" Background="DarkGreen" >
         </Canvas>
     </Grid>
 </Window>

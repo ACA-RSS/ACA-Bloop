@@ -16,6 +16,13 @@ namespace Twisted_Treeline.Model
             Type = "Hittable";
             Dead = false;
         }
+        public Stump()
+        {
+            Object = new Stick(1000000000);
+            HitPoints = 1000000;
+            Type = "Hittable";
+            Dead = false;
+        }
 
         public Stump(int hp)
         {

@@ -100,7 +100,6 @@
     <Compile Include="Model\Squirrel.cs" />
     <Compile Include="Model\Stick.cs" />
     <Compile Include="Model\Stump.cs" />
-    <Compile Include="Model\Terrain.cs" />
     <Compile Include="Model\Wall.cs" />
     <Compile Include="Model\Wolf.cs" />
     <Compile Include="Model\World.cs" />
@@ -177,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="TTLine.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

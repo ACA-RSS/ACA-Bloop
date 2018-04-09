@@ -25,7 +25,14 @@ namespace Twisted_Treeline.Model
             {
                 Dead = true;
                 GameController.Instance.Points += PointValue * (GameController.Instance.Difficulty);
+                Die();
             }
+        }
+
+        public void Die()
+        {
+            GameController.Instance.Level.WorldObj.Remove(this);
+
         }
     }
 }

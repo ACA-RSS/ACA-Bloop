@@ -15,6 +15,11 @@ namespace Twisted_Treeline.Model
             Damage = hurt;
         }
 
+        public Stick()
+        {
+            Damage = 1337;
+        }
+
         public override WorldObject Deserialize(string statsStr)
         {
 

@@ -14,29 +14,43 @@ namespace Twisted_Treeline.Model
 
         public int Difficulty { get; set; }
 
-        public World Level {get; set;}
+        public World Level { get; set; }
 
-        public int Points {get; set;}
-
-
+        public int Points { get; set; }
+        
         public Character Player { get; set; }
 
         public DispatcherTimer Timer;
 
-        private GameController(){
+        private GameController()
+        {
             Level = new World();
             Points = 0;
+            Difficulty = 1;
+            Player = new Character();
         }
 
-        public void isGameOver(){
-            throw new NotImplementedException();
+        public bool isGameOver()
+        {
+            if (Instance.Player.Dead)
+            {
+                return true;
+            }
+            else if (Instance.Level.Stars == 3 && Instance.Player.Spot.Column == 0 && Instance.Player.Spot.Row == 13)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
 
         public void Reset()
         {
             Level = new World();
             Points = 0;
-
             Timer = new DispatcherTimer();
             Timer.Tick += Timer_Tick;
             Timer.Interval = new TimeSpan(100000);
@@ -44,16 +58,7 @@ namespace Twisted_Treeline.Model
 
         private void Timer_Tick(object sender, object e)
         {
-            foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
-            {
-                if (obj.Type == "Animals")
-                {
-                    Animals a = obj as Animals;
-                    a.CheckState();
-                }
-
-                GameController.Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = obj;
-            }
+            Update();
         }
 
         public void SetUpLevelOne()
@@ -61,10 +66,9 @@ namespace Twisted_Treeline.Model
             Player = new Character()
             {
                 Stick = new Stick(5),
-                Spot = new Location { Row = 12, Column = 0}
+                Spot = new Location { Row = 12, Column = 0 }
             };
             
-
             Bear fuzzy = new Bear() { Spot = new Location { Row = 4, Column = 5 } };
             Bear wuzzy = new Bear() { Spot = new Location { Row = 7, Column = 15 } };
             Bear buzzy = new Bear() { Spot = new Location { Row = 10, Column = 3 } };
@@ -80,7 +84,7 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
             Instance.Level.WorldObj.Add(glow);
-            
+
             Wolf wolfy = new Wolf() { Spot = new Location { Row = 3, Column = 10 } };
             Wolf bitey = new Wolf() { Spot = new Location { Row = 6, Column = 16 } };
             Wolf growly = new Wolf() { Spot = new Location { Row = 13, Column = 6 } };
@@ -123,11 +127,10 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(11, 5, 2, "Vert");
             Wall.WallBuilder(11, 3, 1, "Horz");
             Wall.WallBuilder(12, 3, 0, "Vert");
-
-
         }
 
-        public void Save(){
+        public void Save()
+        {
             string saveData = "TwistedTLine";
             //adds highscores at the beginning of the file
 
@@ -141,26 +144,104 @@ namespace Twisted_Treeline.Model
                     writer.WriteLine(obj.Serialize());
                 }
             }
-                
-
         }
 
         public void Load(string fileName)
         {
-            using (StreamReader rd = new StreamReader("TTLSave.txt"))
+            using (StreamReader sr = new StreamReader("TTLSave.txt"))
             {
-                //splits the file based on new line characters 
-                //uses each of the remaining parts of the array to create all the objects 
+                string curLine;
+                string saveTitle = sr.ReadLine();
+                if(saveTitle != "TwistedTLine")
+                {
+                    Environment.Exit(1);
+                }
+                instance.Level.WorldObj.Clear();
+                //check to make sure it isnt the last line in the file
+                while (sr.Peek() >= 0)
+                {
+                    curLine = sr.ReadLine();
+                    string type = curLine.Substring(0, 4);
+                    WorldObject w;
+                    switch (type)
+                    {
+                        case "Bear":
+                            {
+                                Bear b = new Bear();
+                                w =  b.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Wolf":
+                            {
+                                Wolf coyote = new Wolf();
+                                w = coyote.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Squi":
+                            {
+                                Squirrel scrat = new Squirrel();
+                                w = scrat.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Char":
+                            {
+                                Character alcatraz = new Character();
+                                w = alcatraz.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Wall":
+                            {
+                                Wall china = new Wall();
+                                w = china.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Stum":
+                            {
+                                Stump thump = new Stump();
+                                w = thump.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Stic":
+                            {
+                                Stick discipline = new Stick();
+                                w = discipline.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                    }
+
+                }
             }
         }
 
         //Updates Model based on Timer and user actions
         public void Update()
         {
-            throw new NotImplementedException();
+            foreach (WorldObject obj in Instance.Level.Squares)
+            {
+                Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = null;
+            }
+
+            foreach (WorldObject obj in Instance.Level.WorldObj)
+            {
+                if (obj.Type == "Animals")
+                {
+                    Animals a = obj as Animals;
+                    a.CheckState();
+                }
+
+                Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = obj;
+            }
         }
 
         private static GameController instance = new GameController();
+
         public static GameController Instance
         {
             get { return instance; }

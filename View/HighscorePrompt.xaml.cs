@@ -31,8 +31,6 @@ namespace Twisted_Treeline.View
         {
             string name = Name.Text;
             manager.SaveList(new Highscore(0,name));
-
-
         }
     }
 }

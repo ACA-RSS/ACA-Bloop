@@ -1,94 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Twisted_Treeline.Model.WorldObject">
-    <Position X="9" Y="0.5" Width="1.5" />
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAABAAAAgAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgCBAABAAAQgAAAAAAAA=</HashCode>
       <FileName>Model\WorldObject.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Twisted_Treeline.Model.Animals">
-    <Position X="5.5" Y="6.25" Width="1.5" />
+    <Position X="6.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAIAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIgAAAAAAAAAAAAAAIAAAAIAAAIAAAAAAAA=</HashCode>
       <FileName>Model\Animals.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.Animate">
-    <Position X="6.75" Y="3" Width="1.5" />
+    <Position X="7.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAIAAAAAAAAAABAABAIAAAAAAAAAAiAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAgAAAAAgABAKAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Model\Animate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.Bear">
-    <Position X="3.5" Y="9" Width="1.5" />
+    <Position X="4.5" Y="12.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgIAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Bear.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.Character">
-    <Position X="8" Y="6.25" Width="1.5" />
+    <Position X="9" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgIAAAIAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAgKBAAAAAACAAAAAAAAA=</HashCode>
       <FileName>Model\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.Squirrel">
-    <Position X="5.5" Y="9" Width="1.5" />
+    <Position X="6.5" Y="12.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgIAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Squirrel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.Stick">
-    <Position X="12.25" Y="3" Width="1.5" />
+    <Position X="12" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Stick.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.Stump">
-    <Position X="10.5" Y="4.5" Width="1.5" />
+    <Position X="11.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgIAAAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAACFAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Model\Stump.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Twisted_Treeline.Model.Terrain">
-    <Position X="9.75" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Model\Terrain.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Twisted_Treeline.Model.Wall">
-    <Position X="8.75" Y="4.5" Width="1.5" />
+    <Position X="7.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.GameController">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEQAgIAAAAAAgAAAAAAAAACAAAAAAAABAQAAAQAAAAA=</HashCode>
+      <HashCode>AAQAgIAAAAAAhQBAAAAAAACAAABAAAABQQAAAQAEABA=</HashCode>
       <FileName>Model\GameController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.World">
-    <Position X="4.75" Y="0.5" Width="1.5" />
+    <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgQAAAABAAAAAAAAAAAEABAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAAABAAAAAAAAAAAAEAAAAAAAAEABAAAAAAAAAA=</HashCode>
       <FileName>Model\World.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.Wolf">
-    <Position X="7.5" Y="9" Width="1.5" />
+    <Position X="8.5" Y="12.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgIAAAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAMAAAAAACAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Wolf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Twisted_Treeline.Model.Hittable">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAiAAAAAA=</HashCode>
+      <FileName>Model\Hittable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Twisted_Treeline.Model.Star">
+    <Position X="9.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Model\Star.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
