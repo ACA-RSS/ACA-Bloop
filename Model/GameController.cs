@@ -31,9 +31,20 @@ namespace Twisted_Treeline.Model
             Player = new Character();
         }
 
-        public void isGameOver()
+        public bool isGameOver()
         {
-            throw new NotImplementedException();
+            if (Instance.Player.Dead)
+            {
+                return true;
+            }
+            else if (Instance.Level.Stars == 3 && Instance.Player.Spot.Column == 0 && Instance.Player.Spot.Row == 13)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 

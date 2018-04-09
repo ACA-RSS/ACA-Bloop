@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Twisted_Treeline.Model;
 using System.Windows.Threading;
+using Twisted_Treeline.View;
 
 namespace Twisted_Treeline
 {
@@ -46,7 +47,17 @@ namespace Twisted_Treeline
 
         public void Ticky_Tick(object sender, object e)
         {
-            UpdateScreen();
+            if (!GameController.Instance.isGameOver())
+            {
+                UpdateScreen();
+            }
+            else
+            {
+                GameController.Instance.Timer.Stop();
+                Ticky.Stop();
+                HighscorePrompt hs = new HighscorePrompt();
+                hs.ShowDialog();
+            }
         }
 
         private void BuildTheWall()
@@ -156,6 +167,7 @@ namespace Twisted_Treeline
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Timer.Stop();
+            Ticky.Stop();
             Menu menu = new Menu();
             menu.ShowDialog();
         }

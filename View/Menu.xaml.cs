@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Twisted_Treeline
+namespace Twisted_Treeline.View
 {
     /// <summary>
     /// Interaction logic for Menu.xaml
