@@ -17,7 +17,8 @@ namespace Twisted_Treeline.Model
         {
             HighscoreList = new List<Highscore>();
             Filename = filename;
-            Writer = new StreamWriter(Filename);
+            FileStream file = new FileStream(filename, FileMode.Open ,FileAccess.Write);
+            StreamWriter Writer = new StreamWriter(file);
         }
 
         /// <summary>
@@ -25,14 +26,15 @@ namespace Twisted_Treeline.Model
         /// </summary>
         public void LoadList()
         {
-
-            using (StreamReader reader = new StreamReader(Filename))
+            using(FileStream rfstream = new FileStream(Filename, FileMode.Open, FileAccess.Read)) { 
+            using (StreamReader reader = new StreamReader(rfstream))
             {
-                while (!reader.EndOfStream)
-                {
-                    string scoreString = reader.ReadLine();
-                    string[] scoreArray = scoreString.Split(',');
-                    this.HighscoreList.Add(new Highscore(Convert.ToInt32(scoreArray[0]), scoreArray[1]));
+                    while (!reader.EndOfStream)
+                    {
+                        string scoreString = reader.ReadLine();
+                        string[] scoreArray = scoreString.Split(',');
+                        this.HighscoreList.Add(new Highscore(Convert.ToInt32(scoreArray[0]), scoreArray[1]));
+                    }
                 }
             }
         }
@@ -43,6 +45,7 @@ namespace Twisted_Treeline.Model
         {
             Writer.WriteLine(hscore.Score + "," + hscore.Name);
             Writer.Flush();
+            Writer.Dispose();
         }
     }
 }
