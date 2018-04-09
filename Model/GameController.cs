@@ -147,10 +147,74 @@ namespace Twisted_Treeline.Model
 
         public void Load(string fileName)
         {
-            using (StreamReader rd = new StreamReader("TTLSave.txt"))
+            using (StreamReader sr = new StreamReader("TTLSave.txt"))
             {
-                //splits the file based on new line characters 
-                //uses each of the remaining parts of the array to create all the objects 
+                string curLine;
+                string saveTitle = sr.ReadLine();
+                if(saveTitle != "TwistedTLine")
+                {
+                    Environment.Exit(1);
+                }
+                //check to make sure it isnt the last line in the file
+                while (sr.Peek() >= 0)
+                {
+                    curLine = sr.ReadLine();
+                    string type = curLine.Substring(0, 3);
+                    WorldObject w;
+                    switch (type)
+                    {
+                        case "Bear":
+                            {
+                                Bear b = new Bear();
+                                w =  b.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Wolf":
+                            {
+                                Wolf coyote = new Wolf();
+                                w = coyote.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Squi":
+                            {
+                                Squirrel scrat = new Squirrel();
+                                w = scrat.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Char":
+                            {
+                                Character alcatraz = new Character();
+                                w = alcatraz.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Wall":
+                            {
+                                Wall china = new Wall();
+                                w = china.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Stum":
+                            {
+                                Stump thump = new Stump();
+                                w = thump.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                        case "Stic":
+                            {
+                                Stick discipline = new Stick();
+                                w = discipline.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
+                    }
+
+                }
             }
         }
 
