@@ -5,17 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1440" Background="Black">
+        Title="MainWindow" Height="800" Width="1300" Background="Black">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="273*"/>
-            <ColumnDefinition Width="1160*"/>
-        </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="118" VerticalAlignment="Top" Width="817" Source="TTLine.png" Grid.Column="1" Margin="29.2,0,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" Foreground="White" VerticalAlignment="Top" RenderTransformOrigin="0.68,0.541" Grid.Column="1" Margin="682.2,180,0,0" Height="22" Width="120"/>
-        <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="802.2,180,0,0" SelectionChanged="DifficultyLstBox_SelectionChanged"/>
-
-
-
+        <Image x:Name="imgTitle" HorizontalAlignment="Center" Height="118" VerticalAlignment="Top" Width="817" Source="Graphics/TTLine.png" Grid.Column="1" Margin="29.2,0,0,0"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" Foreground="White" VerticalAlignment="Top" Grid.Column="1" Margin="0,180,0,0" Height="22" Width="120"/>
+        <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="300,180,0,0" SelectionChanged="DifficultyLstBox_SelectionChanged"/>
+        <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="0,477,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+        <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="0,385,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Center" Height="23" Margin="0,288,0,0" TextWrapping="Wrap" Text="Enter Your Username" VerticalAlignment="Top" Width="150"/>
     </Grid>
 </Window>

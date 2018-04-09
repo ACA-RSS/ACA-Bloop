@@ -8,15 +8,6 @@
         Title="About" Height="300" Width="300" Background="DarkGreen">
     <Grid>
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Width="75" Margin="10,241,0,8" Click="btnBack_Click"/>
-        <TextBox TextAlignment="Center" Background="DarkGray" FontWeight="Bold" HorizontalAlignment="Center" Height="99" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Margin="0,47,0,123" Text="
-                 
-                 
-                 Designed and Implemented by
-                 Alex Raddatz
-                 
-                 Caroline Smith
-                 
-                 
-                 Amy Surrett"/>
+        <TextBox TextAlignment="Center" Background="DarkGray" FontWeight="Bold" HorizontalAlignment="Center" Height="99" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Margin="0,47,0,123" Text="&#xD;&#xA;Designed and Implemented by&#xD;&#xA; Alex Raddatz&#xD;&#xA;Caroline Smith&#xD;&#xA;Amy Surrett"/>
     </Grid>
 </Window>

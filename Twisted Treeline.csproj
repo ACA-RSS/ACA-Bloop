@@ -68,9 +68,6 @@
     <Compile Include="View\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Credits.xaml.cs">
-      <DependentUpon>Credits.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\GameScreen.xaml.cs">
       <DependentUpon>GameScreen.xaml</DependentUpon>
     </Compile>
@@ -133,10 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\About.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Credits.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
