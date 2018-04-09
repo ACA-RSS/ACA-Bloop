@@ -14,23 +14,28 @@ namespace Twisted_Treeline.Model
 
         public int Difficulty { get; set; }
 
-        public World Level {get; set;}
+        public World Level { get; set; }
 
-        public int Points {get; set;}
+        public int Points { get; set; }
 
 
         public Character Player { get; set; }
 
         public DispatcherTimer Timer;
 
-        private GameController(){
+        private GameController()
+        {
             Level = new World();
             Points = 0;
+            Difficulty = 1;
+            Player = new Character();
         }
 
-        public void isGameOver(){
+        public void isGameOver()
+        {
             throw new NotImplementedException();
         }
+
 
         public void Reset()
         {
@@ -44,16 +49,7 @@ namespace Twisted_Treeline.Model
 
         private void Timer_Tick(object sender, object e)
         {
-            foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
-            {
-                if (obj.Type == "Animals")
-                {
-                    Animals a = obj as Animals;
-                    a.CheckState();
-                }
-
-                GameController.Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = obj;
-            }
+            Update();
         }
 
         public void SetUpLevelOne()
@@ -61,9 +57,9 @@ namespace Twisted_Treeline.Model
             Player = new Character()
             {
                 Stick = new Stick(5),
-                Spot = new Location { Row = 12, Column = 0}
+                Spot = new Location { Row = 12, Column = 0 }
             };
-            
+
 
             Bear fuzzy = new Bear() { Spot = new Location { Row = 4, Column = 5 } };
             Bear wuzzy = new Bear() { Spot = new Location { Row = 7, Column = 15 } };
@@ -80,7 +76,7 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
             Instance.Level.WorldObj.Add(glow);
-            
+
             Wolf wolfy = new Wolf() { Spot = new Location { Row = 3, Column = 10 } };
             Wolf bitey = new Wolf() { Spot = new Location { Row = 6, Column = 16 } };
             Wolf growly = new Wolf() { Spot = new Location { Row = 13, Column = 6 } };
@@ -123,11 +119,10 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(11, 5, 2, "Vert");
             Wall.WallBuilder(11, 3, 1, "Horz");
             Wall.WallBuilder(12, 3, 0, "Vert");
-
-
         }
 
-        public void Save(){
+        public void Save()
+        {
             string saveData = "TwistedTLine";
             //adds highscores at the beginning of the file
 
@@ -141,8 +136,6 @@ namespace Twisted_Treeline.Model
                     writer.WriteLine(obj.Serialize());
                 }
             }
-                
-
         }
 
         public void Load(string fileName)
@@ -157,7 +150,21 @@ namespace Twisted_Treeline.Model
         //Updates Model based on Timer and user actions
         public void Update()
         {
-            throw new NotImplementedException();
+            foreach (WorldObject obj in Instance.Level.Squares)
+            {
+                Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = null;
+            }
+
+            foreach (WorldObject obj in Instance.Level.WorldObj)
+            {
+                if (obj.Type == "Animals")
+                {
+                    Animals a = obj as Animals;
+                    a.CheckState();
+                }
+
+                Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = obj;
+            }
         }
 
         private static GameController instance = new GameController();
