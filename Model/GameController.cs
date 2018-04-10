@@ -157,11 +157,12 @@ namespace Twisted_Treeline.Model
                 {
                     Environment.Exit(1);
                 }
+                instance.Level.WorldObj.Clear();
                 //check to make sure it isnt the last line in the file
                 while (sr.Peek() >= 0)
                 {
                     curLine = sr.ReadLine();
-                    string type = curLine.Substring(0, 3);
+                    string type = curLine.Substring(0, 4);
                     WorldObject w;
                     switch (type)
                     {
