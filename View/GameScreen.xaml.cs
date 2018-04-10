@@ -53,6 +53,7 @@ namespace Twisted_Treeline
             }
             else
             {
+                GameController.Instance.Points += 500;
                 GameController.Instance.Timer.Stop();
                 Ticky.Stop();
                 HighscorePrompt hs = new HighscorePrompt();
