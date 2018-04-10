@@ -26,7 +26,7 @@ namespace Twisted_Treeline
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DifficultyLstBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
             ComboBoxItem cheat = new ComboBoxItem() { Content = "Cheat Mode" };
             ComboBoxItem easy = new ComboBoxItem() { Content = "Hard" };

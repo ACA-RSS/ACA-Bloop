@@ -7,33 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1300" Background="Black">
     <Grid>
-<<<<<<< HEAD
-        <Image HorizontalAlignment="Center" Height="118" VerticalAlignment="Top" Width="817" Source="Graphics/TTLine.png" Grid.Column="1" Margin="29.2,0,0,0"/>
+        <Image x:Name="imgTitle" HorizontalAlignment="Center" Height="118" VerticalAlignment="Top" Width="817" Source="Graphics/TTLine.png" Grid.Column="1" Margin="29.2,0,0,0"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" Foreground="White" VerticalAlignment="Top" Grid.Column="1" Margin="0,180,0,0" Height="22" Width="120"/>
         <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="300,180,0,0" SelectionChanged="DifficultyLstBox_SelectionChanged"/>
         <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="0,477,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
         <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="0,385,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Center" Height="23" Margin="0,288,0,0" TextWrapping="Wrap" Text="Enter Your Username" VerticalAlignment="Top" Width="150"/>
-
-=======
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="273*"/>
-            <ColumnDefinition Width="1160*"/>
-        </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="118" VerticalAlignment="Top" Width="817" Source="TTLine.png" Grid.Column="1" Margin="29.2,0,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" Foreground="White" VerticalAlignment="Top" RenderTransformOrigin="0.68,0.541" Grid.Column="1" Margin="682.2,180,0,0" Height="22" Width="120"/>
-        <ComboBox Text="HERE" Foreground="White" Margin="807.2,180,80.6,668.4" Grid.Column="1" >
-            <ComboBoxItem Name="cbi1">Item1</ComboBoxItem>
-            <ComboBoxItem Name="cbi2">Item2</ComboBoxItem>
-            <ComboBoxItem Name="cbi3">Item3</ComboBoxItem>
-        </ComboBox>
-        <Button Content="Start Game" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="420.2,165,0,0" Click="Button_Click"/>
-        <Button Content="About" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="420.2,211,0,0"/>
-        <Button Content="Help" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="420.2,257,0,0"/>
-        <Button Content="High Scores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="420.2,306,0,0"/>
-        
->>>>>>> 2a9bf681ab212608d64a44047d3bcc247ea5d3ee
-
-
     </Grid>
 </Window>
