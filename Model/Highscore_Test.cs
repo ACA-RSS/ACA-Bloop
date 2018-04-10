@@ -29,19 +29,17 @@ namespace Twisted_Treeline.Model
         [TestMethod]
         public void Test_Multiple_Highscores()
         {
-            HighscoreManager manager = new HighscoreManager("HighScores_Test.txt");
-            manager.LoadList();
+            HighscoreManager manager2 = new HighscoreManager("HighScores_Test.txt");
+            manager2.LoadList();
             Highscore highscore = new Highscore(5609, "amy");
-            manager.SaveList(highscore);
+            manager2.SaveList(highscore);
             Highscore highscore2 = new Highscore(60, "2ndplace");
-            manager.SaveList(highscore2);
-            manager.LoadList();
-            int score2 = manager.HighscoreList[1].Score;
+            manager2.SaveList(highscore2);
+            manager2.LoadList();
+            int score2 = manager2.HighscoreList[1].Score;
             Assert.IsTrue(score2 == 60);
-            string nickname2 = manager.HighscoreList[1].Name;
+            string nickname2 = manager2.HighscoreList[1].Name;
             Assert.IsTrue(nickname2 == "2ndplace");
-
-
         }
 
     }
