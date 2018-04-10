@@ -17,7 +17,7 @@ namespace Twisted_Treeline.Model
             Damage = 15 * GameController.Instance.Difficulty;
             Dead = false;
             Speed = 0;
-            Image = "Images/bigber.gif";
+            Image = "/bigber.gif";
             AttackTime = 0;
             Type = "Hittable";
         }

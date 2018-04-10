@@ -11,7 +11,7 @@ namespace Twisted_Treeline.Model
         public Wall()
         {
             Type = "Wall";
-            Image = "Graphics/Wall.png";
+            Image = "/Wall.png";
         }
         public static void WallBuilder(int startRow, int startCol, int numSpaces, string dir)
         {
