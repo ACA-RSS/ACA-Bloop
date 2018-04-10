@@ -38,6 +38,7 @@ namespace Twisted_Treeline
             GameController.Instance.Reset();
             GameController.Instance.SetUpLevelOne();
             BuildTheWall();
+            GameController.Instance.InitialSetup();
             UpdateScreen();
 
             GameController.Instance.Timer.Start();

@@ -51,7 +51,7 @@ namespace Twisted_Treeline
             {
                 howHard = 1;
             }
-            else if (DifficultyLstBox.Text == "More Harder")
+            else if (DifficultyLstBox.Text == "More Hardlier")
             {
                 howHard = 2;
             }

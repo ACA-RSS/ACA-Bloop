@@ -220,14 +220,24 @@ namespace Twisted_Treeline.Model
             }
         }
 
-        //Updates Model based on Timer and user actions
-        public void Update()
+        public void InitialSetup()
         {
             foreach (WorldObject obj in Instance.Level.WorldObj)
             {
-                Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = null;
+                Instance.Level.Squares[obj.Spot.Row - 1, obj.Spot.Column - 1] = obj;
             }
+        }
 
+        //Updates Model based on Timer and user actions
+        public void Update()
+        {
+            foreach ( WorldObject o in Instance.Level.Squares)
+            {
+                if (o.Type != "Wall")
+                {
+                    Instance.Level.Squares[o.Spot.Row, o.Spot.Column] = null;
+                }
+            }
             foreach (WorldObject obj in Instance.Level.WorldObj)
             {
                 if (obj.Type == "Animals")
