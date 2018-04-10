@@ -16,14 +16,15 @@ namespace Twisted_Treeline.Model
             Stick = new Stick(5);
             Damage = Stick.Damage;
             Dead = false;
-            Spot = new Location { Row = 0, Column = 0 };
+            Spot = new Location { Row = 12, Column = 0 };
             Image = "/Scotty.gif";
             Type = "Character";
+            DirFacing = Direction.Up;
         }
 
         public void doDamage(Hittable toAttack)
         {
-            if (!toAttack.Dead)
+            if (toAttack != null && !toAttack.Dead)
                 toAttack.TakeDamage(Damage);
         }
 
@@ -32,7 +33,7 @@ namespace Twisted_Treeline.Model
             switch (DirFacing)
             {
                 case Direction.Up:
-                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Hittable")
+                    if (GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column].Type == "Hittable")
                     {
                         doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
                     }
@@ -47,14 +48,14 @@ namespace Twisted_Treeline.Model
                     break;
 
                 case Direction.Left:
-                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Hittable")
+                    if (GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1].Type == "Hittable")
                     {
                         doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
                     }
                     break;
 
                 case Direction.Right:
-                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Hittable")
+                    if (GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1].Type == "Hittable")
                     {
                         doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
                     }
@@ -73,6 +74,7 @@ namespace Twisted_Treeline.Model
                 if (Spot.Row - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column] == null)
                 {
                     Spot = new Location { Row = Spot.Row - 1, Column = Spot.Column };
+                    Image = "/Scotty.gif";
                 }
             }
             else if (Dir == "Down" && GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null)
@@ -81,11 +83,15 @@ namespace Twisted_Treeline.Model
                 if (Spot.Row + 1 <= GameController.Instance.Level.Height)
                 {
                     Spot = new Location { Row = Spot.Row + 1, Column = Spot.Column };
+
+                    Image = "/Scotty.gif";
                 }
             }
             else if (Dir == "Left")
             {
                 DirFacing = Direction.Left;
+
+                Image = "/scottybutliketotheleft.png";
                 if (Spot.Column - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1] == null)
                 {
                     Spot = new Location { Row = Spot.Row, Column = Spot.Column - 1 };
@@ -97,6 +103,8 @@ namespace Twisted_Treeline.Model
                 if (Spot.Column + 1 <= GameController.Instance.Level.Width)
                 {
                     Spot = new Location { Row = Spot.Row, Column = Spot.Column + 1 };
+
+                    Image = "/Scotty.gif";
                 }
             }
 

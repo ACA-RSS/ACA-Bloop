@@ -18,7 +18,7 @@ namespace Twisted_Treeline.Model
         public World Level { get; set; }
 
         public int Points { get; set; }
-        
+
         public Character Player { get; set; }
 
         public DispatcherTimer Timer;
@@ -54,7 +54,7 @@ namespace Twisted_Treeline.Model
             Points = 0;
             Timer = new DispatcherTimer();
             Timer.Tick += Timer_Tick;
-            Timer.Interval = new TimeSpan(100000);
+            Timer.Interval = new TimeSpan(10);
         }
 
         private void Timer_Tick(object sender, object e)
@@ -69,7 +69,9 @@ namespace Twisted_Treeline.Model
                 Stick = new Stick(5),
                 Spot = new Location { Row = 12, Column = 0 }
             };
-            
+
+            Instance.Level.WorldObj.Add(Player);
+
             Bear fuzzy = new Bear() { Spot = new Location { Row = 4, Column = 5 } };
             Bear wuzzy = new Bear() { Spot = new Location { Row = 7, Column = 15 } };
             Bear buzzy = new Bear() { Spot = new Location { Row = 10, Column = 3 } };
@@ -100,9 +102,9 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(5, 4, 3, "Horz");
             Wall.WallBuilder(1, 7, 3, "Vert");
             Wall.WallBuilder(1, 1, 5, "Horz");
-            Wall.WallBuilder(2, 1, 6, "Vert");
+            Wall.WallBuilder(2, 1, 5, "Vert");
             Wall.WallBuilder(7, 2, 7, "Horz");
-            Wall.WallBuilder(6, 0, 8, "Vert");
+            Wall.WallBuilder(0, 9, 7, "Vert");
 
             //Right Side
 
@@ -112,19 +114,19 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(12, 14, 5, "Horz");
             Wall.WallBuilder(3, 19, 8, "Vert");
             Wall.WallBuilder(3, 13, 5, "Horz");
-            Wall.WallBuilder(4, 13, 5, "Vert");
+            Wall.WallBuilder(4, 13, 4, "Vert");
             Wall.WallBuilder(8, 14, 1, "Horz");
             Wall.WallBuilder(9, 15, 1, "Vert");
             Wall.WallBuilder(10, 16, 1, "Horz");
             Wall.WallBuilder(5, 17, 4, "Vert");
-            Wall.WallBuilder(5, 16, 1, "Horz");
+            Wall.WallBuilder(5, 15, 2, "Horz");
             Wall.WallBuilder(6, 15, 0, "Vert");
 
             //Bottom Left
             Wall.WallBuilder(11, 9, 2, "Vert");
             Wall.WallBuilder(10, 7, 2, "Vert");
             Wall.WallBuilder(9, 1, 4, "Vert");
-            Wall.WallBuilder(9, 2, 7, "Horz");
+            Wall.WallBuilder(9, 2, 8, "Horz");
             Wall.WallBuilder(11, 5, 2, "Vert");
             Wall.WallBuilder(11, 3, 1, "Horz");
             Wall.WallBuilder(12, 3, 0, "Vert");
@@ -152,7 +154,7 @@ namespace Twisted_Treeline.Model
             {
                 string curLine;
                 string saveTitle = sr.ReadLine();
-                if(saveTitle != "TwistedTLine")
+                if (saveTitle != "TwistedTLine")
                 {
                     Environment.Exit(1);
                 }
@@ -168,7 +170,7 @@ namespace Twisted_Treeline.Model
                         case "Bear":
                             {
                                 Bear b = new Bear();
-                                w =  b.Deserialize(curLine);
+                                w = b.Deserialize(curLine);
                                 Instance.Level.WorldObj.Add(w);
                                 break;
                             }
@@ -231,7 +233,7 @@ namespace Twisted_Treeline.Model
         //Updates Model based on Timer and user actions
         public void Update()
         {
-            foreach ( WorldObject o in Instance.Level.Squares)
+            foreach (WorldObject o in Instance.Level.Squares)
             {
                 if (o != null)
                 {

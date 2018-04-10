@@ -28,12 +28,15 @@ namespace Twisted_Treeline.Model
 
         public void CheckState()
         {
-            for (int i = -1; i < 2; i++)
+            for (int r = -1; r < 2; r++)
             {
-                if (Spot.Row + i == GameController.Instance.Player.Spot.Row || Spot.Column + i == GameController.Instance.Player.Spot.Column)
+                for (int c = -1; c < 2; c++)
                 {
-                    GameController.Instance.Player.TakeDamage(Attack());
-                    return;
+                    if (Spot.Row + r == GameController.Instance.Player.Spot.Row && Spot.Column + c == GameController.Instance.Player.Spot.Column)
+                    {
+                        GameController.Instance.Player.TakeDamage(Attack());
+                        return;
+                    }
                 }
             }
             Move();

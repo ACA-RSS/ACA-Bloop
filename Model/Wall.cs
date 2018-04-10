@@ -17,7 +17,7 @@ namespace Twisted_Treeline.Model
         {
             if (dir == "Vert")
             {
-                for (int i = 0; i < numSpaces; i++)
+                for (int i = 0; i < numSpaces + 1; i++)
                 {
                     Wall wally = new Wall() { Spot = new Location() { Row = startRow + i, Column = startCol } };
                     GameController.Instance.Level.WorldObj.Add(wally);
@@ -25,7 +25,7 @@ namespace Twisted_Treeline.Model
             }
             else if (dir == "Horz")
             {
-                for (int i = 0; i < numSpaces; i++)
+                for (int i = 0; i < numSpaces + 1; i++)
                 {
                     Wall wally = new Wall() { Spot = new Location() { Row = startRow , Column = startCol + i} };
 

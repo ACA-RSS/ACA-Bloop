@@ -32,7 +32,7 @@ namespace Twisted_Treeline
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Ticky = new DispatcherTimer(){ Interval = new TimeSpan(100000) };
+            Ticky = new DispatcherTimer() { Interval = new TimeSpan(10) };
             Ticky.Tick += Ticky_Tick;
 
             GameController.Instance.Reset();
@@ -74,7 +74,7 @@ namespace Twisted_Treeline
                         Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
-                        Margin = new System.Windows.Thickness(obj.Spot.Column * 65, obj.Spot.Row * 64, 0, 0),
+                        Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
 
@@ -87,7 +87,7 @@ namespace Twisted_Treeline
         {
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
             txtHealth.Text = String.Format("Health Percent: {0}", Convert.ToString(GameController.Instance.Player.HitPoints));
-            imgStars.Source = new BitmapImage(new Uri(String.Format("/Graphics/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
+            imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
 
             List<Image> toDestroy = new List<Image>();
             foreach (Image i in WorldCanvas.Children)
@@ -96,7 +96,7 @@ namespace Twisted_Treeline
 
                 if (o.Type != "Wall")
                 {
-                    toDestroy.Add(i); 
+                    toDestroy.Add(i);
                 }
             }
 
@@ -104,7 +104,7 @@ namespace Twisted_Treeline
             {
                 WorldCanvas.Children.Remove(i);
             }
-           
+
 
             foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
             {
@@ -122,7 +122,7 @@ namespace Twisted_Treeline
 
                     WorldCanvas.Children.Add(i);
                 }
-             }
+            }
 
         }
 
