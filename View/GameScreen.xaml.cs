@@ -40,8 +40,7 @@ namespace Twisted_Treeline
             BuildTheWall();
             GameController.Instance.InitialSetup();
             UpdateScreen();
-
-            GameController.Instance.Timer.Start();
+            
             Ticky.Start();
 
         }
@@ -51,11 +50,11 @@ namespace Twisted_Treeline
             if (!GameController.Instance.isGameOver())
             {
                 UpdateScreen();
+                GameController.Instance.Update();
             }
             else
             {
                 GameController.Instance.Points += 500;
-                GameController.Instance.Timer.Stop();
                 Ticky.Stop();
                 HighscorePrompt hs = new HighscorePrompt();
                 hs.ShowDialog();
@@ -154,7 +153,6 @@ namespace Twisted_Treeline
 
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
-            GameController.Instance.Timer.Stop();
             Ticky.Stop();
             Menu menu = new Menu();
             menu.ShowDialog();
