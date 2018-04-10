@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="Menu" Height="300" Width="300" Background="DarkGreen">
     <Grid>
+        <TextBlock Text="Pause Menu" HorizontalAlignment="Center" Margin="0,15,0,0" FontSize="30"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
-        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="0,123,0,0" VerticalAlignment="Top" Width="75" Click="btnAbout_Click"/>
-        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="0,180,0,0" VerticalAlignment="Top" Width="75" Click="btnHelp_Click"/>
+        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="108,111,108,0" VerticalAlignment="Top" Width="76" Click="btnAbout_Click"/>
+        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="108,162,108,0" VerticalAlignment="Top" Width="76" Click="btnHelp_Click"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Width="76" Click="btnBack_Click"/>
 
 
     </Grid>

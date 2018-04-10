@@ -26,7 +26,7 @@ namespace Twisted_Treeline
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
