@@ -109,7 +109,7 @@ namespace Twisted_Treeline
                         Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
-                        Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width),    200/*obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height)*/, 0, 0),
+                        Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
 
@@ -119,25 +119,6 @@ namespace Twisted_Treeline
              }
 
         }
-
-        /* class ImageControl : ContentControl
-             {
-             public ImageControl(string imgSource)
-             {
-                 Content = new Image()
-                 {
-                     Source = new BitmapImage(new Uri(imgSource, UriKind.Relative))
-                 };
-             }
-
-             public void NotifyMoved(object sender, int i)
-             {
-                 WorldObject obj = sender as WorldObject;
-                 HorizontalAlignment = HorizontalAlignment.Left;
-                 VerticalAlignment = VerticalAlignment.Top;
-                 Margin = new System.Windows.Thickness(obj.Spot.Column * 65, obj.Spot.Row * 64, 0, 0);
-             }
-         }*/
 
 
         private void Window_KeyUp(object sender, KeyEventArgs e)

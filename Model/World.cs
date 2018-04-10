@@ -22,7 +22,7 @@ namespace Twisted_Treeline.Model
             Width = 21;
             Stars = 0;
 
-            Squares = new WorldObject[Height, Width];
+            Squares = new WorldObject[ Height, Width];
 
             for (int row = 0; row < Height; ++row)
             {
