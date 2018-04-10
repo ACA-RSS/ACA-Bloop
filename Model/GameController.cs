@@ -132,7 +132,6 @@ namespace Twisted_Treeline.Model
         public void Save()
         {
             string saveData = "TwistedTLine";
-            //adds highscores at the beginning of the file
 
             //Saves the player info
             using (StreamWriter writer = new StreamWriter("TTLSave.txt"))
