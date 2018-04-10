@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Twisted_Treeline.Model;
+using Twisted_Treeline.View;
 
 namespace Twisted_Treeline
 {
@@ -62,6 +63,29 @@ namespace Twisted_Treeline
             GameController.Instance.Difficulty = howHard;
             GameScreen game = new GameScreen();
             game.ShowDialog();
+        }
+
+        private void imgTitle_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Help h = new Help();
+            h.ShowDialog();
+        }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            About a = new About();
+            a.ShowDialog();
+        }
+
+        private void btnHighScores_Click(object sender, RoutedEventArgs e)
+        {
+            HighscoreScreen h = new HighscoreScreen();
+            h.ShowDialog();
         }
     }
 }
