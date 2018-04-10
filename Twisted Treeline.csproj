@@ -170,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="ster.png" />
     <Resource Include="ber.png" />
     <Resource Include="bigber.gif" />
     <Resource Include="bigber.png" />

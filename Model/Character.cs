@@ -90,8 +90,7 @@ namespace Twisted_Treeline.Model
             else if (Dir == "Left")
             {
                 DirFacing = Direction.Left;
-
-                Image = "/scottybutliketotheleft.png";
+                
                 if (Spot.Column - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1] == null)
                 {
                     Spot = new Location { Row = Spot.Row, Column = Spot.Column - 1 };
