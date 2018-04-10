@@ -12,7 +12,7 @@ namespace Twisted_Treeline.Model
         {
             HitPoints = 0;
             Dead = false;
-
+            Image = "Graphics/Wolf.png";
         }
 
         public override void TakeDamage(int damage)

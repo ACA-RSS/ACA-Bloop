@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Threading;
+using Twisted_Treeline;
 
 namespace Twisted_Treeline.Model
 {
@@ -222,7 +223,7 @@ namespace Twisted_Treeline.Model
         //Updates Model based on Timer and user actions
         public void Update()
         {
-            foreach (WorldObject obj in Instance.Level.Squares)
+            foreach (WorldObject obj in Instance.Level.WorldObj)
             {
                 Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = null;
             }
