@@ -40,8 +40,6 @@ namespace Twisted_Treeline.Model
             Assert.IsTrue(score2 == 60);
             string nickname2 = manager.HighscoreList[1].Name;
             Assert.IsTrue(nickname2 == "2ndplace");
-
-
         }
 
     }
