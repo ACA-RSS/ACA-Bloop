@@ -7,11 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1300" Background="Black">
     <Grid>
-        <Image x:Name="imgTitle" HorizontalAlignment="Center" Height="118" VerticalAlignment="Top" Width="817" Source="Graphics/TTLine.png" Grid.Column="1" Margin="29.2,0,0,0"/>
+        
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" Foreground="White" VerticalAlignment="Top" Grid.Column="1" Margin="0,180,0,0" Height="22" Width="120"/>
         <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="300,180,0,0" />
-        <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="0,477,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
-        <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="0,385,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
+        <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="597,392,596.6,0" VerticalAlignment="Top" Width="100" Height="30"/>
+        <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="597,343,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Center" Height="23" Margin="0,288,0,0" TextWrapping="Wrap" Text="Enter Your Username" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="imgTitle"  Height="118" VerticalAlignment="Top" Width="818" Source="/View/TTLine.png" Grid.Column="0" Margin="266,0,209.6,0" Loaded="imgTitle_Loaded"/>
+        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="597,440,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHelp_Click"/>
+        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="597,494,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAbout_Click"/>
+        <Button x:Name="btnHighScores" Content="High Scores" HorizontalAlignment="Center" Margin="597,546,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHighScores_Click"/>
     </Grid>
 </Window>
