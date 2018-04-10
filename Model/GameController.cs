@@ -17,8 +17,7 @@ namespace Twisted_Treeline.Model
         public World Level { get; set; }
 
         public int Points { get; set; }
-
-
+        
         public Character Player { get; set; }
 
         public DispatcherTimer Timer;
