@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Twisted_Treeline.Model;
+using Twisted_Treeline;
 
 namespace Twisted_Treeline
 {
