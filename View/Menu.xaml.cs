@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Twisted_Treeline.Model;
 
 namespace Twisted_Treeline
 {
@@ -38,7 +39,12 @@ namespace Twisted_Treeline
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            GameController.Instance.Save();
+        }
 
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
