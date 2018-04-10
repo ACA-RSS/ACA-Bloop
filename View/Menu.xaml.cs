@@ -23,5 +23,22 @@ namespace Twisted_Treeline
         {
             InitializeComponent();
         }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            About a = new About();
+            a.ShowDialog();
+        }
+
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Help h = new Help();
+            h.ShowDialog();
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
