@@ -224,7 +224,7 @@ namespace Twisted_Treeline.Model
         {
             foreach (WorldObject obj in Instance.Level.WorldObj)
             {
-                Instance.Level.Squares[obj.Spot.Row - 1, obj.Spot.Column - 1] = obj;
+                Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column ] = obj;
             }
         }
 
@@ -233,9 +233,12 @@ namespace Twisted_Treeline.Model
         {
             foreach ( WorldObject o in Instance.Level.Squares)
             {
-                if (o.Type != "Wall")
+                if (o != null)
                 {
-                    Instance.Level.Squares[o.Spot.Row, o.Spot.Column] = null;
+                    if (o.Type != "Wall")
+                    {
+                        Instance.Level.Squares[o.Spot.Row, o.Spot.Column] = null;
+                    }
                 }
             }
             foreach (WorldObject obj in Instance.Level.WorldObj)

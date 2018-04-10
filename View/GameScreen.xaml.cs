@@ -87,18 +87,24 @@ namespace Twisted_Treeline
         {
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
             txtHealth.Text = String.Format("Health Percent: {0}", Convert.ToString(GameController.Instance.Player.HitPoints));
-            imgStars.Source = new BitmapImage(new Uri(String.Format("Graphics/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
+            imgStars.Source = new BitmapImage(new Uri(String.Format("/Graphics/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
 
-
+            List<Image> toDestroy = new List<Image>();
             foreach (Image i in WorldCanvas.Children)
             {
                 WorldObject o = i.Tag as WorldObject;
+
                 if (o.Type != "Wall")
                 {
-                    WorldCanvas.Children.Remove(i);
+                    toDestroy.Add(i); 
                 }
-                
             }
+
+            foreach (Image i in toDestroy)
+            {
+                WorldCanvas.Children.Remove(i);
+            }
+           
 
             foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
             {
@@ -115,7 +121,6 @@ namespace Twisted_Treeline
                     };
 
                     WorldCanvas.Children.Add(i);
-                    //obj.ObjectMovedEvent += imgControl.NotifyMoved;
                 }
              }
 
