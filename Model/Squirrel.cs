@@ -14,7 +14,7 @@ namespace Twisted_Treeline.Model
             HitPoints = 5 * GameController.Instance.Difficulty;
             AttackSpeed = 0.5;
             Speed = 5;
-            Damage = 5 * GameController.Instance.Difficulty;
+            Damage = 2 * GameController.Instance.Difficulty;
             Dead = false;
             AttackTime = 0;
             Type = "Hittable";

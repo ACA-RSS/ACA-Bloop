@@ -83,10 +83,14 @@ namespace Twisted_Treeline.Model
             Star glitter = new Star() { Spot = new Location { Row = 4, Column = 4 } };
             Star gleam = new Star() { Spot = new Location { Row = 12, Column = 4 } };
             Star glow = new Star() { Spot = new Location { Row = 9, Column = 16 } };
+            
 
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
             Instance.Level.WorldObj.Add(glow);
+
+            Squirrel nutsy = new Squirrel() { Spot = new Location { Row = 5, Column = 0 } };
+            Instance.Level.WorldObj.Add(nutsy);
 
             Wolf wolfy = new Wolf() { Spot = new Location { Row = 3, Column = 10 } };
             Wolf bitey = new Wolf() { Spot = new Location { Row = 6, Column = 16 } };
@@ -246,6 +250,7 @@ namespace Twisted_Treeline.Model
             foreach (WorldObject obj in Instance.Level.WorldObj)
             {
                 if (obj.Type == "Animals")
+
                 {
                     Animals a = obj as Animals;
                     a.CheckState();
