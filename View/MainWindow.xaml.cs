@@ -24,20 +24,13 @@ namespace Twisted_Treeline
         public MainWindow()
         {
             InitializeComponent();
+            DifficultyLstBox.Items.Add("Cheat Mode");
+            DifficultyLstBox.Items.Add("Hard");
+            DifficultyLstBox.Items.Add("More Hardlier");
+            DifficultyLstBox.Items.Add("Downright Impossible");
         }
 
-        private void DifficultyLstBox_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            ComboBoxItem cheat = new ComboBoxItem() { Content = "Cheat Mode" };
-            ComboBoxItem easy = new ComboBoxItem() { Content = "Hard" };
-            ComboBoxItem medium = new ComboBoxItem() { Content = "More Harder" };
-            ComboBoxItem hard = new ComboBoxItem() { Content = "Downright Impossible" };
-
-            DifficultyLstBox.Items.Add(cheat);
-            DifficultyLstBox.Items.Add(easy);
-            DifficultyLstBox.Items.Add(medium);
-            DifficultyLstBox.Items.Add(hard);
-        }
+        
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
@@ -61,7 +54,7 @@ namespace Twisted_Treeline
             {
                 howHard = 2;
             }
-            else if (DifficultyLstBox.Text == "Downright Impossible")
+            else 
             {
                 howHard = 3;
             }
