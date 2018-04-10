@@ -52,7 +52,6 @@ namespace Twisted_Treeline.Model
         {
             Level = new World();
             Points = 0;
-
             Timer = new DispatcherTimer();
             Timer.Tick += Timer_Tick;
             Timer.Interval = new TimeSpan(100000);
@@ -70,8 +69,7 @@ namespace Twisted_Treeline.Model
                 Stick = new Stick(5),
                 Spot = new Location { Row = 12, Column = 0 }
             };
-
-
+            
             Bear fuzzy = new Bear() { Spot = new Location { Row = 4, Column = 5 } };
             Bear wuzzy = new Bear() { Spot = new Location { Row = 7, Column = 15 } };
             Bear buzzy = new Bear() { Spot = new Location { Row = 10, Column = 3 } };
@@ -243,6 +241,7 @@ namespace Twisted_Treeline.Model
         }
 
         private static GameController instance = new GameController();
+
         public static GameController Instance
         {
             get { return instance; }

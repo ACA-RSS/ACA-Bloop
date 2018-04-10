@@ -31,7 +31,7 @@ namespace Twisted_Treeline.Model
 
             Wolf fuzzy = new Wolf();
             Assert.IsTrue(fuzzy.Dead == false);
-            wolfy.TakeDamage(20);
+            fuzzy.TakeDamage(20);
             Assert.IsTrue(fuzzy.Dead == true);
         }
 

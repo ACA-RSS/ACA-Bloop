@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-
-    public enum SquareState { Animal, Grass, House, Scotty, Star, Stick, Stump, Wall  };
-
     public class World
     {
-       // public SquareState[,] Squares { get; set; }
-
         public WorldObject[,] Squares { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
-        
+
         public int Stars { get; set; }
 
         public List<WorldObject> WorldObj { get; set; }
 
-        public World() {
+        public World()
+        {
             Height = 14;
             Width = 21;
+            Stars = 0;
+
+            Squares = new WorldObject[Height, Width];
 
             for (int row = 0; row < Height; ++row)
             {
@@ -36,11 +35,6 @@ namespace Twisted_Treeline.Model
 
             WorldObj = new List<WorldObject>();
         }
-
-        public void Configure(){
-            throw new NotImplementedException();
-        }
-
     }
 
     public struct Location
