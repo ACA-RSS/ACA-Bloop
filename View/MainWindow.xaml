@@ -5,9 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="900" Width="1440" Background="Black">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="273*"/>
+            <ColumnDefinition Width="1160*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="118" VerticalAlignment="Top" Width="817" Source="TTLine.png" Grid.Column="1" Margin="29.2,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" Foreground="White" VerticalAlignment="Top" RenderTransformOrigin="0.68,0.541" Grid.Column="1" Margin="682.2,180,0,0" Height="22" Width="120"/>
+        <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="802.2,180,0,0" SelectionChanged="DifficultyLstBox_SelectionChanged"/>
+
 
 
     </Grid>
