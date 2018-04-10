@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="Help" Height="300" Width="300">
+        Title="Help" Height="300" Width="300" Background="LightGreen">
     <Grid>
         <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,241,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="214" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Margin="31,22,0,0" Text="Objective: Collect as many stars as you can in the maze. Sound easy? Beasts are lurking in the maze. Defeat them, and you will succeed.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Controls: WASD to move, SPACE to attack"/>
+        <TextBox HorizontalAlignment="Center" Height="125" TextWrapping="Wrap" VerticalAlignment="Center" Width="236" Margin="0,0,0,50" Text="Objective: Collect as many stars as you can in the maze. Sound easy? Beasts are lurking in the maze. Defeat them, and you will succeed.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Controls: WASD to move, SPACE to attack"/>
 
     </Grid>
 </Window>

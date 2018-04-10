@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="About" Height="300" Width="300">
+        Title="About" Height="300" Width="300" Background="LightGreen">
     <Grid>
         
     </Grid>
