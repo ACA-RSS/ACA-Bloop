@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline.View"
         mc:Ignorable="d"
-        Title="HighscorePrompt" Height="300" Width="300">
+        Title="HighscorePrompt" Height="300" Width="300" Background="DarkGreen">
     <Grid>
-        <TextBox x:Name="Name">Your name here</TextBox>
-        <Button x:Name="Submit" Click="Submit_Click">Submit</Button>
+        <TextBox x:Name="Name" Text="Your name here" HorizontalAlignment="Center" Margin="0,0,0,100" Height="30" Width="100" />
+        <Button x:Name="Submit" Click="Submit_Click" Content="Submit" Height="30" Width="100" HorizontalAlignment="Center" />
     </Grid>
 </Window>
