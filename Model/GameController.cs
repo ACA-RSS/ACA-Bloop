@@ -224,7 +224,11 @@ namespace Twisted_Treeline.Model
         {
             foreach (WorldObject obj in Instance.Level.WorldObj)
             {
+<<<<<<< HEAD
+                Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = obj;
+=======
                 Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column ] = obj;
+>>>>>>> 7c839fad3e287dcec538d780f198e32e4037befc
             }
         }
 
