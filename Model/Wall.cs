@@ -27,7 +27,7 @@ namespace Twisted_Treeline.Model
             {
                 for (int i = 0; i < numSpaces; i++)
                 {
-                    Wall wally = new Wall() { Spot = new Location() { Row = startRow + i, Column = startCol } };
+                    Wall wally = new Wall() { Spot = new Location() { Row = startRow , Column = startCol + i} };
 
                     GameController.Instance.Level.WorldObj.Add(wally);
                 }
