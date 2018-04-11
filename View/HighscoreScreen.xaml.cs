@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Twisted_Treeline.Model;
 
 namespace Twisted_Treeline.View
 {
@@ -22,6 +23,14 @@ namespace Twisted_Treeline.View
         public HighscoreScreen()
         {
             InitializeComponent();
+            LoadHighScores();
+        }
+        public void LoadHighScores()
+        {
+            foreach (Highscore hs in HighscoreManager.Hm.HighscoreList)
+            {
+                Scores.Text += hs.Name + "   " + hs.Score + "\n";
+            }
         }
     }
 }

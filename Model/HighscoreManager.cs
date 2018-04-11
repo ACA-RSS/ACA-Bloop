@@ -9,6 +9,7 @@ namespace Twisted_Treeline.Model
 {
     class HighscoreManager
     {
+        public static HighscoreManager Hm { get; set; }
         public List<Highscore> HighscoreList;
         public string Filename { get; set; }
 
@@ -16,6 +17,7 @@ namespace Twisted_Treeline.Model
         {
             HighscoreList = new List<Highscore>();
             Filename = filename;
+            Hm = this;
             //FileStream file = new FileStream(filename, FileMode.Open ,FileAccess.Write);
             //StreamWriter Writer = new StreamWriter(file);
         }
