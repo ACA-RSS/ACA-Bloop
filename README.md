@@ -12,7 +12,7 @@ List any major issues.
 When loading a game, the character is unable to move after the proper map is drawn
 
 ## Recording:
-A link to your screen recording.
+[Link to a playthrough of our Alpha version](https://tinyurl.com/team-2-alpha)
 
 ## Expenses:
 
