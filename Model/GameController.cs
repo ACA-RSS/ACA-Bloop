@@ -124,12 +124,12 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(12, 3, 0, "Vert");
         }
 
-        public void Save()
+        public void Save(string file)
         {
             string saveData = "TwistedTLine";
 
             //Saves the player info
-            using (StreamWriter writer = new StreamWriter("TTLSave.txt"))
+            using (StreamWriter writer = new StreamWriter(file))
             {
                 writer.WriteLine(saveData);
                 foreach (WorldObject obj in Level.WorldObj)
@@ -141,7 +141,7 @@ namespace Twisted_Treeline.Model
 
         public void Load(string fileName)
         {
-            using (StreamReader sr = new StreamReader("TTLSave.txt"))
+            using (StreamReader sr = new StreamReader(fileName))
             {
                 string curLine;
                 string saveTitle = sr.ReadLine();
