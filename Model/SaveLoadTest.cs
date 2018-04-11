@@ -20,37 +20,37 @@ namespace Twisted_Treeline.Model
             gc.Level.WorldObj.Add(b);
             Squirrel s = new Squirrel();
             gc.Level.WorldObj.Add(s);
-            gc.Save();
+            gc.Save("TTL_Test.txt");
             gc.Reset();
-            gc.Load("TTLSave.txt");
+            gc.Load("TTL_Test.txt");
             Assert.IsTrue(gc.Level.Stars == 0);
-            Assert.IsTrue(gc.Level.WorldObj.Count == 3);
+            Assert.IsTrue(gc.Level.WorldObj.Count == 2);
             gc.Reset();
 
         }
         [TestMethod]
         public void Save_Succes()
         {
-            GameController gc = GameController.Instance;
-            gc.Reset();
-            gc.Save();
-            gc.Load("TTLSave.txt");
-            Assert.IsTrue(gc.Player.HitPoints == 100);
-            Assert.IsTrue(gc.Level.Stars == 0);
+            GameController gc2 = GameController.Instance;
+            gc2.Reset();
+            gc2.Save("TTL_Test2.txt");
+            gc2.Load("TTL_Test2.txt");
+            Assert.IsTrue(gc2.Player.HitPoints == 100);
+            Assert.IsTrue(gc2.Level.Stars == 0);
 
         }
         [TestMethod]
         public void Load_Dmg_Success()
         {
-            GameController gc = GameController.Instance;
-            gc.Reset();
+            GameController gc3 = GameController.Instance;
+            gc3.Reset();
             Wolf wolfy = new Wolf();
             wolfy.TakeDamage(5);
-            gc.Level.WorldObj.Add(wolfy);
-            gc.Save();
-            gc.Reset();
-            gc.Load("TTLSave.txt");
-            Wolf coyote = gc.Level.WorldObj[1] as Wolf;
+            gc3.Level.WorldObj.Add(wolfy);
+            gc3.Save("TTL_Test3.txt");
+            gc3.Reset();
+            gc3.Load("TTL_Test3.txt");
+            Wolf coyote = gc3.Level.WorldObj[0] as Wolf;
             Assert.IsTrue(coyote.HitPoints == 15);
         }
     }

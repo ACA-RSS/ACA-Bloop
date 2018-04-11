@@ -39,7 +39,7 @@ namespace Twisted_Treeline
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            GameController.Instance.Save();
+            GameController.Instance.Save("TTLSave.txt");
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

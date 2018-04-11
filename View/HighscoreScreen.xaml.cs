@@ -24,11 +24,13 @@ namespace Twisted_Treeline.View
         {
             InitializeComponent();
             LoadHighScores();
+            
         }
         public void LoadHighScores()
         {
-            HighscoreManager.Hm.LoadList();
-            foreach (Highscore hs in HighscoreManager.Hm.HighscoreList)
+            HighscoreManager hsm = new HighscoreManager("HighScores.txt");
+            hsm.LoadList();
+            foreach (Highscore hs in hsm.HighscoreList)
             {
                 Scores.Text += hs.Name + "   " + hs.Score + "\n";
             }

@@ -29,7 +29,7 @@ namespace Twisted_Treeline.Model
         [TestMethod]
         public void Test_Multiple_Highscores()
         {
-            HighscoreManager manager2 = new HighscoreManager("HighScores_Test.txt");
+            HighscoreManager manager2 = new HighscoreManager("HighScores1_Test.txt");
             manager2.LoadList();
             Highscore highscore = new Highscore(5609, "amy");
             manager2.SaveList(highscore);
