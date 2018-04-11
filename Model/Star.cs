@@ -22,14 +22,18 @@ namespace Twisted_Treeline.Model
             GameController.Instance.Points += 100 * GameController.Instance.Difficulty;
         }
 
-        public override WorldObject Deserialize(string s)
+        public override WorldObject Deserialize(string statsStr)
         {
-            throw new NotImplementedException();
+            Star st = new Star();
+            string[] stats = statsStr.Split(',');
+            Location l = new Location(string.Format("{0},{1}", stats[1], stats[2]));
+            st.Spot = l;
+            return st;
         }
 
         public override string Serialize()
         {
-            throw new NotImplementedException();
+            return string.Format("Star,{0}", Spot);
         }
     }
 }

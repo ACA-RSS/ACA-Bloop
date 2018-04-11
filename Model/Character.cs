@@ -68,13 +68,17 @@ namespace Twisted_Treeline.Model
 
         public Location PlayerMove(string Dir)
         {
+            Location oldPos;
             if (Dir == "Up")
-            {
+            { 
                 DirFacing = Direction.Up;
                 if (Spot.Row - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column] == null)
                 {
+                    oldPos = Spot;
                     Spot = new Location { Row = Spot.Row - 1, Column = Spot.Column };
+                    GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
                     Image = "/Scotty.gif";
+
                 }
             }
             else if (Dir == "Down" && GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null)
@@ -82,8 +86,9 @@ namespace Twisted_Treeline.Model
                 DirFacing = Direction.Down;
                 if (Spot.Row + 1 <= GameController.Instance.Level.Height)
                 {
+                    oldPos = Spot;
                     Spot = new Location { Row = Spot.Row + 1, Column = Spot.Column };
-
+                    GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
                     Image = "/Scotty.gif";
                 }
             }
@@ -93,7 +98,9 @@ namespace Twisted_Treeline.Model
                 
                 if (Spot.Column - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1] == null)
                 {
+                    oldPos = Spot;
                     Spot = new Location { Row = Spot.Row, Column = Spot.Column - 1 };
+                    GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
                 }
             }
             else if (Dir == "Right" && GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null)
@@ -101,8 +108,9 @@ namespace Twisted_Treeline.Model
                 DirFacing = Direction.Right;
                 if (Spot.Column + 1 <= GameController.Instance.Level.Width)
                 {
+                    oldPos = Spot;
                     Spot = new Location { Row = Spot.Row, Column = Spot.Column + 1 };
-
+                    GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
                     Image = "/Scotty.gif";
                 }
             }
@@ -117,8 +125,7 @@ namespace Twisted_Treeline.Model
             string[] stats = statsStr.Split(',');
             HitPoints = Convert.ToInt32(stats[1]);
             Dead = Convert.ToBoolean(stats[2]);
-            Location l = new Location(string.Format("{0},{1}", stats[3], stats[4]));
-            c.Spot = l;
+            c.Spot = new Location(string.Format("{0},{1}", stats[3], stats[4]));
             return c;
         }
 

@@ -35,10 +35,8 @@ namespace Twisted_Treeline
             Ticky = new DispatcherTimer() { Interval = new TimeSpan(10) };
             Ticky.Tick += Ticky_Tick;
 
-            GameController.Instance.Reset();
-            GameController.Instance.SetUpLevelOne();
+            
             BuildTheWall();
-            GameController.Instance.InitialSetup();
             UpdateScreen();
 
             GameController.Instance.Timer.Start();

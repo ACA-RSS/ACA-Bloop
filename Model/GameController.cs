@@ -144,7 +144,6 @@ namespace Twisted_Treeline.Model
             using (StreamWriter writer = new StreamWriter("TTLSave.txt"))
             {
                 writer.WriteLine(saveData);
-                writer.WriteLine(Player.Serialize());
                 foreach (WorldObject obj in Level.WorldObj)
                 {
                     writer.WriteLine(obj.Serialize());

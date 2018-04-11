@@ -37,7 +37,6 @@ namespace Twisted_Treeline.Model
             Location l = new Location(string.Format("{0},{1}", stats[3], stats[4]));
             b.Spot = l;
             return b;
-
         }
 
         public override string Serialize()

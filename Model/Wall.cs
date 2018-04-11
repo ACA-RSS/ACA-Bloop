@@ -39,7 +39,7 @@ namespace Twisted_Treeline.Model
         {
             string[] stats = statsStr.Split(',');
             Wall walle = new Wall();
-            walle.Spot = new Location(string.Format("{0},{1}", stats[3], stats[4]));
+            walle.Spot = new Location(string.Format("{0},{1}", stats[1], stats[2]));
             return walle;
         }
 
