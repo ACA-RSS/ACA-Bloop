@@ -9,6 +9,7 @@ List work completed.
 
 ## Known Issues:
 List any major issues.
+When loading a game, the character is unable to move after the proper map is drawn
 
 ## Recording:
 A link to your screen recording.
@@ -17,6 +18,6 @@ A link to your screen recording.
 
 |Team Member | Hours Invested | Hours Remaining | Journal |     
 |------|--------------------|---------------------| ---------- |     
-|Alex Raddatz | Hours Invested | Hours Remaining | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
+|Alex Raddatz  |20 | 30 | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
 |Caroline Smith | 18.5 | 31.5 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
 |Amy Surrett | Hours Invested | Hours Remaining | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
