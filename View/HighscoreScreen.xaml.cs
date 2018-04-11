@@ -27,6 +27,7 @@ namespace Twisted_Treeline.View
         }
         public void LoadHighScores()
         {
+            HighscoreManager.Hm.LoadList();
             foreach (Highscore hs in HighscoreManager.Hm.HighscoreList)
             {
                 Scores.Text += hs.Name + "   " + hs.Score + "\n";
