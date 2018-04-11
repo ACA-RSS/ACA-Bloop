@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Twisted_Treeline.Model;
+using Twisted_Treeline;
+using Twisted_Treeline.View;
 
 namespace Twisted_Treeline
 {
@@ -24,20 +26,13 @@ namespace Twisted_Treeline
         public MainWindow()
         {
             InitializeComponent();
+            DifficultyLstBox.Items.Add("Cheat Mode");
+            DifficultyLstBox.Items.Add("Hard");
+            DifficultyLstBox.Items.Add("More Hardlier");
+            DifficultyLstBox.Items.Add("Downright Impossible");
         }
 
-        private void DifficultyLstBox_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            ComboBoxItem cheat = new ComboBoxItem() { Content = "Cheat Mode" };
-            ComboBoxItem easy = new ComboBoxItem() { Content = "Hard" };
-            ComboBoxItem medium = new ComboBoxItem() { Content = "More Harder" };
-            ComboBoxItem hard = new ComboBoxItem() { Content = "Downright Impossible" };
-
-            DifficultyLstBox.Items.Add(cheat);
-            DifficultyLstBox.Items.Add(easy);
-            DifficultyLstBox.Items.Add(medium);
-            DifficultyLstBox.Items.Add(hard);
-        }
+        
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
@@ -57,11 +52,11 @@ namespace Twisted_Treeline
             {
                 howHard = 1;
             }
-            else if (DifficultyLstBox.Text == "More Harder")
+            else if (DifficultyLstBox.Text == "More Hardlier")
             {
                 howHard = 2;
             }
-            else if (DifficultyLstBox.Text == "Downright Impossible")
+            else 
             {
                 howHard = 3;
             }
@@ -69,6 +64,29 @@ namespace Twisted_Treeline
             GameController.Instance.Difficulty = howHard;
             GameScreen game = new GameScreen();
             game.ShowDialog();
+        }
+
+        private void imgTitle_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Help h = new Help();
+            h.ShowDialog();
+        }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            About a = new About();
+            a.ShowDialog();
+        }
+
+        private void btnHighScores_Click(object sender, RoutedEventArgs e)
+        {
+            HighscoreScreen h = new HighscoreScreen();
+            h.ShowDialog();
         }
     }
 }

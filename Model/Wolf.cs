@@ -18,7 +18,7 @@ namespace Twisted_Treeline.Model
             Speed = 5;
             Damage = 10 * GameController.Instance.Difficulty;
             Dead = false;
-            Image = "Images/wolf.gif";
+            Image = "/wolf.gif";
             AttackTime = 0;
             EyeContact = false;
             Type = "Hittable";

@@ -119,6 +119,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include=".DS_Store" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,7 +170,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="ster.png" />
+    <Resource Include="ber.png" />
+    <Resource Include="bigber.gif" />
+    <Resource Include="bigber.png" />
+    <Resource Include="Scotty.gif" />
+    <Resource Include="squirrel.png" />
+    <Resource Include="Star0.png" />
+    <Resource Include="Star1.png" />
+    <Resource Include="Star2.png" />
+    <Resource Include="Star3.png" />
+    <Resource Include="Sue.gif" />
     <Resource Include="TTLine.png" />
+    <Resource Include="Wall.png" />
+    <Resource Include="Wolf.gif" />
+    <Resource Include="View\TTLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Graphicz\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

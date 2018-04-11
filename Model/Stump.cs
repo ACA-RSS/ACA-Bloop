@@ -14,6 +14,7 @@ namespace Twisted_Treeline.Model
             Object = obj;
             HitPoints = hp;
             Type = "Hittable";
+            Image = "/Bigber.png";
             Dead = false;
         }
         public Stump()

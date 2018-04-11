@@ -32,15 +32,15 @@ namespace Twisted_Treeline
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Ticky = new DispatcherTimer(){ Interval = new TimeSpan(100000) };
+            Ticky = new DispatcherTimer() { Interval = new TimeSpan(10) };
             Ticky.Tick += Ticky_Tick;
 
             GameController.Instance.Reset();
             GameController.Instance.SetUpLevelOne();
             BuildTheWall();
+            GameController.Instance.InitialSetup();
             UpdateScreen();
-
-            GameController.Instance.Timer.Start();
+            
             Ticky.Start();
 
         }
@@ -50,11 +50,11 @@ namespace Twisted_Treeline
             if (!GameController.Instance.isGameOver())
             {
                 UpdateScreen();
+                GameController.Instance.Update();
             }
             else
             {
                 GameController.Instance.Points += 500;
-                GameController.Instance.Timer.Stop();
                 Ticky.Stop();
                 HighscorePrompt hs = new HighscorePrompt();
                 hs.ShowDialog();
@@ -73,7 +73,7 @@ namespace Twisted_Treeline
                         Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
-                        Margin = new System.Windows.Thickness(obj.Spot.Column * 65, obj.Spot.Row * 64, 0, 0),
+                        Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
 
@@ -86,18 +86,24 @@ namespace Twisted_Treeline
         {
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
             txtHealth.Text = String.Format("Health Percent: {0}", Convert.ToString(GameController.Instance.Player.HitPoints));
-            imgStars.Source = new BitmapImage(new Uri(String.Format("Graphics/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
+            imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
 
-
+            List<Image> toDestroy = new List<Image>();
             foreach (Image i in WorldCanvas.Children)
             {
                 WorldObject o = i.Tag as WorldObject;
+
                 if (o.Type != "Wall")
                 {
-                    WorldCanvas.Children.Remove(i);
+                    toDestroy.Add(i);
                 }
-                
             }
+
+            foreach (Image i in toDestroy)
+            {
+                WorldCanvas.Children.Remove(i);
+            }
+
 
             foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
             {
@@ -114,30 +120,10 @@ namespace Twisted_Treeline
                     };
 
                     WorldCanvas.Children.Add(i);
-                    //obj.ObjectMovedEvent += imgControl.NotifyMoved;
                 }
-             }
+            }
 
         }
-
-        /* class ImageControl : ContentControl
-             {
-             public ImageControl(string imgSource)
-             {
-                 Content = new Image()
-                 {
-                     Source = new BitmapImage(new Uri(imgSource, UriKind.Relative))
-                 };
-             }
-
-             public void NotifyMoved(object sender, int i)
-             {
-                 WorldObject obj = sender as WorldObject;
-                 HorizontalAlignment = HorizontalAlignment.Left;
-                 VerticalAlignment = VerticalAlignment.Top;
-                 Margin = new System.Windows.Thickness(obj.Spot.Column * 65, obj.Spot.Row * 64, 0, 0);
-             }
-         }*/
 
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
@@ -167,7 +153,6 @@ namespace Twisted_Treeline
 
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
-            GameController.Instance.Timer.Stop();
             Ticky.Stop();
             Menu menu = new Menu();
             menu.ShowDialog();

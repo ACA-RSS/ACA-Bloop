@@ -11,13 +11,13 @@ namespace Twisted_Treeline.Model
         public Wall()
         {
             Type = "Wall";
-            Image = "Graphics/Wall.png";
+            Image = "/Wall.png";
         }
         public static void WallBuilder(int startRow, int startCol, int numSpaces, string dir)
         {
             if (dir == "Vert")
             {
-                for (int i = 0; i < numSpaces; i++)
+                for (int i = 0; i < numSpaces + 1; i++)
                 {
                     Wall wally = new Wall() { Spot = new Location() { Row = startRow + i, Column = startCol } };
                     GameController.Instance.Level.WorldObj.Add(wally);
@@ -25,9 +25,9 @@ namespace Twisted_Treeline.Model
             }
             else if (dir == "Horz")
             {
-                for (int i = 0; i < numSpaces; i++)
+                for (int i = 0; i < numSpaces + 1; i++)
                 {
-                    Wall wally = new Wall() { Spot = new Location() { Row = startRow + i, Column = startCol } };
+                    Wall wally = new Wall() { Spot = new Location() { Row = startRow , Column = startCol + i} };
 
                     GameController.Instance.Level.WorldObj.Add(wally);
                 }
