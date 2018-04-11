@@ -79,10 +79,7 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
             Instance.Level.WorldObj.Add(glow);
-
-            Squirrel nutsy = new Squirrel() { Spot = new Location { Row = 5, Column = 0 } };
-            Instance.Level.WorldObj.Add(nutsy);
-
+            
             Wolf wolfy = new Wolf() { Spot = new Location { Row = 3, Column = 10 } };
             Wolf bitey = new Wolf() { Spot = new Location { Row = 6, Column = 16 } };
             Wolf growly = new Wolf() { Spot = new Location { Row = 13, Column = 6 } };
