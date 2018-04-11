@@ -20,4 +20,4 @@ When loading a game, the character is unable to move after the proper map is dra
 |------|--------------------|---------------------| ---------- |     
 |Alex Raddatz  |20 | 30 | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
 |Caroline Smith | 18.5 | 31.5 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
-|Amy Surrett | Hours Invested | Hours Remaining | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
+|Amy Surrett | 21 | 29 | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
