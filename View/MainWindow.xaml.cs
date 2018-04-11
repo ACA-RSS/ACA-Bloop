@@ -37,7 +37,6 @@ namespace Twisted_Treeline
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Reset();
-            GameController.Instance.InitialSetup();
             GameController.Instance.Load("TTLSave");
             int howHard = 0;
             if (DifficultyLstBox.Text == "Cheat Mode")
@@ -58,6 +57,7 @@ namespace Twisted_Treeline
             }
 
             GameController.Instance.Difficulty = howHard;
+            GameController.Instance.InitialSetup();
             GameScreen game = new GameScreen();
             game.ShowDialog();
         }
