@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline.View"
         mc:Ignorable="d"
-        Title="HighscoreScreen" Height="300" Width="300">
+        Title="HighscorePrompt" Height="300" Width="300" Background="DarkGreen">
     <Grid>
-        
+        <TextBlock x:Name="Scores" HorizontalAlignment="Center" Margin="0,0,0,0" Height="250" Width="250" Background="DarkGreen" FontSize="20" Text=""/>
+
+
+
+
+
     </Grid>
 </Window>

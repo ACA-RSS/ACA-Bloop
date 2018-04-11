@@ -29,8 +29,12 @@ namespace Twisted_Treeline.View
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
+            manager.LoadList();
             string name = Name.Text;
-            manager.SaveList(new Highscore(0,name));
+            int score = Convert.ToInt32(Score.Text);
+            manager.SaveList(new Highscore(score,name));
+            HighscoreScreen hscreen = new HighscoreScreen();
+            hscreen.Show();
         }
     }
 }
