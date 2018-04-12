@@ -17,6 +17,8 @@ namespace Twisted_Treeline.Model
 
         public abstract int Attack();
 
+        //Removes the received attack from the object's hit points, and checks if it's hit points are at
+        // or below 0. If so, it updates it's 'dead' attribute and adds it's points to the player's points
         public override void TakeDamage(int damage)
         {
             HitPoints -= damage;
@@ -29,10 +31,10 @@ namespace Twisted_Treeline.Model
             }
         }
 
+        //Removes the object from the World's list of objects
         public void Die()
         {
             GameController.Instance.Level.WorldObj.Remove(this);
-
         }
     }
 }

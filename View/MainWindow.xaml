@@ -13,7 +13,7 @@
         <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="597,392,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnLoad_Click"/>
         <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="597,343,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Center" Height="23" Margin="0,288,0,0" TextWrapping="Wrap" Text="Enter Your Username" VerticalAlignment="Top" Width="150"/>
-        <Image x:Name="imgTitle"  Height="118" VerticalAlignment="Top" Width="818" Source="/View/TTLine.png" Grid.Column="0" Margin="266,0,209.6,0" Loaded="imgTitle_Loaded"/>
+        <Image x:Name="imgTitle"  Height="118" VerticalAlignment="Top" HorizontalAlignment="Center" Width="818" Source="/View/TTLine.png" Grid.Column="0" Margin="0,0,0,0"/>
         <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="597,440,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHelp_Click"/>
         <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="597,494,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAbout_Click"/>
         <Button x:Name="btnHighScores" Content="High Scores" HorizontalAlignment="Center" Margin="597,546,596.6,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHighScores_Click"/>

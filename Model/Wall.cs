@@ -13,6 +13,13 @@ namespace Twisted_Treeline.Model
             Type = "Wall";
             Image = "/Wall.png";
         }
+
+        //Used for building walls instead of coding each one individually
+        //Takes 4 parameters: The row of the first location, and the column, the length of the wall, and 
+        //Whether it's horizontal or vertical.
+        //It builds a wall in the starting location (so don't accidentally make two walls in the same 
+        //place), then builds a wall in each location for the number of spaces given, either moving RIGHT if
+        // Horizontal ("Horz"), or DOWN if vertical ("vert"), and adds each wall piece to the World Objects list
         public static void WallBuilder(int startRow, int startCol, int numSpaces, string dir)
         {
             if (dir == "Vert")

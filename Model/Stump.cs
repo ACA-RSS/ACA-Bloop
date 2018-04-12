@@ -35,6 +35,8 @@ namespace Twisted_Treeline.Model
             Dead = false;
         }
 
+        //Removes the player's Damage from the hit points. If hit points are at or below 0, it releases it's object
+        // And a squirrel in every direction
         public override void TakeDamage(int damage)
         {
             HitPoints -= damage;
@@ -43,9 +45,11 @@ namespace Twisted_Treeline.Model
             {
                 Dead = true;
                 ReleaseTheSquirrels();
+
             }
         }
 
+        //Makes 4 new squirrels and places them around the stump
         public void ReleaseTheSquirrels()
         {
             Squirrel s = new Squirrel();

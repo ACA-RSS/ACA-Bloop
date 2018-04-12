@@ -22,7 +22,7 @@ namespace Twisted_Treeline.Model
             Type = "Hittable";
         }
 
-
+        //Bears don't move
         public override Location Move()
         {
             return Spot;

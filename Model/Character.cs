@@ -22,12 +22,16 @@ namespace Twisted_Treeline.Model
             DirFacing = Direction.Up;
         }
 
+        //Removes the character's damage from the animal's hitpoints
+       
         public void doDamage(Hittable toAttack)
         {
             if (toAttack != null && !toAttack.Dead)
                 toAttack.TakeDamage(Damage);
         }
 
+        //Checks the direction the character is facing, then sees if there's an animal or stum (The hittable
+        // sbstract class) one space in that direction. If so, it does damage to that object(See doDamage())
         public override int Attack()
         {
             switch (DirFacing)
@@ -66,6 +70,9 @@ namespace Twisted_Treeline.Model
             return Damage;
         }
 
+        //Recieves a direction based on which keyboard button was pressed, then checks if
+        //Moving in that direction will either take the player off the map or if something is already there
+        //If both of these are false, it updates the player's location to the spot.
         public Location PlayerMove(string Dir)
         {
             Location oldPos;

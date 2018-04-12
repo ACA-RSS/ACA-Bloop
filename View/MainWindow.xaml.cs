@@ -83,6 +83,7 @@ namespace Twisted_Treeline
             {
                 howHard = 3;
             }
+
             GameController.Instance.SetUpLevelOne();
             GameController.Instance.Difficulty = howHard;
 
@@ -91,10 +92,6 @@ namespace Twisted_Treeline
             game.ShowDialog();
         }
 
-        private void imgTitle_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {

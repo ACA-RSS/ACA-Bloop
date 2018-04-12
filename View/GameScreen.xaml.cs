@@ -30,6 +30,8 @@ namespace Twisted_Treeline
             InitializeComponent();
         }
 
+
+        //Makes the new timer and sets up all the wall objects before initially updating the screen
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Ticky = new DispatcherTimer() { Interval = new TimeSpan(10) };
@@ -43,12 +45,15 @@ namespace Twisted_Treeline
 
         }
 
+        //On every timer tick, checks if the game is over (See isGameOver for Game Controller
+        //And if not, updates the animal locations and then updates the scree with these changes
         public void Ticky_Tick(object sender, object e)
         {
             if (!GameController.Instance.isGameOver())
             {
-                UpdateScreen();
                 GameController.Instance.Update();
+                UpdateScreen();
+                
             }
             else
             {
@@ -59,6 +64,7 @@ namespace Twisted_Treeline
             }
         }
 
+        //Sets up all wall objects; only called at beginning of level setup
         private void BuildTheWall()
         {
             foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
@@ -80,6 +86,9 @@ namespace Twisted_Treeline
             }
         }
 
+        //Called every timer tick
+        //Updates the points, health, and number of stars of the player. 
+        //Destroys all non-wall images, and then makes new ones with the world object's new location
         private void UpdateScreen()
         {
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
@@ -123,7 +132,7 @@ namespace Twisted_Treeline
 
         }
 
-
+        //Controls the user movements and attack
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.W)
@@ -149,6 +158,7 @@ namespace Twisted_Treeline
 
         }
 
+        //Pauses the timer and opens the menu
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
             Ticky.Stop();

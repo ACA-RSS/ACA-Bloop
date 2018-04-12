@@ -21,6 +21,7 @@ namespace Twisted_Treeline.Model
 
         public Character Player { get; set; }
         
+        //Resets points, assumes difficulty 'easy', and makes the new world
         private GameController()
         {
             Level = new World();
@@ -28,6 +29,9 @@ namespace Twisted_Treeline.Model
             Difficulty = 1;
             Player = new Character();
         }
+
+        //Returns true if the character is dead, or if the player has all three stars and is back at the starting
+        //point of row 13, column 0. I used this to test whether to continue the game and animal movements
 
         public bool isGameOver()
         {
@@ -45,14 +49,15 @@ namespace Twisted_Treeline.Model
             }
         }
 
-
+        //Clears the Level and points, mostly for startng a new level or testing
         public void Reset()
         {
             Level = new World();
             Points = 0;
         }
 
-
+        //Hardcodes in the player and all of the wall pieces and animals and such, then adds all of them
+        // to the Game Controller's WorldObj list. This is the only thing that changes from level to level
         public void SetUpLevelOne()
         {
             Player = new Character()
@@ -213,6 +218,8 @@ namespace Twisted_Treeline.Model
             }
         }
 
+        //Mostly made this to avoid errors on the first run through. It moves the location variables
+        //Of all the world objects into a 2D array that keeps track of where things are.
         public void InitialSetup()
         {
             foreach (WorldObject obj in Instance.Level.WorldObj)
@@ -222,6 +229,10 @@ namespace Twisted_Treeline.Model
         }
 
         //Updates Model based on Timer and user actions
+        //Resets the 2D array of world object locations to equal null, unless it's a Wall since we don't
+        //Wants to redraw all of those and they don't move. 
+        //Then it goes through, updates everything's position, and then refills the Array (Squares) with the new
+        //Locations
         public void Update()
         {
             foreach (WorldObject o in Instance.Level.Squares)

@@ -21,6 +21,10 @@ namespace Twisted_Treeline.Model
             Image = "/squirrel.png";
         }
 
+        //Tracking ability that begins as soon as the squirrel is generated. If the player's column is
+        //Greater than the squirrel's, it moves up a column based on its speed, otherwise it moves down. 
+        //Same logic for the row. So it starts with a new location, checks if that location is occupied by
+        //Anything else, and then moves there.
         public override Location Move()
         {
             Location potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column };

@@ -40,7 +40,11 @@ namespace Twisted_Treeline.Model
             return string.Format("Wolf,{0},{1},{2},{3}", HitPoints, Dead, EyeContact, Spot);
         }
 
-
+        //Tracking ability that begins as soon as eye contact is
+        // made (See Move()). If the player's column is greater than the wolfs, it moves up
+        //a column based on its speed, otherwise it moves down. 
+        //Same logic for the row. So it starts with a new location, checks if that location is occupied by
+        //Anything else, and then moves there.
         public Location Track()
         {
             Location potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column };
@@ -76,6 +80,10 @@ namespace Twisted_Treeline.Model
 
         }
 
+        //Checks if eye contact has been made by determining if the player is on the same row as the wolf,
+        //Then checks every spot along the row between the them to see if any location has a wall
+        //If there is no wall and they're on the same row, it sets Eye Contact to true.
+        //If eye contact is true, the wolf tracks (See Track())
         public override Location Move()
         {
 
@@ -98,10 +106,10 @@ namespace Twisted_Treeline.Model
                     }
                 }
             }
-
-            Track();
-            
-
+            else
+            {
+                Track();
+            }
             return Spot;
 
 
