@@ -23,7 +23,7 @@ namespace Twisted_Treeline.Model
         }
 
         //Removes the character's damage from the animal's hitpoints
-       
+
         public void doDamage(Hittable toAttack)
         {
             if (toAttack != null && !toAttack.Dead)
@@ -34,39 +34,30 @@ namespace Twisted_Treeline.Model
         // sbstract class) one space in that direction. If so, it does damage to that object(See doDamage())
         public override int Attack()
         {
+            int down = 0;
+            int right = 0;
             switch (DirFacing)
             {
                 case Direction.Up:
-                    if (GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column].Type == "Hittable")
-                    {
-                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
-                    }
+                    down = -1;
                     break;
 
                 case Direction.Down:
-                    if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column].Type == "Hittable")
-                    {
-                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
-                    }
-
+                    down = 1;
                     break;
 
                 case Direction.Left:
-                    if (GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1].Type == "Hittable")
-                    {
-                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
-                    }
+                    right = -1;
                     break;
 
                 case Direction.Right:
-                    if (GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1].Type == "Hittable")
-                    {
-                        doDamage(GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] as Hittable);
-                    }
+                    right = 1;
                     break;
-
             }
-
+            if (GameController.Instance.Level.Squares[Spot.Row + down, Spot.Column + right] != null && GameController.Instance.Level.Squares[Spot.Row + down, Spot.Column + right].Type == "Hittable")
+            {
+                doDamage(GameController.Instance.Level.Squares[Spot.Row + down, Spot.Column + right] as Hittable);
+            }
             return Damage;
         }
 
@@ -77,7 +68,7 @@ namespace Twisted_Treeline.Model
         {
             Location oldPos;
             if (Dir == "Up")
-            { 
+            {
                 DirFacing = Direction.Up;
                 if (Spot.Row - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column] == null)
                 {
@@ -88,10 +79,10 @@ namespace Twisted_Treeline.Model
 
                 }
             }
-            else if (Dir == "Down" && GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null)
+            else if (Dir == "Down")
             {
                 DirFacing = Direction.Down;
-                if (Spot.Row + 1 <= GameController.Instance.Level.Height)
+                if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null && Spot.Row + 1 <= GameController.Instance.Level.Height - 1)
                 {
                     oldPos = Spot;
                     Spot = new Location { Row = Spot.Row + 1, Column = Spot.Column };
@@ -102,7 +93,9 @@ namespace Twisted_Treeline.Model
             else if (Dir == "Left")
             {
                 DirFacing = Direction.Left;
-                
+
+                //Image = "/scottybutliketotheleft.png";
+
                 if (Spot.Column - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1] == null)
                 {
                     oldPos = Spot;
@@ -110,20 +103,21 @@ namespace Twisted_Treeline.Model
                     GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
                 }
             }
-            else if (Dir == "Right" && GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null)
+            else if (Dir == "Right")
             {
                 DirFacing = Direction.Right;
-                if (Spot.Column + 1 <= GameController.Instance.Level.Width)
                 {
-                    oldPos = Spot;
-                    Spot = new Location { Row = Spot.Row, Column = Spot.Column + 1 };
-                    GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
-                    Image = "/Scotty.gif";
+                    if (GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null && Spot.Column + 1 <= GameController.Instance.Level.Width - 1)
+                    {
+                        oldPos = Spot;
+                        Spot = new Location { Row = Spot.Row, Column = Spot.Column + 1 };
+                        GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
+                        Image = "/Scotty.gif";
+                    }
                 }
             }
 
             return Spot;
-
         }
 
         public override WorldObject Deserialize(string statsStr)

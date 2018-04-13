@@ -19,6 +19,7 @@ namespace Twisted_Treeline.Model
             AttackTime = 0;
             Type = "Hittable";
             Image = "/squirrel.png";
+            PointValue = 5;
         }
 
         //Tracking ability that begins as soon as the squirrel is generated. If the player's column is

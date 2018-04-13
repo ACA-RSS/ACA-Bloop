@@ -22,6 +22,7 @@ namespace Twisted_Treeline.Model
             AttackTime = 0;
             EyeContact = false;
             Type = "Hittable";
+            PointValue = 15;
         }
         public override WorldObject Deserialize(string statsStr)
         {

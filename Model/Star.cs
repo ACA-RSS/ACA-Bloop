@@ -10,9 +10,10 @@ namespace Twisted_Treeline.Model
     {
         public Star()
         {
-            HitPoints = 0;
+            HitPoints = 1;
             Dead = false;
             Image = "/ster.png";
+            Type = "Hittable";
         }
 
         public override void TakeDamage(int damage)
@@ -20,6 +21,7 @@ namespace Twisted_Treeline.Model
             Dead = true;
             GameController.Instance.Level.Stars += 1;
             GameController.Instance.Points += 100 * GameController.Instance.Difficulty;
+            GameController.Instance.Level.WorldObj.Remove(this);
         }
 
         public override WorldObject Deserialize(string statsStr)

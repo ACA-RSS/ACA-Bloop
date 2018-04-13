@@ -9,7 +9,6 @@ namespace Twisted_Treeline.Model
 
     public class Bear : Animals
     {
-
         public Bear()
         {
             HitPoints = 25 * GameController.Instance.Difficulty;
@@ -20,6 +19,7 @@ namespace Twisted_Treeline.Model
             Image = "/bigber.gif";
             AttackTime = 0;
             Type = "Hittable";
+            PointValue = 50;
         }
 
         //Bears don't move
