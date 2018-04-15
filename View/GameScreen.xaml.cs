@@ -77,8 +77,6 @@ namespace Twisted_Treeline
                         hs.ShowDialog();
                         break;
                 }
-
-
             }
         }
 

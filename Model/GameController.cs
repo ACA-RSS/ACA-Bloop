@@ -91,8 +91,8 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(gleam);
             Instance.Level.WorldObj.Add(glow);
 
-            Wolf wolfy = new Wolf() { Spot = new Location { Row = 3, Column = 10 } };
-            Wolf bitey = new Wolf() { Spot = new Location { Row = 6, Column = 16 } };
+            Wolf wolfy = new Wolf() { Spot = new Location { Row = 8, Column = 10 } };
+            Wolf bitey = new Wolf() { Spot = new Location { Row = 11, Column = 16 } };
             Wolf growly = new Wolf() { Spot = new Location { Row = 13, Column = 6 } };
 
             Instance.Level.WorldObj.Add(wolfy);

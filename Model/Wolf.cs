@@ -14,8 +14,8 @@ namespace Twisted_Treeline.Model
         {
 
             HitPoints = 20 * GameController.Instance.Difficulty;
-            AttackSpeed = 1;
-            Speed = 5;
+            AttackSpeed = 20;
+            Speed = 1;
             Damage = 10 * GameController.Instance.Difficulty;
             Dead = false;
             Image = "/wolf.gif";
@@ -33,7 +33,7 @@ namespace Twisted_Treeline.Model
             w.EyeContact = Convert.ToBoolean(stats[3]);
             w.Spot = new Location(string.Format("{0},{1}", stats[4], stats[5]));
             return w;
-            
+
         }
 
         public override string Serialize()
@@ -48,37 +48,49 @@ namespace Twisted_Treeline.Model
         //Anything else, and then moves there.
         public Location Track()
         {
-            Location potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column };
+            
+            int potentialCol;
+            int potentialRow;
             if (EyeContact)
             {
 
                 if (GameController.Instance.Player.Spot.Column > Spot.Column)
                 {
-                    potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column + Speed };
+                    potentialCol = Spot.Column + Speed;
                 }
 
+                else if (GameController.Instance.Player.Spot.Column < Spot.Column)
+                {
+                    potentialCol = Spot.Column - Speed;
+                }
                 else
                 {
-                    potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column - Speed };
+                    potentialCol = Spot.Column;
                 }
 
                 if (GameController.Instance.Player.Spot.Row > Spot.Row)
                 {
-                    potentialSpot = new Location { Row = Spot.Row + Speed, Column = Spot.Column };
+                    potentialRow = Spot.Row + Speed;
+                }
+
+                else if (GameController.Instance.Player.Spot.Row < Spot.Row)
+                {
+                    potentialRow = Spot.Row - Speed;
                 }
 
                 else
                 {
-                    potentialSpot = new Location { Row = Spot.Row - Speed, Column = Spot.Column };
+                    potentialRow = Spot.Row;
                 }
 
+                Location potentialSpot = new Location { Row = potentialRow, Column = potentialCol };
                 if (GameController.Instance.Level.Squares[potentialSpot.Row, potentialSpot.Column] == null)
                 {
                     Spot = potentialSpot;
                 }
             }
-            return Spot;
 
+            return Spot;
         }
 
         //Checks if eye contact has been made by determining if the player is on the same row as the wolf,
@@ -93,17 +105,35 @@ namespace Twisted_Treeline.Model
                 if (Spot.Row == GameController.Instance.Player.Spot.Row)
                 {
                     bool isWall = false;
-                    for (int i = Spot.Column; i < GameController.Instance.Player.Spot.Column; i++)
+                    if (Spot.Column < GameController.Instance.Player.Spot.Column)
                     {
-                        if (GameController.Instance.Level.Squares[Spot.Row, i].Type == "Wall")
+                        for (int i = Spot.Column; i < GameController.Instance.Player.Spot.Column; i++)
                         {
-                            isWall = true;
+                            if (GameController.Instance.Level.Squares[Spot.Row, i] != null && GameController.Instance.Level.Squares[Spot.Row, i].Type == "Wall")
+                            {
+                                isWall = true;
+                            }
+                        }
+
+                        if (!isWall)
+                        {
+                            EyeContact = true;
                         }
                     }
-
-                    if (!isWall)
+                    else
                     {
-                        EyeContact = true;
+                        for (int i = GameController.Instance.Player.Spot.Column; i < Spot.Column; i++)
+                        {
+                            if (GameController.Instance.Level.Squares[Spot.Row, i] != null && GameController.Instance.Level.Squares[Spot.Row, i].Type == "Wall")
+                            {
+                                isWall = true;
+                            }
+                        }
+
+                        if (!isWall)
+                        {
+                            EyeContact = true;
+                        }
                     }
                 }
             }
