@@ -31,7 +31,7 @@ namespace Twisted_Treeline.Model
         }
 
         //Removes the object from the World's list of objects
-        public void Die()
+        public virtual void Die()
         {
             GameController.Instance.Level.WorldObj.Remove(this);
         }

@@ -132,6 +132,11 @@ namespace Twisted_Treeline.Model
             return c;
         }
 
+        public override void Die()
+        {
+            Dead = true;
+        }
+
         public override string Serialize()
         {
             return string.Format("Character,{0},{1},{2}", HitPoints, Dead, Spot);
