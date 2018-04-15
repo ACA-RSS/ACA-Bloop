@@ -134,9 +134,15 @@ namespace Twisted_Treeline.Model
             string saveData = "TwistedTLine";
 
             //Saves the player info
+
             using (StreamWriter writer = new StreamWriter(file))
             {
+                
                 writer.WriteLine(saveData);
+                writer.WriteLine(Instance.UserName);
+                writer.WriteLine(Instance.Difficulty);
+                writer.WriteLine(Instance.Points);
+                writer.WriteLine(Instance.Level.Stars);
                 foreach (WorldObject obj in Level.WorldObj)
                 {
                     writer.WriteLine(obj.Serialize());
@@ -155,6 +161,13 @@ namespace Twisted_Treeline.Model
                 {
                     Environment.Exit(1);
                 }
+                Instance.UserName = sr.ReadLine();
+                //difficulty
+                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
+                //points
+                Instance.Points = Convert.ToInt32(sr.ReadLine());
+                //stars
+                Instance.Level.Stars = Convert.ToInt32(sr.ReadLine());
                 //check to make sure it isnt the last line in the file
                 while (sr.Peek() >= 0)
                 {
