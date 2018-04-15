@@ -245,6 +245,13 @@ namespace Twisted_Treeline.Model
                                 Instance.Level.WorldObj.Add(w);
                                 break;
                             }
+                        case "Star":
+                            {
+                                Star sta = new Star();
+                                w = sta.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
                     }
                 }
             }

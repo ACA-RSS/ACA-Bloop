@@ -126,8 +126,8 @@ namespace Twisted_Treeline.Model
         {
             Character c = new Character();
             string[] stats = statsStr.Split(',');
-            HitPoints = Convert.ToInt32(stats[1]);
-            Dead = Convert.ToBoolean(stats[2]);
+            c.HitPoints = Convert.ToInt32(stats[1]);
+            c.Dead = Convert.ToBoolean(stats[2]);
             c.Spot = new Location(string.Format("{0},{1}", stats[3], stats[4]));
             return c;
         }
