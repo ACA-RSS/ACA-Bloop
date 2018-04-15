@@ -146,6 +146,7 @@ namespace Twisted_Treeline.Model
 
         public void Load(string fileName)
         {
+            
             using (StreamReader sr = new StreamReader(fileName))
             {
                 string curLine;
@@ -154,7 +155,6 @@ namespace Twisted_Treeline.Model
                 {
                     Environment.Exit(1);
                 }
-                instance.Level.WorldObj.Clear();
                 //check to make sure it isnt the last line in the file
                 while (sr.Peek() >= 0)
                 {
@@ -188,6 +188,7 @@ namespace Twisted_Treeline.Model
                             {
                                 Character alcatraz = new Character();
                                 w = alcatraz.Deserialize(curLine);
+                                Instance.Player = w as Character;
                                 Instance.Level.WorldObj.Add(w);
                                 break;
                             }

@@ -35,6 +35,18 @@ namespace Twisted_Treeline.Model
 
             WorldObj = new List<WorldObject>();
         }
+
+        public void Reset()
+        {
+            for (int row = 0; row < Height; ++row)
+            {
+                for (int col = 0; col < Width; ++col)
+                {
+                    Squares[row, col] = null;
+                }
+
+            }
+        }
     }
 
     public struct Location
