@@ -71,11 +71,13 @@ namespace Twisted_Treeline.Model
                 if (GameController.Instance.Player.Spot.Row > Spot.Row)
                 {
                     potentialRow = Spot.Row + 1;
+                    Image = "/wolf.gif";
                 }
 
                 else if (GameController.Instance.Player.Spot.Row < Spot.Row)
                 {
                     potentialRow = Spot.Row - 1;
+                    Image = "/wolf.gif";
                 }
 
                 else

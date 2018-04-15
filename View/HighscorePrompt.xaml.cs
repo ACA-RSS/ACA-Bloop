@@ -31,7 +31,7 @@ namespace Twisted_Treeline.View
         {
             manager.LoadList();
             string name = Name.Text;
-            int score = Convert.ToInt32(Score.Text);
+            int score = GameController.Instance.Points;
             manager.SaveList(new Highscore(score,name));
             HighscoreScreen hscreen = new HighscoreScreen();
             hscreen.Show();

@@ -160,10 +160,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="HighScores.txt" />
+    <Resource Include="HighScores.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="HighScores_Test.txt" />
+    <Resource Include="HighScores_Test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
