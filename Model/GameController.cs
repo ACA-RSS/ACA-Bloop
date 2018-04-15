@@ -138,7 +138,7 @@ namespace Twisted_Treeline.Model
         public void SetUpLevelTwo()
         {
             Instance.Level.Height = 24;
-            Instance.Level.Width = 31;
+            Instance.Level.Width = 32;
 
         }
 
