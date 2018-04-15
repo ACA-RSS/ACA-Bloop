@@ -32,7 +32,7 @@ namespace Twisted_Treeline
             DifficultyLstBox.Items.Add("Downright Impossible");
         }
 
-        
+
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
@@ -79,7 +79,7 @@ namespace Twisted_Treeline
             {
                 howHard = 2;
             }
-            else 
+            else
             {
                 howHard = 3;
             }
