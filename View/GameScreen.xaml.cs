@@ -52,7 +52,6 @@ namespace Twisted_Treeline
             {
                 GameController.Instance.Update();
                 UpdateScreen();
-
             }
             else
             {

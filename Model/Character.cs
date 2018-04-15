@@ -85,7 +85,7 @@ namespace Twisted_Treeline.Model
             {
                 Image = "/Scotty.gif";
                 DirFacing = Direction.Down;
-                if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null && Spot.Row + 1 <= GameController.Instance.Level.Height - 1)
+                if (Spot.Row + 1 <= GameController.Instance.Level.Height - 1 && GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null)
                 {
                     oldPos = Spot;
                     Spot = new Location { Row = Spot.Row + 1, Column = Spot.Column };
@@ -110,7 +110,7 @@ namespace Twisted_Treeline.Model
                 Image = "/Scotty.gif";
                 DirFacing = Direction.Right;
                 {
-                    if (GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null && Spot.Column + 1 <= GameController.Instance.Level.Width - 1)
+                    if (Spot.Column + 1 <= GameController.Instance.Level.Width - 1 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null)
                     {
                         oldPos = Spot;
                         Spot = new Location { Row = Spot.Row, Column = Spot.Column + 1 };
