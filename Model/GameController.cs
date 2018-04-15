@@ -276,11 +276,14 @@ namespace Twisted_Treeline.Model
             }
             foreach (WorldObject obj in Instance.Level.WorldObj)
             {
-                if (obj.Type == "Animals")
+                if (obj.Type == "Hittable")
 
                 {
                     Animals a = obj as Animals;
-                    a.CheckState();
+                    if (a != null)
+                    {
+                        a.CheckState();
+                    }
                 }
 
                 Instance.Level.Squares[obj.Spot.Row, obj.Spot.Column] = obj;
