@@ -18,7 +18,7 @@ namespace Twisted_Treeline.Model
             Damage = 3 * GameController.Instance.Difficulty;
             Dead = false;
             MoveTime = 0;
-            Image = "/wolf.gif";
+            Image = "/Wolf.gif";
             AttackTime = 0;
             EyeContact = false;
             Type = "Hittable";
@@ -71,13 +71,13 @@ namespace Twisted_Treeline.Model
                 if (GameController.Instance.Player.Spot.Row > Spot.Row)
                 {
                     potentialRow = Spot.Row + 1;
-                    Image = "/wolf.gif";
+                    Image = "/Wolf-Left.gif";
                 }
 
                 else if (GameController.Instance.Player.Spot.Row < Spot.Row)
                 {
                     potentialRow = Spot.Row - 1;
-                    Image = "/wolf.gif";
+                    Image = "/Wolf.gif";
                 }
 
                 else
