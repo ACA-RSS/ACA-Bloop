@@ -32,8 +32,6 @@ namespace Twisted_Treeline
             DifficultyLstBox.Items.Add("Downright Impossible");
         }
 
-
-
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Reset();

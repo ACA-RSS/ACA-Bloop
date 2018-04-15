@@ -26,7 +26,6 @@ namespace Twisted_Treeline.Model
         }
 
         //Removes the character's damage from the animal's hitpoints
-
         public void doDamage(Hittable toAttack)
         {
             if (toAttack != null && !toAttack.Dead)

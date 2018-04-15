@@ -13,8 +13,7 @@ namespace Twisted_Treeline.Model
         public int Damage { get; set; }
         public int PointValue { get; set; }
         public Direction DirFacing { get; set; }
-
-
+        
         public abstract int Attack();
 
         //Removes the received attack from the object's hit points, and checks if it's hit points are at
