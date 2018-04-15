@@ -25,6 +25,8 @@ namespace Twisted_Treeline.View
         public HighscorePrompt()
         {
             InitializeComponent();
+            string winscore = GameController.Instance.Points.ToString();
+            Score.Text = winscore;
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)

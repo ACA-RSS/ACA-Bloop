@@ -8,7 +8,7 @@
         Title="HighscorePrompt" Height="300" Width="300" Background="DarkGreen">
     <Grid>
         <TextBlock x:Name="ScoreTitle" HorizontalAlignment="Center" Margin="0,0,0,230" Height="30" Width="120" Text="YOU WON" TextAlignment="Center" Foreground="Yellow" FontSize="20"/>
-        <TextBlock x:Name="Score" HorizontalAlignment="Center" Margin="0,5,0,170" Height="30" Width="120" Text="" TextAlignment="Center" Foreground="Yellow" />
+        <TextBlock x:Name="Score" HorizontalAlignment="Center" Margin="0,5,0,170" Height="30" Width="120" Text="" TextAlignment="Center" Foreground="Yellow" FontSize="15" />
         <TextBox x:Name="Name" Text="Your name here" HorizontalAlignment="Center" Margin="0,0,0,100" Height="30" Width="100" />
         <Button x:Name="Submit" Click="Submit_Click" Content="Submit" Height="30" Width="100" HorizontalAlignment="Center"/>
     </Grid>
