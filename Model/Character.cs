@@ -73,24 +73,24 @@ namespace Twisted_Treeline.Model
             if (Dir == "Up")
             {
                 DirFacing = Direction.Up;
+                Image = "/Scotty.gif";
                 if (Spot.Row - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column] == null)
                 {
                     oldPos = Spot;
                     Spot = new Location { Row = Spot.Row - 1, Column = Spot.Column };
                     GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
-                    Image = "/Scotty.gif";
 
                 }
             }
             else if (Dir == "Down")
             {
+                Image = "/Scotty.gif";
                 DirFacing = Direction.Down;
                 if (GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null && Spot.Row + 1 <= GameController.Instance.Level.Height - 1)
                 {
                     oldPos = Spot;
                     Spot = new Location { Row = Spot.Row + 1, Column = Spot.Column };
                     GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
-                    Image = "/Scotty.gif";
                 }
             }
             else if (Dir == "Left")
@@ -108,6 +108,7 @@ namespace Twisted_Treeline.Model
             }
             else if (Dir == "Right")
             {
+                Image = "/Scotty.gif";
                 DirFacing = Direction.Right;
                 {
                     if (GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null && Spot.Column + 1 <= GameController.Instance.Level.Width - 1)
@@ -115,7 +116,6 @@ namespace Twisted_Treeline.Model
                         oldPos = Spot;
                         Spot = new Location { Row = Spot.Row, Column = Spot.Column + 1 };
                         GameController.Instance.Level.Squares[oldPos.Row, oldPos.Column] = null;
-                        Image = "/Scotty.gif";
                     }
                 }
             }
