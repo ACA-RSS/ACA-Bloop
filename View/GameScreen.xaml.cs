@@ -37,10 +37,9 @@ namespace Twisted_Treeline
             Ticky = new DispatcherTimer() { Interval = new TimeSpan(10) };
             Ticky.Tick += Ticky_Tick;
 
-            
             BuildTheWall();
             UpdateScreen();
-            
+
             Ticky.Start();
 
         }
@@ -53,14 +52,33 @@ namespace Twisted_Treeline
             {
                 GameController.Instance.Update();
                 UpdateScreen();
-                
+
             }
             else
             {
                 GameController.Instance.Points += 500;
-                Ticky.Stop();
-                HighscorePrompt hs = new HighscorePrompt();
-                hs.ShowDialog();
+                switch (GameController.Instance.LevelNum)
+                {
+                    case LevelNum.One:
+                        GameController.Instance.Level = new World();
+                        GameController.Instance.SetUpLevelTwo();
+                        GameController.Instance.InitialSetup();
+                        GameController.Instance.LevelNum = LevelNum.Two;
+                        break;
+                    case LevelNum.Two:
+                        GameController.Instance.Level = new World();
+                        GameController.Instance.SetUpLevelThree();
+                        GameController.Instance.InitialSetup();
+                        GameController.Instance.LevelNum = LevelNum.Three;
+                        break;
+                    case LevelNum.Three:
+                        Ticky.Stop();
+                        HighscorePrompt hs = new HighscorePrompt();
+                        hs.ShowDialog();
+                        break;
+                }
+
+
             }
         }
 
