@@ -10,6 +10,8 @@ namespace Twisted_Treeline.Model
     {
         public Stick Stick;
 
+        public Location StartSpot;
+
         public Character()
         {
             HitPoints = 100;
@@ -17,6 +19,7 @@ namespace Twisted_Treeline.Model
             Damage = Stick.Damage;
             Dead = false;
             Spot = new Location { Row = 12, Column = 0 };
+            StartSpot = new Location { Row = 12, Column = 0 };
             Image = "/Scotty.gif";
             Type = "Character";
             DirFacing = Direction.Up;
@@ -94,7 +97,7 @@ namespace Twisted_Treeline.Model
             {
                 DirFacing = Direction.Left;
 
-                //Image = "/scottybutliketotheleft.png";
+                Image = "/LeftScot.gif";
 
                 if (Spot.Column - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1] == null)
                 {
