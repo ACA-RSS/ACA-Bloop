@@ -12,12 +12,12 @@ namespace Twisted_Treeline.Model
 
         public Wolf()
         {
-
             HitPoints = 20 * GameController.Instance.Difficulty;
-            AttackSpeed = 20;
-            Speed = 1;
-            Damage = 10 * GameController.Instance.Difficulty;
+            AttackSpeed = 40;
+            Speed = 30;
+            Damage = 5 * GameController.Instance.Difficulty;
             Dead = false;
+            MoveTime = 0;
             Image = "/wolf.gif";
             AttackTime = 0;
             EyeContact = false;
@@ -56,12 +56,12 @@ namespace Twisted_Treeline.Model
 
                 if (GameController.Instance.Player.Spot.Column > Spot.Column)
                 {
-                    potentialCol = Spot.Column + Speed;
+                    potentialCol = Spot.Column + 1;
                 }
 
                 else if (GameController.Instance.Player.Spot.Column < Spot.Column)
                 {
-                    potentialCol = Spot.Column - Speed;
+                    potentialCol = Spot.Column - 1;
                 }
                 else
                 {
@@ -70,12 +70,12 @@ namespace Twisted_Treeline.Model
 
                 if (GameController.Instance.Player.Spot.Row > Spot.Row)
                 {
-                    potentialRow = Spot.Row + Speed;
+                    potentialRow = Spot.Row + 1;
                 }
 
                 else if (GameController.Instance.Player.Spot.Row < Spot.Row)
                 {
-                    potentialRow = Spot.Row - Speed;
+                    potentialRow = Spot.Row - 1;
                 }
 
                 else

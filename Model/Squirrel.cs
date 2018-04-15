@@ -12,11 +12,12 @@ namespace Twisted_Treeline.Model
         {
 
             HitPoints = 5 * GameController.Instance.Difficulty;
-            AttackSpeed = 10;
-            Speed = 1;
+            AttackSpeed = 20;
+            Speed = 20;
             Damage = 2 * GameController.Instance.Difficulty;
             Dead = false;
             AttackTime = 0;
+            MoveTime = 0;
             Type = "Hittable";
             Image = "/squirrel.png";
             PointValue = 5;
@@ -28,35 +29,43 @@ namespace Twisted_Treeline.Model
         //Anything else, and then moves there.
         public override Location Move()
         {
-            Location potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column };
-
+            int potentialCol;
+            int potentialRow;
             if (GameController.Instance.Player.Spot.Column > Spot.Column)
             {
-                potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column + Speed };
+                potentialCol = Spot.Column + 1;
             }
 
+            else if (GameController.Instance.Player.Spot.Column < Spot.Column)
+            {
+                potentialCol = Spot.Column - 1;
+            }
             else
             {
-                potentialSpot = new Location { Row = Spot.Row, Column = Spot.Column - Speed };
+                potentialCol = Spot.Column;
             }
 
             if (GameController.Instance.Player.Spot.Row > Spot.Row)
             {
-                potentialSpot = new Location { Row = Spot.Row + Speed, Column = Spot.Column };
+                potentialRow = Spot.Row + 1;
+            }
+
+            else if (GameController.Instance.Player.Spot.Row < Spot.Row)
+            {
+                potentialRow = Spot.Row - 1;
             }
 
             else
             {
-                potentialSpot = new Location { Row = Spot.Row - Speed, Column = Spot.Column };
+                potentialRow = Spot.Row;
             }
 
+            Location potentialSpot = new Location { Row = potentialRow, Column = potentialCol };
             if (GameController.Instance.Level.Squares[potentialSpot.Row, potentialSpot.Column] == null)
             {
                 Spot = potentialSpot;
             }
-
             return Spot;
-
         }
 
         public override WorldObject Deserialize(string statsStr)

@@ -11,6 +11,8 @@ namespace Twisted_Treeline.Model
         public double AttackSpeed { get; set; }
         public int AttackTime { get; set; }
 
+        public double MoveTime { get; set; }
+
 
         //This is an odd one. Every animal has an attack speed, which is how many timer ticks between
         //Each attack while the player is in an adjacent square. Its timer (Attack Time) starts at 0
@@ -28,6 +30,17 @@ namespace Twisted_Treeline.Model
                 return Damage;
             }
             else return 0;
+        }
+
+        public void checkMove()
+        {
+            MoveTime++;
+
+            if (MoveTime >= Speed)
+            {
+                MoveTime = 0;
+                Move();
+            }
         }
 
         public abstract Location Move();
@@ -48,7 +61,7 @@ namespace Twisted_Treeline.Model
                     }
                 }
             }
-            Move();
+            checkMove();
         }
     }
 }
