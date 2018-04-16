@@ -63,7 +63,6 @@ namespace Twisted_Treeline
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Reset();
-            GameController.Instance.UserName = txtUsername.Text;
             int howHard = 0;
             if (DifficultyLstBox.Text == "Cheat Mode")
             {
