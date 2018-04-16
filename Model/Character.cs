@@ -135,6 +135,7 @@ namespace Twisted_Treeline.Model
         public override void Die()
         {
             Dead = true;
+            Image = "/Scotty-Dead.png";
         }
 
         public override string Serialize()
