@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using Twisted_Treeline.Model;
 using System.Windows.Threading;
 using Twisted_Treeline.View;
+using System.Media;
+using Twisted_Treeline;
 
 namespace Twisted_Treeline
 {
@@ -55,7 +57,7 @@ namespace Twisted_Treeline
             }
             else
             {
-                GameController.Instance.Points += 500;
+                GameController.Instance.Points += 500 + (GameController.Instance.Difficulty * GameController.Instance.Player.HitPoints);
                 switch (GameController.Instance.LevelNum)
                 {
                     case LevelNum.One:
@@ -63,13 +65,19 @@ namespace Twisted_Treeline
                         GameController.Instance.SetUpLevelTwo();
                         GameController.Instance.InitialSetup();
                         GameController.Instance.LevelNum = LevelNum.Two;
+                        UpdateScreen();
+                        GameController.Instance.Update();
                         break;
+
                     case LevelNum.Two:
                         GameController.Instance.Level = new World();
                         GameController.Instance.SetUpLevelThree();
                         GameController.Instance.InitialSetup();
                         GameController.Instance.LevelNum = LevelNum.Three;
+                        UpdateScreen();
+                        GameController.Instance.Update();
                         break;
+
                     case LevelNum.Three:
                         Ticky.Stop();
                         HighscorePrompt hs = new HighscorePrompt();
@@ -106,6 +114,12 @@ namespace Twisted_Treeline
         //Destroys all non-wall images, and then makes new ones with the world object's new location
         private void UpdateScreen()
         {
+            if (GameController.Instance.CurrentSound != "Blank")
+            {
+                SoundPlayer sound = new SoundPlayer(GameController.Instance.CurrentSound);
+                sound.Play();
+            }
+
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
             txtHealth.Text = String.Format("Health Percent: {0}", Convert.ToString(GameController.Instance.Player.HitPoints));
             imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
@@ -144,7 +158,7 @@ namespace Twisted_Treeline
                     WorldCanvas.Children.Add(i);
                 }
             }
-
+            GameController.Instance.CurrentSound = "Blank";
         }
 
         //Controls the user movements and attack

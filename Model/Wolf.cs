@@ -23,7 +23,7 @@ namespace Twisted_Treeline.Model
             EyeContact = false;
             Type = "Hittable";
             PointValue = 15;
-            Sound = "WolfSound.wav";
+            Sound = "@/WolfSound.wav";
         }
         public override WorldObject Deserialize(string statsStr)
         {
@@ -58,11 +58,13 @@ namespace Twisted_Treeline.Model
                 if (GameController.Instance.Player.Spot.Column > Spot.Column)
                 {
                     potentialCol = Spot.Column + 1;
+                    Image = "/Wolf.gif";
                 }
 
                 else if (GameController.Instance.Player.Spot.Column < Spot.Column)
                 {
                     potentialCol = Spot.Column - 1;
+                    Image = "/Wolf-Left.gif";
                 }
                 else
                 {
@@ -72,13 +74,11 @@ namespace Twisted_Treeline.Model
                 if (GameController.Instance.Player.Spot.Row > Spot.Row)
                 {
                     potentialRow = Spot.Row + 1;
-                    Image = "/Wolf-Left.gif";
                 }
 
                 else if (GameController.Instance.Player.Spot.Row < Spot.Row)
                 {
                     potentialRow = Spot.Row - 1;
-                    Image = "/Wolf.gif";
                 }
 
                 else

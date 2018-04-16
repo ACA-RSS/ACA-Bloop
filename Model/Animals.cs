@@ -32,8 +32,7 @@ namespace Twisted_Treeline.Model
                 AttackTime = 0;
 
                 //add animal attack sound here
-                SoundPlayer sp = new SoundPlayer(this.Sound);
-                sp.Play();
+                GameController.Instance.CurrentSound = Sound;
                 // end sound stuff
                 return Damage;
                 

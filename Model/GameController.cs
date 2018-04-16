@@ -25,6 +25,8 @@ namespace Twisted_Treeline.Model
 
         public Character Player { get; set; }
 
+        public string CurrentSound { get; set; }
+
         //Resets points, assumes difficulty 'easy', and makes the new world
         private GameController()
         {
@@ -33,6 +35,7 @@ namespace Twisted_Treeline.Model
             Difficulty = 1;
             Player = new Character();
             LevelNum = LevelNum.One;
+            CurrentSound = "Blank";
         }
 
         //Returns true if the character is dead, or if the player has all three stars and is back at the starting
@@ -156,7 +159,7 @@ namespace Twisted_Treeline.Model
 
             using (StreamWriter writer = new StreamWriter(file))
             {
-                
+
                 writer.WriteLine(saveData);
                 writer.WriteLine(Instance.UserName);
                 writer.WriteLine(Instance.Difficulty);

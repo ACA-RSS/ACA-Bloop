@@ -72,7 +72,6 @@ namespace Twisted_Treeline.Model
             if (Dir == "Up")
             {
                 DirFacing = Direction.Up;
-                Image = "/Scotty.gif";
                 if (Spot.Row - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row - 1, Spot.Column] == null)
                 {
                     oldPos = Spot;
@@ -83,7 +82,6 @@ namespace Twisted_Treeline.Model
             }
             else if (Dir == "Down")
             {
-                Image = "/Scotty.gif";
                 DirFacing = Direction.Down;
                 if (Spot.Row + 1 <= GameController.Instance.Level.Height - 1 && GameController.Instance.Level.Squares[Spot.Row + 1, Spot.Column] == null)
                 {

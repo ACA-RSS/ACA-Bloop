@@ -69,17 +69,13 @@ namespace Twisted_Treeline
             {
                 howHard = 0;
             }
-            else if (DifficultyLstBox.Text == "Hard")
-            {
-                howHard = 1;
-            }
             else if (DifficultyLstBox.Text == "More Hardlier")
             {
                 howHard = 2;
             }
             else
             {
-                howHard = 3;
+                howHard = 1;
             }
 
             GameController.Instance.SetUpLevelOne();
@@ -89,8 +85,7 @@ namespace Twisted_Treeline
             GameScreen game = new GameScreen();
             game.ShowDialog();
         }
-
-
+        
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             Help h = new Help();
