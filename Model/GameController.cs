@@ -62,6 +62,8 @@ namespace Twisted_Treeline.Model
         {
             Level = new World();
             Points = 0;
+            LevelNum = LevelNum.One;
+            CurrentSound = "Blank";
         }
 
         //Hardcodes in the player and all of the wall pieces and animals and such, then adds all of them

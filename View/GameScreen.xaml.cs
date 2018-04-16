@@ -116,8 +116,8 @@ namespace Twisted_Treeline
         {
             if (GameController.Instance.CurrentSound != "Blank")
             {
-                SoundPlayer sound = new SoundPlayer(GameController.Instance.CurrentSound);
-                sound.Play();
+               // SoundPlayer sound = new SoundPlayer(GameController.Instance.CurrentSound);
+               // sound.Play();
             }
 
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
