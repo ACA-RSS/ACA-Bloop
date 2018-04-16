@@ -21,6 +21,7 @@ namespace Twisted_Treeline.Model
             AttackTime = 0;
             Type = "Hittable";
             PointValue = 50;
+            Sound = "BerSound.wav";
         }
 
         //Bears don't move

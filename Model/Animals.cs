@@ -13,6 +13,9 @@ namespace Twisted_Treeline.Model
 
         public double MoveTime { get; set; }
 
+        //holds the name of the sound file to be played on animal attack
+        public string Sound { get; set; }
+
 
         //This is an odd one. Every animal has an attack speed, which is how many timer ticks between
         //Each attack while the player is in an adjacent square. Its timer (Attack Time) starts at 0

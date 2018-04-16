@@ -21,6 +21,7 @@ namespace Twisted_Treeline.Model
             Type = "Hittable";
             Image = "/squirrel.png";
             PointValue = 5;
+            Sound = "SquirrelSound.wav";
         }
 
         //Tracking ability that begins as soon as the squirrel is generated. If the player's column is
