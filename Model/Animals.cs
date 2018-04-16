@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
 
 namespace Twisted_Treeline.Model
 {
@@ -30,7 +31,12 @@ namespace Twisted_Treeline.Model
             {
                 AttackTime = 0;
 
+                //add animal attack sound here
+                SoundPlayer sp = new SoundPlayer(this.Sound);
+                sp.Play();
+                // end sound stuff
                 return Damage;
+                
             }
             else return 0;
         }
