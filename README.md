@@ -7,10 +7,10 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 ## Work Completed:
 * Title screen runs with working links to an About page, a Help page, and an option to select a difficulty and start a new game or load an old one.
 * The game screen opens and all creatures and walls are placed. There is a bar displaying the health, number of stars found, and points of the player, and another Menu button that pauses the game and has Save, About, and Help buttons.
+* Animals attack and can be defeated, and stars can be collected
 
 ## Known Issues:
-* When reloading a game, the character is unable to move after the proper map is drawn.
-* The animals do not Attack, and the player's attack technically does damage but does not 
+* Because the next levels have not been designed, when the first level is built, the game just turns off.
 
 ## Recording:
 [Link to a playthrough of our Alpha version](https://tinyurl.com/team-2-alpha)
@@ -20,5 +20,5 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 |Team Member | Hours Invested | Hours Remaining | Journal |     
 |------|--------------------|---------------------| ---------- |     
 |Alex Raddatz  |20.5 | 30 | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
-|Caroline Smith | 18.5 | 31.5 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
+|Caroline Smith | 29.5 | 20.5 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
 |Amy Surrett | 21 | 29 | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
