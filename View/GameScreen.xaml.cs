@@ -17,6 +17,8 @@ using System.Windows.Threading;
 using Twisted_Treeline.View;
 using System.Media;
 using Twisted_Treeline;
+using System.Reflection;
+using System.IO;
 
 namespace Twisted_Treeline
 {
@@ -114,10 +116,11 @@ namespace Twisted_Treeline
         //Destroys all non-wall images, and then makes new ones with the world object's new location
         private void UpdateScreen()
         {
-            if (GameController.Instance.CurrentSound != "Blank")
+            if (GameController.Instance.CurrentSound != null)
             {
-               // SoundPlayer sound = new SoundPlayer(GameController.Instance.CurrentSound);
-               // sound.Play();
+                SoundPlayer sound = new SoundPlayer(GameController.Instance.CurrentSound);
+                sound.Play();
+              
             }
 
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
@@ -158,7 +161,7 @@ namespace Twisted_Treeline
                     WorldCanvas.Children.Add(i);
                 }
             }
-            GameController.Instance.CurrentSound = "Blank";
+            GameController.Instance.CurrentSound = null;
         }
 
         //Controls the user movements and attack

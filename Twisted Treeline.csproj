@@ -174,7 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="BerSound.wav" />
+    <EmbeddedResource Include="BerSound.wav" />
     <Content Include="SquirrelSound.wav" />
     <Content Include="StickSound.wav" />
     <Content Include="WolfSound.wav" />

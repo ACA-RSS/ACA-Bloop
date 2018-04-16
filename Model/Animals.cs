@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Media;
+using System.IO;
 
 namespace Twisted_Treeline.Model
 {
@@ -15,7 +16,7 @@ namespace Twisted_Treeline.Model
         public double MoveTime { get; set; }
 
         //holds the name of the sound file to be played on animal attack
-        public string Sound { get; set; }
+        public Stream Sound { get; set; }
 
 
         //This is an odd one. Every animal has an attack speed, which is how many timer ticks between

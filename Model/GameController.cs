@@ -25,7 +25,7 @@ namespace Twisted_Treeline.Model
 
         public Character Player { get; set; }
 
-        public string CurrentSound { get; set; }
+        public Stream CurrentSound { get; set; }
 
         //Resets points, assumes difficulty 'easy', and makes the new world
         private GameController()
@@ -35,7 +35,7 @@ namespace Twisted_Treeline.Model
             Difficulty = 1;
             Player = new Character();
             LevelNum = LevelNum.One;
-            CurrentSound = "Blank";
+            CurrentSound = null;
         }
 
         //Returns true if the character is dead, or if the player has all three stars and is back at the starting
@@ -63,7 +63,7 @@ namespace Twisted_Treeline.Model
             Level = new World();
             Points = 0;
             LevelNum = LevelNum.One;
-            CurrentSound = "Blank";
+            CurrentSound = null;
         }
 
         //Hardcodes in the player and all of the wall pieces and animals and such, then adds all of them
