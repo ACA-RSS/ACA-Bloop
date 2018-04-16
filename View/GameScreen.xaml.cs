@@ -118,9 +118,16 @@ namespace Twisted_Treeline
         {
             if (GameController.Instance.CurrentSound != null)
             {
-                SoundPlayer sound = new SoundPlayer(GameController.Instance.CurrentSound);
-                sound.Play();
-              
+                SoundPlayer player = new SoundPlayer(GameController.Instance.CurrentSound);
+                Properties.Resources.BerSound.Position = 0;
+                Properties.Resources.SquirrelSound.Position = 0;
+                Properties.Resources.StickSound.Position = 0;
+                Properties.Resources.WolfSound.Position = 0;
+                GameController.Instance.CurrentSound.Position = 0;     // Manually rewind stream 
+                player.Stream = null;    // Then we have to set stream to null 
+                player.Stream = GameController.Instance.CurrentSound;  // And set it again, to force it to be loaded again... 
+                player.Play();
+
             }
 
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));

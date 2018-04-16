@@ -175,9 +175,9 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <EmbeddedResource Include="BerSound.wav" />
-    <Content Include="SquirrelSound.wav" />
-    <Content Include="StickSound.wav" />
-    <Content Include="WolfSound.wav" />
+    <EmbeddedResource Include="SquirrelSound.wav" />
+    <EmbeddedResource Include="StickSound.wav" />
+    <EmbeddedResource Include="WolfSound.wav" />
     <Resource Include="squirrel-Left.gif" />
     <Resource Include="squirrel.gif" />
     <Resource Include="stump.png" />
