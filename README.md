@@ -10,7 +10,7 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 * Animals attack and can be defeated, and stars can be collected
 
 ## Known Issues:
-* Because the next levels have not been designed, when the first level is built, the game just turns off.
+* No known issues
 
 ## Recording:
 [Link to a playthrough of our Alpha version](https://tinyurl.com/team-2-alpha)
