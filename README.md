@@ -15,6 +15,8 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 ## Recording:
 [Link to a playthrough of our Alpha version](https://tinyurl.com/team-2-alpha)
 
+[Link to a playthrough of our Beta version](https://drive.google.com/open?id=1KcwiC_eocVph_SlbDjW_hDrSlr8vtS2j)
+
 ## Expenses:
 
 |Team Member | Hours Invested | Hours Remaining | Journal |     
