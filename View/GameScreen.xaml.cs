@@ -60,8 +60,8 @@ namespace Twisted_Treeline
             else
             {
                 GameController.Instance.Points += 500 + (GameController.Instance.Difficulty * GameController.Instance.Player.HitPoints);
-                switch (GameController.Instance.LevelNum)
-                {
+                //switch (GameController.Instance.LevelNum)
+               /* {
                     case LevelNum.One:
                         GameController.Instance.Level = new World();
                         GameController.Instance.SetUpLevelTwo();
@@ -80,12 +80,12 @@ namespace Twisted_Treeline
                         GameController.Instance.Update();
                         break;
 
-                    case LevelNum.Three:
+                    case LevelNum.Three:*/
                         Ticky.Stop();
                         HighscorePrompt hs = new HighscorePrompt();
                         hs.ShowDialog();
-                        break;
-                }
+                        //break;
+              //  }
             }
         }
 
