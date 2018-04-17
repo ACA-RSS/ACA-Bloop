@@ -65,6 +65,11 @@
     <Compile Include="Model\HighscoreManager.cs" />
     <Compile Include="Model\Hittable.cs" />
     <Compile Include="Model\Star.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -104,11 +109,6 @@
     <Compile Include="Model\WorldObjectTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -174,12 +174,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="punch.wav" />
+    <Content Include="SquirrelSound.wav" />
+    <Content Include="StickSound.wav" />
+    <Content Include="WolfSound.wav" />
+    <Content Include="wolf_attack.wav" />
     <Resource Include="steer.png" />
     <Resource Include="tree.png" />
     <EmbeddedResource Include="BerSound.wav" />
-    <EmbeddedResource Include="SquirrelSound.wav" />
-    <EmbeddedResource Include="StickSound.wav" />
-    <EmbeddedResource Include="WolfSound.wav" />
     <Resource Include="squirrel-Left.gif" />
     <Resource Include="squirrel.gif" />
     <Resource Include="stump.png" />

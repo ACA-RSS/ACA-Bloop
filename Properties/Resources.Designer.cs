@@ -72,27 +72,18 @@ namespace Twisted_Treeline.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream SquirrelSound {
+        internal static System.IO.UnmanagedMemoryStream punch {
             get {
-                return ResourceManager.GetStream("SquirrelSound", resourceCulture);
+                return ResourceManager.GetStream("punch", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream StickSound {
+        internal static System.IO.UnmanagedMemoryStream wolf_attack {
             get {
-                return ResourceManager.GetStream("StickSound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream WolfSound {
-            get {
-                return ResourceManager.GetStream("WolfSound", resourceCulture);
+                return ResourceManager.GetStream("wolf_attack", resourceCulture);
             }
         }
     }

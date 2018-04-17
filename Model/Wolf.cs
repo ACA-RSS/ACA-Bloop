@@ -23,7 +23,7 @@ namespace Twisted_Treeline.Model
             EyeContact = false;
             Type = "Hittable";
             PointValue = 15;
-            Sound = Properties.Resources.WolfSound;
+            Sound = Properties.Resources.wolf_attack;
         }
         public override WorldObject Deserialize(string statsStr)
         {
