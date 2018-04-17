@@ -12,7 +12,7 @@ namespace Twisted_Treeline.Model
         {
             HitPoints = 1;
             Dead = false;
-            Image = "/ster.png";
+            Image = "/steer.png";
             Type = "Hittable";
         }
 

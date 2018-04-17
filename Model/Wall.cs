@@ -11,7 +11,7 @@ namespace Twisted_Treeline.Model
         public Wall()
         {
             Type = "Wall";
-            Image = "/Wall.png";
+            Image = "/tree.png";
         }
 
         //Used for building walls instead of coding each one individually
