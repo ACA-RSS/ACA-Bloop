@@ -10,7 +10,7 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 * Animals attack and can be defeated, and stars can be collected
 
 ## Known Issues:
-* Because the next levels have not been designed, when the first level is built, the game just turns off.
+* Game crashes if there is no save file in the debug folder. 
 
 ## Recording:
 [Link to a playthrough of our Alpha version](https://tinyurl.com/team-2-alpha)
@@ -19,6 +19,6 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 
 |Team Member | Hours Invested | Hours Remaining | Journal |     
 |------|--------------------|---------------------| ---------- |     
-|Alex Raddatz  |20.5 | 30 | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
+|Alex Raddatz  |27 | 23 | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
 |Caroline Smith | 29.5 | 20.5 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
 |Amy Surrett | 21 | 29 | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
