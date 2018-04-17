@@ -61,6 +61,7 @@ namespace Twisted_Treeline.Model
                 doDamage(GameController.Instance.Level.Squares[Spot.Row + down, Spot.Column + right] as Hittable);
             }
             return Damage;
+
         }
 
         //Recieves a direction based on which keyboard button was pressed, then checks if

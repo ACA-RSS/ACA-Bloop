@@ -120,8 +120,8 @@ namespace Twisted_Treeline
             {
                 SoundPlayer player = new SoundPlayer(GameController.Instance.CurrentSound);
                 Properties.Resources.BerSound.Position = 0;
-                Properties.Resources.SquirrelSound.Position = 0;
-                Properties.Resources.StickSound.Position = 0;
+                //Properties.Resources.SquirrelSound.Position = 0;
+                Properties.Resources.punch.Position = 0;
                 Properties.Resources.wolf_attack.Position = 0;
                 GameController.Instance.CurrentSound.Position = 0;     // Manually rewind stream 
                 player.Stream = null;    // Then we have to set stream to null 
