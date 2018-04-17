@@ -11,6 +11,7 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 
 ## Known Issues:
 * Game crashes if there is no save file in the debug folder. 
+* The game has sound effects, but the video recording did not record them for the beta.
 
 ## Recording:
 [Link to a playthrough of our Alpha version](https://tinyurl.com/team-2-alpha)
