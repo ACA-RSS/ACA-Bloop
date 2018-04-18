@@ -59,6 +59,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Boost.cs" />
     <Compile Include="Model\Highscore_Test.cs" />
     <Compile Include="ISerializable.cs" />
     <Compile Include="Model\Highscore.cs" />
@@ -174,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="boost.png" />
     <Content Include="punch.wav" />
     <Content Include="SquirrelSound.wav" />
     <Content Include="StickSound.wav" />

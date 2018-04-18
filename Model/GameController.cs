@@ -79,6 +79,10 @@ namespace Twisted_Treeline.Model
 
             Instance.Level.WorldObj.Add(Player);
 
+            //TEMPORARY FOR BOOST TEST//
+            Boost b = new Boost() { Spot = new Location { Row = 11, Column = 0 } };
+            Instance.Level.WorldObj.Add(b);
+
             Bear fuzzy = new Bear() { Spot = new Location { Row = 4, Column = 5 } };
             Bear wuzzy = new Bear() { Spot = new Location { Row = 7, Column = 15 } };
             Bear buzzy = new Bear() { Spot = new Location { Row = 10, Column = 3 } };
