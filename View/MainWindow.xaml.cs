@@ -26,10 +26,10 @@ namespace Twisted_Treeline
         public MainWindow()
         {
             InitializeComponent();
-            DifficultyLstBox.Items.Add("Cheat Mode");
+           /* DifficultyLstBox.Items.Add("Cheat Mode");
             DifficultyLstBox.Items.Add("Hard");
             DifficultyLstBox.Items.Add("More Hardlier");
-            DifficultyLstBox.Items.Add("Downright Impossible");
+            DifficultyLstBox.Items.Add("Downright Impossible");*/
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -37,15 +37,16 @@ namespace Twisted_Treeline
             GameController.Instance.Reset();
             GameController.Instance.Load("TTLSave.txt");
             int howHard = 0;
-            if (DifficultyLstBox.Text == "Cheat Mode")
+            string diff = Convert.ToString(DifficultyLstBox.SelectionBoxItem);
+            if (diff == "Cheat Mode")
             {
                 howHard = 0;
             }
-            else if (DifficultyLstBox.Text == "Hard")
+            else if (diff == "Hard")
             {
                 howHard = 1;
             }
-            else if (DifficultyLstBox.Text == "More Hardlier")
+            else if (diff == "More Hardlier")
             {
                 howHard = 2;
             }
@@ -64,17 +65,22 @@ namespace Twisted_Treeline
         {
             GameController.Instance.Reset();
             int howHard = 0;
-            if (DifficultyLstBox.Text == "Cheat Mode")
+            string diff = Convert.ToString(DifficultyLstBox.Text);
+            if (diff == "Cheat Mode")
             {
                 howHard = 0;
             }
-            else if (DifficultyLstBox.Text == "More Hardlier")
+            else if (diff == "Hard")
+            {
+                howHard = 1;
+            }
+            else if (diff == "More Hardlier")
             {
                 howHard = 2;
             }
             else
             {
-                howHard = 1;
+                howHard = 3;
             }
 
             GameController.Instance.SetUpLevelOne();

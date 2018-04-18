@@ -42,10 +42,10 @@ namespace Twisted_Treeline
             Ticky.Tick += Ticky_Tick;
 
             BuildTheWall();
+            Setup();
             UpdateScreen();
 
             Ticky.Start();
-
         }
 
         //On every timer tick, checks if the game is over (See isGameOver for Game Controller
@@ -111,6 +111,28 @@ namespace Twisted_Treeline
             }
         }
 
+
+        public void Setup()
+        {
+            foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
+            {
+                if (obj.Type != "Wall")
+                {
+                    Image i = new Image()
+                    {
+                        Tag = obj,
+                        Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
+                        HorizontalAlignment = HorizontalAlignment.Left,
+                        VerticalAlignment = VerticalAlignment.Top,
+                        Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
+                        Width = 20
+                    };
+
+                    WorldCanvas.Children.Add(i);
+                }
+            }
+        }
+
         //Called every timer tick
         //Updates the points, health, and number of stars of the player. 
         //Destroys all non-wall images, and then makes new ones with the world object's new location
@@ -134,15 +156,28 @@ namespace Twisted_Treeline
             txtHealth.Text = String.Format("Health Percent: {0}", Convert.ToString(GameController.Instance.Player.HitPoints));
             imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
 
+            List < WorldObject > accounted = new List<WorldObject>();
+            
             List<Image> toDestroy = new List<Image>();
+
             foreach (Image i in WorldCanvas.Children)
             {
                 WorldObject o = i.Tag as WorldObject;
 
-                if (o.Type != "Wall")
+                if (GameController.Instance.Level.WorldObj.Contains(o))
+                {
+                    accounted.Add(o);
+                    if (o.Type != "Wall" && o.Type != "Stump")
+                    {
+                        i.Margin = new Thickness(o.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), o.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0);
+                        i.Source = new BitmapImage(new Uri(o.Image, UriKind.Relative));
+                    }
+                }
+                else
                 {
                     toDestroy.Add(i);
                 }
+                
             }
 
             foreach (Image i in toDestroy)
@@ -150,12 +185,15 @@ namespace Twisted_Treeline
                 WorldCanvas.Children.Remove(i);
             }
 
-
             foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
             {
-                if (obj.Type != "Wall")
+                if (accounted.Contains(obj))
                 {
-                    Image i = new Image()
+                    continue;
+                }
+                else
+                {
+                    Image img = new Image()
                     {
                         Tag = obj,
                         Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
@@ -165,9 +203,11 @@ namespace Twisted_Treeline
                         Width = 20
                     };
 
-                    WorldCanvas.Children.Add(i);
+                    WorldCanvas.Children.Add(img);
                 }
             }
+
+            /**/
             GameController.Instance.CurrentSound = null;
         }
 
