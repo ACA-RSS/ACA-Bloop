@@ -164,6 +164,44 @@ namespace Twisted_Treeline.Model
 
             Instance.Level.WorldObj.Add(Player);
 
+            Bear fuzzy = new Bear() { Spot = new Location { Row = 17, Column = 4 } };
+            Bear wuzzy = new Bear() { Spot = new Location { Row = 5, Column = 25 } };
+            Bear buzzy = new Bear() { Spot = new Location { Row = 8, Column = 27 } };
+            Bear juzzy = new Bear() { Spot = new Location { Row = 17, Column = 24 } };
+
+            Instance.Level.WorldObj.Add(fuzzy);
+            Instance.Level.WorldObj.Add(wuzzy);
+            Instance.Level.WorldObj.Add(buzzy);
+            Instance.Level.WorldObj.Add(juzzy);
+
+            Star glitter = new Star() { Spot = new Location { Row = 13, Column = 1 } };
+            Star gleam = new Star() { Spot = new Location { Row = 3, Column = 26 } };
+            Star glow = new Star() { Spot = new Location { Row = 23, Column = 28 } };
+
+            Instance.Level.WorldObj.Add(glitter);
+            Instance.Level.WorldObj.Add(gleam);
+            Instance.Level.WorldObj.Add(glow);
+
+            Wolf wolfy = new Wolf() { Spot = new Location { Row = 4, Column = 8 } };
+            Wolf bitey = new Wolf() { Spot = new Location { Row = 13, Column = 10 } };
+            Wolf growly = new Wolf() { Spot = new Location { Row = 23, Column = 12 } };
+            Wolf snippy = new Wolf() { Spot = new Location { Row = 13, Column = 18 } };
+            Wolf snappy = new Wolf() { Spot = new Location { Row = 13, Column = 26 } };
+
+            Instance.Level.WorldObj.Add(wolfy);
+            Instance.Level.WorldObj.Add(bitey);
+            Instance.Level.WorldObj.Add(growly);
+            Instance.Level.WorldObj.Add(snippy);
+            Instance.Level.WorldObj.Add(snappy);
+
+            Stump s = new Stump() { Spot = new Location { Row = 6, Column = 19 } };
+            Stump hiddenOne = new Stump() { Spot = new Location { Row = 4, Column = 23 } };
+            Stump hiddenTwo = new Stump() { Spot = new Location { Row = 11, Column = 29 } };
+
+            Instance.Level.WorldObj.Add(s);
+            Instance.Level.WorldObj.Add(hiddenOne);
+            Instance.Level.WorldObj.Add(hiddenTwo);
+
         }
 
         public void SetUpLevelThree()

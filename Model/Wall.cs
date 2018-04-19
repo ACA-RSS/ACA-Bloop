@@ -34,12 +34,12 @@ namespace Twisted_Treeline.Model
             {
                 for (int i = 0; i < numSpaces + 1; i++)
                 {
-                    Wall wally = new Wall() { Spot = new Location() { Row = startRow , Column = startCol + i} };
+                    Wall wally = new Wall() { Spot = new Location() { Row = startRow, Column = startCol + i } };
 
                     GameController.Instance.Level.WorldObj.Add(wally);
                 }
             }
-            
+
         }
 
         public override WorldObject Deserialize(string statsStr)
@@ -54,7 +54,7 @@ namespace Twisted_Treeline.Model
         {
             return string.Format("Wall,{0}", Spot);
         }
-        
+
 
         public static void LevelTwo(int quadrant)
         {
@@ -116,5 +116,5 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(10 + addDown, 13 + addRight, 1, "Horz");
         }
     }
-    
+
 }

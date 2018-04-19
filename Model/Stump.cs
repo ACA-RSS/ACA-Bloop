@@ -20,9 +20,10 @@ namespace Twisted_Treeline.Model
         public Stump()
         {
             Object = new Stick(1000000000);
-            HitPoints = 1000000;
+            HitPoints = 10;
             Type = "Hittable";
             Dead = false;
+            Image = "/stump.png";
         }
 
         public Stump(int hp)
@@ -45,7 +46,7 @@ namespace Twisted_Treeline.Model
             {
                 Dead = true;
                 ReleaseTheSquirrels();
-
+                GameController.Instance.Level.WorldObj.Remove(this);
             }
         }
 

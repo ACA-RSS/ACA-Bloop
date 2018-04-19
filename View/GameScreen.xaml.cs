@@ -60,8 +60,8 @@ namespace Twisted_Treeline
             else
             {
                 GameController.Instance.Points += 500 + (GameController.Instance.Difficulty * GameController.Instance.Player.HitPoints);
-                //switch (GameController.Instance.LevelNum)
-               /* {
+                switch (GameController.Instance.LevelNum)
+                {
                     case LevelNum.One:
                         GameController.Instance.Level = new World();
                         GameController.Instance.SetUpLevelTwo();
@@ -80,12 +80,12 @@ namespace Twisted_Treeline
                         GameController.Instance.Update();
                         break;
 
-                    case LevelNum.Three:*/
+                    case LevelNum.Three:
                         Ticky.Stop();
                         HighscorePrompt hs = new HighscorePrompt();
                         hs.ShowDialog();
-                        //break;
-              //  }
+                        break;
+                }
             }
         }
 
@@ -156,8 +156,8 @@ namespace Twisted_Treeline
             txtHealth.Text = String.Format("Health Percent: {0}", Convert.ToString(GameController.Instance.Player.HitPoints));
             imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
 
-            List < WorldObject > accounted = new List<WorldObject>();
-            
+            List<WorldObject> accounted = new List<WorldObject>();
+
             List<Image> toDestroy = new List<Image>();
 
             foreach (Image i in WorldCanvas.Children)
@@ -167,7 +167,7 @@ namespace Twisted_Treeline
                 if (GameController.Instance.Level.WorldObj.Contains(o))
                 {
                     accounted.Add(o);
-                    if (o.Type != "Wall" && o.Type != "Stump")
+                    if (o.Type != "Wall")
                     {
                         i.Margin = new Thickness(o.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), o.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0);
                         i.Source = new BitmapImage(new Uri(o.Image, UriKind.Relative));
@@ -177,7 +177,7 @@ namespace Twisted_Treeline
                 {
                     toDestroy.Add(i);
                 }
-                
+
             }
 
             foreach (Image i in toDestroy)
