@@ -20,7 +20,7 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Spot = new Location { Row = 12, Column = 0 };
             StartSpot = new Location { Row = 12, Column = 0 };
-            Image = /*GameController.Instance.GenderImg;*/ "/Scotty.gif";
+            Image = "/Scotty.gif;";
             Type = "Character";
             DirFacing = Direction.Up;
         }

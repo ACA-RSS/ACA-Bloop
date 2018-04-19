@@ -12,7 +12,6 @@ namespace Twisted_Treeline.Model
 
     public class GameController
     {
-        public string UserName { get; set; }
 
         public int Difficulty { get; set; }
 
@@ -26,7 +25,7 @@ namespace Twisted_Treeline.Model
 
         public Stream CurrentSound { get; set; }
 
-        //public string GenderImg { get; set; }
+        public string GenderImg { get; set; }
 
         //Resets points, assumes difficulty 'easy', and makes the new world
         private GameController()
@@ -226,7 +225,6 @@ namespace Twisted_Treeline.Model
 
                 writer.WriteLine(title);
                 writer.WriteLine(Instance.LevelNum);
-                writer.WriteLine(Instance.UserName);
                 writer.WriteLine(Instance.Difficulty);
                 writer.WriteLine(Instance.Points);
                 writer.WriteLine(Instance.Level.Stars);
@@ -249,7 +247,6 @@ namespace Twisted_Treeline.Model
                     Environment.Exit(1);
                 }
                 Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
-                Instance.UserName = sr.ReadLine();
                 //difficulty
                 
                 //level number
