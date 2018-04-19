@@ -13,7 +13,7 @@ namespace Twisted_Treeline.Model
         public Stick(int hurt)
         {
             Damage = hurt;
-            Image = "/bigber.gif";
+            Image = "/Stick.png";
             Type = "Hittable";
         }
 
@@ -21,7 +21,7 @@ namespace Twisted_Treeline.Model
         {
             Damage = 1337;
             Type = "Hittable";
-            Image = "/bigber.gif";
+            Image = "/Stick.png";
         }
 
         public override void TakeDamage(int damage)
