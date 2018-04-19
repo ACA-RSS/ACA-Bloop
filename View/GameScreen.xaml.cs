@@ -87,6 +87,7 @@ namespace Twisted_Treeline
                         case LevelNum.Three:
                             Ticky.Stop();
                             HighscorePrompt hs = new HighscorePrompt();
+                            hs.ScoreTitle.Text = "YOU WON";
                             hs.ShowDialog();
                             break;
                     }
@@ -95,6 +96,7 @@ namespace Twisted_Treeline
                 {
                     Ticky.Stop();
                     HighscorePrompt hs = new HighscorePrompt();
+                    hs.ScoreTitle.Text = "YOU HAVE FAILED";
                     hs.ShowDialog();
                 }
             }
