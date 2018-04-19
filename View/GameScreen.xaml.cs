@@ -64,27 +64,27 @@ namespace Twisted_Treeline
                     GameController.Instance.Points += 500 + (GameController.Instance.Difficulty * GameController.Instance.Player.HitPoints);
                     switch (GameController.Instance.LevelNum)
                     {
-                        case LevelNum.One:
+                        case 1:
                             GameController.Instance.Level = new World();
                             GameController.Instance.SetUpLevelTwo();
                             GameController.Instance.InitialSetup();
-                            GameController.Instance.LevelNum = LevelNum.Two;
+                            GameController.Instance.LevelNum = 1;
                             txtLevel.Text = "Level Two";
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
 
-                        case LevelNum.Two:
+                        case 2:
                             GameController.Instance.Level = new World();
                             GameController.Instance.SetUpLevelThree();
                             GameController.Instance.InitialSetup();
-                            GameController.Instance.LevelNum = LevelNum.Three;
+                            GameController.Instance.LevelNum = 3;
                             txtLevel.Text = "Level Three";
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
 
-                        case LevelNum.Three:
+                        case 3:
                             Ticky.Stop();
                             HighscorePrompt hs = new HighscorePrompt();
                             hs.ScoreTitle.Text = "YOU WON";
