@@ -248,9 +248,10 @@ namespace Twisted_Treeline.Model
                 {
                     Environment.Exit(1);
                 }
+                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
                 Instance.UserName = sr.ReadLine();
                 //difficulty
-                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
+                
                 //level number
                 Instance.LevelNum = Convert.ToInt32(sr.ReadLine());
                 //points

@@ -34,11 +34,13 @@ namespace Twisted_Treeline
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
-            GameController.Instance.Reset();
+            GameController.Instance.Level = new World();
             GameController.Instance.Load("TTLSave.txt");
-            int howHard = 0;
-            string diff = Convert.ToString(DifficultyLstBox.SelectionBoxItem);
-            if (diff == "Cheat Mode")
+
+            GameController.Instance.InitialSetup();
+            // int howHard = 0;
+            // string diff = Convert.ToString(DifficultyLstBox.SelectionBoxItem);
+            /*if (diff == "Cheat Mode")
             {
                 howHard = 0;
             }
@@ -53,10 +55,12 @@ namespace Twisted_Treeline
             else
             {
                 howHard = 3;
-            }
+            }*/
 
-            GameController.Instance.Difficulty = howHard;
-            GameController.Instance.InitialSetup();
+            // GameController.Instance.Difficulty = howHard;
+            //GameController.Instance.InitialSetup();
+            
+            GameController.Instance.Update();
             GameScreen game = new GameScreen();
             game.ShowDialog();
         }
