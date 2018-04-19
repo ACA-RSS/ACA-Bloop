@@ -9,7 +9,6 @@ using Twisted_Treeline;
 
 namespace Twisted_Treeline.Model
 {
-    public enum LevelNum { One, Two, Three };
 
     public class GameController
     {
@@ -17,7 +16,7 @@ namespace Twisted_Treeline.Model
 
         public int Difficulty { get; set; }
 
-        public LevelNum LevelNum { get; set; }
+        public int LevelNum { get; set; }
 
         public World Level { get; set; }
 
@@ -27,6 +26,8 @@ namespace Twisted_Treeline.Model
 
         public Stream CurrentSound { get; set; }
 
+        //public string GenderImg { get; set; }
+
         //Resets points, assumes difficulty 'easy', and makes the new world
         private GameController()
         {
@@ -34,13 +35,13 @@ namespace Twisted_Treeline.Model
             Points = 0;
             Difficulty = 1;
             Player = new Character();
-            LevelNum = LevelNum.One;
+            LevelNum = 1;
             CurrentSound = null;
+          //  GenderImg = "/Scotty.gif";
         }
 
         //Returns true if the character is dead, or if the player has all three stars and is back at the starting
         //point of row 13, column 0. I used this to test whether to continue the game and animal movements
-
         public bool isGameOver()
         {
             if (Instance.Player.Dead)
@@ -62,7 +63,7 @@ namespace Twisted_Treeline.Model
         {
             Level = new World();
             Points = 0;
-            LevelNum = LevelNum.One;
+            LevelNum = 1;
             CurrentSound = null;
         }
 
@@ -159,7 +160,7 @@ namespace Twisted_Treeline.Model
                 Wall.LevelTwo(i);
             }
 
-            Player = new Character()
+            Instance.Player = new Character()
             {
                 Stick = new Stick(5),
                 StartSpot = new Location { Row = 1, Column = 0 },
@@ -167,6 +168,44 @@ namespace Twisted_Treeline.Model
             };
 
             Instance.Level.WorldObj.Add(Player);
+
+            Bear fuzzy = new Bear() { Spot = new Location { Row = 17, Column = 4 } };
+            Bear wuzzy = new Bear() { Spot = new Location { Row = 5, Column = 25 } };
+            Bear buzzy = new Bear() { Spot = new Location { Row = 8, Column = 27 } };
+            Bear juzzy = new Bear() { Spot = new Location { Row = 17, Column = 24 } };
+
+            Instance.Level.WorldObj.Add(fuzzy);
+            Instance.Level.WorldObj.Add(wuzzy);
+            Instance.Level.WorldObj.Add(buzzy);
+            Instance.Level.WorldObj.Add(juzzy);
+
+            Star glitter = new Star() { Spot = new Location { Row = 13, Column = 1 } };
+            Star gleam = new Star() { Spot = new Location { Row = 3, Column = 26 } };
+            Star glow = new Star() { Spot = new Location { Row = 23, Column = 28 } };
+
+            Instance.Level.WorldObj.Add(glitter);
+            Instance.Level.WorldObj.Add(gleam);
+            Instance.Level.WorldObj.Add(glow);
+
+            Wolf wolfy = new Wolf() { Spot = new Location { Row = 4, Column = 8 } };
+            Wolf bitey = new Wolf() { Spot = new Location { Row = 13, Column = 10 } };
+            Wolf growly = new Wolf() { Spot = new Location { Row = 23, Column = 12 } };
+            Wolf snippy = new Wolf() { Spot = new Location { Row = 13, Column = 18 } };
+            Wolf snappy = new Wolf() { Spot = new Location { Row = 13, Column = 26 } };
+
+            Instance.Level.WorldObj.Add(wolfy);
+            Instance.Level.WorldObj.Add(bitey);
+            Instance.Level.WorldObj.Add(growly);
+            Instance.Level.WorldObj.Add(snippy);
+            Instance.Level.WorldObj.Add(snappy);
+
+            Stump s = new Stump() { Spot = new Location { Row = 6, Column = 19 } };
+            Stump hiddenOne = new Stump() { Spot = new Location { Row = 4, Column = 23 } };
+            Stump hiddenTwo = new Stump() { Spot = new Location { Row = 11, Column = 29 } };
+
+            Instance.Level.WorldObj.Add(s);
+            Instance.Level.WorldObj.Add(hiddenOne);
+            Instance.Level.WorldObj.Add(hiddenTwo);
 
         }
 
@@ -204,14 +243,15 @@ namespace Twisted_Treeline.Model
 
         public void Save(string file)
         {
-            string saveData = "TwistedTLine";
+            string title = "TwistedTLine";
 
             //Saves the player info
 
             using (StreamWriter writer = new StreamWriter(file))
             {
 
-                writer.WriteLine(saveData);
+                writer.WriteLine(title);
+                writer.WriteLine(Instance.LevelNum);
                 writer.WriteLine(Instance.UserName);
                 writer.WriteLine(Instance.Difficulty);
                 writer.WriteLine(Instance.Points);
@@ -234,9 +274,12 @@ namespace Twisted_Treeline.Model
                 {
                     Environment.Exit(1);
                 }
+                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
                 Instance.UserName = sr.ReadLine();
                 //difficulty
-                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
+                
+                //level number
+                Instance.LevelNum = Convert.ToInt32(sr.ReadLine());
                 //points
                 Instance.Points = Convert.ToInt32(sr.ReadLine());
                 //stars

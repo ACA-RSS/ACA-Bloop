@@ -20,7 +20,7 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Spot = new Location { Row = 12, Column = 0 };
             StartSpot = new Location { Row = 12, Column = 0 };
-            Image = "/Scotty.gif";
+            Image = /*GameController.Instance.GenderImg;*/ "/Scotty.gif";
             Type = "Character";
             DirFacing = Direction.Up;
         }
@@ -38,6 +38,7 @@ namespace Twisted_Treeline.Model
         {
             int down = 0;
             int right = 0;
+            GameController.Instance.CurrentSound = Properties.Resources.punch;
             switch (DirFacing)
             {
                 case Direction.Up:

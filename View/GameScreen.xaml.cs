@@ -44,7 +44,7 @@ namespace Twisted_Treeline
             BuildTheWall();
             Setup();
             UpdateScreen();
-
+            
             Ticky.Start();
         }
 
@@ -59,33 +59,46 @@ namespace Twisted_Treeline
             }
             else
             {
-                GameController.Instance.Points += 500 + (GameController.Instance.Difficulty * GameController.Instance.Player.HitPoints);
-                //switch (GameController.Instance.LevelNum)
-               /* {
-                    case LevelNum.One:
-                        GameController.Instance.Level = new World();
-                        GameController.Instance.SetUpLevelTwo();
-                        GameController.Instance.InitialSetup();
-                        GameController.Instance.LevelNum = LevelNum.Two;
-                        UpdateScreen();
-                        GameController.Instance.Update();
-                        break;
+                if (!GameController.Instance.Player.Dead)
+                {
+                    GameController.Instance.Points += 500 + (GameController.Instance.Difficulty * GameController.Instance.Player.HitPoints);
+                    switch (GameController.Instance.LevelNum)
+                    {
+                        case 1:
+                            GameController.Instance.Level = new World();
+                            GameController.Instance.SetUpLevelTwo();
+                            GameController.Instance.InitialSetup();
+                            GameController.Instance.LevelNum = 2;
+                            txtLevel.Text = "Level Two";
+                            UpdateScreen();
+                            GameController.Instance.Update();
+                            break;
 
-                    case LevelNum.Two:
-                        GameController.Instance.Level = new World();
-                        GameController.Instance.SetUpLevelThree();
-                        GameController.Instance.InitialSetup();
-                        GameController.Instance.LevelNum = LevelNum.Three;
-                        UpdateScreen();
-                        GameController.Instance.Update();
-                        break;
+                        case 2:
+                            GameController.Instance.Level = new World();
+                            GameController.Instance.SetUpLevelThree();
+                            GameController.Instance.InitialSetup();
+                            GameController.Instance.LevelNum = 3;
+                            txtLevel.Text = "Level Three";
+                            UpdateScreen();
+                            GameController.Instance.Update();
+                            break;
 
-                    case LevelNum.Three:*/
-                        Ticky.Stop();
-                        HighscorePrompt hs = new HighscorePrompt();
-                        hs.ShowDialog();
-                        //break;
-              //  }
+                        case 3:
+                            Ticky.Stop();
+                            HighscorePrompt hs = new HighscorePrompt();
+                            hs.ScoreTitle.Text = "YOU WON";
+                            hs.ShowDialog();
+                            break;
+                    }
+                }
+                else
+                {
+                    Ticky.Stop();
+                    HighscorePrompt hs = new HighscorePrompt();
+                    hs.ScoreTitle.Text = "YOU HAVE FAILED";
+                    hs.ShowDialog();
+                }
             }
         }
 
@@ -103,7 +116,7 @@ namespace Twisted_Treeline
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
-                        Width = 20
+                        Width = WorldCanvas.Width / GameController.Instance.Level.Width,
                     };
 
                     WorldCanvas.Children.Add(i);
@@ -153,11 +166,11 @@ namespace Twisted_Treeline
             }
 
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
-            txtHealth.Text = String.Format("Health Percent: {0}", Convert.ToString(GameController.Instance.Player.HitPoints));
+            prgHealth.Value = GameController.Instance.Player.HitPoints;
             imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
 
-            List < WorldObject > accounted = new List<WorldObject>();
-            
+            List<WorldObject> accounted = new List<WorldObject>();
+
             List<Image> toDestroy = new List<Image>();
 
             foreach (Image i in WorldCanvas.Children)
@@ -167,7 +180,7 @@ namespace Twisted_Treeline
                 if (GameController.Instance.Level.WorldObj.Contains(o))
                 {
                     accounted.Add(o);
-                    if (o.Type != "Wall" && o.Type != "Stump")
+                    if (o.Type != "Wall")
                     {
                         i.Margin = new Thickness(o.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), o.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0);
                         i.Source = new BitmapImage(new Uri(o.Image, UriKind.Relative));
@@ -177,7 +190,7 @@ namespace Twisted_Treeline
                 {
                     toDestroy.Add(i);
                 }
-                
+
             }
 
             foreach (Image i in toDestroy)
@@ -214,6 +227,16 @@ namespace Twisted_Treeline
         //Controls the user movements and attack
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
+            
+            if (e.Key == Key.Space)
+            {
+                GameController.Instance.Player.Attack();
+            }
+
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
             if (e.Key == Key.W)
             {
                 GameController.Instance.Player.PlayerMove("Up");
@@ -230,11 +253,6 @@ namespace Twisted_Treeline
             {
                 GameController.Instance.Player.PlayerMove("Right");
             }
-            else if (e.Key == Key.Space)
-            {
-                GameController.Instance.Player.Attack();
-            }
-
         }
 
         //Pauses the timer and opens the menu

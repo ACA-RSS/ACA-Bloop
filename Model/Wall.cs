@@ -34,7 +34,7 @@ namespace Twisted_Treeline.Model
             {
                 for (int i = 0; i < numSpaces + 1; i++)
                 {
-                    Wall wally = new Wall() { Spot = new Location() { Row = startRow , Column = startCol + i} };
+                    Wall wally = new Wall() { Spot = new Location() { Row = startRow, Column = startCol + i } };
 
                     GameController.Instance.Level.WorldObj.Add(wally);
                 }
@@ -57,7 +57,6 @@ namespace Twisted_Treeline.Model
 
                 }
             }
-
         }
 
         public override WorldObject Deserialize(string statsStr)
@@ -72,7 +71,7 @@ namespace Twisted_Treeline.Model
         {
             return string.Format("Wall,{0}", Spot);
         }
-        
+
 
         public static void LevelTwo(int quadrant)
         {
@@ -100,38 +99,38 @@ namespace Twisted_Treeline.Model
                 addDown = 12;
             }
 
-            Wall.WallBuilder(3 + addDown, 0 + addRight, 7, "Vert");
-            Wall.WallBuilder(7 + addDown, 1 + addRight, 3, "Vert");
-            Wall.WallBuilder(4 + addDown, 2 + addRight, 1, "Vert");
-            Wall.WallBuilder(7 + addDown, 3 + addRight, 3, "Vert");
-            Wall.WallBuilder(7 + addDown, 3 + addRight, 3, "Vert");
-            Wall.WallBuilder(5 + addDown, 5 + addRight, 4, "Vert");
-            Wall.WallBuilder(8 + addDown, 6 + addRight, 1, "Vert");
-            Wall.WallBuilder(2 + addDown, 7 + addRight, 1, "Vert");
-            Wall.WallBuilder(7 + addDown, 7 + addRight, 1, "Vert");
-            Wall.WallBuilder(7 + addDown, 8 + addRight, 3, "Vert");
-            Wall.WallBuilder(1 + addDown, 9 + addRight, 2, "Vert");
-            Wall.WallBuilder(4 + addDown, 13 + addRight, 1, "Vert");
-            Wall.WallBuilder(3 + addDown, 15 + addRight, 7, "Vert");
-            Wall.WallBuilder(1 + addDown, 3 + addRight, 4, "Vert");
+            WallBuilder(3 + addDown, 0 + addRight, 7, "Vert");
+            WallBuilder(7 + addDown, 1 + addRight, 3, "Vert");
+            WallBuilder(4 + addDown, 2 + addRight, 1, "Vert");
+            WallBuilder(7 + addDown, 3 + addRight, 3, "Vert");
+            WallBuilder(7 + addDown, 3 + addRight, 3, "Vert");
+            WallBuilder(5 + addDown, 5 + addRight, 4, "Vert");
+            WallBuilder(8 + addDown, 6 + addRight, 1, "Vert");
+            WallBuilder(2 + addDown, 7 + addRight, 1, "Vert");
+            WallBuilder(7 + addDown, 7 + addRight, 1, "Vert");
+            WallBuilder(7 + addDown, 8 + addRight, 3, "Vert");
+            WallBuilder(1 + addDown, 9 + addRight, 2, "Vert");
+            WallBuilder(4 + addDown, 13 + addRight, 1, "Vert");
+            WallBuilder(3 + addDown, 15 + addRight, 7, "Vert");
+            WallBuilder(1 + addDown, 3 + addRight, 4, "Vert");
 
             //Horizontals of top left quadrant
 
-            Wall.WallBuilder(0 + addDown, 0 + addRight, 13, "Horz");
-            Wall.WallBuilder(1 + addDown, 5 + addRight, 2, "Horz");
-            Wall.WallBuilder(2 + addDown, 0 + addRight, 1, "Horz");
-            Wall.WallBuilder(2 + addDown, 11 + addRight, 4, "Horz");
-            Wall.WallBuilder(3 + addDown, 4 + addRight, 1, "Horz");
-            Wall.WallBuilder(4 + addDown, 9 + addRight, 3, "Horz");
-            Wall.WallBuilder(5 + addDown, 6 + addRight, 1, "Horz");
-            Wall.WallBuilder(6 + addDown, 9 + addRight, 1, "Horz");
-            Wall.WallBuilder(7 + addDown, 9 + addRight, 1, "Horz");
-            Wall.WallBuilder(7 + addDown, 12 + addRight, 2, "Horz");
-            Wall.WallBuilder(8 + addDown, 12 + addRight, 2, "Horz");
-            Wall.WallBuilder(9 + addDown, 10 + addRight, 4, "Horz");
-            Wall.WallBuilder(11 + addDown, 3 + addRight, 8, "Horz");
-            Wall.WallBuilder(0 + addDown, 0 + addRight, 1, "Horz");
-            Wall.WallBuilder(10 + addDown, 13 + addRight, 1, "Horz");
+            WallBuilder(0 + addDown, 0 + addRight, 13, "Horz");
+            WallBuilder(1 + addDown, 5 + addRight, 2, "Horz");
+            WallBuilder(2 + addDown, 0 + addRight, 1, "Horz");
+            WallBuilder(2 + addDown, 11 + addRight, 4, "Horz");
+            WallBuilder(3 + addDown, 4 + addRight, 1, "Horz");
+            WallBuilder(4 + addDown, 9 + addRight, 3, "Horz");
+            WallBuilder(5 + addDown, 6 + addRight, 1, "Horz");
+            WallBuilder(6 + addDown, 9 + addRight, 1, "Horz");
+            WallBuilder(7 + addDown, 9 + addRight, 1, "Horz");
+            WallBuilder(7 + addDown, 12 + addRight, 2, "Horz");
+            WallBuilder(8 + addDown, 12 + addRight, 2, "Horz");
+            WallBuilder(9 + addDown, 10 + addRight, 4, "Horz");
+            WallBuilder(11 + addDown, 3 + addRight, 8, "Horz");
+            WallBuilder(0 + addDown, 0 + addRight, 1, "Horz");
+            WallBuilder(10 + addDown, 13 + addRight, 1, "Horz");
         }
         public static void LevelThree()
         {
@@ -167,5 +166,5 @@ namespace Twisted_Treeline.Model
 
         }
     }
-    
+
 }

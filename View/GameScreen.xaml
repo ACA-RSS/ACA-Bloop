@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="GameScreen" Height="600" Width="800" Loaded="Window_Loaded" KeyUp="Window_KeyUp">
+        Title="GameScreen" Height="600" Width="800" Loaded="Window_Loaded" KeyUp="Window_KeyUp" KeyDown="Window_KeyDown">
     <Grid x:Name="World_Grid" HorizontalAlignment="Center">
-        <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="563,10,0,0" VerticalAlignment="Top" Width="75" Click="btnMenu_Click"/>
-        <TextBlock x:Name="txtHealth" HorizontalAlignment="Left" Margin="188,10,0,0" TextWrapping="Wrap" Text="Health Bar" VerticalAlignment="Top"/>
-        <Image x:Name="imgStars" HorizontalAlignment="Left" Margin="436,10,0,0" VerticalAlignment="Top" Width=" 80"/>
-        <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Margin="315,10,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="71,10,0,0" TextWrapping="Wrap" Text="Level 1" VerticalAlignment="Top"/>
+        <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="648,10,0,0" VerticalAlignment="Top" Width="75" Click="btnMenu_Click"/>
+        
+        <ProgressBar x:Name="prgHealth" Width="120" Height="20" Margin="177,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="imgStars" HorizontalAlignment="Left" Margin="494,10,0,0" VerticalAlignment="Top" Width=" 80"/>
+        <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Margin="364,12,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top" RenderTransformOrigin="1.781,0.562"/>
+       
+        <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="48,10,0,0" TextWrapping="Wrap" Text="Level 1" VerticalAlignment="Top"/>
         <Canvas x:Name="WorldCanvas" HorizontalAlignment="Center" Width="772" Height="525" Margin="0,35,0,10" Background="YellowGreen" >
         </Canvas>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Health" VerticalAlignment="Top" Margin="137,12,0,0"/>
     </Grid>
 </Window>

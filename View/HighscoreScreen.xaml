@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="HighscorePrompt" Height="300" Width="300" Background="DarkGreen">
     <Grid>
-        <TextBlock x:Name="Scores" HorizontalAlignment="Center" Margin="0,0,0,0" Height="250" Width="250" Background="DarkGreen" FontSize="20" Text=""/>
+        <TextBlock x:Name="Scores" HorizontalAlignment="Center" Margin="21,27,21,29" Width="250" Background="DarkSlateGray" FontSize="20" Text=""/>
 
 
 
