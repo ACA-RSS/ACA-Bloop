@@ -27,7 +27,7 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class GameScreen : Window
     {
-        static DispatcherTimer Ticky { get; set; }
+        DispatcherTimer Ticky { get; set; }
 
         public GameScreen()
         {
