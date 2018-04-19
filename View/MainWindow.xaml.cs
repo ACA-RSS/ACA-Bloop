@@ -38,28 +38,6 @@ namespace Twisted_Treeline
             GameController.Instance.Load("TTLSave.txt");
 
             GameController.Instance.InitialSetup();
-            // int howHard = 0;
-            // string diff = Convert.ToString(DifficultyLstBox.SelectionBoxItem);
-            /*if (diff == "Cheat Mode")
-            {
-                howHard = 0;
-            }
-            else if (diff == "Hard")
-            {
-                howHard = 1;
-            }
-            else if (diff == "More Hardlier")
-            {
-                howHard = 2;
-            }
-            else
-            {
-                howHard = 3;
-            }*/
-
-            // GameController.Instance.Difficulty = howHard;
-            //GameController.Instance.InitialSetup();
-            
             GameController.Instance.Update();
             GameScreen game = new GameScreen();
             game.ShowDialog();
@@ -115,12 +93,12 @@ namespace Twisted_Treeline
 
         private void btnBoy_Click(object sender, RoutedEventArgs e)
         {
-           // GameController.Instance.GenderImg = "/Scotty.gif";
+            GameController.Instance.GenderImg = "/Scotty.gif";
         }
 
         private void btnGirl_Click(object sender, RoutedEventArgs e)
         {
-          //  GameController.Instance.GenderImg = "/Sue.gif";
+            GameController.Instance.GenderImg = "/Sue.gif";
         }
     }
 }

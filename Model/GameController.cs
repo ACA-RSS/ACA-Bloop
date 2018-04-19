@@ -33,7 +33,7 @@ namespace Twisted_Treeline.Model
             Level = new World();
             Points = 0;
             Difficulty = 1;
-            Player = new Character();
+            Player = new Character(GenderImg);
             LevelNum = 1;
             CurrentSound = null;
           //  GenderImg = "/Scotty.gif";
@@ -70,7 +70,7 @@ namespace Twisted_Treeline.Model
         // to the Game Controller's WorldObj list. This is the only thing that changes from level to level
         public void SetUpLevelOne()
         {
-            Player = new Character()
+            Player = new Character(GameController.Instance.GenderImg)
             {
                 Stick = new Stick(5),
                 StartSpot = new Location { Row = 12, Column = 0 },
@@ -217,7 +217,7 @@ namespace Twisted_Treeline.Model
                 Squares = new WorldObject[24, 32]
             };
 
-            Player = new Character()
+            Player = new Character(GameController.Instance.GenderImg)
             {
                 Stick = new Stick(5),
                 StartSpot = new Location { Row = 11, Column = 1 },

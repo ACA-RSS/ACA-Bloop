@@ -12,6 +12,7 @@ namespace Twisted_Treeline.Model
 
         public Location StartSpot;
 
+        
         public Character()
         {
             HitPoints = 100;
@@ -20,11 +21,23 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Spot = new Location { Row = 12, Column = 0 };
             StartSpot = new Location { Row = 12, Column = 0 };
-            Image = "/Scotty.gif;";
+            Image = "/Sue.gif";
             Type = "Character";
             DirFacing = Direction.Up;
         }
 
+        public Character(string img)
+        {
+            HitPoints = 100;
+            Stick = new Stick(5);
+            Damage = Stick.Damage;
+            Dead = false;
+            Spot = new Location { Row = 12, Column = 0 };
+            StartSpot = new Location { Row = 12, Column = 0 };
+            Image = img;
+            Type = "Character";
+            DirFacing = Direction.Up;
+        }
         //Removes the character's damage from the animal's hitpoints
         public void doDamage(Hittable toAttack)
         {
