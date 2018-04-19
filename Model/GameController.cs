@@ -26,7 +26,7 @@ namespace Twisted_Treeline.Model
 
         public Stream CurrentSound { get; set; }
 
-        public string GenderImg { get; set; }
+        //public string GenderImg { get; set; }
 
         //Resets points, assumes difficulty 'easy', and makes the new world
         private GameController()
@@ -37,7 +37,7 @@ namespace Twisted_Treeline.Model
             Player = new Character();
             LevelNum = 1;
             CurrentSound = null;
-            GenderImg = "/Scotty.gif";
+          //  GenderImg = "/Scotty.gif";
         }
 
         //Returns true if the character is dead, or if the player has all three stars and is back at the starting
@@ -160,7 +160,7 @@ namespace Twisted_Treeline.Model
                 Wall.LevelTwo(i);
             }
 
-            Player = new Character()
+            Instance.Player = new Character()
             {
                 Stick = new Stick(5),
                 StartSpot = new Location { Row = 1, Column = 0 },
