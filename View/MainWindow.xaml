@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1100" Background="Black">
-    <Grid>
-        
+    <Grid Margin="0,0,-8,0">
+
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" Foreground="White" VerticalAlignment="Top" Grid.Column="1" Margin="0,180,0,0" Height="22" Width="120"/>
         <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="300,180,0,0" >
             <ComboBoxItem>Cheat Mode</ComboBoxItem>
@@ -16,24 +16,26 @@
             <ComboBoxItem>Downright Impossible</ComboBoxItem>
         </ComboBox>
 
-        <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="0,269,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnLoad_Click"/>
-        <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="0,207,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
+        <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="362,232,638,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnLoad_Click"/>
+        <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="695,354,265,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
         <Image x:Name="imgTitle"  Height="118" VerticalAlignment="Top" HorizontalAlignment="Center" Width="818" Source="/View/TTLine.png" Grid.Column="0" Margin="0,0,0,0"/>
-       
-        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="0,335,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHelp_Click"/>
-        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="0,407,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAbout_Click"/>
 
-        <Button x:Name="btnHighScores" Content="High Scores" HorizontalAlignment="Center" Margin="0,471,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHighScores_Click"/>
-        <Button x:Name="btnBoy" HorizontalAlignment="Left" Margin="459,567,0,0" VerticalAlignment="Top" Width="50" Click="btnBoy_Click">
+        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="362,302,638,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHelp_Click"/>
+        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="362,374,638,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAbout_Click"/>
+
+        <Button x:Name="btnHighScores" Content="High Scores" HorizontalAlignment="Center" Margin="362,438,638,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHighScores_Click"/>
+
+        <Button x:Name="btnBoy" HorizontalAlignment="Left" Margin="693,277,0,0" VerticalAlignment="Top" Width="50" Click="btnBoy_Click" Height="50">
             <StackPanel>
-                <Image Source="Scotty.gif" Width="20"/>
-            </StackPanel>
-            </Button>
-        <Button x:Name="btnGirl"  HorizontalAlignment="Left" Margin="571,567,0,0" VerticalAlignment="Top" Width="50" Click="btnGirl_Click">
-            <StackPanel>
-                <Image Source="Sue.gif" Width="20"/>
+                <Image Source="/Scotty.gif" Width="20"/>
             </StackPanel>
         </Button>
-        <TextBlock HorizontalAlignment="Center" Margin="0,520,0,0" TextWrapping="Wrap" Text="Choose Your Player" VerticalAlignment="Top" Background="LightGray" Width="110" Height="20"/>
+        <Button x:Name="btnGirl"  HorizontalAlignment="Left" Margin="785,277,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btnGirl_Click" RenderTransformOrigin="-0.28,0.5">
+            <StackPanel>
+                <Image Source="/Sue.gif" Width="20"/>
+            </StackPanel>
+        </Button>
+        <TextBlock HorizontalAlignment="Center" Margin="709,230,281,0" TextWrapping="Wrap" Text="Choose Your Player" VerticalAlignment="Top" Background="LightGray" Width="120" Height="20" TextAlignment="Center"/>
+
     </Grid>
 </Window>

@@ -26,6 +26,8 @@ namespace Twisted_Treeline.Model
 
         public Stream CurrentSound { get; set; }
 
+        public string GenderImg { get; set; }
+
         //Resets points, assumes difficulty 'easy', and makes the new world
         private GameController()
         {
@@ -35,11 +37,11 @@ namespace Twisted_Treeline.Model
             Player = new Character();
             LevelNum = 1;
             CurrentSound = null;
+            GenderImg = "/Scotty.gif";
         }
 
         //Returns true if the character is dead, or if the player has all three stars and is back at the starting
         //point of row 13, column 0. I used this to test whether to continue the game and animal movements
-
         public bool isGameOver()
         {
             if (Instance.Player.Dead)

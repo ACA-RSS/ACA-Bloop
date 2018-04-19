@@ -108,5 +108,15 @@ namespace Twisted_Treeline
             HighscoreScreen h = new HighscoreScreen();
             h.ShowDialog();
         }
+
+        private void btnBoy_Click(object sender, RoutedEventArgs e)
+        {
+            GameController.Instance.GenderImg = "/Scotty.gif";
+        }
+
+        private void btnGirl_Click(object sender, RoutedEventArgs e)
+        {
+            GameController.Instance.GenderImg = "/Sue.gif";
+        }
     }
 }
