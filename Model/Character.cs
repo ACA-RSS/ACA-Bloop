@@ -38,6 +38,7 @@ namespace Twisted_Treeline.Model
         {
             int down = 0;
             int right = 0;
+            GameController.Instance.CurrentSound = Properties.Resources.punch;
             switch (DirFacing)
             {
                 case Direction.Up:
