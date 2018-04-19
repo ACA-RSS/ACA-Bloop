@@ -9,7 +9,6 @@ using Twisted_Treeline;
 
 namespace Twisted_Treeline.Model
 {
-    public enum LevelNum { One, Two, Three };
 
     public class GameController
     {
@@ -17,7 +16,7 @@ namespace Twisted_Treeline.Model
 
         public int Difficulty { get; set; }
 
-        public LevelNum LevelNum { get; set; }
+        public int LevelNum { get; set; }
 
         public World Level { get; set; }
 
@@ -34,7 +33,7 @@ namespace Twisted_Treeline.Model
             Points = 0;
             Difficulty = 1;
             Player = new Character();
-            LevelNum = LevelNum.One;
+            LevelNum = 1;
             CurrentSound = null;
         }
 
@@ -62,7 +61,7 @@ namespace Twisted_Treeline.Model
         {
             Level = new World();
             Points = 0;
-            LevelNum = LevelNum.One;
+            LevelNum = 1;
             CurrentSound = null;
         }
 
@@ -216,14 +215,15 @@ namespace Twisted_Treeline.Model
 
         public void Save(string file)
         {
-            string saveData = "TwistedTLine";
+            string title = "TwistedTLine";
 
             //Saves the player info
 
             using (StreamWriter writer = new StreamWriter(file))
             {
 
-                writer.WriteLine(saveData);
+                writer.WriteLine(title);
+                writer.WriteLine(Instance.LevelNum);
                 writer.WriteLine(Instance.UserName);
                 writer.WriteLine(Instance.Difficulty);
                 writer.WriteLine(Instance.Points);
@@ -249,6 +249,8 @@ namespace Twisted_Treeline.Model
                 Instance.UserName = sr.ReadLine();
                 //difficulty
                 Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
+                //level number
+                Instance.LevelNum = Convert.ToInt32(sr.ReadLine());
                 //points
                 Instance.Points = Convert.ToInt32(sr.ReadLine());
                 //stars
