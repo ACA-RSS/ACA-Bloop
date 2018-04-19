@@ -34,6 +34,7 @@ namespace Twisted_Treeline.Model
             HitPoints = hp;
             Type = "Hittable";
             Dead = false;
+            Image = "/stump.png";
         }
 
         //Removes the player's Damage from the hit points. If hit points are at or below 0, it releases it's object
@@ -47,6 +48,8 @@ namespace Twisted_Treeline.Model
                 Dead = true;
                 ReleaseTheSquirrels();
                 GameController.Instance.Level.WorldObj.Remove(this);
+                Object.Spot = new Location { Row = Spot.Row, Column = Spot.Column };
+                GameController.Instance.Level.WorldObj.Add(Object);
             }
         }
 

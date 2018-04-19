@@ -6,18 +6,28 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-    public class Stick : WorldObject
+    public class Stick : Hittable
     {
         public int Damage { get; set; }
 
         public Stick(int hurt)
         {
             Damage = hurt;
+            Image = "/bigber.gif";
+            Type = "Hittable";
         }
 
         public Stick()
         {
             Damage = 1337;
+            Type = "Hittable";
+            Image = "/bigber.gif";
+        }
+
+        public override void TakeDamage(int damage)
+        {
+            GameController.Instance.Player.Stick = this;
+            GameController.Instance.Level.WorldObj.Remove(this);
         }
 
         public override WorldObject Deserialize(string statsStr)

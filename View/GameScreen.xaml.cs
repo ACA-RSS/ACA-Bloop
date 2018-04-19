@@ -27,7 +27,7 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class GameScreen : Window
     {
-        DispatcherTimer Ticky { get; set; }
+        static DispatcherTimer Ticky { get; set; }
 
         public GameScreen()
         {
@@ -44,7 +44,7 @@ namespace Twisted_Treeline
             BuildTheWall();
             Setup();
             UpdateScreen();
-
+            
             Ticky.Start();
         }
 
