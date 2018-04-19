@@ -9,7 +9,7 @@ namespace Twisted_Treeline.Model
 {
     class Boost : Hittable
     {
-        int Bonus { get; set; }
+        public int Bonus { get; set; }
         public Boost()
         {
             HitPoints = 1;
@@ -18,7 +18,6 @@ namespace Twisted_Treeline.Model
             Type = "Hittable";
             //how many health points to add to player
             Bonus = 5;
-
         }
 
         public override void TakeDamage(int damage)

@@ -5,37 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1100" Background="Black">
-    <Grid Margin="0,0,-8,0">
+        Title="MainWindow" Height="500" Width="1000" Background="Black">
+    <Grid>
 
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" Foreground="White" VerticalAlignment="Top" Grid.Column="1" Margin="0,180,0,0" Height="22" Width="120"/>
-        <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="300,180,0,0" >
+        <TextBlock HorizontalAlignment="Center" Background="Green" Foreground="Black" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" TextAlignment="Center" VerticalAlignment="Top" Margin="-160,123,0,0" Height="22" Width="120" Grid.Column="1"/>
+        <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="160,123,0,0" Grid.Column="1" >
             <ComboBoxItem>Cheat Mode</ComboBoxItem>
             <ComboBoxItem IsSelected="True">Hard</ComboBoxItem>
             <ComboBoxItem>More Hardlier</ComboBoxItem>
             <ComboBoxItem>Downright Impossible</ComboBoxItem>
         </ComboBox>
 
-        <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="362,232,638,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnLoad_Click"/>
-        <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="695,354,265,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
-        <Image x:Name="imgTitle"  Height="118" VerticalAlignment="Top" HorizontalAlignment="Center" Width="818" Source="/View/TTLine.png" Grid.Column="0" Margin="0,0,0,0"/>
+        <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="0,384,160,0" VerticalAlignment="Top" Width="120" Height="30" Click="btnLoad_Click" Grid.Column="1"/>
+        <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="0,304,0,0" VerticalAlignment="Top" Width="276" Height="58" Click="btnNewGame_Click" FontSize="30" Grid.Column="1"/>
+        <Image x:Name="imgTitle"  Height="118" VerticalAlignment="Top" HorizontalAlignment="Center" Width="818" Source="/View/TTLine.png" Grid.Column="1" Margin="77.5,0,141,0"/>
 
-        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="362,302,638,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHelp_Click"/>
-        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="362,374,638,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAbout_Click"/>
+        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Width="68" Height="30" Click="btnHelp_Click" Grid.Column="1"/>
+        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="0,254,0,0" VerticalAlignment="Top" Width="68" Height="30" Click="btnAbout_Click" Grid.Column="1"/>
 
-        <Button x:Name="btnHighScores" Content="High Scores" HorizontalAlignment="Center" Margin="362,438,638,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHighScores_Click"/>
+        <Button x:Name="btnHighScores" Content="High Scores" HorizontalAlignment="Center" Margin="150,384,0,0" VerticalAlignment="Top" Width="122" Height="30" Click="btnHighScores_Click" Grid.Column="1"/>
 
-        <Button x:Name="btnBoy" HorizontalAlignment="Left" Margin="693,277,0,0" VerticalAlignment="Top" Width="50" Click="btnBoy_Click" Height="50">
+        <Button x:Name="btnBoy" HorizontalAlignment="Center" Margin="0,209,200,0" VerticalAlignment="Top" Width="76" Click="btnBoy_Click" Height="75" Grid.Column="1">
             <StackPanel>
                 <Image Source="/Scotty.gif" Width="20"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnGirl"  HorizontalAlignment="Left" Margin="785,277,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btnGirl_Click" RenderTransformOrigin="-0.28,0.5">
+        <Button x:Name="btnGirl"  HorizontalAlignment="Center" Margin="200,209,0,0" VerticalAlignment="Top" Width="76" Height="75" Click="btnGirl_Click" RenderTransformOrigin="-0.28,0.5" Grid.Column="1">
             <StackPanel>
-                <Image Source="/Sue.gif" Width="20"/>
+                <Image Source="/Sue-Left.gif" Width="20"/>
             </StackPanel>
         </Button>
-        <TextBlock HorizontalAlignment="Center" Margin="709,230,281,0" TextWrapping="Wrap" Text="Choose Your Player" VerticalAlignment="Top" Background="LightGray" Width="120" Height="20" TextAlignment="Center"/>
+        <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="0,162,0,0" TextWrapping="Wrap" Text="Choose Your Player" VerticalAlignment="Top" Background="Green" Width="280" Height="28" TextAlignment="Center" Grid.Column="1"/>
 
     </Grid>
 </Window>

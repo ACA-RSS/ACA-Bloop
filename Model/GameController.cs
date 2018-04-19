@@ -199,9 +199,9 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(snippy);
             Instance.Level.WorldObj.Add(snappy);
 
-            Stump s = new Stump() { Spot = new Location { Row = 6, Column = 19 } };
-            Stump hiddenOne = new Stump() { Spot = new Location { Row = 4, Column = 23 } };
-            Stump hiddenTwo = new Stump() { Spot = new Location { Row = 11, Column = 29 } };
+            Stump s = new Stump(new Stick() { HitPoints = 10, Damage = 20 }, 15) { Spot = new Location { Row = 6, Column = 19 } };
+            Stump hiddenOne = new Stump(new Boost(), 15) { Spot = new Location { Row = 4, Column = 23 } };
+            Stump hiddenTwo = new Stump(new Boost() { Bonus = 10 }, 20) { Spot = new Location { Row = 11, Column = 29 } };
 
             Instance.Level.WorldObj.Add(s);
             Instance.Level.WorldObj.Add(hiddenOne);
