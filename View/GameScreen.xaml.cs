@@ -227,6 +227,16 @@ namespace Twisted_Treeline
         //Controls the user movements and attack
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
+            
+            if (e.Key == Key.Space)
+            {
+                GameController.Instance.Player.Attack();
+            }
+
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
             if (e.Key == Key.W)
             {
                 GameController.Instance.Player.PlayerMove("Up");
@@ -243,11 +253,6 @@ namespace Twisted_Treeline
             {
                 GameController.Instance.Player.PlayerMove("Right");
             }
-            else if (e.Key == Key.Space)
-            {
-                GameController.Instance.Player.Attack();
-            }
-
         }
 
         //Pauses the timer and opens the menu
