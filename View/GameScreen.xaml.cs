@@ -114,7 +114,7 @@ namespace Twisted_Treeline
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
-                        Width = 20
+                        Width = WorldCanvas.Width / GameController.Instance.Level.Width,
                     };
 
                     WorldCanvas.Children.Add(i);
