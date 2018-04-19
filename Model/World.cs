@@ -18,8 +18,8 @@ namespace Twisted_Treeline.Model
 
         public World()
         {
-            Height = 14;
-            Width = 21;
+            Height = 24;
+            Width = 32;
             Stars = 0;
 
             Squares = new WorldObject[ Height, Width];
