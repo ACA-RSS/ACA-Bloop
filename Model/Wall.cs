@@ -39,7 +39,25 @@ namespace Twisted_Treeline.Model
                     GameController.Instance.Level.WorldObj.Add(wally);
                 }
             }
-            
+            else if (dir == "DiagDown")
+            {
+                for(int i = 0; i < numSpaces +1; i++)
+                {
+                    Wall wally = new Wall() { Spot = new Location() { Row = startRow + i, Column = startCol + i } };
+                    GameController.Instance.Level.WorldObj.Add(wally);
+
+                }
+            }
+            else if (dir == "DiagUp")
+            {
+                for (int i = numSpaces + 1 ; i > 0 ; i--)
+                {
+                    Wall wally = new Wall() { Spot = new Location() { Row = startRow - i, Column = startCol + i } };
+                    GameController.Instance.Level.WorldObj.Add(wally);
+
+                }
+            }
+
         }
 
         public override WorldObject Deserialize(string statsStr)
@@ -114,6 +132,39 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(11 + addDown, 3 + addRight, 8, "Horz");
             Wall.WallBuilder(0 + addDown, 0 + addRight, 1, "Horz");
             Wall.WallBuilder(10 + addDown, 13 + addRight, 1, "Horz");
+        }
+        public static void LevelThree()
+        {
+            //Edges of the map
+            //entire top edge
+            Wall.WallBuilder(0, 0, 31, "Horz");
+            //rest of left side
+            Wall.WallBuilder(1, 0, 22, "Vert");
+            //entire bottom edge
+            Wall.WallBuilder(23, 1, 29, "Horz");
+            //rest of right side
+            Wall.WallBuilder(1, 31, 22, "Vert");
+            //Top walls
+            Wall.WallBuilder(1, 6, 2, "Vert");
+            Wall.WallBuilder(4, 7, 5, "DiagDown");
+            Wall.WallBuilder(9, 13, 1, "Horz");
+            Wall.WallBuilder(9, 16, 2, "Horz");
+            Wall.WallBuilder(9, 18, 5, "DiagUp");
+            Wall.WallBuilder(1, 24, 2, "Vert");
+            //Bottom walls
+            Wall.WallBuilder(20, 6, 2, "Vert");
+            Wall.WallBuilder(20, 6, 5, "DiagUp");
+            Wall.WallBuilder(14, 13, 1, "Horz");
+            Wall.WallBuilder(14, 16, 1, "Horz");
+            Wall.WallBuilder(14, 18, 5, "DiagDown");
+            Wall.WallBuilder(20, 24, 2, "Vert");
+            //Right Side walls
+            Wall.WallBuilder(9, 27, 5, "Vert");
+            Wall.WallBuilder(14, 28, 2, "Horz");
+            Wall.WallBuilder(9, 29, 3, "Vert");
+            Wall.WallBuilder(9, 30, 0, "Horz");
+
+
         }
     }
     
