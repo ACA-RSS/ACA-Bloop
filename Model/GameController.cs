@@ -146,8 +146,27 @@ namespace Twisted_Treeline.Model
 
         public void SetUpLevelTwo()
         {
-            Instance.Level.Height = 24;
-            Instance.Level.Width = 32;
+
+            Instance.Level = new World()
+            {
+                Height = 24,
+                Width = 32,
+                Squares = new WorldObject[24, 32]
+            };
+
+            for (int i = 1; i < 5; i++)
+            {
+                Wall.LevelTwo(i);
+            }
+
+            Player = new Character()
+            {
+                Stick = new Stick(5),
+                StartSpot = new Location { Row = 1, Column = 0 },
+                Spot = new Location { Row = 1, Column = 0 }
+            };
+
+            Instance.Level.WorldObj.Add(Player);
 
         }
 
