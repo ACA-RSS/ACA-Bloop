@@ -22,8 +22,9 @@ namespace Twisted_Treeline.View
     {
         public HighscoreScreen()
         {
-            InitializeComponent();
             LoadHighScores();
+            InitializeComponent();
+
             
         }
         public void LoadHighScores()
