@@ -210,8 +210,34 @@ namespace Twisted_Treeline.Model
 
         public void SetUpLevelThree()
         {
-            Instance.Level.Height = 34;
-            Instance.Level.Width = 41;
+            Instance.Level = new World()
+            {
+                Height = 24,
+                Width = 32,
+                Squares = new WorldObject[24, 32]
+            };
+
+            Player = new Character()
+            {
+                Stick = new Stick(5),
+                StartSpot = new Location { Row = 11, Column = 1 },
+                Spot = new Location { Row = 1, Column = 0 }
+            };
+            Instance.Level.WorldObj.Add(Player);
+
+            //Walls setup
+            Wall.LevelThree();
+            //boost setup
+            Boost b1 = new Boost() { Spot = new Location { Row = 2, Column = 7 } };
+            Boost b2 = new Boost() { Spot = new Location { Row = 21, Column = 7 } };
+            Boost b3 = new Boost() { Spot = new Location { Row = 8, Column = 30 } };
+            Instance.Level.WorldObj.Add(b1);
+            Instance.Level.WorldObj.Add(b2);
+            Instance.Level.WorldObj.Add(b3);
+
+
+
+
         }
 
         public void Save(string file)
