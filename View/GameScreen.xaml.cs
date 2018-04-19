@@ -44,7 +44,7 @@ namespace Twisted_Treeline
             BuildTheWall();
             Setup();
             UpdateScreen();
-            
+
             Ticky.Start();
         }
 
@@ -96,7 +96,7 @@ namespace Twisted_Treeline
                 {
                     Ticky.Stop();
                     HighscorePrompt hs = new HighscorePrompt();
-                    hs.ScoreTitle.Text = "YOU HAVE FAILED";
+                    hs.ScoreTitle.Text = "YOU FAILED";
                     hs.ShowDialog();
                 }
             }
@@ -227,7 +227,7 @@ namespace Twisted_Treeline
         //Controls the user movements and attack
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            
+
             if (e.Key == Key.Space)
             {
                 GameController.Instance.Player.Attack();
@@ -258,7 +258,7 @@ namespace Twisted_Treeline
         //Pauses the timer and opens the menu
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
-            Ticky.Stop();
+            //Ticky.Stop();
             Menu menu = new Menu();
             menu.ShowDialog();
         }

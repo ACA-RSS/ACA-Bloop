@@ -24,8 +24,6 @@ namespace Twisted_Treeline.View
         {
             LoadHighScores();
             InitializeComponent();
-
-            
         }
         public void LoadHighScores()
         {

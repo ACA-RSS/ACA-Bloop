@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline.View"
         mc:Ignorable="d"
-        Title="HighscorePrompt" Height="300" Width="300" Background="DarkGreen">
+        Title="HighscorePrompt" Height="300" Width="300" Background="DarkSlateGray">
     <Grid>
-        <TextBlock x:Name="ScoreTitle" TextAlignment="Center" HorizontalAlignment="Center" Margin="33,15,32,224" Height="30" Width="227" Text="YOU WON" Foreground="Yellow" FontStyle="Oblique" FontSize="20"/>
-        <TextBlock x:Name="Score" HorizontalAlignment="Center" Margin="96,50,76,189" Height="30" Width="120" Text="" TextAlignment="Center" Foreground="Yellow" FontSize="15" />
-        <TextBox x:Name="Name" Text="Your name here" HorizontalAlignment="Center" Margin="96,97,96,142" Height="30" Width="100" />
-        <Button x:Name="Submit" Click="Submit_Click" Content="Submit" Height="30" Width="100" HorizontalAlignment="Center" Margin="96,158,96,81"/>
+        <TextBlock x:Name="ScoreTitle" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,15,0,0" Height="40" Width="227" Text="YOU WON" Foreground="Goldenrod" FontWeight="Bold" FontSize="30"/>
+        <TextBlock x:Name="Score" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" Height="30" Width="120" Text="" TextAlignment="Center" Foreground="Goldenrod" FontSize="15" />
+        <TextBox x:Name="Name" Text="Your name here" HorizontalAlignment="Center" Margin="0,40,0,0" Height="30" Width="100" />
+        <Button x:Name="Submit" Click="Submit_Click" Content="Submit" Height="30" Width="100" HorizontalAlignment="Center" Margin="0,150,0,0"/>
     </Grid>
 </Window>
