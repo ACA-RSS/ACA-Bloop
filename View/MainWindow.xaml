@@ -19,7 +19,7 @@
         <Button x:Name="btnLoad" Content="Load Old Game" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnLoad_Click"/>
         <Button x:Name="btnNewGame" Content="Start New Game" HorizontalAlignment="Center" Margin="0,262,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnNewGame_Click"/>
         <Image x:Name="imgTitle"  Height="118" VerticalAlignment="Top" HorizontalAlignment="Center" Width="818" Source="/View/TTLine.png" Grid.Column="0" Margin="0,0,0,0"/>
-        
+       
         <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" Margin="0,404,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnHelp_Click"/>
         <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" Margin="0,470,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAbout_Click"/>
         
