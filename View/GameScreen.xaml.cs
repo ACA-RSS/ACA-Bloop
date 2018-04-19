@@ -59,32 +59,45 @@ namespace Twisted_Treeline
             }
             else
             {
-                GameController.Instance.Points += 500 + (GameController.Instance.Difficulty * GameController.Instance.Player.HitPoints);
-                switch (GameController.Instance.LevelNum)
+                if (!GameController.Instance.Player.Dead)
                 {
-                    case LevelNum.One:
-                        GameController.Instance.Level = new World();
-                        GameController.Instance.SetUpLevelTwo();
-                        GameController.Instance.InitialSetup();
-                        GameController.Instance.LevelNum = LevelNum.Two;
-                        UpdateScreen();
-                        GameController.Instance.Update();
-                        break;
+                    GameController.Instance.Points += 500 + (GameController.Instance.Difficulty * GameController.Instance.Player.HitPoints);
+                    switch (GameController.Instance.LevelNum)
+                    {
+                        case LevelNum.One:
+                            GameController.Instance.Level = new World();
+                            GameController.Instance.SetUpLevelTwo();
+                            GameController.Instance.InitialSetup();
+                            GameController.Instance.LevelNum = LevelNum.Two;
+                            txtLevel.Text = "Level Two";
+                            UpdateScreen();
+                            GameController.Instance.Update();
+                            break;
 
-                    case LevelNum.Two:
-                        GameController.Instance.Level = new World();
-                        GameController.Instance.SetUpLevelThree();
-                        GameController.Instance.InitialSetup();
-                        GameController.Instance.LevelNum = LevelNum.Three;
-                        UpdateScreen();
-                        GameController.Instance.Update();
-                        break;
+                        case LevelNum.Two:
+                            GameController.Instance.Level = new World();
+                            GameController.Instance.SetUpLevelThree();
+                            GameController.Instance.InitialSetup();
+                            GameController.Instance.LevelNum = LevelNum.Three;
+                            txtLevel.Text = "Level Three";
+                            UpdateScreen();
+                            GameController.Instance.Update();
+                            break;
 
-                    case LevelNum.Three:
-                        Ticky.Stop();
-                        HighscorePrompt hs = new HighscorePrompt();
-                        hs.ShowDialog();
-                        break;
+                        case LevelNum.Three:
+                            Ticky.Stop();
+                            HighscorePrompt hs = new HighscorePrompt();
+                            hs.ScoreTitle.Text = "YOU WON";
+                            hs.ShowDialog();
+                            break;
+                    }
+                }
+                else
+                {
+                    Ticky.Stop();
+                    HighscorePrompt hs = new HighscorePrompt();
+                    hs.ScoreTitle.Text = "YOU HAVE FAILED";
+                    hs.ShowDialog();
                 }
             }
         }
@@ -103,7 +116,7 @@ namespace Twisted_Treeline
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
-                        Width = 20
+                        Width = WorldCanvas.Width / GameController.Instance.Level.Width,
                     };
 
                     WorldCanvas.Children.Add(i);
@@ -153,7 +166,7 @@ namespace Twisted_Treeline
             }
 
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
-            txtHealth.Text = String.Format("Health Percent: {0}", Convert.ToString(GameController.Instance.Player.HitPoints));
+            prgHealth.Value = GameController.Instance.Player.HitPoints;
             imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
 
             List<WorldObject> accounted = new List<WorldObject>();
