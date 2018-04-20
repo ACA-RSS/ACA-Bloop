@@ -12,12 +12,13 @@ namespace Twisted_Treeline.Model
         public Bear()
         {
             HitPoints = 25 * GameController.Instance.Difficulty;
-            AttackSpeed = 120 * GameController.Instance.Difficulty * 0.5;
-            Damage = 2 * GameController.Instance.Difficulty;
+            AttackSpeed = 140 * GameController.Instance.Difficulty * 0.5;
+            Damage = 4 * GameController.Instance.Difficulty;
             Dead = false;
             Speed = 0;
             MoveTime = 0;
-            Image = "/bigber.gif";
+            Image = "/bigber.png";
+            AttackImage = "/bigber.gif";
             AttackTime = 0;
             Type = "Hittable";
             PointValue = 50;
@@ -27,7 +28,9 @@ namespace Twisted_Treeline.Model
         //Bears don't move
         public override Location Move()
         {
+            Image = "/bigber.png";
             return Spot;
+
         }
 
         public override WorldObject Deserialize(string statsStr)

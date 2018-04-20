@@ -19,6 +19,7 @@ namespace Twisted_Treeline.Model
             Dead = false;
             MoveTime = 0;
             Image = "/Wolf.gif";
+            AttackImage = "/Wolf.gif";
             AttackTime = 0;
             EyeContact = false;
             Type = "Hittable";

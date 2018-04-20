@@ -19,6 +19,7 @@ using System.Media;
 using Twisted_Treeline;
 using System.Reflection;
 using System.IO;
+using WpfAnimatedGif;
 
 namespace Twisted_Treeline
 {
@@ -27,7 +28,8 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class GameScreen : Window
     {
-        DispatcherTimer Ticky { get; set; }
+        public static DispatcherTimer Ticky;
+        private readonly ImageSource img;
 
         public GameScreen()
         {
@@ -85,6 +87,16 @@ namespace Twisted_Treeline
                             break;
 
                         case 3:
+                            GameController.Instance.Level.Stars = 0;
+                            GameController.Instance.Player.HitPoints = 100;
+                            GameController.Instance.Armageddon();
+                            GameController.Instance.LevelNum = 4;
+                            txtLevel.Text = "ARMAGEDDON";
+                            WorldCanvas.Background = new SolidColorBrush(Colors.Red);
+                            UpdateScreen();
+                            break;
+
+                        case 4:
                             Ticky.Stop();
                             HighscorePrompt hs = new HighscorePrompt();
                             hs.ScoreTitle.Text = "YOU WON";
@@ -101,6 +113,7 @@ namespace Twisted_Treeline
                 }
             }
         }
+
 
         //Sets up all wall objects; only called at beginning of level setup
         private void BuildTheWall()
@@ -131,17 +144,18 @@ namespace Twisted_Treeline
             {
                 if (obj.Type != "Wall")
                 {
-                    Image i = new Image()
+                    var source = new BitmapImage(new Uri(obj.Image, UriKind.Relative));
+                    var img = new Image()
                     {
                         Tag = obj,
-                        Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
+                    ImageBehavior.SetAnimatedSource(img, source);
 
-                    WorldCanvas.Children.Add(i);
+                    WorldCanvas.Children.Add(img);
                 }
             }
         }
@@ -183,14 +197,13 @@ namespace Twisted_Treeline
                     if (o.Type != "Wall")
                     {
                         i.Margin = new Thickness(o.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), o.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0);
-                        i.Source = new BitmapImage(new Uri(o.Image, UriKind.Relative));
+                        ImageBehavior.SetAnimatedSource(i, new BitmapImage(new Uri(o.Image, UriKind.Relative)));
                     }
                 }
                 else
                 {
                     toDestroy.Add(i);
                 }
-
             }
 
             foreach (Image i in toDestroy)
@@ -206,21 +219,22 @@ namespace Twisted_Treeline
                 }
                 else
                 {
-                    Image img = new Image()
+                    var img = new Image()
                     {
                         Tag = obj,
-                        Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
 
+                    //https://stackoverflow.com/questions/210922/how-do-i-get-an-animated-gif-to-work-in-wpf
+                    ImageBehavior.SetAnimatedSource(img, new BitmapImage(new Uri(obj.Image, UriKind.Relative)));
+
                     WorldCanvas.Children.Add(img);
                 }
             }
-
-            /**/
+            
             GameController.Instance.CurrentSound = null;
         }
 
@@ -258,9 +272,11 @@ namespace Twisted_Treeline
         //Pauses the timer and opens the menu
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
-            //Ticky.Stop();
+            Ticky.Stop();
             Menu menu = new Menu();
             menu.ShowDialog();
+            btnMenu.Focusable = false;
+
         }
 
     }
