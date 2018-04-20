@@ -85,6 +85,13 @@ namespace Twisted_Treeline
                             break;
 
                         case 3:
+                            GameController.Instance.Armageddon();
+                            GameController.Instance.LevelNum = 4;
+                            txtLevel.Text = "ARMAGEDDON";
+                            UpdateScreen();
+                            break;
+
+                        case 4:
                             Ticky.Stop();
                             HighscorePrompt hs = new HighscorePrompt();
                             hs.ScoreTitle.Text = "YOU WON";

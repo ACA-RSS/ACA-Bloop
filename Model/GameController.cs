@@ -12,7 +12,6 @@ namespace Twisted_Treeline.Model
 
     public class GameController
     {
-
         public int Difficulty { get; set; }
 
         public int LevelNum { get; set; }
@@ -36,7 +35,7 @@ namespace Twisted_Treeline.Model
             Player = new Character(GenderImg);
             LevelNum = 1;
             CurrentSound = null;
-          //  GenderImg = "/Scotty.gif";
+            //  GenderImg = "/Scotty.gif";
         }
 
         //Returns true if the character is dead, or if the player has all three stars and is back at the starting
@@ -51,10 +50,27 @@ namespace Twisted_Treeline.Model
             {
                 return true;
             }
+            else if (Instance.Level.Stars == 3 && Instance.LevelNum == 3)
+            {
+                return true;
+            }
             else
             {
                 return false;
             }
+        }
+
+        public void Armageddon()
+        {
+            Bear famine = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column + 1 }, Damage = 5 * Instance.Difficulty };
+            Bear plague = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column - 1}, Damage = 5 * Instance.Difficulty };
+            Bear war = new Bear() { Spot = new Location { Row = Player.Spot.Row - 1, Column = Player.Spot.Column }, Damage = 5 * Instance.Difficulty };
+            Bear death = new Bear() { Spot = new Location { Row = Player.Spot.Row + 1, Column = Player.Spot.Column }, Damage = 5 * Instance.Difficulty };
+
+            Instance.Level.WorldObj.Add(famine);
+            Instance.Level.WorldObj.Add(plague);
+            Instance.Level.WorldObj.Add(war);
+            Instance.Level.WorldObj.Add(death);
         }
 
         //Clears the Level and points, mostly for startng a new level or testing
@@ -280,7 +296,7 @@ namespace Twisted_Treeline.Model
                 }
                 Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
                 //difficulty
-                
+
                 //level number
                 Instance.LevelNum = Convert.ToInt32(sr.ReadLine());
                 //points
