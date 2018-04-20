@@ -73,75 +73,85 @@ namespace Twisted_Treeline.Model
             Player = new Character(GameController.Instance.GenderImg)
             {
                 Stick = new Stick(5),
-                StartSpot = new Location { Row = 12, Column = 0 },
-                Spot = new Location { Row = Player.StartSpot.Row, Column = Player.StartSpot.Column }
+                StartSpot = new Location { Row = 13, Column = 1 },
+                Spot = new Location { Row = 13, Column = 1 }
             };
 
             Instance.Level.WorldObj.Add(Player);
 
             //TEMPORARY FOR BOOST TEST//
-            Boost b = new Boost() { Spot = new Location { Row = 11, Column = 0 } };
+            Boost b = new Boost() { Spot = new Location { Row = 12, Column = 1 } };
             Instance.Level.WorldObj.Add(b);
 
-            Bear fuzzy = new Bear() { Spot = new Location { Row = 4, Column = 5 } };
-            Bear wuzzy = new Bear() { Spot = new Location { Row = 7, Column = 15 } };
-            Bear buzzy = new Bear() { Spot = new Location { Row = 10, Column = 3 } };
+            Bear fuzzy = new Bear() { Spot = new Location { Row = 5, Column = 6 } };
+            Bear wuzzy = new Bear() { Spot = new Location { Row = 8, Column = 16 } };
+            Bear buzzy = new Bear() { Spot = new Location { Row = 11, Column = 4 } };
 
             Instance.Level.WorldObj.Add(fuzzy);
             Instance.Level.WorldObj.Add(wuzzy);
             Instance.Level.WorldObj.Add(buzzy);
 
-            Star glitter = new Star() { Spot = new Location { Row = 4, Column = 4 } };
-            Star gleam = new Star() { Spot = new Location { Row = 12, Column = 4 } };
-            Star glow = new Star() { Spot = new Location { Row = 9, Column = 16 } };
+            Star glitter = new Star() { Spot = new Location { Row = 5, Column = 5 } };
+            Star gleam = new Star() { Spot = new Location { Row = 13, Column = 5 } };
+            Star glow = new Star() { Spot = new Location { Row = 10, Column = 17 } };
 
 
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
             Instance.Level.WorldObj.Add(glow);
 
-            Wolf wolfy = new Wolf() { Spot = new Location { Row = 8, Column = 10 } };
-            Wolf bitey = new Wolf() { Spot = new Location { Row = 11, Column = 16 } };
-            Wolf growly = new Wolf() { Spot = new Location { Row = 13, Column = 6 } };
+            Wolf wolfy = new Wolf() { Spot = new Location { Row = 9, Column = 11 } };
+            Wolf bitey = new Wolf() { Spot = new Location { Row = 12, Column = 17 } };
+            Wolf growly = new Wolf() { Spot = new Location { Row = 14, Column = 7 } };
 
             Instance.Level.WorldObj.Add(wolfy);
             Instance.Level.WorldObj.Add(bitey);
             Instance.Level.WorldObj.Add(growly);
 
+
+            //Edges
+            Wall.WallBuilder(0, 0, 30, "Horz");
+            Wall.WallBuilder(1, 0, 22, "Vert");
+            Wall.WallBuilder(23, 1, 30, "Horz");
+            Wall.WallBuilder(0, 31, 22, "Vert");
+
+            Wall.WallBuilder(14, 1, 20, "Horz");
+            Wall.WallBuilder(1, 22, 13, "Vert");
+
             //Swirl in top left
-            Wall.WallBuilder(3, 3, 2, "Horz");
-            Wall.WallBuilder(4, 3, 1, "Vert");
-            Wall.WallBuilder(5, 4, 3, "Horz");
-            Wall.WallBuilder(1, 7, 3, "Vert");
-            Wall.WallBuilder(1, 1, 5, "Horz");
-            Wall.WallBuilder(2, 1, 5, "Vert");
-            Wall.WallBuilder(7, 2, 7, "Horz");
-            Wall.WallBuilder(0, 9, 7, "Vert");
+            Wall.WallBuilder(4, 4, 2, "Horz");
+            Wall.WallBuilder(5, 4, 1, "Vert");
+            Wall.WallBuilder(6, 5, 3, "Horz");
+            Wall.WallBuilder(2, 8, 3, "Vert");
+            Wall.WallBuilder(2, 2, 5, "Horz");
+            Wall.WallBuilder(3, 2, 5, "Vert");
+            Wall.WallBuilder(8, 3, 7, "Horz");
+            Wall.WallBuilder(1, 10, 7, "Vert");
 
             //Right Side
 
-            Wall.WallBuilder(1, 11, 8, "Horz");
-            Wall.WallBuilder(2, 11, 10, "Vert");
-            Wall.WallBuilder(10, 13, 2, "Vert");
-            Wall.WallBuilder(12, 14, 5, "Horz");
-            Wall.WallBuilder(3, 19, 8, "Vert");
-            Wall.WallBuilder(3, 13, 5, "Horz");
-            Wall.WallBuilder(4, 13, 4, "Vert");
-            Wall.WallBuilder(8, 14, 1, "Horz");
-            Wall.WallBuilder(9, 15, 1, "Vert");
-            Wall.WallBuilder(10, 16, 1, "Horz");
-            Wall.WallBuilder(5, 17, 4, "Vert");
-            Wall.WallBuilder(5, 15, 2, "Horz");
-            Wall.WallBuilder(6, 15, 0, "Vert");
+            Wall.WallBuilder(2, 12, 8, "Horz");
+            Wall.WallBuilder(3, 12, 10, "Vert");
+            Wall.WallBuilder(11, 14, 2, "Vert");
+            Wall.WallBuilder(13, 15, 5, "Horz");
+            Wall.WallBuilder(4, 20, 8, "Vert");
+            Wall.WallBuilder(4, 14, 5, "Horz");
+            Wall.WallBuilder(5, 14, 4, "Vert");
+            Wall.WallBuilder(9, 15, 1, "Horz");
+            Wall.WallBuilder(10, 16, 1, "Vert");
+            Wall.WallBuilder(11, 17, 1, "Horz");
+            Wall.WallBuilder(6, 18, 4, "Vert");
+            Wall.WallBuilder(6, 16, 2, "Horz");
+            Wall.WallBuilder(7, 16, 0, "Vert");
 
             //Bottom Left
-            Wall.WallBuilder(11, 9, 2, "Vert");
-            Wall.WallBuilder(10, 7, 2, "Vert");
-            Wall.WallBuilder(9, 1, 4, "Vert");
-            Wall.WallBuilder(9, 2, 8, "Horz");
-            Wall.WallBuilder(11, 5, 2, "Vert");
-            Wall.WallBuilder(11, 3, 1, "Horz");
-            Wall.WallBuilder(12, 3, 0, "Vert");
+            Wall.WallBuilder(12, 10, 2, "Vert");
+            Wall.WallBuilder(11, 8, 2, "Vert");
+            Wall.WallBuilder(10, 2, 4, "Vert");
+            Wall.WallBuilder(10, 3, 8, "Horz");
+            Wall.WallBuilder(12, 6, 2, "Vert");
+            Wall.WallBuilder(12, 4, 1, "Horz");
+            Wall.WallBuilder(13, 4, 0, "Vert");
         }
 
         public void SetUpLevelTwo()
