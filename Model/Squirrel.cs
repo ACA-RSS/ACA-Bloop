@@ -20,6 +20,7 @@ namespace Twisted_Treeline.Model
             MoveTime = 0;
             Type = "Hittable";
             Image = "/squirrel.gif";
+            AttackImage = "/squirrel.gif";
             PointValue = 5;
            // Sound = Properties.Resources.SquirrelSound;
         }

@@ -18,6 +18,8 @@ namespace Twisted_Treeline.Model
         //holds the name of the sound file to be played on animal attack
         public Stream Sound { get; set; }
 
+        public string AttackImage { get; set; }
+
 
         //This is an odd one. Every animal has an attack speed, which is how many timer ticks between
         //Each attack while the player is in an adjacent square. Its timer (Attack Time) starts at 0
@@ -32,6 +34,8 @@ namespace Twisted_Treeline.Model
             {
                 AttackTime = 0;
 
+                Image = AttackImage;
+                Console.WriteLine(AttackImage);
                 //add animal attack sound here
                 GameController.Instance.CurrentSound = Sound;
                 // end sound stuff

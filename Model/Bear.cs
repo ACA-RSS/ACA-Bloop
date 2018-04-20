@@ -17,7 +17,8 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Speed = 0;
             MoveTime = 0;
-            Image = "/bigber.gif";
+            Image = "/bigber.png";
+            AttackImage = "/bigber.gif";
             AttackTime = 0;
             Type = "Hittable";
             PointValue = 50;
@@ -27,7 +28,9 @@ namespace Twisted_Treeline.Model
         //Bears don't move
         public override Location Move()
         {
+            Image = "/bigber.png";
             return Spot;
+
         }
 
         public override WorldObject Deserialize(string statsStr)
