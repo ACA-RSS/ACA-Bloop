@@ -79,10 +79,6 @@ namespace Twisted_Treeline.Model
 
             Instance.Level.WorldObj.Add(Player);
 
-            //TEMPORARY FOR BOOST TEST//
-            Boost b = new Boost() { Spot = new Location { Row = 12, Column = 1 } };
-            Instance.Level.WorldObj.Add(b);
-
             Bear fuzzy = new Bear() { Spot = new Location { Row = 5, Column = 6 } };
             Bear wuzzy = new Bear() { Spot = new Location { Row = 8, Column = 16 } };
             Bear buzzy = new Bear() { Spot = new Location { Row = 11, Column = 4 } };
@@ -109,11 +105,9 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(growly);
 
 
-            //Edges
-            Wall.WallBuilder(0, 0, 30, "Horz");
-            Wall.WallBuilder(1, 0, 22, "Vert");
-            Wall.WallBuilder(23, 1, 30, "Horz");
-            Wall.WallBuilder(0, 31, 22, "Vert");
+            Wall.BuildEdges();
+
+            //Edges of smaller map
 
             Wall.WallBuilder(14, 1, 20, "Horz");
             Wall.WallBuilder(1, 22, 13, "Vert");
@@ -164,6 +158,8 @@ namespace Twisted_Treeline.Model
                 Squares = new WorldObject[24, 32]
             };
 
+            Wall.BuildEdges();
+
             for (int i = 1; i < 5; i++)
             {
                 Wall.LevelTwo(i);
@@ -190,7 +186,7 @@ namespace Twisted_Treeline.Model
 
             Star glitter = new Star() { Spot = new Location { Row = 13, Column = 1 } };
             Star gleam = new Star() { Spot = new Location { Row = 3, Column = 26 } };
-            Star glow = new Star() { Spot = new Location { Row = 23, Column = 28 } };
+            Star glow = new Star() { Spot = new Location { Row = 22, Column = 28 } };
 
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
@@ -198,7 +194,7 @@ namespace Twisted_Treeline.Model
 
             Wolf wolfy = new Wolf() { Spot = new Location { Row = 4, Column = 8 } };
             Wolf bitey = new Wolf() { Spot = new Location { Row = 13, Column = 10 } };
-            Wolf growly = new Wolf() { Spot = new Location { Row = 23, Column = 12 } };
+            Wolf growly = new Wolf() { Spot = new Location { Row = 22, Column = 12 } };
             Wolf snippy = new Wolf() { Spot = new Location { Row = 13, Column = 18 } };
             Wolf snappy = new Wolf() { Spot = new Location { Row = 13, Column = 26 } };
 
@@ -209,8 +205,8 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(snappy);
 
             Stump s = new Stump(new Stick() { HitPoints = 10, Damage = 20 }, 15) { Spot = new Location { Row = 6, Column = 19 } };
-            Stump hiddenOne = new Stump(new Boost(), 15) { Spot = new Location { Row = 4, Column = 23 } };
-            Stump hiddenTwo = new Stump(new Boost() { Bonus = 10 }, 20) { Spot = new Location { Row = 11, Column = 29 } };
+            Stump hiddenOne = new Stump(new Boost(), 15) { Spot = new Location { Row = 4, Column = 23 }, Image = "/Tree_Dark.png" };
+            Stump hiddenTwo = new Stump(new Boost() { Bonus = 10 }, 20) { Spot = new Location { Row = 11, Column = 29 }, Image = "/Tree_Dark.png" };
 
             Instance.Level.WorldObj.Add(s);
             Instance.Level.WorldObj.Add(hiddenOne);

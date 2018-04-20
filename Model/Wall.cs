@@ -59,6 +59,15 @@ namespace Twisted_Treeline.Model
             }
         }
 
+        public static void BuildEdges()
+        {
+            Wall.WallBuilder(0, 0, 30, "Horz");
+            Wall.WallBuilder(1, 0, 22, "Vert");
+            Wall.WallBuilder(23, 1, 30, "Horz");
+            Wall.WallBuilder(0, 31, 22, "Vert");
+            
+        }
+
         public override WorldObject Deserialize(string statsStr)
         {
             string[] stats = statsStr.Split(',');
