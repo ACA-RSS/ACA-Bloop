@@ -178,7 +178,9 @@
     <Resource Include="boost.png" />
     <Content Include="punch.wav" />
     <Content Include="SquirrelSound.wav" />
+    <Resource Include="Stick.png" />
     <Content Include="StickSound.wav" />
+    <Resource Include="Tree_Dark.png" />
     <Content Include="WolfSound.wav" />
     <Content Include="wolf_attack.wav" />
     <Resource Include="steer.png" />
