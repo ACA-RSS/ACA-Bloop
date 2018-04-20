@@ -119,6 +119,9 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(wuzzy);
             Instance.Level.WorldObj.Add(buzzy);
 
+            Stump stumpy = new Stump(new Boost(), 15) { Spot = new Location { Row = 6, Column = 19 } };
+            Instance.Level.WorldObj.Add(stumpy);
+
             Star glitter = new Star() { Spot = new Location { Row = 5, Column = 5 } };
             Star gleam = new Star() { Spot = new Location { Row = 13, Column = 5 } };
             Star glow = new Star() { Spot = new Location { Row = 10, Column = 17 } };
@@ -178,7 +181,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(12, 6, 2, "Vert");
             Wall.WallBuilder(12, 4, 1, "Horz");
             Wall.WallBuilder(13, 4, 0, "Vert");
-            
+
         }
 
         public void SetUpLevelTwo()
@@ -198,7 +201,7 @@ namespace Twisted_Treeline.Model
                 Wall.LevelTwo(i);
             }
 
-            Instance.Player = new Character()
+            Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
                 StartSpot = new Location { Row = 1, Column = 0 },
@@ -274,9 +277,6 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(b1);
             Instance.Level.WorldObj.Add(b2);
             Instance.Level.WorldObj.Add(b3);
-
-
-
 
         }
 

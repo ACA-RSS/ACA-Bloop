@@ -26,10 +26,10 @@ namespace Twisted_Treeline
         public MainWindow()
         {
             InitializeComponent();
-           /* DifficultyLstBox.Items.Add("Cheat Mode");
-            DifficultyLstBox.Items.Add("Hard");
-            DifficultyLstBox.Items.Add("More Hardlier");
-            DifficultyLstBox.Items.Add("Downright Impossible");*/
+            /* DifficultyLstBox.Items.Add("Cheat Mode");
+             DifficultyLstBox.Items.Add("Hard");
+             DifficultyLstBox.Items.Add("More Hardlier");
+             DifficultyLstBox.Items.Add("Downright Impossible");*/
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -72,7 +72,7 @@ namespace Twisted_Treeline
             GameScreen game = new GameScreen();
             game.ShowDialog();
         }
-        
+
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             Help h = new Help();

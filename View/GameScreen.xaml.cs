@@ -19,6 +19,7 @@ using System.Media;
 using Twisted_Treeline;
 using System.Reflection;
 using System.IO;
+using WpfAnimatedGif;
 
 namespace Twisted_Treeline
 {
@@ -28,6 +29,7 @@ namespace Twisted_Treeline
     public partial class GameScreen : Window
     {
         public static DispatcherTimer Ticky;
+        private readonly ImageSource img;
 
         public GameScreen()
         {
@@ -142,17 +144,18 @@ namespace Twisted_Treeline
             {
                 if (obj.Type != "Wall")
                 {
-                    Image i = new Image()
+                    var source = new BitmapImage(new Uri(obj.Image, UriKind.Relative));
+                    var img = new Image()
                     {
                         Tag = obj,
-                        Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
+                    ImageBehavior.SetAnimatedSource(img, source);
 
-                    WorldCanvas.Children.Add(i);
+                    WorldCanvas.Children.Add(img);
                 }
             }
         }
@@ -193,8 +196,9 @@ namespace Twisted_Treeline
                     accounted.Add(o);
                     if (o.Type != "Wall")
                     {
-                        i.Margin = new Thickness(o.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), o.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0);
                         i.Source = new BitmapImage(new Uri(o.Image, UriKind.Relative));
+                        i.Margin = new Thickness(o.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), o.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0);
+
                     }
                 }
                 else
@@ -217,15 +221,16 @@ namespace Twisted_Treeline
                 }
                 else
                 {
-                    Image img = new Image()
+                    var source = new BitmapImage(new Uri(obj.Image, UriKind.Relative));
+                    var img = new Image()
                     {
                         Tag = obj,
-                        Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
+                    ImageBehavior.SetAnimatedSource(img, source);
 
                     WorldCanvas.Children.Add(img);
                 }
