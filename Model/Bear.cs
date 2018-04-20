@@ -12,8 +12,8 @@ namespace Twisted_Treeline.Model
         public Bear()
         {
             HitPoints = 25 * GameController.Instance.Difficulty;
-            AttackSpeed = 120 * GameController.Instance.Difficulty * 0.5;
-            Damage = 2 * GameController.Instance.Difficulty;
+            AttackSpeed = 140 * GameController.Instance.Difficulty * 0.5;
+            Damage = 4 * GameController.Instance.Difficulty;
             Dead = false;
             Speed = 0;
             MoveTime = 0;

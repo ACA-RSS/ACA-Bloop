@@ -27,7 +27,7 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class GameScreen : Window
     {
-        DispatcherTimer Ticky { get; set; }
+        public static DispatcherTimer Ticky;
 
         public GameScreen()
         {
@@ -85,9 +85,12 @@ namespace Twisted_Treeline
                             break;
 
                         case 3:
+                            GameController.Instance.Level.Stars = 0;
+                            GameController.Instance.Player.HitPoints = 100;
                             GameController.Instance.Armageddon();
                             GameController.Instance.LevelNum = 4;
                             txtLevel.Text = "ARMAGEDDON";
+                            WorldCanvas.Background = new SolidColorBrush(Colors.Red);
                             UpdateScreen();
                             break;
 
@@ -108,6 +111,7 @@ namespace Twisted_Treeline
                 }
             }
         }
+
 
         //Sets up all wall objects; only called at beginning of level setup
         private void BuildTheWall()
@@ -265,9 +269,11 @@ namespace Twisted_Treeline
         //Pauses the timer and opens the menu
         private void btnMenu_Click(object sender, RoutedEventArgs e)
         {
-            //Ticky.Stop();
+            Ticky.Stop();
             Menu menu = new Menu();
             menu.ShowDialog();
+            btnMenu.Focusable = false;
+
         }
 
     }

@@ -65,7 +65,7 @@ namespace Twisted_Treeline
                 howHard = 3;
             }
 
-            GameController.Instance.SetUpLevelTwo();
+            GameController.Instance.SetUpLevelOne();
             GameController.Instance.Difficulty = howHard;
 
             GameController.Instance.InitialSetup();

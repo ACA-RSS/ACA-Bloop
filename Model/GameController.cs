@@ -54,6 +54,10 @@ namespace Twisted_Treeline.Model
             {
                 return true;
             }
+            else if (Instance.Level.Stars == 1 && Instance.LevelNum == 4)
+            {
+                return true;
+            }
             else
             {
                 return false;
@@ -62,15 +66,27 @@ namespace Twisted_Treeline.Model
 
         public void Armageddon()
         {
-            Bear famine = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column + 1 }, Damage = 5 * Instance.Difficulty };
-            Bear plague = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column - 1}, Damage = 5 * Instance.Difficulty };
-            Bear war = new Bear() { Spot = new Location { Row = Player.Spot.Row - 1, Column = Player.Spot.Column }, Damage = 5 * Instance.Difficulty };
-            Bear death = new Bear() { Spot = new Location { Row = Player.Spot.Row + 1, Column = Player.Spot.Column }, Damage = 5 * Instance.Difficulty };
+
+            //RELEASE THE HORSEMEN
+            Bear famine = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column + 1 }, Damage = 2 };
+            Bear plague = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column - 1 }, Damage = 2 };
+            Bear war = new Bear() { Spot = new Location { Row = Player.Spot.Row - 1, Column = Player.Spot.Column }, Damage = 2 };
+            Bear death = new Bear() { Spot = new Location { Row = Player.Spot.Row + 1, Column = Player.Spot.Column }, Damage = 2 };
 
             Instance.Level.WorldObj.Add(famine);
             Instance.Level.WorldObj.Add(plague);
             Instance.Level.WorldObj.Add(war);
             Instance.Level.WorldObj.Add(death);
+
+            //CLOSE THE ARENA
+            Wall.WallBuilder(Instance.Player.Spot.Row - 3, Instance.Player.Spot.Column - 3, 6, "Horz");
+            Wall.WallBuilder(Instance.Player.Spot.Row - 2, Instance.Player.Spot.Column + 3, 5, "Vert");
+            Wall.WallBuilder(Instance.Player.Spot.Row + 3, Instance.Player.Spot.Column - 3, 5, "Horz");
+            Wall.WallBuilder(Instance.Player.Spot.Row - 2, Instance.Player.Spot.Column - 3, 4, "Vert");
+
+            Stump HolyGrail = new Stump(new Star(), 20) { Spot = new Location { Row = Instance.Player.Spot.Row - 2, Column = Instance.Player.Spot.Column - 2 } };
+            Instance.Level.WorldObj.Add(HolyGrail);
+
         }
 
         //Clears the Level and points, mostly for startng a new level or testing
@@ -86,7 +102,7 @@ namespace Twisted_Treeline.Model
         // to the Game Controller's WorldObj list. This is the only thing that changes from level to level
         public void SetUpLevelOne()
         {
-            Player = new Character(GameController.Instance.GenderImg)
+            Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
                 StartSpot = new Location { Row = 13, Column = 1 },
@@ -125,7 +141,7 @@ namespace Twisted_Treeline.Model
 
             //Edges of smaller map
 
-            Wall.WallBuilder(14, 1, 20, "Horz");
+            Wall.WallBuilder(15, 1, 20, "Horz");
             Wall.WallBuilder(1, 22, 13, "Vert");
 
             //Swirl in top left
@@ -162,6 +178,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(12, 6, 2, "Vert");
             Wall.WallBuilder(12, 4, 1, "Horz");
             Wall.WallBuilder(13, 4, 0, "Vert");
+            
         }
 
         public void SetUpLevelTwo()
@@ -228,6 +245,7 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(hiddenOne);
             Instance.Level.WorldObj.Add(hiddenTwo);
 
+
         }
 
         public void SetUpLevelThree()
@@ -239,7 +257,7 @@ namespace Twisted_Treeline.Model
                 Squares = new WorldObject[24, 32]
             };
 
-            Player = new Character(GameController.Instance.GenderImg)
+            Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
                 StartSpot = new Location { Row = 11, Column = 1 },
