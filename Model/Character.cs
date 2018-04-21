@@ -21,9 +21,10 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Spot = new Location { Row = 12, Column = 0 };
             StartSpot = new Location { Row = 12, Column = 0 };
-            Image = "/Sue.gif";
+            //Image = "/Sue.gif";
             Type = "Character";
             DirFacing = Direction.Up;
+
         }
 
         public Character(string img)
@@ -51,6 +52,15 @@ namespace Twisted_Treeline.Model
         {
             int down = 0;
             int right = 0;
+            if (GameController.Instance.GenderImg == "/Scotty.gif")
+            {
+                Image = "/Scot-Left.gif";
+            }
+            else
+            {
+                Image = "/Sue-Left.gif";
+            }
+
             GameController.Instance.CurrentSound = Properties.Resources.punch;
             switch (DirFacing)
             {
@@ -139,6 +149,10 @@ namespace Twisted_Treeline.Model
                 }
             }
 
+            Console.WriteLine(Spot.Row);
+            Console.WriteLine(Spot.Column);
+            Console.WriteLine(StartSpot.Row);
+            Console.WriteLine(StartSpot.Column);
             return Spot;
         }
 

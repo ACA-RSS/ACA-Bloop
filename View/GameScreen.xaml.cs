@@ -244,6 +244,7 @@ namespace Twisted_Treeline
             if (e.Key == Key.Space)
             {
                 GameController.Instance.Player.Attack();
+                
             }
 
         }
