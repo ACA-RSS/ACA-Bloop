@@ -10,7 +10,7 @@
     <Grid>
 
         <TextBlock HorizontalAlignment="Center" Background="Green" Foreground="Black" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" TextAlignment="Center" VerticalAlignment="Top" Margin="-160,123,0,0" Height="22" Width="120" Grid.Column="1"/>
-        <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="160,123,0,0" Grid.Column="1" >
+        <ComboBox x:Name="DifficultyLstBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="160,123,0,0" Grid.Column="1" SelectionChanged="DifficultyLstBox_SelectionChanged">
             <ComboBoxItem>Cheat Mode</ComboBoxItem>
             <ComboBoxItem IsSelected="True">Hard</ComboBoxItem>
             <ComboBoxItem>More Hardlier</ComboBoxItem>

@@ -46,7 +46,7 @@ namespace Twisted_Treeline
             game.ShowDialog();
         }
 
-        private void lstFriends_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DifficultyLstBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DifficultyLstBox.SelectedIndex != -1)
             {
