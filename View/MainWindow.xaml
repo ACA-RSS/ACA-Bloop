@@ -6,7 +6,7 @@
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:local="clr-namespace:Twisted_Treeline"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000" Background="Black">
+        Title="MainWindow" Height="500" Width="1000" Background="Black" Loaded="Window_Loaded">
     <Grid>
 
         <TextBlock HorizontalAlignment="Center" Background="Green" Foreground="Black" TextWrapping="Wrap" Text="Difficulty Level:" FontSize ="15" TextAlignment="Center" VerticalAlignment="Top" Margin="-160,123,0,0" Height="22" Width="120" Grid.Column="1"/>

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Twisted_Treeline.Model;
 using Twisted_Treeline;
 using Twisted_Treeline.View;
+using System.Media;
 
 namespace Twisted_Treeline
 {
@@ -26,10 +27,12 @@ namespace Twisted_Treeline
         public MainWindow()
         {
             InitializeComponent();
-            /* DifficultyLstBox.Items.Add("Cheat Mode");
-             DifficultyLstBox.Items.Add("Hard");
-             DifficultyLstBox.Items.Add("More Hardlier");
-             DifficultyLstBox.Items.Add("Downright Impossible");*/
+        }
+
+        public void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.Sitar);
+            //player.Play();
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -43,31 +46,20 @@ namespace Twisted_Treeline
             game.ShowDialog();
         }
 
+        private void lstFriends_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DifficultyLstBox.SelectedIndex != -1)
+            {
+                GameController.Instance.Difficulty = DifficultyLstBox.SelectedIndex;
+                Console.WriteLine(DifficultyLstBox.SelectedIndex);
+                Console.WriteLine(GameController.Instance.Difficulty);
+            }
+        }
+
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Reset();
-            int howHard = 0;
-            string diff = Convert.ToString(DifficultyLstBox.Text);
-            if (diff == "Cheat Mode")
-            {
-                howHard = 0;
-            }
-            else if (diff == "Hard")
-            {
-                howHard = 1;
-            }
-            else if (diff == "More Hardlier")
-            {
-                howHard = 2;
-            }
-            else
-            {
-                howHard = 3;
-            }
-
             GameController.Instance.SetUpLevelOne();
-            GameController.Instance.Difficulty = howHard;
-
             GameController.Instance.InitialSetup();
             GameScreen game = new GameScreen();
             game.ShowDialog();

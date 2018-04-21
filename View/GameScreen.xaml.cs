@@ -227,8 +227,7 @@ namespace Twisted_Treeline
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
-
-                    //https://stackoverflow.com/questions/210922/how-do-i-get-an-animated-gif-to-work-in-wpf
+                     
                     ImageBehavior.SetAnimatedSource(img, new BitmapImage(new Uri(obj.Image, UriKind.Relative)));
 
                     WorldCanvas.Children.Add(img);
