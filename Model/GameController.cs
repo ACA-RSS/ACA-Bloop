@@ -205,8 +205,8 @@ namespace Twisted_Treeline.Model
             Instance.Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
-                StartSpot = new Location { Row = 2, Column = 2 },
-                Spot = new Location { Row = 2, Column = 2 }
+                StartSpot = new Location { Row = 1, Column = 1 },
+                Spot = new Location { Row = 1, Column = 1 }
             };
 
             Instance.Level.WorldObj.Add(Player);
@@ -242,14 +242,12 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(snappy);
 
             Stump s = new Stump(new Stick() { HitPoints = 10, Damage = 20 }, 15) { Spot = new Location { Row = 6, Column = 19 } };
-            Stump hiddenOne = new Stump(new Boost(), 15) { Spot = new Location { Row = 4, Column = 23 }, Image = "/Tree_Dark.png" };
-            Stump hiddenTwo = new Stump(new Boost() { Bonus = 10 }, 20) { Spot = new Location { Row = 11, Column = 29 }, Image = "/Tree_Dark.png" };
+            Stump hiddenOne = new Stump(new Boost(), 15) { Spot = new Location { Row = 4, Column = 23 }, Image = "/Tree_Fake.png" };
+            Stump hiddenTwo = new Stump(new Boost() { Bonus = 10 }, 20) { Spot = new Location { Row = 11, Column = 29 }, Image = "/Tree_Fake.png" };
 
             Instance.Level.WorldObj.Add(s);
             Instance.Level.WorldObj.Add(hiddenOne);
             Instance.Level.WorldObj.Add(hiddenTwo);
-
-
         }
 
         public void SetUpLevelThree()

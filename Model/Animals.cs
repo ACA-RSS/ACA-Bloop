@@ -57,9 +57,7 @@ namespace Twisted_Treeline.Model
 
         public abstract Location Move();
 
-        //NEEDS SOME HELP
-        //Checks if the player is plus or minus one row, and then one space from the animal's space.
-        //If so, it attacks (See Attack()); otherwise it calls the move method.
+
         public void CheckState()
         {
             for (int r = -1; r < 2; r++)

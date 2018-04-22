@@ -167,11 +167,6 @@ namespace Twisted_Treeline.Model
                     }
                 }
             }
-
-            Console.WriteLine(Spot.Row);
-            Console.WriteLine(Spot.Column);
-            Console.WriteLine(StartSpot.Row);
-            Console.WriteLine(StartSpot.Column);
             return Spot;
         }
 
