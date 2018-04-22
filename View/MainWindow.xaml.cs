@@ -93,5 +93,11 @@ namespace Twisted_Treeline
         {
             GameController.Instance.GenderImg = "/Sue.gif";
         }
+
+        private void btnTTLLevelDesigner_Click(object sender, RoutedEventArgs e)
+        {
+            TTLLevelDesigner ld = new TTLLevelDesigner();
+            ld.Show();
+        }
     }
 }
