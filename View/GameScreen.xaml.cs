@@ -67,6 +67,7 @@ namespace Twisted_Treeline
                     switch (GameController.Instance.LevelNum)
                     {
                         case 1:
+                            //Abduction();
                             GameController.Instance.Level = new World();
                             GameController.Instance.SetUpLevelTwo();
                             GameController.Instance.InitialSetup();
@@ -85,7 +86,7 @@ namespace Twisted_Treeline
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
-                            
+
                         case 3.1:
                             GameController.Instance.Level = new World();
                             GameController.Instance.SetUpLevelThreePtTwo();
@@ -106,10 +107,7 @@ namespace Twisted_Treeline
                             break;
 
                         case 4:
-                            Ticky.Stop();
-                            HighscorePrompt hs = new HighscorePrompt();
-                            hs.ScoreTitle.Text = "YOU WON";
-                            hs.ShowDialog();
+                            Abduction();
                             break;
                     }
                 }
@@ -144,6 +142,73 @@ namespace Twisted_Treeline
                     WorldCanvas.Children.Add(i);
                 }
             }
+        }
+
+        public void Abduction()
+        {
+            Ticky.Stop();
+
+            Image ship = new Image()
+            {
+                Source = new BitmapImage(new Uri("/Bigber.png", UriKind.Relative)),
+                Width = 150,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+            };
+
+            WorldCanvas.Children.Add(ship);
+
+            Image scotty = ship;
+            foreach (Image i in WorldCanvas.Children)
+            {
+                WorldObject obj = i.Tag as WorldObject;
+                if (obj.Type == "Character")
+                {
+                    scotty = i;
+                }
+            }
+
+            double playerX = GameController.Instance.Player.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width);
+            double playerY = GameController.Instance.Player.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height);
+
+            double Col = 772;
+            double Row = 0;
+
+            ship.Margin = new Thickness(Col, Row, 0, 0);
+
+            while (Col != playerX || Row != playerY)
+            {
+
+                if (Col > playerX)
+                {
+                    Col -= 1;
+                }
+                if (Row > playerY)
+                {
+                    Row -= 1;
+                }
+                ship.Margin = new Thickness(Col, Row, 0, 0);
+            }
+
+            WorldCanvas.Children.Remove(scotty);
+
+            while (Col > 0 || Row > 0)
+            {
+
+                if (Col > 0)
+                {
+                    Col -= 1;
+                }
+                if (Row > 0)
+                {
+                    Row -= 1;
+                }
+                ship.Margin = new Thickness(Col, Row, 0, 0);
+            }
+
+            HighscorePrompt hs = new HighscorePrompt();
+            hs.ScoreTitle.Text = "YOU WON";
+            hs.ShowDialog();
         }
 
 
@@ -291,7 +356,6 @@ namespace Twisted_Treeline
             btnMenu.Focusable = false;
 
         }
-
     }
 }
 
