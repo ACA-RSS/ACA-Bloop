@@ -168,8 +168,8 @@ namespace Twisted_Treeline
                 }
             }
 
-            int playerX = GameController.Instance.Player.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width);
-            int playerY = GameController.Instance.Player.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height);
+            double playerX = GameController.Instance.Player.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width);
+            double playerY = GameController.Instance.Player.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height);
 
             int Col = 772;
             int Row = 0;

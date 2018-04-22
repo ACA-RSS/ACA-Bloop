@@ -291,12 +291,20 @@ namespace Twisted_Treeline.Model
             Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
-                StartSpot = new Location { Row = 1, Column = 1 },
-                Spot = new Location { Row = 1, Column = 1 }
+                StartSpot = new Location { Row = 22, Column = 4 },
+                Spot = new Location { Row = 22, Column = 4 }
             };
             Instance.Level.WorldObj.Add(Player);
             Wall.LevelThreePtTwo();
             Wall.BuildEdges();
+
+            Star glitter = new Star() { Spot = new Location { Row = 2, Column = 1 } };
+            Star gleam = new Star() { Spot = new Location { Row = 9, Column = 23 } };
+            Star glow = new Star() { Spot = new Location { Row = 12, Column = 29 } };
+
+            Instance.Level.WorldObj.Add(glitter);
+            Instance.Level.WorldObj.Add(gleam);
+            Instance.Level.WorldObj.Add(glow);
         }
 
 
@@ -314,10 +322,12 @@ namespace Twisted_Treeline.Model
                 writer.WriteLine(Instance.Difficulty);
                 writer.WriteLine(Instance.Points);
                 writer.WriteLine(Instance.Level.Stars);
+                writer.WriteLine(Instance.GenderImg);
                 foreach (WorldObject obj in Level.WorldObj)
                 {
                     writer.WriteLine(obj.Serialize());
                 }
+               
             }
         }
 
@@ -342,6 +352,9 @@ namespace Twisted_Treeline.Model
                 //stars
                 Instance.Level.Stars = Convert.ToInt32(sr.ReadLine());
                 //check to make sure it isnt the last line in the file
+                Instance.GenderImg = sr.ReadLine();
+                
+
                 while (sr.Peek() >= 0)
                 {
                     curLine = sr.ReadLine();
@@ -406,7 +419,9 @@ namespace Twisted_Treeline.Model
                                 Instance.Level.WorldObj.Add(w);
                                 break;
                             }
+                            
                     }
+                    Instance.Player.Image = Instance.GenderImg;
                 }
             }
         }
