@@ -204,8 +204,8 @@ namespace Twisted_Treeline.Model
             Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
-                StartSpot = new Location { Row = 1, Column = 0 },
-                Spot = new Location { Row = 1, Column = 0 }
+                StartSpot = new Location { Row = 2, Column = 2 },
+                Spot = new Location { Row = 2, Column = 2 }
             };
 
             Instance.Level.WorldObj.Add(Player);
