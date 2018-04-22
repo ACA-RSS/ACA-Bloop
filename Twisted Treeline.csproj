@@ -62,6 +62,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\LevelDesigner.xaml.cs" />
     <Compile Include="Model\Boost.cs" />
     <Compile Include="Model\Highscore_Test.cs" />
     <Compile Include="ISerializable.cs" />
@@ -88,6 +89,9 @@
     </Compile>
     <Compile Include="View\HighscoreScreen.xaml.cs">
       <DependentUpon>HighscoreScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LevelDesigner.xaml.cs">
+      <DependentUpon>LevelDesigner.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -135,6 +139,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\LevelDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\About.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -152,6 +160,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\HighscoreScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LevelDesigner.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

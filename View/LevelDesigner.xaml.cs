@@ -22,6 +22,7 @@ namespace Twisted_Treeline
     public partial class LevelDesigner : Window
     {
         public List<WorldObject> list = new List<WorldObject>();
+        public Image[,] images = new Image[24,32];
         public LevelDesigner()
         {
             InitializeComponent();
@@ -37,17 +38,20 @@ namespace Twisted_Treeline
                 panel.Children.Add(rowPanel);
                 for (int col = 0; col < 32; ++col)
                 {
-                    int btnNum = row * 3 + col;
+                    int btnNum = row * 24 + col;
                     Image i = new Image() { };
                     i.Tag = new Location() { Row = row, Column = col };
                     rowPanel.Children.Add(i);
                 }
             }
         }
-                    private void Tree_Click(object sender, RoutedEventArgs e)
+        private void Tree_Click(object sender, RoutedEventArgs e)
         {
-
+            Image newimage = GetEmptySpace();
+            Location loc = (Location)newimage.Tag;
         }
+
+
 
         private void Bear_Click(object sender, RoutedEventArgs e)
         {
@@ -84,6 +88,10 @@ namespace Twisted_Treeline
             }
 
 
+        }
+        private Image GetEmptySpace()
+        {
+            throw new NotImplementedException();
         }
     }
 }
