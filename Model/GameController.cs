@@ -101,7 +101,7 @@ namespace Twisted_Treeline.Model
 
         //Hardcodes in the player and all of the wall pieces and animals and such, then adds all of them
         // to the Game Controller's WorldObj list. This is the only thing that changes from level to level
-        public void SetUpLevelOne()
+        /*public void SetUpLevelOne()
         {
             Instance.Player = new Character(Instance.GenderImg)
             {
@@ -183,7 +183,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(12, 4, 1, "Horz");
             Wall.WallBuilder(13, 4, 0, "Vert");
 
-        }
+        }*/
 
         public void SetUpLevelTwo()
         {
@@ -268,7 +268,7 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(Player);
 
             //Walls setup
-            Wall.LevelThree();
+            Wall.LevelThreePtOne();
             //boost setup
             Boost b1 = new Boost() { Spot = new Location { Row = 2, Column = 7 } };
             Boost b2 = new Boost() { Spot = new Location { Row = 21, Column = 7 } };

@@ -141,7 +141,7 @@ namespace Twisted_Treeline.Model
             WallBuilder(0 + addDown, 0 + addRight, 1, "Horz");
             WallBuilder(10 + addDown, 13 + addRight, 1, "Horz");
         }
-        public static void LevelThree()
+        public static void LevelThreePtOne()
         {
             //Edges of the map
             //entire top edge
@@ -173,6 +173,17 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(9, 30, 0, "Horz");
 
 
+        }
+
+        public static void LevelThreePtTwo()
+        {
+            Wall.WallBuilder(4, 1, 8, "Vert");
+            Wall.WallBuilder(12, 2, 1, "Vert");
+            Wall.WallBuilder(3, 1, 23, "Horz");
+            Wall.WallBuilder(2, 6, 3, "Horz");
+            Wall.WallBuilder(1, 12, 3, "Horz");
+            Wall.WallBuilder(2, 18, 2, "Horz");
+            Wall.WallBuilder(3, 25, 6, "Horz");
         }
     }
 
