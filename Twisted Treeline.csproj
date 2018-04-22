@@ -74,6 +74,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\TTLLevelDesigner.xaml.cs">
+      <DependentUpon>TTLLevelDesigner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\TTLLevelDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\About.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
