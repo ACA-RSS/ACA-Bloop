@@ -21,9 +21,10 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Spot = new Location { Row = 12, Column = 0 };
             StartSpot = new Location { Row = 12, Column = 0 };
-            Image = "/Sue.gif";
+            //Image = "/Sue.gif";
             Type = "Character";
             DirFacing = Direction.Up;
+
         }
 
         public Character(string img)
@@ -45,12 +46,40 @@ namespace Twisted_Treeline.Model
                 toAttack.TakeDamage(Damage);
         }
 
+        public void AttackImage()
+        {
+            if (GameController.Instance.GenderImg == "/Scotty.gif")
+            {
+                if (DirFacing == Direction.Right)
+                {
+                    Image = "/Scotty-Attack.png";
+                }
+                else
+                {
+                    Image = "/Scotty-Left-Attack.png";
+                }
+            }
+            else
+            {
+                if (DirFacing == Direction.Right)
+                {
+                    Image = "/Sue-Attack.png";
+                }
+                else
+                {
+                    Image = "/Sue-Left-Attack.png";
+                }
+            }
+        }
+
         //Checks the direction the character is facing, then sees if there's an animal or stum (The hittable
         // sbstract class) one space in that direction. If so, it does damage to that object(See doDamage())
         public override int Attack()
         {
             int down = 0;
             int right = 0;
+            
+
             GameController.Instance.CurrentSound = Properties.Resources.punch;
             switch (DirFacing)
             {
@@ -139,6 +168,10 @@ namespace Twisted_Treeline.Model
                 }
             }
 
+            Console.WriteLine(Spot.Row);
+            Console.WriteLine(Spot.Column);
+            Console.WriteLine(StartSpot.Row);
+            Console.WriteLine(StartSpot.Column);
             return Spot;
         }
 
