@@ -62,6 +62,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\LevelDesigner.xaml.cs" />
     <Compile Include="Model\Boost.cs" />
     <Compile Include="Model\Highscore_Test.cs" />
     <Compile Include="ISerializable.cs" />
@@ -135,6 +136,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\LevelDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\About.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -181,11 +186,21 @@
     <Content Include=".gitignore" />
     <Resource Include="boost.png" />
     <Resource Include="Sitar.wav" />
+    <Resource Include="bigber-Attack.png" />
+    <Resource Include="bigber-Left-Attack.png" />
     <Content Include="punch.wav" />
+    <Resource Include="Scotty-Attack.png" />
+    <Resource Include="Scotty-Left-Attack.png" />
     <Content Include="SquirrelSound.wav" />
     <Resource Include="Stick.png" />
     <Content Include="StickSound.wav" />
     <Resource Include="Tree_Dark.png" />
+    <Resource Include="Sue-Attack.png" />
+    <Resource Include="Sue-Dead.png" />
+    <Resource Include="Sue-Left-Attack.png" />
+    <Resource Include="Wolf-Attack.png" />
+    <Resource Include="Wolf-Left-Attack.png" />
+    <Resource Include="Tree_Fake.png" />
     <Content Include="WolfSound.wav" />
     <Content Include="wolf_attack.wav" />
     <Resource Include="steer.png" />
