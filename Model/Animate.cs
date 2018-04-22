@@ -15,6 +15,7 @@ namespace Twisted_Treeline.Model
         public Direction DirFacing { get; set; }
         
         public abstract int Attack();
+        
 
         //Removes the received attack from the object's hit points, and checks if it's hit points are at
         // or below 0. If so, it updates it's 'dead' attribute and adds it's points to the player's points

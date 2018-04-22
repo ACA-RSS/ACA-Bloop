@@ -19,7 +19,7 @@ namespace Twisted_Treeline.Model
             Dead = false;
             MoveTime = 0;
             Image = "/Wolf.gif";
-            AttackImage = "/Wolf.gif";
+            AttackImage = "/Wolf-Attack.png";
             AttackTime = 0;
             EyeContact = false;
             Type = "Hittable";
@@ -50,7 +50,6 @@ namespace Twisted_Treeline.Model
         //Anything else, and then moves there.
         public Location Track()
         {
-            
             int potentialCol;
             int potentialRow;
             if (EyeContact)

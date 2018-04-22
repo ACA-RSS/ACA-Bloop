@@ -18,7 +18,7 @@ namespace Twisted_Treeline.Model
             Speed = 0;
             MoveTime = 0;
             Image = "/bigber.png";
-            AttackImage = "/bigber.gif";
+            AttackImage = "/bigber-Attack.png";
             AttackTime = 0;
             Type = "Hittable";
             PointValue = 50;

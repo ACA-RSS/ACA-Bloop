@@ -188,6 +188,7 @@
     <Resource Include="Sitar.wav" />
     <Resource Include="bigber-Attack.png" />
     <Resource Include="bigber-Left-Attack.png" />
+    <Resource Include="bigber-Left.gif" />
     <Content Include="punch.wav" />
     <Resource Include="Scotty-Attack.png" />
     <Resource Include="Scotty-Left-Attack.png" />
@@ -198,9 +199,9 @@
     <Resource Include="Sue-Attack.png" />
     <Resource Include="Sue-Dead.png" />
     <Resource Include="Sue-Left-Attack.png" />
+    <Resource Include="Tree_Fake.png" />
     <Resource Include="Wolf-Attack.png" />
     <Resource Include="Wolf-Left-Attack.png" />
-    <Resource Include="Tree_Fake.png" />
     <Content Include="WolfSound.wav" />
     <Content Include="wolf_attack.wav" />
     <Resource Include="steer.png" />

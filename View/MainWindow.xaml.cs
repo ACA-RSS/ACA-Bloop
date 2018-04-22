@@ -86,6 +86,7 @@ namespace Twisted_Treeline
         private void btnBoy_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.GenderImg = "/Scotty.gif";
+
         }
 
         private void btnGirl_Click(object sender, RoutedEventArgs e)

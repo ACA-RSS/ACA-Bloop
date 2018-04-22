@@ -35,7 +35,6 @@ namespace Twisted_Treeline.Model
                 AttackTime = 0;
 
                 Image = AttackImage;
-                Console.WriteLine(AttackImage);
                 //add animal attack sound here
                 GameController.Instance.CurrentSound = Sound;
                 // end sound stuff
