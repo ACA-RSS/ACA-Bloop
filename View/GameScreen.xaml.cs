@@ -67,7 +67,7 @@ namespace Twisted_Treeline
                     switch (GameController.Instance.LevelNum)
                     {
                         case 1:
-                            Abduction();
+                            //Abduction();
                             GameController.Instance.Level = new World();
                             GameController.Instance.SetUpLevelTwo();
                             GameController.Instance.InitialSetup();
@@ -168,11 +168,11 @@ namespace Twisted_Treeline
                 }
             }
 
-            int playerX = GameController.Instance.Player.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width);
-            int playerY = GameController.Instance.Player.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height);
+            double playerX = GameController.Instance.Player.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width);
+            double playerY = GameController.Instance.Player.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height);
 
-            int Col = 772;
-            int Row = 0;
+            double Col = 772;
+            double Row = 0;
 
             ship.Margin = new Thickness(Col, Row, 0, 0);
 
@@ -181,11 +181,11 @@ namespace Twisted_Treeline
 
                 if (Col > playerX)
                 {
-                    Col += 1;
+                    Col -= 1;
                 }
                 if (Row > playerY)
                 {
-                    Row += 1;
+                    Row -= 1;
                 }
                 ship.Margin = new Thickness(Col, Row, 0, 0);
             }
