@@ -127,7 +127,6 @@ namespace Twisted_Treeline.Model
             Star gleam = new Star() { Spot = new Location { Row = 13, Column = 5 } };
             Star glow = new Star() { Spot = new Location { Row = 10, Column = 17 } };
 
-
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
             Instance.Level.WorldObj.Add(glow);
@@ -280,7 +279,8 @@ namespace Twisted_Treeline.Model
 
         }
 
-        public void SetUpLevelThreePtTwo() {
+        public void SetUpLevelThreePtTwo()
+        {
             Instance.Level = new World()
             {
                 Height = 24,

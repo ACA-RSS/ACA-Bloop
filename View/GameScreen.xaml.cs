@@ -90,7 +90,7 @@ namespace Twisted_Treeline
                             GameController.Instance.Level = new World();
                             GameController.Instance.SetUpLevelThreePtTwo();
                             GameController.Instance.InitialSetup();
-                            GameController.Instance.LevelNum = 3.1;
+                            GameController.Instance.LevelNum = 3.2;
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
