@@ -14,7 +14,7 @@ namespace Twisted_Treeline.Model
     {
         public int Difficulty { get; set; }
 
-        public int LevelNum { get; set; }
+        public double LevelNum { get; set; }
 
         public World Level { get; set; }
 
@@ -205,8 +205,8 @@ namespace Twisted_Treeline.Model
             Instance.Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
-                StartSpot = new Location { Row = 2, Column = 2 },
-                Spot = new Location { Row = 2, Column = 2 }
+                StartSpot = new Location { Row = 1, Column = 1 },
+                Spot = new Location { Row = 1, Column = 1 }
             };
 
             Instance.Level.WorldObj.Add(Player);
@@ -252,7 +252,7 @@ namespace Twisted_Treeline.Model
 
         }
 
-        public void SetUpLevelThree()
+        public void SetUpLevelThreePtOne()
         {
             Instance.Level = new World()
             {
@@ -264,8 +264,8 @@ namespace Twisted_Treeline.Model
             Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
-                StartSpot = new Location { Row = 11, Column = 1 },
-                Spot = new Location { Row = 1, Column = 0 }
+                StartSpot = new Location { Row = 10, Column = 30 },
+                Spot = new Location { Row = 1, Column = 1 }
             };
             Instance.Level.WorldObj.Add(Player);
 
@@ -278,8 +278,27 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(b1);
             Instance.Level.WorldObj.Add(b2);
             Instance.Level.WorldObj.Add(b3);
+            Instance.Level.Stars = 3;
 
         }
+
+        public void SetUpLevelThreePtTwo() {
+            Instance.Level = new World()
+            {
+                Height = 24,
+                Width = 32,
+                Squares = new WorldObject[24, 32]
+            };
+
+            Player = new Character(Instance.GenderImg)
+            {
+                Stick = new Stick(5),
+                StartSpot = new Location { Row = 1, Column = 1 },
+                Spot = new Location { Row = 1, Column = 1 }
+            };
+            Instance.Level.WorldObj.Add(Player);
+        }
+
 
         public void Save(string file)
         {

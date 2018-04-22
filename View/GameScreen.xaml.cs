@@ -78,15 +78,24 @@ namespace Twisted_Treeline
 
                         case 2:
                             GameController.Instance.Level = new World();
-                            GameController.Instance.SetUpLevelThree();
+                            GameController.Instance.SetUpLevelThreePtOne();
                             GameController.Instance.InitialSetup();
-                            GameController.Instance.LevelNum = 3;
+                            GameController.Instance.LevelNum = 3.1;
                             txtLevel.Text = "Level Three";
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
+                            
+                        case 3.1:
+                            GameController.Instance.Level = new World();
+                            GameController.Instance.SetUpLevelThreePtTwo();
+                            GameController.Instance.InitialSetup();
+                            GameController.Instance.LevelNum = 3.1;
+                            UpdateScreen();
+                            GameController.Instance.Update();
+                            break;
 
-                        case 3:
+                        case 3.2:
                             GameController.Instance.Level.Stars = 0;
                             GameController.Instance.Player.HitPoints = 100;
                             GameController.Instance.Armageddon();
