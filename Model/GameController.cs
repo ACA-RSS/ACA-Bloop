@@ -295,6 +295,8 @@ namespace Twisted_Treeline.Model
                 Spot = new Location { Row = 1, Column = 1 }
             };
             Instance.Level.WorldObj.Add(Player);
+            Wall.LevelThreePtTwo();
+            Wall.BuildEdges();
         }
 
 
