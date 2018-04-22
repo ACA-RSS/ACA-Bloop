@@ -59,7 +59,7 @@ namespace Twisted_Treeline
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Reset();
-            GameController.Instance.SetUpLevels();
+            GameController.Instance.SetUpLevelOne();
             GameController.Instance.InitialSetup();
             GameScreen game = new GameScreen();
             game.ShowDialog();
