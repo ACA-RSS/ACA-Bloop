@@ -51,11 +51,15 @@ namespace Twisted_Treeline.Model
             {
                 return true;
             }
-            else if (Instance.Level.Stars == 3 && Instance.LevelNum == 3)
+            else if (Instance.Level.Stars == 3 && Instance.LevelNum == 3.2)
             {
                 return true;
             }
             else if (Instance.Level.Stars == 1 && Instance.LevelNum == 4)
+            {
+                return true;
+            }
+            else if (Instance.LevelNum == 3.1 && Player.Spot.Row == 5 && Player.Spot.Column == 30)
             {
                 return true;
             }
@@ -261,6 +265,28 @@ namespace Twisted_Treeline.Model
             Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
+                StartSpot = new Location { Row = 1, Column = 1 },
+                Spot = new Location { Row = 1, Column = 1 }
+            };
+            Instance.Level.WorldObj.Add(Player);
+            Wall.LevelThreePtOne();
+            Wall.BuildEdges();
+        }
+
+        public void SetUpLevelThreePtTwo()
+        {
+        
+
+        Instance.Level = new World()
+            {
+                Height = 24,
+                Width = 32,
+                Squares = new WorldObject[24, 32]
+            };
+
+            Player = new Character(Instance.GenderImg)
+            {
+                Stick = new Stick(5),
                 StartSpot = new Location { Row = 10, Column = 30 },
                 Spot = new Location { Row = 1, Column = 1 }
             };
@@ -277,26 +303,6 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(b3);
             Instance.Level.Stars = 3;
 
-        }
-
-        public void SetUpLevelThreePtTwo()
-        {
-            Instance.Level = new World()
-            {
-                Height = 24,
-                Width = 32,
-                Squares = new WorldObject[24, 32]
-            };
-
-            Player = new Character(Instance.GenderImg)
-            {
-                Stick = new Stick(5),
-                StartSpot = new Location { Row = 1, Column = 1 },
-                Spot = new Location { Row = 1, Column = 1 }
-            };
-            Instance.Level.WorldObj.Add(Player);
-            Wall.LevelThreePtTwo();
-            Wall.BuildEdges();
         }
 
 
