@@ -187,7 +187,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(9, 9, 1, "Vert");
             Wall.WallBuilder(9, 11, 2, "Vert");
             Wall.WallBuilder(12, 1, 11, "Horz");
-            Wall.WallBuilder(11, 3, 1, "Horz");
+            Wall.WallBuilder(13, 3, 1, "Vert");
             Wall.WallBuilder(16, 1, 3, "Horz");
             Wall.WallBuilder(16, 1, 3, "Horz");
             Wall.WallBuilder(13, 9, 4, "Vert");

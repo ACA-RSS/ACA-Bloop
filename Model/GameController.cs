@@ -305,6 +305,42 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
             Instance.Level.WorldObj.Add(glow);
+
+            Bear cutler = new Bear() { Spot = new Location { Row = 1, Column = 2 } };
+            Bear jones = new Bear() { Spot = new Location { Row = 2, Column = 2 } };
+            Bear urlacher = new Bear() { Spot = new Location { Row = 8, Column = 2 } };
+            Bear marshall = new Bear() { Spot = new Location { Row = 7, Column = 9 } };
+            Bear forte = new Bear() { Spot = new Location { Row = 8, Column = 9 } };
+            Bear grossman = new Bear() { Spot = new Location { Row = 12, Column = 13 } };
+            Bear gould = new Bear() { Spot = new Location { Row = 12, Column = 14 } };
+            Bear fuzzy = new Bear() { Spot = new Location { Row = 12, Column = 18 } };
+
+            Instance.Level.WorldObj.Add(cutler);
+            Instance.Level.WorldObj.Add(jones);
+            Instance.Level.WorldObj.Add(urlacher);
+            Instance.Level.WorldObj.Add(marshall);
+            Instance.Level.WorldObj.Add(forte);
+            Instance.Level.WorldObj.Add(grossman);
+            Instance.Level.WorldObj.Add(gould);
+            Instance.Level.WorldObj.Add(fuzzy);
+
+            Wolf toews = new Wolf() { Spot = new Location { Row = 1, Column = 6 } };
+            Wolf kane = new Wolf() { Spot = new Location { Row = 2, Column = 12 } };
+            Wolf keith = new Wolf() { Spot = new Location { Row = 1, Column = 17 } };
+            Wolf seabrook = new Wolf() { Spot = new Location { Row = 12, Column = 30 } };
+            Wolf panerin = new Wolf() { Spot = new Location { Row = 12, Column = 28 } };
+            Wolf crawford = new Wolf() { Spot = new Location { Row = 17, Column = 6 } };
+            Wolf byfuglian = new Wolf() { Spot = new Location { Row = 18, Column = 6 } };
+            Wolf dunkin = new Wolf() { Spot = new Location { Row = 15, Column = 2 } };
+
+            Instance.Level.WorldObj.Add(toews);
+            Instance.Level.WorldObj.Add(kane);
+            Instance.Level.WorldObj.Add(keith);
+            Instance.Level.WorldObj.Add(seabrook);
+            Instance.Level.WorldObj.Add(panerin);
+            Instance.Level.WorldObj.Add(crawford);
+            Instance.Level.WorldObj.Add(byfuglian);
+            Instance.Level.WorldObj.Add(dunkin);
         }
 
 
