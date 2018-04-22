@@ -68,7 +68,15 @@ namespace Twisted_Treeline.Properties {
                 return ResourceManager.GetStream("BerSound", resourceCulture);
             }
         }
-        
+
+        internal static System.IO.UnmanagedMemoryStream Sitar
+        {
+            get
+            {
+                return ResourceManager.GetStream("Sitar", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>

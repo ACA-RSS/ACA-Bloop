@@ -180,6 +180,7 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Resource Include="boost.png" />
+    <Resource Include="Sitar.wav" />
     <Content Include="punch.wav" />
     <Content Include="SquirrelSound.wav" />
     <Resource Include="Stick.png" />

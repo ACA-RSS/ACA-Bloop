@@ -35,7 +35,7 @@ namespace Twisted_Treeline.Model
             Player = new Character(GenderImg);
             LevelNum = 1;
             CurrentSound = null;
-            //  GenderImg = "/Scotty.gif";
+            //GenderImg = "/Scotty.gif";
         }
 
         //Returns true if the character is dead, or if the player has all three stars and is back at the starting
