@@ -178,12 +178,53 @@ namespace Twisted_Treeline.Model
         public static void LevelThreePtTwo()
         {
             Wall.WallBuilder(4, 1, 8, "Vert");
-            Wall.WallBuilder(12, 2, 1, "Vert");
-            Wall.WallBuilder(3, 1, 23, "Horz");
-            Wall.WallBuilder(2, 6, 3, "Horz");
-            Wall.WallBuilder(1, 12, 3, "Horz");
-            Wall.WallBuilder(2, 18, 2, "Horz");
-            Wall.WallBuilder(3, 25, 6, "Horz");
+            Wall.WallBuilder(12, 2, 0, "Vert");
+            Wall.WallBuilder(3, 1, 22, "Horz");
+            Wall.WallBuilder(2, 6, 2, "Horz");
+            Wall.WallBuilder(1, 12, 2, "Horz");
+            Wall.WallBuilder(2, 18, 1, "Horz");
+            Wall.WallBuilder(3, 25, 5, "Horz");
+            Wall.WallBuilder(6, 3, 10, "Horz");
+            Wall.WallBuilder(7, 3, 2, "Horz");
+            Wall.WallBuilder(8, 3, 2, "Horz");
+            Wall.WallBuilder(5, 14, 3, "Vert");
+            Wall.WallBuilder(8, 7, 6 , "Vert");
+            Wall.WallBuilder(8, 11, 1, "Vert");
+            Wall.WallBuilder(9, 9, 1, "Vert");
+            Wall.WallBuilder(9, 11, 2, "Vert");
+            Wall.WallBuilder(12, 1, 11, "Horz");
+            Wall.WallBuilder(11, 3, 1, "Horz");
+            Wall.WallBuilder(16, 1, 3, "Horz");
+            Wall.WallBuilder(16, 1, 3, "Horz");
+            Wall.WallBuilder(13, 9, 4, "Vert");
+            Wall.WallBuilder(8, 15, 1, "Horz");
+            Wall.WallBuilder(9, 15, 6, "Vert");
+            Wall.WallBuilder(15, 14, 2, "Vert");
+            Wall.WallBuilder(15, 16, 7, "Horz");
+            Wall.WallBuilder(19, 2, 2, "Vert");
+            
+            //bottom section
+            Wall.WallBuilder(19, 4, 25, "Horz");
+            Wall.WallBuilder(20, 4, 21, "Horz");
+            Wall.WallBuilder(21, 3, 21, "Horz");
+            Wall.WallBuilder(17, 7, 1, "Vert");
+
+            Wall.WallBuilder(13, 18, 1, "Vert");
+            Wall.WallBuilder(4, 18, 7, "Vert");
+            Wall.WallBuilder(10, 19, 1, "Horz");
+            Wall.WallBuilder(11, 20, 1, "Vert");
+            Wall.WallBuilder(18, 27, 1, "Vert");
+            
+            Wall.WallBuilder(7, 20, 10, "Horz");
+            Wall.WallBuilder(5, 25, 13, "Vert");
+
+            Wall.WallBuilder(8, 22, 6, "Vert");
+            Wall.WallBuilder(10, 23, 0, "Vert");
+
+            Wall.WallBuilder(12, 24, 1, "Vert");
+            Wall.WallBuilder(10, 26, 4, "Horz");
+            Wall.WallBuilder(11, 27, 3, "Horz");
+            Wall.WallBuilder(12, 27, 3, "Vert");
         }
     }
 
