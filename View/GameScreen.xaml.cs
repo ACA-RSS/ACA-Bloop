@@ -227,13 +227,13 @@ namespace Twisted_Treeline
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
                         Width = 20
                     };
-                     
+
                     ImageBehavior.SetAnimatedSource(img, new BitmapImage(new Uri(obj.Image, UriKind.Relative)));
 
                     WorldCanvas.Children.Add(img);
                 }
             }
-            
+
             GameController.Instance.CurrentSound = null;
         }
 
@@ -244,7 +244,7 @@ namespace Twisted_Treeline
             if (e.Key == Key.Space)
             {
                 GameController.Instance.Player.Attack();
-                
+                GameController.Instance.Player.Image = GameController.Instance.GenderImg;
             }
 
         }
@@ -266,6 +266,10 @@ namespace Twisted_Treeline
             else if (e.Key == Key.D)
             {
                 GameController.Instance.Player.PlayerMove("Right");
+            }
+            else if (e.Key == Key.Space)
+            {
+                GameController.Instance.Player.AttackImage();
             }
         }
 
