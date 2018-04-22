@@ -44,7 +44,7 @@ namespace Twisted_Treeline
                 }
             }
         }
-                    private void Tree_Click(object sender, RoutedEventArgs e)
+        private void Tree_Click(object sender, RoutedEventArgs e)
         {
 
         }
