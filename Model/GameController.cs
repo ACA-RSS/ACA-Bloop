@@ -353,8 +353,8 @@ namespace Twisted_Treeline.Model
             {
                 Stick = new Stick(5),
 
-                StartSpot = new Location { Row = 22, Column = 4 },
-                Spot = new Location { Row = 22, Column = 4 }
+                StartSpot = new Location { Row = 1, Column = 1 },
+                Spot = new Location { Row = 1, Column = 1 }
             };
             Instance.Level.WorldObj.Add(Player);
             Wall.LevelThreePtTwo();
