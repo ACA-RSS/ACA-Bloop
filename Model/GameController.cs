@@ -357,13 +357,18 @@ namespace Twisted_Treeline.Model
             Wall.LevelThreePtTwo();
             Wall.BuildEdges();
 
-            Star glitter = new Star() { Spot = new Location { Row = 2, Column = 1 } };
-            Star gleam = new Star() { Spot = new Location { Row = 9, Column = 23 } };
-            Star glow = new Star() { Spot = new Location { Row = 12, Column = 29 } };
+            Star glitter = new Star() { Spot = new Location { Row = 21, Column = 14 } };
+            Star gleam = new Star() { Spot = new Location { Row = 3, Column = 15 } };
+
+            //Circle of fake stars
+            Stump s = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
+            Stump t = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
+            Stump u = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
+            Stump m = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
+            Stump p = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
 
             Instance.Level.WorldObj.Add(glitter);
             Instance.Level.WorldObj.Add(gleam);
-            Instance.Level.WorldObj.Add(glow);
 
             Bear cutler = new Bear() { Spot = new Location { Row = 1, Column = 2 } };
             Bear jones = new Bear() { Spot = new Location { Row = 2, Column = 2 } };
@@ -400,6 +405,15 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(crawford);
             Instance.Level.WorldObj.Add(byfuglian);
             Instance.Level.WorldObj.Add(dunkin);
+
+            Boost a = new Boost() { Spot = new Location() { Row = 19, Column = 4 } };
+            Boost b = new Boost() { Spot = new Location() { Row = 19, Column = 5 } };
+            Boost c = new Boost() { Spot = new Location() { Row = 19, Column = 3 } };
+
+            Instance.Level.WorldObj.Add(a);
+            Instance.Level.WorldObj.Add(b);
+            Instance.Level.WorldObj.Add(c);
+
         }
 
 
