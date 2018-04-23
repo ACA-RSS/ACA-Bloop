@@ -312,7 +312,6 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(aeary);
             Instance.Level.WorldObj.Add(ceary);
             Instance.Level.WorldObj.Add(deary);
-            Instance.Level.WorldObj.Add(deary);
             Instance.Level.WorldObj.Add(feary);
             Instance.Level.WorldObj.Add(eeary);
 
