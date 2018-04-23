@@ -59,7 +59,7 @@ namespace Twisted_Treeline.Model
             {
                 return true;
             }
-            else if (Instance.LevelNum == 3.1 && Player.Spot.Row == 5 && Player.Spot.Column == 30)
+            else if (Instance.LevelNum == 3.1 && Player.Spot.Row == 13 && Player.Spot.Column == 30 && Level.Stars == 1)
             {
                 return true;
             }
@@ -71,6 +71,13 @@ namespace Twisted_Treeline.Model
 
         public void Armageddon()
         {
+            foreach (WorldObject obj in Instance.Level.WorldObj)
+            {
+                if (obj.Type == "Wall")
+                {
+                    Instance.Level.WorldObj.Remove(obj);
+                }
+            }
 
             //RELEASE THE HORSEMEN
             Bear famine = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column + 1 }, Damage = 2 };
@@ -271,13 +278,68 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(Player);
             Wall.LevelThreePtOne();
             Wall.BuildEdges();
+
+            Wolf wolfy = new Wolf() { Spot = new Location() { Row = 1, Column = 7} };
+            Wolf aolfy = new Wolf() { Spot = new Location() { Row = 4, Column = 3 } };
+            Wolf bolfy = new Wolf() { Spot = new Location() { Row = 5, Column = 3 } };
+            Wolf colfy = new Wolf() { Spot = new Location() { Row = 22, Column = 22 } };
+            Wolf dolfy = new Wolf() { Spot = new Location() { Row = 18, Column = 23 } };
+            Wolf eolfy = new Wolf() { Spot = new Location() { Row = 17, Column = 23 } };
+            Wolf folfy = new Wolf() { Spot = new Location() { Row = 2, Column = 14 } };
+            Wolf golfy = new Wolf() { Spot = new Location() { Row = 22, Column = 14 } };
+
+            Instance.Level.WorldObj.Add(wolfy);
+            Instance.Level.WorldObj.Add(aolfy);
+            Instance.Level.WorldObj.Add(bolfy);
+            Instance.Level.WorldObj.Add(colfy);
+            Instance.Level.WorldObj.Add(dolfy);
+            Instance.Level.WorldObj.Add(eolfy);
+            Instance.Level.WorldObj.Add(folfy);
+            Instance.Level.WorldObj.Add(golfy);
+
+            Bear beary = new Bear() { Spot = new Location() { Row = 15, Column = 24 } };
+            Bear feary = new Bear() { Spot = new Location() { Row = 11, Column = 24 } };
+            Bear aeary = new Bear() { Spot = new Location() { Row = 19, Column = 30 } };
+            Bear ceary = new Bear() { Spot = new Location() { Row = 8, Column = 6 } };
+            Bear deary = new Bear() { Spot = new Location() { Row = 22, Column = 2 } };
+            Bear eeary = new Bear() { Spot = new Location() { Row = 18, Column = 15 } };
+
+            Instance.Level.WorldObj.Add(beary);
+            Instance.Level.WorldObj.Add(aeary);
+            Instance.Level.WorldObj.Add(ceary);
+            Instance.Level.WorldObj.Add(deary);
+            Instance.Level.WorldObj.Add(deary);
+            Instance.Level.WorldObj.Add(feary);
+            Instance.Level.WorldObj.Add(eeary);
+
+            Stump stumpy = new Stump(new Bear(), 20) { Spot = new Location { Row = 3, Column = 24 } };
+            Stump sneaky = new Stump(new Boost(), 15) { Spot = new Location { Row = 8, Column = 23 }, Image = "/steer.png" };
+            Stump crumpy = new Stump(new Stick(15), 15) { Spot = new Location { Row = 7, Column = 11 } };
+            Stump slump = new Stump(new Boost(), 25) { Spot = new Location { Row = 18, Column = 9 } };
+            Stump arg = new Stump(new Boost(), 15) { Spot = new Location { Row = 1, Column = 19 } };
+            Stump barg = new Stump(new Boost(), 15) { Spot = new Location { Row = 15, Column = 3 } };
+
+            Instance.Level.WorldObj.Add(stumpy);
+            Instance.Level.WorldObj.Add(sneaky);
+            Instance.Level.WorldObj.Add(crumpy);
+            Instance.Level.WorldObj.Add(slump);
+            Instance.Level.WorldObj.Add(arg);
+            Instance.Level.WorldObj.Add(barg);
+
+            Boost b = new Boost() { Spot = new Location { Row = 13, Column = 1 } };
+            Instance.Level.WorldObj.Add(b);
+
+            Stump starry = new Stump(new Star(), 30) { Spot = new Location() { Row = 13, Column = 30 } };
+            
+            Instance.Level.WorldObj.Add(starry);
+
         }
 
         public void SetUpLevelThreePtTwo()
         {
-        
 
-        Instance.Level = new World()
+
+            Instance.Level = new World()
             {
                 Height = 24,
                 Width = 32,
@@ -287,24 +349,7 @@ namespace Twisted_Treeline.Model
             Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
-<<<<<<< HEAD
-                StartSpot = new Location { Row = 10, Column = 30 },
-                Spot = new Location { Row = 1, Column = 1 }
-            };
-            Instance.Level.WorldObj.Add(Player);
 
-            //Walls setup
-            Wall.LevelThreePtOne();
-            //boost setup
-            Boost b1 = new Boost() { Spot = new Location { Row = 2, Column = 7 } };
-            Boost b2 = new Boost() { Spot = new Location { Row = 21, Column = 7 } };
-            Boost b3 = new Boost() { Spot = new Location { Row = 8, Column = 30 } };
-            Instance.Level.WorldObj.Add(b1);
-            Instance.Level.WorldObj.Add(b2);
-            Instance.Level.WorldObj.Add(b3);
-            Instance.Level.Stars = 3;
-
-=======
                 StartSpot = new Location { Row = 22, Column = 4 },
                 Spot = new Location { Row = 22, Column = 4 }
             };
@@ -355,7 +400,6 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(crawford);
             Instance.Level.WorldObj.Add(byfuglian);
             Instance.Level.WorldObj.Add(dunkin);
->>>>>>> fa612c77e660c9de928c4da0f90220fb35cc113d
         }
 
 
@@ -378,7 +422,7 @@ namespace Twisted_Treeline.Model
                 {
                     writer.WriteLine(obj.Serialize());
                 }
-               
+
             }
         }
 
@@ -404,7 +448,7 @@ namespace Twisted_Treeline.Model
                 Instance.Level.Stars = Convert.ToInt32(sr.ReadLine());
                 //check to make sure it isnt the last line in the file
                 Instance.GenderImg = sr.ReadLine();
-                
+
 
                 while (sr.Peek() >= 0)
                 {
@@ -470,7 +514,7 @@ namespace Twisted_Treeline.Model
                                 Instance.Level.WorldObj.Add(w);
                                 break;
                             }
-                            
+
                     }
                     Instance.Player.Image = Instance.GenderImg;
                 }

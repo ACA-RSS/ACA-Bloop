@@ -165,8 +165,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(14, 28, 2, "Horz");
             Wall.WallBuilder(9, 29, 3, "Vert");
             Wall.WallBuilder(9, 30, 0, "Horz");
-
-
+           
         }
 
         public static void LevelThreePtOne()

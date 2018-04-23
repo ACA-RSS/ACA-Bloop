@@ -13,7 +13,7 @@
         <Image x:Name="imgStars" HorizontalAlignment="Left" Margin="494,10,0,0" VerticalAlignment="Top" Width=" 80"/>
         <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Margin="364,12,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top" RenderTransformOrigin="1.781,0.562"/>
        
-        <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="48,10,0,0" TextWrapping="Wrap" Text="Level 1" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="48,10,0,0" TextWrapping="Wrap" Text="Level One" VerticalAlignment="Top"/>
         <Canvas x:Name="WorldCanvas" HorizontalAlignment="Center" Width="772" Height="525" Margin="0,35,0,10" Background="YellowGreen" >
         </Canvas>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Health" VerticalAlignment="Top" Margin="137,12,0,0"/>
