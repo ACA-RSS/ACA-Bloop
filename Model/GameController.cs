@@ -131,6 +131,10 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(wuzzy);
             Instance.Level.WorldObj.Add(buzzy);
 
+            Boost b = new Boost();
+            b.Spot = new Location { Row = 10, Column = 13 };
+            Instance.Level.WorldObj.Add(b);
+
             Stump stumpy = new Stump(new Boost(), 15) { Spot = new Location { Row = 6, Column = 19 } };
             Instance.Level.WorldObj.Add(stumpy);
 
@@ -514,7 +518,13 @@ namespace Twisted_Treeline.Model
                                 Instance.Level.WorldObj.Add(w);
                                 break;
                             }
-
+                        case "Boos":
+                            {
+                                Boost lasagna = new Boost();
+                                w = lasagna.Deserialize(curLine);
+                                Instance.Level.WorldObj.Add(w);
+                                break;
+                            }
                     }
                     Instance.Player.Image = Instance.GenderImg;
                 }

@@ -10,13 +10,13 @@
         <StackPanel x:Name="panel" Background="#FFFFFFFF" Height="400" Width="800" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,70,0,0" MouseMove="panel_MouseMove" MouseUp="panel_MouseUp"></StackPanel>
         <Image Source="TTLine.png" Height="80" VerticalAlignment="Top"/>
         <Button x:Name="Tree_btn" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" Click="Tree_Click">
-            <Image Source="tree.png"/>
+            <Image Source="/tree.png"/>
         </Button>
         <Button x:Name="Bear_btn" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,130,0,0" Click="Bear_Click">
-            <Image Source="bigber.png"/>
+            <Image Source="/bigber.png"/>
         </Button>
         <Button x:Name="Wolf_btn" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,190,0,0" Click="Wolf_Click">
-            <Image Source="wolf.gif"/>
+            <Image Source="/wolf.gif"/>
         </Button>
         <Button x:Name="Submit" Height="50" Width="200" VerticalAlignment="Bottom" Click="Submit_Click">Submit and Save</Button>
     </Grid>

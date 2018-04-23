@@ -77,16 +77,44 @@ namespace Twisted_Treeline.Model
             
             string[] stats = statsStr.Split(',');
             HitPoints = Convert.ToInt32(stats[2]);
+            string type = stats[5];
             Stump s = new Stump(HitPoints);
             s.Spot = new Location(string.Format("{0},{1}", stats[3], stats[4]));
             s.Dead = Convert.ToBoolean(stats[1]);
+            switch (type)
+            {
+                case "Bear":
+                    {
+                        Bear b = new Bear();
+                        s.Object = b;
+                        break;
+                    }
+                case "Star":
+                    {
+                        Star st = new Star();
+                        s.Object = st;
+                        break;
+                    }
+                case "Boost":
+                    {
+                        Boost bo = new Boost();
+                        s.Object = bo;
+                        break;
+                    }
+                case "Stick":
+                    {
+                        Stick danger = new Stick();
+                        s.Object = danger;
+                        break;
+                    }
+            }
             return s;
         }
 
         public override string Serialize()
         {
             //spot will convert itselft to s comma seperated string already
-            return string.Format("Stump,{0},{1},{2}", Dead, HitPoints, Spot);
+            return string.Format("Stump,{0},{1},{2},{3}", Dead, HitPoints, Spot, Object.Serialize());
         }
     }
 }

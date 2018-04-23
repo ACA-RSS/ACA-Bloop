@@ -17,7 +17,7 @@ namespace Twisted_Treeline.Model
             Image = "/boost.png";
             Type = "Hittable";
             //how many health points to add to player
-            Bonus = 5;
+            Bonus = 20;
         }
 
         public override void TakeDamage(int damage)
