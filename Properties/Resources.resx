@@ -124,6 +124,9 @@
   <data name="punch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\punch.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Sitar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sitar.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="wolf_attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\wolf_attack.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

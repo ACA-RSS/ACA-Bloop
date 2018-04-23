@@ -51,15 +51,15 @@ namespace Twisted_Treeline.Model
             {
                 return true;
             }
-            else if (Instance.Level.Stars == 3 && Instance.LevelNum == 3.2)
+            else if (Instance.Level.Stars == 2 && Instance.LevelNum == 3.2)
             {
                 return true;
             }
-            else if (Instance.Level.Stars == 1 && Instance.LevelNum == 4)
+            else if (Instance.Level.Stars == 3 && Instance.LevelNum == 4)
             {
                 return true;
             }
-            else if (Instance.LevelNum == 3.1 && Player.Spot.Row == 13 && Player.Spot.Column == 30 && Level.Stars == 1)
+            else if (Instance.LevelNum == 3.1 && Player.Spot.Row == 14 && Player.Spot.Column == 30 && Level.Stars == 1)
             {
                 return true;
             }

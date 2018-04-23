@@ -32,7 +32,7 @@ namespace Twisted_Treeline
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources.Sitar);
-            //player.Play();
+            player.Play();
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)

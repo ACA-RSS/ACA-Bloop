@@ -92,12 +92,12 @@ namespace Twisted_Treeline
                             GameController.Instance.SetUpLevelThreePtTwo();
                             GameController.Instance.InitialSetup();
                             GameController.Instance.LevelNum = 3.2;
+                            GameController.Instance.Level.Stars = 1;
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
 
                         case 3.2:
-                            GameController.Instance.Level.Stars = 0;
                             GameController.Instance.Player.HitPoints = 100;
                             GameController.Instance.Armageddon();
                             GameController.Instance.LevelNum = 4;
