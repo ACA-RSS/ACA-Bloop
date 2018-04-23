@@ -37,6 +37,7 @@
             </StackPanel>
         </Button>
         <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="0,162,0,0" TextWrapping="Wrap" Text="Choose Your Player" VerticalAlignment="Top" Background="Green" Width="280" Height="28" TextAlignment="Center" Grid.Column="1"/>
+        <Button x:Name="btnTTLLevelDesigner" Content="Level Designer" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="122" Height="30" Click="btnTTLLevelDesigner_Click" Grid.Column="1"/>
 
     </Grid>
 </Window>

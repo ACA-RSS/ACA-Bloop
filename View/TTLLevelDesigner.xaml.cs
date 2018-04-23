@@ -107,7 +107,7 @@ namespace Twisted_Treeline
         }
         private Image GetEmptySpace()
         {
-            BitmapImage bi = new BitmapImage(new Uri("/wall.png"));
+            BitmapImage bi = new BitmapImage(new Uri("wall.png"));
             Random r = new Random();
             while (true)
             {
