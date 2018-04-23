@@ -146,26 +146,58 @@ namespace Twisted_Treeline.Model
             
             BuildEdges();
 
-            //Top walls
-            Wall.WallBuilder(1, 6, 2, "Vert");
-            Wall.WallBuilder(4, 7, 5, "DiagDown");
-            Wall.WallBuilder(9, 13, 1, "Horz");
-            Wall.WallBuilder(9, 16, 2, "Horz");
-            Wall.WallBuilder(9, 18, 5, "DiagUp");
-            Wall.WallBuilder(1, 24, 2, "Vert");
-            //Bottom walls
-            Wall.WallBuilder(20, 6, 2, "Vert");
-            Wall.WallBuilder(20, 6, 5, "DiagUp");
-            Wall.WallBuilder(14, 13, 1, "Horz");
-            Wall.WallBuilder(14, 16, 1, "Horz");
-            Wall.WallBuilder(14, 18, 5, "DiagDown");
-            Wall.WallBuilder(20, 24, 2, "Vert");
-            //Right Side walls
-            Wall.WallBuilder(9, 27, 5, "Vert");
-            Wall.WallBuilder(14, 28, 2, "Horz");
-            Wall.WallBuilder(9, 29, 3, "Vert");
-            Wall.WallBuilder(9, 30, 0, "Horz");
-           
+            WallBuilder(1, 2, 5, "Vert");
+            WallBuilder(8, 1, 3, "Horz");
+            WallBuilder(15, 1, 7, "Horz");
+            WallBuilder(16, 1, 7, "Horz");
+            WallBuilder(16, 1, 7, "Horz");
+            WallBuilder(10, 2, 2, "Horz");
+            WallBuilder(12, 2, 3, "Horz");
+            WallBuilder(13, 2, 3, "Horz");
+            WallBuilder(2, 4, 4, "Vert");
+            WallBuilder(2, 5, 4, "Vert");
+            WallBuilder(8, 6, 5, "Vert");
+            WallBuilder(3, 7, 5, "Vert");
+            WallBuilder(1, 8, 2, "Vert");
+            WallBuilder(1, 9, 2, "Vert");
+            WallBuilder(2, 10, 1, "Horz");
+            WallBuilder(2, 12, 5, "Vert");
+
+            WallBuilder(6, 11, 1, "Vert");
+            WallBuilder(6, 10, 1, "Vert");
+            WallBuilder(5, 9, 8, "Vert");
+            WallBuilder(10, 8, 3, "Vert");
+
+            WallBuilder(18, 2, 4, "Vert");
+            WallBuilder(17, 4, 4, "Vert");
+            WallBuilder(18, 6, 4, "Vert");
+            WallBuilder(18, 7, 1, "Horz");
+            WallBuilder(20, 8, 3, "Horz");
+            WallBuilder(13, 10, 5, "Vert");
+            WallBuilder(16, 11, 1, "Vert");
+            WallBuilder(18, 12, 2, "Vert");
+            WallBuilder(18, 13, 1, "Horz");
+            WallBuilder(16, 12, 2, "Horz");
+            WallBuilder(17, 4, 4, "Vert");
+            WallBuilder(15, 15, 3, "Vert");
+            WallBuilder(11, 12, 3, "Vert");
+            WallBuilder(14, 13, 0, "Vert");
+            WallBuilder(4, 14, 9, "Vert");
+            WallBuilder(1, 14, 1, "Vert");
+            WallBuilder(1, 15, 1, "Vert");
+            WallBuilder(1, 16, 5, "Vert");
+            WallBuilder(8, 16, 3, "Vert");
+            WallBuilder(11, 15, 0, "Vert");
+            WallBuilder(1, 19, 10, "Vert");
+            WallBuilder(11, 15, 0, "Vert");
+            WallBuilder(13, 15, 3, "Horz");
+            WallBuilder(13, 19, 9, "Vert");
+            WallBuilder(15, 17, 1, "Horz");
+            WallBuilder(17, 17, 1, "Horz");
+            WallBuilder(19, 17, 1, "Horz");
+            WallBuilder(20, 14, 2, "Vert");
+            WallBuilder(21, 16, 1, "Vert");
+            WallBuilder(21, 18, 0, "Horz");
         }
 
         public static void LevelThreePtOne()

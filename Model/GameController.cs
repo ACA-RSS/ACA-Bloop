@@ -358,65 +358,11 @@ namespace Twisted_Treeline.Model
             };
             Instance.Level.WorldObj.Add(Player);
             Wall.LevelThreePtTwo();
-            Wall.BuildEdges();
 
             Star glitter = new Star() { Spot = new Location { Row = 21, Column = 14 } };
-            Star gleam = new Star() { Spot = new Location { Row = 3, Column = 15 } };
-
-            //Circle of fake stars
-            Stump s = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
-            Stump t = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
-            Stump u = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
-            Stump m = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
-            Stump p = new Stump(new Boost() { Bonus = 3 }, 5) { Spot = new Location { Row = 20, Column = 13 } };
-
+            
             Instance.Level.WorldObj.Add(glitter);
-            Instance.Level.WorldObj.Add(gleam);
-
-            Bear cutler = new Bear() { Spot = new Location { Row = 1, Column = 2 } };
-            Bear jones = new Bear() { Spot = new Location { Row = 2, Column = 2 } };
-            Bear urlacher = new Bear() { Spot = new Location { Row = 8, Column = 2 } };
-            Bear marshall = new Bear() { Spot = new Location { Row = 7, Column = 9 } };
-            Bear forte = new Bear() { Spot = new Location { Row = 8, Column = 9 } };
-            Bear grossman = new Bear() { Spot = new Location { Row = 12, Column = 13 } };
-            Bear gould = new Bear() { Spot = new Location { Row = 12, Column = 14 } };
-            Bear fuzzy = new Bear() { Spot = new Location { Row = 12, Column = 18 } };
-
-            Instance.Level.WorldObj.Add(cutler);
-            Instance.Level.WorldObj.Add(jones);
-            Instance.Level.WorldObj.Add(urlacher);
-            Instance.Level.WorldObj.Add(marshall);
-            Instance.Level.WorldObj.Add(forte);
-            Instance.Level.WorldObj.Add(grossman);
-            Instance.Level.WorldObj.Add(gould);
-            Instance.Level.WorldObj.Add(fuzzy);
-
-            Wolf toews = new Wolf() { Spot = new Location { Row = 1, Column = 6 } };
-            Wolf kane = new Wolf() { Spot = new Location { Row = 2, Column = 12 } };
-            Wolf keith = new Wolf() { Spot = new Location { Row = 1, Column = 17 } };
-            Wolf seabrook = new Wolf() { Spot = new Location { Row = 12, Column = 30 } };
-            Wolf panerin = new Wolf() { Spot = new Location { Row = 12, Column = 28 } };
-            Wolf crawford = new Wolf() { Spot = new Location { Row = 17, Column = 6 } };
-            Wolf byfuglian = new Wolf() { Spot = new Location { Row = 18, Column = 6 } };
-            Wolf dunkin = new Wolf() { Spot = new Location { Row = 15, Column = 2 } };
-
-            Instance.Level.WorldObj.Add(toews);
-            Instance.Level.WorldObj.Add(kane);
-            Instance.Level.WorldObj.Add(keith);
-            Instance.Level.WorldObj.Add(seabrook);
-            Instance.Level.WorldObj.Add(panerin);
-            Instance.Level.WorldObj.Add(crawford);
-            Instance.Level.WorldObj.Add(byfuglian);
-            Instance.Level.WorldObj.Add(dunkin);
-
-            Boost a = new Boost() { Spot = new Location() { Row = 19, Column = 4 } };
-            Boost b = new Boost() { Spot = new Location() { Row = 19, Column = 5 } };
-            Boost c = new Boost() { Spot = new Location() { Row = 19, Column = 3 } };
-
-            Instance.Level.WorldObj.Add(a);
-            Instance.Level.WorldObj.Add(b);
-            Instance.Level.WorldObj.Add(c);
-
+           
         }
 
 
