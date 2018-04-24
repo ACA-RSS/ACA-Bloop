@@ -151,7 +151,7 @@ namespace Twisted_Treeline
             //TRY # 3
 
             GameController.Instance.Difficulty = 0;
-            Squirrel ship = new Squirrel() { HitPoints = 5000, Speed = 5000, Damage = 0, Image = "/boost.png", Spot = new Location() { Row = GameController.Instance.Player.Spot.Row - 2, Column = GameController.Instance.Player.Spot.Column } };
+            Squirrel ship = new Squirrel() { HitPoints = 5000, Speed = 5000, Damage = 0, Image = "/EpicSpaceship.png", Spot = new Location() { Row = GameController.Instance.Player.Spot.Row - 2, Column = GameController.Instance.Player.Spot.Column - 2 } };
 
             GameController.Instance.Level.WorldObj.Add(ship);
 
@@ -301,6 +301,10 @@ namespace Twisted_Treeline
                     if (o.Type != "Wall")
                     {
                         i.Margin = new Thickness(o.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), o.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0);
+                        if (o.Image == "/EpicSpaceship.png")
+                        {
+                            i.Width = 80;
+                        }
                         ImageBehavior.SetAnimatedSource(i, new BitmapImage(new Uri(o.Image, UriKind.Relative)));
                     }
                 }
