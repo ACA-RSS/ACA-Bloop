@@ -41,7 +41,7 @@ namespace Twisted_Treeline.Model
             }
             else if (dir == "DiagDown")
             {
-                for(int i = 0; i < numSpaces + 1; i++)
+                for (int i = 0; i < numSpaces + 1; i++)
                 {
                     Wall wally = new Wall() { Spot = new Location() { Row = startRow + i, Column = startCol + i } };
                     GameController.Instance.Level.WorldObj.Add(wally);
@@ -50,7 +50,7 @@ namespace Twisted_Treeline.Model
             }
             else if (dir == "DiagUp")
             {
-                for (int i = numSpaces + 1 ; i > 0 ; i--)
+                for (int i = numSpaces + 1; i > 0; i--)
                 {
                     Wall wally = new Wall() { Spot = new Location() { Row = startRow - i, Column = startCol + i } };
                     GameController.Instance.Level.WorldObj.Add(wally);
@@ -65,7 +65,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(1, 0, 22, "Vert");
             Wall.WallBuilder(23, 1, 30, "Horz");
             Wall.WallBuilder(0, 31, 22, "Vert");
-            
+
         }
 
         public override WorldObject Deserialize(string statsStr)
@@ -143,7 +143,7 @@ namespace Twisted_Treeline.Model
         }
         public static void LevelThreePtTwo()
         {
-            
+
             BuildEdges();
 
             WallBuilder(1, 2, 5, "Vert");
@@ -213,7 +213,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(7, 3, 2, "Horz");
             Wall.WallBuilder(8, 3, 2, "Horz");
             Wall.WallBuilder(5, 14, 3, "Vert");
-            Wall.WallBuilder(8, 7, 6 , "Vert");
+            Wall.WallBuilder(8, 7, 6, "Vert");
             Wall.WallBuilder(8, 11, 1, "Vert");
             Wall.WallBuilder(9, 9, 1, "Vert");
             Wall.WallBuilder(9, 11, 2, "Vert");
@@ -227,7 +227,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(15, 14, 2, "Vert");
             Wall.WallBuilder(15, 16, 7, "Horz");
             Wall.WallBuilder(19, 2, 2, "Vert");
-            
+
             //bottom section
             Wall.WallBuilder(19, 4, 25, "Horz");
             Wall.WallBuilder(20, 4, 21, "Horz");
@@ -239,7 +239,7 @@ namespace Twisted_Treeline.Model
             Wall.WallBuilder(10, 19, 1, "Horz");
             Wall.WallBuilder(11, 20, 1, "Vert");
             Wall.WallBuilder(18, 27, 1, "Vert");
-            
+
             Wall.WallBuilder(7, 20, 10, "Horz");
             Wall.WallBuilder(5, 25, 13, "Vert");
 
