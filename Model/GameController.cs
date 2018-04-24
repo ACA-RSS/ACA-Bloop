@@ -353,16 +353,33 @@ namespace Twisted_Treeline.Model
             {
                 Stick = new Stick(5),
 
-                StartSpot = new Location { Row = 22, Column = 4 },
-                Spot = new Location { Row = 22, Column = 4 }
+                StartSpot = new Location { Row = 1, Column = 1 },
+                Spot = new Location { Row = 1, Column = 1 }
             };
             Instance.Level.WorldObj.Add(Player);
             Wall.LevelThreePtTwo();
 
-            Star glitter = new Star() { Spot = new Location { Row = 21, Column = 14 } };
+            Star glitter = new Star() { Spot = new Location { Row = 12, Column = 27 } };
             
             Instance.Level.WorldObj.Add(glitter);
-           
+
+            Stump crumpy = new Stump(new Stick(15), 15) { Spot = new Location { Row = 15, Column = 16 } };
+            Stump slump = new Stump(new Boost(), 25) { Spot = new Location { Row = 17, Column = 16 } };
+            Stump arg = new Stump(new Boost(), 15) { Spot = new Location { Row = 6, Column = 13 } };
+
+            Instance.Level.WorldObj.Add(crumpy);
+            Instance.Level.WorldObj.Add(slump);
+            Instance.Level.WorldObj.Add(arg);
+
+            Wolf wolfy = new Wolf() { Spot = new Location() { Row = 14, Column = 18 } };
+            Wolf aolfy = new Wolf() { Spot = new Location() { Row = 16, Column = 18 } };
+            Wolf bolfy = new Wolf() { Spot = new Location() { Row = 18, Column = 18 } };
+            Wolf colfy = new Wolf() { Spot = new Location() { Row = 20, Column = 18 } };
+
+            Instance.Level.WorldObj.Add(wolfy);
+            Instance.Level.WorldObj.Add(aolfy);
+            Instance.Level.WorldObj.Add(bolfy);
+            Instance.Level.WorldObj.Add(colfy);
         }
 
 
@@ -400,11 +417,15 @@ namespace Twisted_Treeline.Model
                 {
                     Environment.Exit(1);
                 }
-                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
-                //difficulty
+                
 
                 //level number
                 Instance.LevelNum = Convert.ToInt32(sr.ReadLine());
+
+                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
+                //difficulty
+
+
                 //points
                 Instance.Points = Convert.ToInt32(sr.ReadLine());
                 //stars

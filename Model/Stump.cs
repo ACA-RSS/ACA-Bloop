@@ -77,8 +77,9 @@ namespace Twisted_Treeline.Model
             
             string[] stats = statsStr.Split(',');
             HitPoints = Convert.ToInt32(stats[2]);
-            string type = stats[5];
+            string type = stats[6];
             Stump s = new Stump(HitPoints);
+            s.Image = stats[5];
             s.Spot = new Location(string.Format("{0},{1}", stats[3], stats[4]));
             s.Dead = Convert.ToBoolean(stats[1]);
             switch (type)
@@ -114,7 +115,7 @@ namespace Twisted_Treeline.Model
         public override string Serialize()
         {
             //spot will convert itselft to s comma seperated string already
-            return string.Format("Stump,{0},{1},{2},{3}", Dead, HitPoints, Spot, Object.Serialize());
+            return string.Format("Stump,{0},{1},{2},{3},{4}", Dead, HitPoints, Spot, Image, Object.Serialize());
         }
     }
 }
