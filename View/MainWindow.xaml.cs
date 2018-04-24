@@ -25,6 +25,7 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class MainWindow : Window
     {
+        public SoundPlayer player;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,15 +33,15 @@ namespace Twisted_Treeline
 
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            SoundPlayer player = new SoundPlayer(Properties.Resources.Sitar);
+            player = new SoundPlayer(Properties.Resources.Sitar);
             player.Play();
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
+            player.Stop();
             GameController.Instance.Level = new World();
             GameController.Instance.Load("TTLSave.txt");
-
             GameController.Instance.InitialSetup();
             GameController.Instance.Update();
             GameScreen game = new GameScreen();
@@ -59,9 +60,10 @@ namespace Twisted_Treeline
 
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
+            player.Stop();
             GameController.Instance.Reset();
-            GameController.Instance.SetUpLevelOne();
-            GameController.Instance.LevelNum = 1;
+            GameController.Instance.SetUpLevelThreePtOne();
+            GameController.Instance.LevelNum = 3.1;
             GameController.Instance.InitialSetup();
             GameScreen game = new GameScreen();
             game.ShowDialog();
