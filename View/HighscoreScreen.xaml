@@ -5,13 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Twisted_Treeline.View"
         mc:Ignorable="d"
-        Title="HighscorePrompt" Height="300" Width="300" Background="DarkSlateGray">
+        Title="HighscoreScreen" Height="300" Width="300" Background="DarkSlateGray">
     <Grid>
-        <TextBlock x:Name="Scores" HorizontalAlignment="Center" Margin="0,0,0,0" Width="250" Background="DarkSlateGray" FontSize="20" Text="" Foreground="Goldenrod"/>
-
-
-
-
+        <TextBlock x:Name="Title" Text="HALL OF FAME" Foreground="Goldenrod" HorizontalAlignment="Center"  VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock x:Name="Scores" HorizontalAlignment="Center" Margin="0,25,0,0" Width="250" Background="DarkSlateGray" FontSize="20" Foreground="Goldenrod"/>
 
     </Grid>
 </Window>

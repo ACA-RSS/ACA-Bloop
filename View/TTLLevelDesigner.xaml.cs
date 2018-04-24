@@ -90,6 +90,7 @@ namespace Twisted_Treeline
                 if (!File.Exists(filestring))
                 {
                     File.Create(filestring);
+                    break;
                 }
 
             }
@@ -142,5 +143,23 @@ namespace Twisted_Treeline
         {
 
         }
+        private Button MakeButton(string src)
+        {
+            Button b = new Button();
+            b.BorderBrush = new SolidColorBrush(Colors.Black);
+            b.Width = 50;
+            b.Height = 50;
+            b.Margin = new Thickness(10);
+            b.Content = "bigber.png";
+
+            b.Click += btn_Click;
+            return b;
+        }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }

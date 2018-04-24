@@ -27,8 +27,8 @@ namespace Twisted_Treeline.Model
         /// </summary>
         public void LoadList()
         {
-            //using(FileStream rfstream = new FileStream(Filename, FileMode.Open, FileAccess.Read)) { 
-            using (StreamReader reader = new StreamReader(Filename))
+            using(FileStream fstream = new FileStream(Filename, FileMode.Open, FileAccess.Read)) {
+            using (StreamReader reader = new StreamReader(fstream))
             {
                     while (!reader.EndOfStream)
                     {
@@ -37,7 +37,7 @@ namespace Twisted_Treeline.Model
                         this.HighscoreList.Add(new Highscore(Convert.ToInt32(scoreArray[0]), scoreArray[1]));
                     }
                 }
-            //}
+            }
         }
         /// <summary>
         /// Updates the txt file to reflect scores and names in `HighscoreList`

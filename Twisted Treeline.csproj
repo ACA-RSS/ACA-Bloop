@@ -172,9 +172,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="HighScores.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Content Include="HighScores.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="HighScores_Test.txt">
