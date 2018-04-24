@@ -177,6 +177,7 @@ namespace Twisted_Treeline.Model
             c.HitPoints = Convert.ToInt32(stats[1]);
             c.Dead = Convert.ToBoolean(stats[2]);
             c.Spot = new Location(string.Format("{0},{1}", stats[3], stats[4]));
+            c.StartSpot = new Location(string.Format("{0},{1}", stats[5], stats[6]));
             return c;
         }
 
@@ -188,7 +189,7 @@ namespace Twisted_Treeline.Model
 
         public override string Serialize()
         {
-            return string.Format("Character,{0},{1},{2}", HitPoints, Dead, Spot);
+            return string.Format("Character,{0},{1},{2},{3}", HitPoints, Dead, Spot, StartSpot);
         }
     }
 }
