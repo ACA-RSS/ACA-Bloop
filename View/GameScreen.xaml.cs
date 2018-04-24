@@ -146,11 +146,40 @@ namespace Twisted_Treeline
 
         public void Abduction()
         {
-            Ticky.Stop();
+            //Ticky.Stop();
 
-            Image ship = new Image()
+            //TRY # 3
+
+            GameController.Instance.Difficulty = 0;
+            Squirrel ship = new Squirrel() { HitPoints = 5000, Speed = 5000, Damage = 0, Image = "/boost.png", Spot = new Location() { Row = GameController.Instance.Player.Spot.Row - 2, Column = GameController.Instance.Player.Spot.Column } };
+
+            GameController.Instance.Level.WorldObj.Add(ship);
+
+            for (int i = 0; i < 10; i++)
             {
-                Source = new BitmapImage(new Uri("/Bigber.png", UriKind.Relative)),
+                GameController.Instance.Update();
+                UpdateScreen();
+            }
+
+            //TRY # 1
+            /*Squirrel ship = new Squirrel() { Damage = 0, Image = "/bigber.png", Spot = new Location() { Row = 0, Column = 30 } };
+
+            GameController.Instance.Level.WorldObj.Add(ship);
+
+            bool found = false;
+
+            while (!found)
+            {
+                if (ship.Spot.Row == GameController.Instance.Player.Spot.Row && ship.Spot.Column == GameController.Instance.Player.Spot.Column)
+                {
+                    found = true;
+                }
+            }*/
+
+            //TRY # 2
+            /*Image ship = new Image()
+            {
+                Source = new BitmapImage(new Uri("/bigber.png", UriKind.Relative)),
                 Width = 150,
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Top,
@@ -204,8 +233,9 @@ namespace Twisted_Treeline
                     Row -= 1;
                 }
                 ship.Margin = new Thickness(Col, Row, 0, 0);
-            }
+            }*/
 
+            Ticky.Stop();
             HighscorePrompt hs = new HighscorePrompt();
             hs.ScoreTitle.Text = "YOU WON";
             hs.ShowDialog();

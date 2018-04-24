@@ -172,9 +172,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="HighScores.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="EpicSpaceship.png" />
+    <Content Include="HighScores.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="HighScores_Test.txt">
