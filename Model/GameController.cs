@@ -414,7 +414,7 @@ namespace Twisted_Treeline.Model
 
 
                 //level number
-                Instance.LevelNum = Convert.ToInt32(sr.ReadLine());
+                Instance.LevelNum = Convert.ToDouble(sr.ReadLine());
 
                 Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
                 //difficulty
