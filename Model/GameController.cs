@@ -411,11 +411,15 @@ namespace Twisted_Treeline.Model
                 {
                     Environment.Exit(1);
                 }
-                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
-                //difficulty
+                
 
                 //level number
                 Instance.LevelNum = Convert.ToInt32(sr.ReadLine());
+
+                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
+                //difficulty
+
+
                 //points
                 Instance.Points = Convert.ToInt32(sr.ReadLine());
                 //stars
