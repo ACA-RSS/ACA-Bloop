@@ -333,7 +333,6 @@ namespace Twisted_Treeline.Model
 
         public void SetUpLevelThreePtTwo()
         {
-
             
             Instance.Level = new World()
             {
@@ -341,7 +340,8 @@ namespace Twisted_Treeline.Model
                 Width = 32,
                 Squares = new WorldObject[24, 32]
             };
-            
+
+            GameController.Instance.Level.Stars = 1;
 
             Player = new Character(Instance.GenderImg)
             {
