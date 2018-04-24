@@ -1,3 +1,4 @@
+﻿
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,8 +60,8 @@ namespace Twisted_Treeline
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Reset();
-            GameController.Instance.SetUpLevelThreePtTwo();
-            GameController.Instance.LevelNum = 3.2;
+            GameController.Instance.SetUpLevelOne();
+            GameController.Instance.LevelNum = 1;
             GameController.Instance.InitialSetup();
             GameScreen game = new GameScreen();
             game.ShowDialog();
