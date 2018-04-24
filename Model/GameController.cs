@@ -73,7 +73,7 @@ namespace Twisted_Treeline.Model
         {
             //RELEASE THE HORSEMEN
 
-            Bear famine = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column + 1 }, Damage = 2 * GameController.Instance.Difficulty};
+            Bear famine = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column + 1 }, Damage = 2 * GameController.Instance.Difficulty };
             Bear plague = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column - 1 }, Damage = 2 * GameController.Instance.Difficulty };
             Bear war = new Bear() { Spot = new Location { Row = Player.Spot.Row - 1, Column = Player.Spot.Column }, Damage = 2 * GameController.Instance.Difficulty };
             Bear death = new Bear() { Spot = new Location { Row = Player.Spot.Row + 1, Column = Player.Spot.Column }, Damage = 2 * GameController.Instance.Difficulty };
@@ -276,7 +276,7 @@ namespace Twisted_Treeline.Model
             Wall.LevelThreePtOne();
             Wall.BuildEdges();
 
-            Wolf wolfy = new Wolf() { Spot = new Location() { Row = 1, Column = 7} };
+            Wolf wolfy = new Wolf() { Spot = new Location() { Row = 1, Column = 7 } };
             Wolf aolfy = new Wolf() { Spot = new Location() { Row = 4, Column = 3 } };
             Wolf bolfy = new Wolf() { Spot = new Location() { Row = 5, Column = 3 } };
             Wolf colfy = new Wolf() { Spot = new Location() { Row = 22, Column = 22 } };
@@ -326,14 +326,14 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(b);
 
             Stump starry = new Stump(new Star(), 30) { Spot = new Location() { Row = 13, Column = 30 } };
-            
+
             Instance.Level.WorldObj.Add(starry);
 
         }
 
         public void SetUpLevelThreePtTwo()
         {
-            
+
             Instance.Level = new World()
             {
                 Height = 24,
@@ -354,7 +354,7 @@ namespace Twisted_Treeline.Model
             Wall.LevelThreePtTwo();
 
             Star glitter = new Star() { Spot = new Location { Row = 12, Column = 27 } };
-            
+
             Instance.Level.WorldObj.Add(glitter);
 
             Stump crumpy = new Stump(new Stick(15), 15) { Spot = new Location { Row = 15, Column = 16 } };
@@ -411,7 +411,7 @@ namespace Twisted_Treeline.Model
                 {
                     Environment.Exit(1);
                 }
-                
+
 
                 //level number
                 Instance.LevelNum = Convert.ToDouble(sr.ReadLine());
