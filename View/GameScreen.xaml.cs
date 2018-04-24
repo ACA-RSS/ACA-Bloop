@@ -286,7 +286,7 @@ namespace Twisted_Treeline
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
             prgHealth.Value = GameController.Instance.Player.HitPoints;
             imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
-
+            txtLevel.Text = String.Format("Level #{0}", Math.Floor(GameController.Instance.LevelNum));
             List<WorldObject> accounted = new List<WorldObject>();
 
             List<Image> toDestroy = new List<Image>();
