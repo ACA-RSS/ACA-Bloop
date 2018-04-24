@@ -21,6 +21,8 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 
 [Link to a playthrough of our Beta version](https://drive.google.com/open?id=1KcwiC_eocVph_SlbDjW_hDrSlr8vtS2j)
 
+[Link to a playthrough of our Release Candidate](https://drive.google.com/file/d/19h5qtX23wmGLNxmPvrUlWjObDvwtbAl0/view?usp=sharing)
+
 ## Expenses:
 
 |Team Member | Hours Invested | Hours Remaining | Journal |     
