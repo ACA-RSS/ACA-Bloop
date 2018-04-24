@@ -71,19 +71,12 @@ namespace Twisted_Treeline.Model
 
         public void Armageddon()
         {
-            foreach (WorldObject obj in Instance.Level.WorldObj)
-            {
-                if (obj.Type == "Wall")
-                {
-                    Instance.Level.WorldObj.Remove(obj);
-                }
-            }
-
             //RELEASE THE HORSEMEN
-            Bear famine = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column + 1 }, Damage = 2 };
-            Bear plague = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column - 1 }, Damage = 2 };
-            Bear war = new Bear() { Spot = new Location { Row = Player.Spot.Row - 1, Column = Player.Spot.Column }, Damage = 2 };
-            Bear death = new Bear() { Spot = new Location { Row = Player.Spot.Row + 1, Column = Player.Spot.Column }, Damage = 2 };
+
+            Bear famine = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column + 1 }, Damage = 2 * GameController.Instance.Difficulty};
+            Bear plague = new Bear() { Spot = new Location { Row = Player.Spot.Row, Column = Player.Spot.Column - 1 }, Damage = 2 * GameController.Instance.Difficulty };
+            Bear war = new Bear() { Spot = new Location { Row = Player.Spot.Row - 1, Column = Player.Spot.Column }, Damage = 2 * GameController.Instance.Difficulty };
+            Bear death = new Bear() { Spot = new Location { Row = Player.Spot.Row + 1, Column = Player.Spot.Column }, Damage = 2 * GameController.Instance.Difficulty };
 
             Instance.Level.WorldObj.Add(famine);
             Instance.Level.WorldObj.Add(plague);
@@ -341,13 +334,14 @@ namespace Twisted_Treeline.Model
         public void SetUpLevelThreePtTwo()
         {
 
-
+            
             Instance.Level = new World()
             {
                 Height = 24,
                 Width = 32,
                 Squares = new WorldObject[24, 32]
             };
+            
 
             Player = new Character(Instance.GenderImg)
             {
