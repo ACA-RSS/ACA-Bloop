@@ -172,6 +172,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="EpicSpaceship.png" />
     <Content Include="HighScores.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
