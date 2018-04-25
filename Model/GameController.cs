@@ -369,16 +369,20 @@ namespace Twisted_Treeline.Model
                 Squares = new WorldObject[24, 32]
             };
 
-            GameController.Instance.Level.Stars = 1;
 
+            int oldHP = Instance.Player.HitPoints;
             Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
-
+                HitPoints = oldHP,
                 StartSpot = new Location { Row = 1, Column = 1 },
                 Spot = new Location { Row = 1, Column = 1 }
             };
+
+            Instance.Level.Stars = 1;
+
             Instance.Level.WorldObj.Add(Player);
+
             Wall.LevelThreePtTwo();
 
             Star glitter = new Star() { Spot = new Location { Row = 12, Column = 27 } };
