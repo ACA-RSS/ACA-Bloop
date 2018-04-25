@@ -156,10 +156,6 @@ namespace Twisted_Treeline
         //new high score screen
         public void Abduction()
         {
-            //Ticky.Stop();
-
-            //TRY # 3
-
             GameController.Instance.Difficulty = 0;
             Squirrel ship = new Squirrel() { HitPoints = 5000, Speed = 5000, Damage = 0, Image = "/EpicSpaceship.png", Spot = new Location() { Row = GameController.Instance.Player.Spot.Row - 2, Column = GameController.Instance.Player.Spot.Column - 2 } };
 
@@ -170,80 +166,6 @@ namespace Twisted_Treeline
                 GameController.Instance.Update();
                 UpdateScreen();
             }
-
-            //TRY # 1
-            /*Squirrel ship = new Squirrel() { Damage = 0, Image = "/bigber.png", Spot = new Location() { Row = 0, Column = 30 } };
-
-            GameController.Instance.Level.WorldObj.Add(ship);
-
-            bool found = false;
-
-            while (!found)
-            {
-                if (ship.Spot.Row == GameController.Instance.Player.Spot.Row && ship.Spot.Column == GameController.Instance.Player.Spot.Column)
-                {
-                    found = true;
-                }
-            }*/
-
-            //TRY # 2
-            /*Image ship = new Image()
-            {
-                Source = new BitmapImage(new Uri("/bigber.png", UriKind.Relative)),
-                Width = 150,
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Top,
-            };
-
-            WorldCanvas.Children.Add(ship);
-
-            Image scotty = ship;
-            foreach (Image i in WorldCanvas.Children)
-            {
-                WorldObject obj = i.Tag as WorldObject;
-                if (obj.Type == "Character")
-                {
-                    scotty = i;
-                }
-            }
-
-            double playerX = GameController.Instance.Player.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width);
-            double playerY = GameController.Instance.Player.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height);
-
-            double Col = 772;
-            double Row = 0;
-
-            ship.Margin = new Thickness(Col, Row, 0, 0);
-
-            while (Col != playerX || Row != playerY)
-            {
-
-                if (Col > playerX)
-                {
-                    Col -= 1;
-                }
-                if (Row > playerY)
-                {
-                    Row -= 1;
-                }
-                ship.Margin = new Thickness(Col, Row, 0, 0);
-            }
-
-            WorldCanvas.Children.Remove(scotty);
-
-            while (Col > 0 || Row > 0)
-            {
-
-                if (Col > 0)
-                {
-                    Col -= 1;
-                }
-                if (Row > 0)
-                {
-                    Row -= 1;
-                }
-                ship.Margin = new Thickness(Col, Row, 0, 0);
-            }*/
 
             Ticky.Stop();
             HighscorePrompt hs = new HighscorePrompt();

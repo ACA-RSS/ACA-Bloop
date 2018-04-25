@@ -345,6 +345,15 @@ namespace Twisted_Treeline.Model
 
             Instance.Level.WorldObj.Add(starry);
 
+            WorldObject toRemove = new Bear();
+            foreach (WorldObject obj in Instance.Level.WorldObj)
+            {
+                if (obj.Type == "Wall" && obj.Spot.Row == 13 && obj.Spot.Column == 31)
+                {
+                    toRemove = obj;
+                }
+            }
+            Instance.Level.WorldObj.Remove(toRemove);
         }
 
 
@@ -393,6 +402,16 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(aolfy);
             Instance.Level.WorldObj.Add(bolfy);
             Instance.Level.WorldObj.Add(colfy);
+
+            WorldObject toRemove = new Bear();
+            foreach (WorldObject obj in Instance.Level.WorldObj)
+            {
+                if (obj.Type == "Wall" && obj.Spot.Row == 1 && obj.Spot.Column == 0)
+                {
+                    toRemove = obj;
+                }
+            }
+            Instance.Level.WorldObj.Remove(toRemove);
         }
 
         //writes key GC info into a file, followed by each object in the current level
