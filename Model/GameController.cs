@@ -424,6 +424,12 @@ namespace Twisted_Treeline.Model
             string title = "TwistedTLine";
 
             //Saves the player info
+             if(File.Exists(file))
+             {  
+                 File.Delete(file);
+             }
+            var myfile = File.Open(file, FileMode.Create);
+            myfile.Close();
 
             using (StreamWriter writer = new StreamWriter(file))
             {
@@ -445,107 +451,111 @@ namespace Twisted_Treeline.Model
         //converts a saved file for the project into an instance of the level
         public void Load(string fileName)
         {
-
-            using (StreamReader sr = new StreamReader(fileName))
+            try
             {
-                string curLine;
-                string saveTitle = sr.ReadLine();
-                if (saveTitle != "TwistedTLine")
+
+                using (StreamReader sr = new StreamReader(fileName))
                 {
-                    Environment.Exit(1);
-                }
-
-
-                //level number
-                Instance.LevelNum = Convert.ToDouble(sr.ReadLine());
-
-                Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
-                //difficulty
-
-
-                //points
-                Instance.Points = Convert.ToInt32(sr.ReadLine());
-                //stars
-                Instance.Level.Stars = Convert.ToInt32(sr.ReadLine());
-                //check to make sure it isnt the last line in the file
-                Instance.GenderImg = sr.ReadLine();
-
-
-                while (sr.Peek() >= 0)
-                {
-                    curLine = sr.ReadLine();
-                    string type = curLine.Substring(0, 4);
-                    WorldObject w;
-                    switch (type)
+                    string curLine;
+                    string saveTitle = sr.ReadLine();
+                    if (saveTitle != "TwistedTLine")
                     {
-                        case "Bear":
-                            {
-                                Bear b = new Bear();
-                                w = b.Deserialize(curLine);
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
-                        case "Wolf":
-                            {
-                                Wolf coyote = new Wolf();
-                                w = coyote.Deserialize(curLine);
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
-                        case "Squi":
-                            {
-                                Squirrel scrat = new Squirrel();
-                                w = scrat.Deserialize(curLine);
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
-                        case "Char":
-                            {
-                                Character alcatraz = new Character();
-                                w = alcatraz.Deserialize(curLine);
-                                Instance.Player = w as Character;
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
-                        case "Wall":
-                            {
-                                Wall china = new Wall();
-                                w = china.Deserialize(curLine);
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
-                        case "Stum":
-                            {
-                                Stump thump = new Stump();
-                                w = thump.Deserialize(curLine);
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
-                        case "Stic":
-                            {
-                                Stick discipline = new Stick();
-                                w = discipline.Deserialize(curLine);
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
-                        case "Star":
-                            {
-                                Star sta = new Star();
-                                w = sta.Deserialize(curLine);
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
-                        case "Boos":
-                            {
-                                Boost lasagna = new Boost();
-                                w = lasagna.Deserialize(curLine);
-                                Instance.Level.WorldObj.Add(w);
-                                break;
-                            }
+                        Environment.Exit(1);
                     }
-                    Instance.Player.Image = Instance.GenderImg;
+
+
+                    //level number
+                    Instance.LevelNum = Convert.ToDouble(sr.ReadLine());
+
+                    Instance.Difficulty = Convert.ToInt32(sr.ReadLine());
+                    //difficulty
+
+
+                    //points
+                    Instance.Points = Convert.ToInt32(sr.ReadLine());
+                    //stars
+                    Instance.Level.Stars = Convert.ToInt32(sr.ReadLine());
+                    //check to make sure it isnt the last line in the file
+                    Instance.GenderImg = sr.ReadLine();
+
+
+                    while (sr.Peek() >= 0)
+                    {
+                        curLine = sr.ReadLine();
+                        string type = curLine.Substring(0, 4);
+                        WorldObject w;
+                        switch (type)
+                        {
+                            case "Bear":
+                                {
+                                    Bear b = new Bear();
+                                    w = b.Deserialize(curLine);
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                            case "Wolf":
+                                {
+                                    Wolf coyote = new Wolf();
+                                    w = coyote.Deserialize(curLine);
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                            case "Squi":
+                                {
+                                    Squirrel scrat = new Squirrel();
+                                    w = scrat.Deserialize(curLine);
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                            case "Char":
+                                {
+                                    Character alcatraz = new Character();
+                                    w = alcatraz.Deserialize(curLine);
+                                    Instance.Player = w as Character;
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                            case "Wall":
+                                {
+                                    Wall china = new Wall();
+                                    w = china.Deserialize(curLine);
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                            case "Stum":
+                                {
+                                    Stump thump = new Stump();
+                                    w = thump.Deserialize(curLine);
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                            case "Stic":
+                                {
+                                    Stick discipline = new Stick();
+                                    w = discipline.Deserialize(curLine);
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                            case "Star":
+                                {
+                                    Star sta = new Star();
+                                    w = sta.Deserialize(curLine);
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                            case "Boos":
+                                {
+                                    Boost lasagna = new Boost();
+                                    w = lasagna.Deserialize(curLine);
+                                    Instance.Level.WorldObj.Add(w);
+                                    break;
+                                }
+                        }
+                        Instance.Player.Image = Instance.GenderImg;
+                    }
                 }
             }
+            catch { }
         }
 
         //Mostly made this to avoid errors on the first run through. It moves the location variables
