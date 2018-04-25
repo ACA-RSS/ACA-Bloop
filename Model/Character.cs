@@ -1,4 +1,6 @@
-﻿//Scotty! or Sue.. Contains information about the main player, move and attack information and methods
+﻿//Contains all code for the Character class, derived from Animate
+
+//Scotty! or Sue.. Contains information about the main player, move, and attack information and methods
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,10 @@ namespace Twisted_Treeline.Model
 {
     public class Character : Animate
     {
+        //Stick object currently weilded by the player
         public Stick Stick;
 
+        //The Location whether the character begins and must return to
         public Location StartSpot;
 
 
@@ -40,6 +44,7 @@ namespace Twisted_Treeline.Model
             Type = "Character";
             DirFacing = Direction.Up;
         }
+
         //Removes the character's damage from the animal's hitpoints
         public void doDamage(Hittable toAttack)
         {
@@ -183,6 +188,7 @@ namespace Twisted_Treeline.Model
             return c;
         }
 
+        //Ends the game
         public override void Die()
         {
             Dead = true;

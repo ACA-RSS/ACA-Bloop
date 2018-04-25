@@ -1,4 +1,6 @@
-﻿//Character's stick, weapon and best friend.
+﻿//Contains all code for the stick class, derived from Hittable
+
+//Character's stick, weapon, and best friend.
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace Twisted_Treeline.Model
 {
     public class Stick : Hittable
     {
+        //Amount of hit points removed by one strike by the stick
         public int Damage { get; set; }
 
         public Stick(int hurt)
@@ -24,6 +27,7 @@ namespace Twisted_Treeline.Model
             Type = "Hittable";
             Image = "/Stick.png";
         }
+
         //allows the player to pick up a stick and use it
         public override void TakeDamage(int damage)
         {

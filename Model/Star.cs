@@ -1,4 +1,6 @@
-﻿//Star: everything a 12 year old could want in life
+﻿//Contains all code for the Stick class, derived from Hittable
+
+//Star: The WorldObject to be collected to complete the level
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace Twisted_Treeline.Model
             Image = "/steer.png";
             Type = "Hittable";
         }
+
         //adds a star to the players star count and removes it from the world
         public override void TakeDamage(int damage)
         {

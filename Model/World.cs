@@ -1,4 +1,7 @@
-﻿//contains the basic attributes needed for each level, mainly the grid of objects and basic methods for manipulation
+﻿//Contains all code describing the World
+
+//Contains the basic attributes needed for each level, mainly the grid of objects and basic methods
+//for manipulation
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +12,19 @@ namespace Twisted_Treeline.Model
 {
     public class World
     {
+        //Grid of WorldObjects to keep track of their locations
         public WorldObject[,] Squares { get; set; }
+
+        //Number of rows in the world grid
         public int Height { get; set; }
+
+        //Number of Columns in the world grid
         public int Width { get; set; }
 
+        //Number of stars the user has collected in this level
         public int Stars { get; set; }
 
+        //List of living World Objects contained in the level
         public List<WorldObject> WorldObj { get; set; }
 
         public World()
@@ -36,7 +46,8 @@ namespace Twisted_Treeline.Model
 
             WorldObj = new List<WorldObject>();
         }
-        //resets the world
+
+        //resets the world to represent a new level by creating a new empty grid
         public void Reset()
         {
             for (int row = 0; row < Height; ++row)
@@ -49,6 +60,7 @@ namespace Twisted_Treeline.Model
             }
         }
     }
+
     //contains row and column coordinates
     public struct Location
     {

@@ -1,4 +1,6 @@
-﻿//bear. He doesn't move but he hurts
+﻿//Contains all code for the bear class, derived from Animals
+
+//Bear. He doesn't move but he hurts
 using System;
 using System.Collections.Generic;
 using System.Linq;

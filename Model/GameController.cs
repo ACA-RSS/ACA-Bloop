@@ -1,4 +1,4 @@
-﻿//Contains a collection of all the levels, and main variables needed for the game to run
+﻿//Contains a collection of all the levels, main variables, and methods needed for the game to run
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,18 +13,27 @@ namespace Twisted_Treeline.Model
 
     public class GameController
     {
+        //Integer based on user-selected difficulty. Multiplied by animal attacks and other
+        //quantities to make the game harder
         public int Difficulty { get; set; }
 
+        //Which level is currently being played
         public double LevelNum { get; set; }
 
+        //The World Object designed as the current level
         public World Level { get; set; }
 
+        //Number of points the player has earned
         public int Points { get; set; }
 
+
+        //Character for the game; reloaded every new level
         public Character Player { get; set; }
 
+        //The sound object currently being played
         public Stream CurrentSound { get; set; }
 
+        //Picture based on character selection
         public string GenderImg { get; set; }
 
 
@@ -70,6 +79,7 @@ namespace Twisted_Treeline.Model
             }
         }
 
+        //Adds all world objects necessary for the final boss battle of the game
         public void Armageddon()
         {
             //RELEASE THE HORSEMEN
@@ -105,7 +115,8 @@ namespace Twisted_Treeline.Model
         }
 
         //Hardcodes in the player and all of the wall pieces and animals and such, then adds all of them
-        // to the Game Controller's WorldObj list. This is the only thing that changes from level to level
+        // to the Game Controller's WorldObj list for level 1. This is the only thing that changes
+        //from level to level
         public void SetUpLevelOne()
         {
             Instance.Player = new Character(Instance.GenderImg)
@@ -193,6 +204,8 @@ namespace Twisted_Treeline.Model
 
         }
 
+        //Hardcodes in the player and all of the wall pieces and animals and such, then adds all of them
+        // to the Game Controller's WorldObj list for Level 2
         public void SetUpLevelTwo()
         {
 
@@ -258,6 +271,8 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(hiddenTwo);
         }
 
+        //Hardcodes in the player and all of the wall pieces and animals and such, then adds all of them
+        // to the Game Controller's WorldObj list for the first screen of level 3
         public void SetUpLevelThreePtOne()
         {
             Instance.Level = new World()
@@ -332,6 +347,9 @@ namespace Twisted_Treeline.Model
 
         }
 
+
+        //Hardcodes in the player and all of the wall pieces and animals and such, then adds all of them
+        // to the Game Controller's WorldObj list for the second screen of level 3
         public void SetUpLevelThreePtTwo()
         {
 

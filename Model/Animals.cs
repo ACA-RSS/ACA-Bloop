@@ -1,4 +1,6 @@
-﻿//abstract class for all animals. contains attack and move information and methods
+﻿//Contains all code for the Base Animals class; derives from Animate
+
+//abstract class for all animals. contains attack and move information and methods
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +13,10 @@ namespace Twisted_Treeline.Model
 {
     public abstract class Animals : Animate
     {
-        //How many timer ticks between each attack
+        //Number of timer ticks between each attack
         public double AttackSpeed { get; set; }
 
-        //number of timer ticks for attack
+        //Number of timer ticks since last attack
         public int AttackTime { get; set; }
 
         //number of timer ticks for move
@@ -22,11 +24,12 @@ namespace Twisted_Treeline.Model
 
         //holds the name of the sound file to be played on animal attack
         public Stream Sound { get; set; }
-        //Shows
+
+        //Image that is shown while the animals is attacking
         public string AttackImage { get; set; }
 
 
-        //This is an odd one. Every animal has an attack speed, which is how many timer ticks between
+        //Every animal has an attack speed, which is how many timer ticks between
         //Each attack while the player is in an adjacent square. Its timer (Attack Time) starts at 0
         //And the animal does damage to the player when it reaches the attack speed, assuming the pllayer stays in
         //The adjacent square. This method returns an integer every time it's called, but returns 0
@@ -40,16 +43,14 @@ namespace Twisted_Treeline.Model
                 AttackTime = 0;
 
                 Image = AttackImage;
-                //add animal attack sound here
                 GameController.Instance.CurrentSound = Sound;
-                // end sound stuff
                 return Damage;
                 
             }
             else return 0;
         }
 
-        //moves the animal every `speed` calls
+        //Moves the animal every `speed` calls
         public void checkMove()
         {
             MoveTime++;
@@ -64,7 +65,7 @@ namespace Twisted_Treeline.Model
         //defines how the animal will move and returns the location of the next square to move to
         public abstract Location Move();
 
-        //animal attacks player if in range and checks of move requirements are met
+        //animal attacks player if in range and checks if move requirements are met
         public void CheckState()
         {
             for (int r = -1; r < 2; r++)

@@ -1,4 +1,4 @@
-﻿//Boost: Gives you extra health when you hit it
+﻿//Boost: Gives you extra health when you hit it, derives from Hittable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +10,19 @@ namespace Twisted_Treeline.Model
 {
     class Boost : Hittable
     {
+        //Amount of hit points the bonus gives the player
         public int Bonus { get; set; }
+
         public Boost()
         {
             HitPoints = 1;
             Dead = false;
             Image = "/boost.png";
             Type = "Hittable";
-            //how many health points to add to player
             Bonus = 20;
         }
-        //automatically adds 5 points to players health and removes itself from the world
+
+        //automatically adds bonus to players health and removes itself from the world
         public override void TakeDamage(int damage)
         {
             Dead = true;

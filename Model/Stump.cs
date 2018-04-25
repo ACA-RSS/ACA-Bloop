@@ -1,4 +1,6 @@
-﻿//Stump: reveal the insides by hitting it
+﻿//Contains all code for the Stump class, derived from Hittable
+
+//Stump: holds a world objects and four squirrels, which are released when hit
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace Twisted_Treeline.Model
 {
     public class Stump : Hittable
     {
+        //The World Obejct that is released when the stump is broken
         public WorldObject Object {get; set;}
 
         public Stump(WorldObject obj, int hp){
@@ -18,6 +21,7 @@ namespace Twisted_Treeline.Model
             Image = "/stump.png";
             Dead = false;
         }
+
         public Stump()
         {
             Object = new Stick(1000000000);
@@ -38,8 +42,8 @@ namespace Twisted_Treeline.Model
             Image = "/stump.png";
         }
 
-        //Removes the player's Damage from the hit points. If hit points are at or below 0, it releases it's object
-        // And a squirrel in every direction
+        //Removes the player's Damage from the hit points. If hit points are at or below 0,
+        //it releases it's object and a squirrel in every direction
         public override void TakeDamage(int damage)
         {
             HitPoints -= damage;

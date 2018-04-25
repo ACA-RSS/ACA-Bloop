@@ -1,4 +1,6 @@
-﻿//Wolf: not a nice doggy
+﻿//Contains all code for the Wolf class, derived from Animals
+
+//Wolf: Tracks player after eye contact
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace Twisted_Treeline.Model
 {
     public class Wolf : Animals
     {
+        //Determines whether the player has been `seen` by the wolf
         public bool EyeContact { get; set; }
 
         public Wolf()

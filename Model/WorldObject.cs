@@ -1,4 +1,6 @@
-﻿//everything that shows up on the map. Contains an image and a location
+﻿//Contains all code defining abstract WorldObject
+
+//Base class for all entities on the map. Contains an image and a location
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +11,13 @@ namespace Twisted_Treeline.Model
 {
     public abstract class WorldObject: ISerializable
     {
+        //The string to be used to create the image that is displayed for the object
         public string Image {get; set;}
+
+        //Member of the Location struct; defines where in the grid the object is
         public Location Spot {get; set;}
 
+        //String used to identify which derived class the object belongs to
         public string Type { get; set; }
 
 

@@ -1,4 +1,6 @@
-﻿//Squirrel: annoying little guys that come in packs
+﻿//Contains all code for the Squirrel class
+
+//Squirrel: Subclass of Animals; track user and attack immediately once added to the World
 using System;
 using System.Collections.Generic;
 using System.Linq;

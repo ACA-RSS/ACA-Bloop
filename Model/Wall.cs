@@ -1,4 +1,8 @@
-﻿//Wall: A line of inpenetrable trees
+﻿//Contains all code for the Wall class, derived from World Object
+
+//Wall: One unit in usually a line of inpenetrable trees. The class contains methods for setting
+//Up the walls of most levels
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +24,8 @@ namespace Twisted_Treeline.Model
         //Whether it's horizontal or vertical.
         //It builds a wall in the starting location (so don't accidentally make two walls in the same 
         //place), then builds a wall in each location for the number of spaces given, either moving RIGHT if
-        // Horizontal ("Horz"), or DOWN if vertical ("vert"), and adds each wall piece to the World Objects list
+        // Horizontal ("Horz"), or DOWN if vertical ("vert"), and adds each wall piece to the World Objects
+        //list
         public static void WallBuilder(int startRow, int startCol, int numSpaces, string dir)
         {
             if (dir == "Vert")
@@ -59,13 +64,14 @@ namespace Twisted_Treeline.Model
                 }
             }
         }
+
         //surrounds the sides of the map
         public static void BuildEdges()
         {
-            Wall.WallBuilder(0, 0, 30, "Horz");
-            Wall.WallBuilder(1, 0, 22, "Vert");
-            Wall.WallBuilder(23, 1, 30, "Horz");
-            Wall.WallBuilder(0, 31, 22, "Vert");
+            WallBuilder(0, 0, 30, "Horz");
+            WallBuilder(1, 0, 22, "Vert");
+            WallBuilder(23, 1, 30, "Horz");
+            WallBuilder(0, 31, 22, "Vert");
 
         }
 
@@ -83,6 +89,10 @@ namespace Twisted_Treeline.Model
         }
 
 
+        //Makes one version of the quadrant for level two.
+
+        //Takes an integer to tell which number quadrant is being built, then builds it and adds
+        //All walls to the WorldObjects list
         public static void LevelTwo(int quadrant)
         {
             int addRight = 0;
@@ -142,6 +152,63 @@ namespace Twisted_Treeline.Model
             WallBuilder(0 + addDown, 0 + addRight, 1, "Horz");
             WallBuilder(10 + addDown, 13 + addRight, 1, "Horz");
         }
+
+
+        //Builds walls for all of level 3, part 1
+        public static void LevelThreePtOne()
+        {
+            Wall.WallBuilder(4, 1, 8, "Vert");
+            Wall.WallBuilder(12, 2, 0, "Vert");
+            Wall.WallBuilder(3, 1, 22, "Horz");
+            Wall.WallBuilder(2, 6, 2, "Horz");
+            Wall.WallBuilder(1, 12, 2, "Horz");
+            Wall.WallBuilder(2, 18, 1, "Horz");
+            Wall.WallBuilder(3, 25, 5, "Horz");
+            Wall.WallBuilder(6, 3, 10, "Horz");
+            Wall.WallBuilder(7, 3, 2, "Horz");
+            Wall.WallBuilder(8, 3, 2, "Horz");
+            Wall.WallBuilder(5, 14, 3, "Vert");
+            Wall.WallBuilder(8, 7, 6, "Vert");
+            Wall.WallBuilder(8, 11, 1, "Vert");
+            Wall.WallBuilder(9, 9, 1, "Vert");
+            Wall.WallBuilder(9, 11, 2, "Vert");
+            Wall.WallBuilder(12, 1, 11, "Horz");
+            Wall.WallBuilder(13, 3, 1, "Vert");
+            Wall.WallBuilder(16, 1, 3, "Horz");
+            Wall.WallBuilder(16, 1, 3, "Horz");
+            Wall.WallBuilder(13, 9, 4, "Vert");
+            Wall.WallBuilder(8, 15, 1, "Horz");
+            Wall.WallBuilder(9, 15, 6, "Vert");
+            Wall.WallBuilder(15, 14, 2, "Vert");
+            Wall.WallBuilder(15, 16, 7, "Horz");
+            Wall.WallBuilder(19, 2, 2, "Vert");
+
+            //bottom section
+            Wall.WallBuilder(19, 4, 25, "Horz");
+            Wall.WallBuilder(20, 4, 21, "Horz");
+            Wall.WallBuilder(21, 3, 21, "Horz");
+            Wall.WallBuilder(17, 7, 1, "Vert");
+
+            Wall.WallBuilder(13, 18, 1, "Vert");
+            Wall.WallBuilder(4, 18, 7, "Vert");
+            Wall.WallBuilder(10, 19, 1, "Horz");
+            Wall.WallBuilder(11, 20, 1, "Vert");
+            Wall.WallBuilder(18, 27, 1, "Vert");
+
+            Wall.WallBuilder(7, 20, 10, "Horz");
+            Wall.WallBuilder(5, 25, 13, "Vert");
+
+            Wall.WallBuilder(8, 22, 6, "Vert");
+            Wall.WallBuilder(10, 23, 0, "Vert");
+
+            Wall.WallBuilder(12, 24, 1, "Vert");
+            Wall.WallBuilder(10, 26, 4, "Horz");
+            Wall.WallBuilder(11, 27, 3, "Horz");
+            Wall.WallBuilder(12, 27, 3, "Vert");
+        }
+
+
+        //Builds walls for all of Level 3, part Two
         public static void LevelThreePtTwo()
         {
 
@@ -201,57 +268,6 @@ namespace Twisted_Treeline.Model
             WallBuilder(21, 18, 0, "Horz");
         }
 
-        public static void LevelThreePtOne()
-        {
-            Wall.WallBuilder(4, 1, 8, "Vert");
-            Wall.WallBuilder(12, 2, 0, "Vert");
-            Wall.WallBuilder(3, 1, 22, "Horz");
-            Wall.WallBuilder(2, 6, 2, "Horz");
-            Wall.WallBuilder(1, 12, 2, "Horz");
-            Wall.WallBuilder(2, 18, 1, "Horz");
-            Wall.WallBuilder(3, 25, 5, "Horz");
-            Wall.WallBuilder(6, 3, 10, "Horz");
-            Wall.WallBuilder(7, 3, 2, "Horz");
-            Wall.WallBuilder(8, 3, 2, "Horz");
-            Wall.WallBuilder(5, 14, 3, "Vert");
-            Wall.WallBuilder(8, 7, 6, "Vert");
-            Wall.WallBuilder(8, 11, 1, "Vert");
-            Wall.WallBuilder(9, 9, 1, "Vert");
-            Wall.WallBuilder(9, 11, 2, "Vert");
-            Wall.WallBuilder(12, 1, 11, "Horz");
-            Wall.WallBuilder(13, 3, 1, "Vert");
-            Wall.WallBuilder(16, 1, 3, "Horz");
-            Wall.WallBuilder(16, 1, 3, "Horz");
-            Wall.WallBuilder(13, 9, 4, "Vert");
-            Wall.WallBuilder(8, 15, 1, "Horz");
-            Wall.WallBuilder(9, 15, 6, "Vert");
-            Wall.WallBuilder(15, 14, 2, "Vert");
-            Wall.WallBuilder(15, 16, 7, "Horz");
-            Wall.WallBuilder(19, 2, 2, "Vert");
-
-            //bottom section
-            Wall.WallBuilder(19, 4, 25, "Horz");
-            Wall.WallBuilder(20, 4, 21, "Horz");
-            Wall.WallBuilder(21, 3, 21, "Horz");
-            Wall.WallBuilder(17, 7, 1, "Vert");
-
-            Wall.WallBuilder(13, 18, 1, "Vert");
-            Wall.WallBuilder(4, 18, 7, "Vert");
-            Wall.WallBuilder(10, 19, 1, "Horz");
-            Wall.WallBuilder(11, 20, 1, "Vert");
-            Wall.WallBuilder(18, 27, 1, "Vert");
-
-            Wall.WallBuilder(7, 20, 10, "Horz");
-            Wall.WallBuilder(5, 25, 13, "Vert");
-
-            Wall.WallBuilder(8, 22, 6, "Vert");
-            Wall.WallBuilder(10, 23, 0, "Vert");
-
-            Wall.WallBuilder(12, 24, 1, "Vert");
-            Wall.WallBuilder(10, 26, 4, "Horz");
-            Wall.WallBuilder(11, 27, 3, "Horz");
-            Wall.WallBuilder(12, 27, 3, "Vert");
-        }
     }
 
 }
