@@ -128,8 +128,7 @@ namespace Twisted_Treeline
                 }
             }
         }
-
-
+        
         //Sets up all wall objects; only called at beginning of level setup
         private void BuildTheWall()
         {
@@ -157,7 +156,7 @@ namespace Twisted_Treeline
         public void Abduction()
         {
             GameController.Instance.Difficulty = 0;
-            Squirrel ship = new Squirrel() { HitPoints = 5000, Speed = 5000, Damage = 0, Image = "/EpicSpaceship.png", Spot = new Location() { Row = GameController.Instance.Player.Spot.Row - 2, Column = GameController.Instance.Player.Spot.Column - 2 } };
+            Squirrel ship = new Squirrel() { HitPoints = 5000, Speed = 5000, Damage = 0, Image = "/EpicSpaceship.png", Spot = new Location() { Row = GameController.Instance.Player.Spot.Row - 2, Column = GameController.Instance.Player.Spot.Column - 1 } };
 
             GameController.Instance.Level.WorldObj.Add(ship);
 
