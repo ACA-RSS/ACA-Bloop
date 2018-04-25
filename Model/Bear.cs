@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 
 namespace Twisted_Treeline.Model
 {
-
     public class Bear : Animals
     {
         public Bear()
         {
             HitPoints = 25 * GameController.Instance.Difficulty;
-            AttackSpeed = 140 * GameController.Instance.Difficulty * 0.5;
-            Damage = 4 * GameController.Instance.Difficulty;
+            AttackSpeed = 180 * GameController.Instance.Difficulty;
+            Damage = 2 * GameController.Instance.Difficulty * Convert.ToInt32(GameController.Instance.LevelNum);
             Dead = false;
             Speed = 0;
             MoveTime = 0;
