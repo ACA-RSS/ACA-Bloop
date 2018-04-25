@@ -1,4 +1,5 @@
-﻿using System;
+﻿//contains the basic test cases for the world objects
+using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

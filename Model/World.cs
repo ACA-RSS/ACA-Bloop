@@ -1,4 +1,5 @@
-﻿using System;
+﻿//contains the basic attributes needed for each level, mainly the grid of objects and basic methods for manipulation
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

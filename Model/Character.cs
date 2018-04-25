@@ -188,7 +188,6 @@ namespace Twisted_Treeline.Model
             Dead = true;
             Image = "/Scotty-Dead.png";
         }
-
         public override string Serialize()
         {
             return string.Format("Character,{0},{1},{2},{3}", HitPoints, Dead, Spot, StartSpot);

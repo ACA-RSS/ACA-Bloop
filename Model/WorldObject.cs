@@ -14,8 +14,11 @@ namespace Twisted_Treeline.Model
 
         public string Type { get; set; }
 
+
+        //converts the object's key stats into a strin
         public abstract string Serialize();
 
+        //converts a string containing a world object's stats into a instance of the object
         public abstract WorldObject Deserialize(string s);
 
     }

@@ -1,4 +1,5 @@
-﻿ using System;
+﻿ //contains the code used to make sure the highscores can be properly saved and laoded
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

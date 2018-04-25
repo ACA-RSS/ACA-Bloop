@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Contains a collection of all the levels, and main variables needed for the game to run
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -376,7 +377,7 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(colfy);
         }
 
-
+        //writes key GC info into a file, followed by each object in the current level
         public void Save(string file)
         {
             string title = "TwistedTLine";
@@ -400,6 +401,7 @@ namespace Twisted_Treeline.Model
             }
         }
 
+        //converts a saved file for the project into an instance of the level
         public void Load(string fileName)
         {
 

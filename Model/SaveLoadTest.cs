@@ -1,4 +1,5 @@
-﻿using System;
+﻿//used to test that the world is able save and load its entities with their correct stats
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
