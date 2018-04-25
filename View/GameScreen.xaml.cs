@@ -1,4 +1,7 @@
-﻿using System;
+﻿//The screen on which the game is displayed and played. Contains logic for level changing and screen
+//Updates.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +31,10 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class GameScreen : Window
     {
+        //Timer to update the screen
         public static DispatcherTimer Ticky;
+
+
         private readonly ImageSource img;
 
         public GameScreen()
@@ -50,8 +56,10 @@ namespace Twisted_Treeline
             Ticky.Start();
         }
 
-        //On every timer tick, checks if the game is over (See isGameOver for Game Controller
-        //And if not, updates the animal locations and then updates the scree with these changes
+        //On every timer tick, checks if the game is over/Level is completed (See isGameOver
+        //for Game Controller).
+        //If not, Calls the UpdateScreen method
+        //If so, performs logic to end the game or to load the next level
         public void Ticky_Tick(object sender, object e)
         {
             if (!GameController.Instance.isGameOver())
@@ -144,6 +152,8 @@ namespace Twisted_Treeline
             }
         }
 
+        //Called at the very end of the third level; adds a space ship above Scotty and launches 
+        //new high score screen
         public void Abduction()
         {
             //Ticky.Stop();
@@ -241,7 +251,7 @@ namespace Twisted_Treeline
             hs.ShowDialog();
         }
 
-
+        //Adds every WorldObject except Walls to the screen at the beginning of the level
         public void Setup()
         {
             foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
@@ -266,7 +276,7 @@ namespace Twisted_Treeline
 
         //Called every timer tick
         //Updates the points, health, and number of stars of the player. 
-        //Destroys all non-wall images, and then makes new ones with the world object's new location
+        //Removes images of dead objects, adds new images, and updates locations and images of others
         private void UpdateScreen()
         {
             if (GameController.Instance.CurrentSound != null)
@@ -345,7 +355,7 @@ namespace Twisted_Treeline
             GameController.Instance.CurrentSound = null;
         }
 
-        //Controls the user movements and attack
+        //Change player to Attack image when the space bar comes up
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
 
@@ -354,9 +364,9 @@ namespace Twisted_Treeline
                 GameController.Instance.Player.Attack();
                 GameController.Instance.Player.Image = GameController.Instance.GenderImg;
             }
-
         }
 
+        //Controls the user movements and attack
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.W)
@@ -388,7 +398,6 @@ namespace Twisted_Treeline
             Menu menu = new Menu();
             menu.ShowDialog();
             btnMenu.Focusable = false;
-
         }
     }
 }

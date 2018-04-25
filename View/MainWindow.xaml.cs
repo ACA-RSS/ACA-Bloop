@@ -1,3 +1,5 @@
+//Runs the Title Screen of the game; contains buttons to start a new game, access the menu,
+//Load a saved game, view highs scores, or read about the authors
 
 using System;
 using System.Collections.Generic;
@@ -25,18 +27,22 @@ namespace Twisted_Treeline
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Plays introductory music
         public SoundPlayer player;
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        //Plays introductory music
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
             player = new SoundPlayer(Properties.Resources.Sitar);
             player.Play();
         }
 
+        //Loads old game from file
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
             player.Stop();
@@ -48,6 +54,7 @@ namespace Twisted_Treeline
             game.ShowDialog();
         }
 
+        //Updates the Game Controller difficulty when the user selects a difficulty
         private void DifficultyLstBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DifficultyLstBox.SelectedIndex != -1)
@@ -58,6 +65,7 @@ namespace Twisted_Treeline
             }
         }
 
+        //Starts a new game by resetting Game Controller, setting up level 1, and launching a game screen
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
             player.Stop();
@@ -69,30 +77,35 @@ namespace Twisted_Treeline
             game.ShowDialog();
         }
 
+        //Opens the Help window
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             Help h = new Help();
             h.ShowDialog();
         }
 
+        //Opens the about window
         private void btnAbout_Click(object sender, RoutedEventArgs e)
         {
             About a = new About();
             a.ShowDialog();
         }
 
+        //Displays high scores from the high score file
         private void btnHighScores_Click(object sender, RoutedEventArgs e)
         {
             HighscoreScreen h = new HighscoreScreen();
             h.ShowDialog();
         }
 
+        //Selects the male character image
         private void btnBoy_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.GenderImg = "/Scotty.gif";
 
         }
 
+        //Selects the female character image
         private void btnGirl_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.GenderImg = "/Sue.gif";

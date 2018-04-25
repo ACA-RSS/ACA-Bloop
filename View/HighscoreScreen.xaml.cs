@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Displays the high scores
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,8 @@ namespace Twisted_Treeline.View
             InitializeComponent();
             LoadHighScores();
         }
+
+        //Loads high scores from file and displays them
         public void LoadHighScores()
         {
             HighscoreManager hsm = new HighscoreManager("HighScores.txt");

@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Allows user to save or access game information during game play
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +27,7 @@ namespace Twisted_Treeline
             InitializeComponent();
         }
 
+        //Links to the About screen
         private void btnAbout_Click(object sender, RoutedEventArgs e)
         {
             About a = new About();
@@ -37,11 +40,13 @@ namespace Twisted_Treeline
             h.ShowDialog();
         }
 
+        //Saves the game to the game file
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             GameController.Instance.Save("TTLSave.txt");
         }
 
+        //Restarts the game timer and closes the window
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             GameScreen.Ticky.Start();

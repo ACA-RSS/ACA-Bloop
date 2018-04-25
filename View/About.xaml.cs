@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Contains information about the game developers
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +26,7 @@ namespace Twisted_Treeline
             InitializeComponent();
         }
 
+        //CLoses the window
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Close();

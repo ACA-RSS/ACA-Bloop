@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Allows user to submit their score to the high scores
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Twisted_Treeline.View
     public partial class HighscorePrompt : Window
     {
         HighscoreManager manager = new HighscoreManager("Highscores.txt");
+
         public HighscorePrompt()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace Twisted_Treeline.View
             Score.Text = winscore;
         }
 
+        //Submits the player's name and score
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             manager.LoadList();
