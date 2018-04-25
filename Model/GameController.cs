@@ -361,16 +361,15 @@ namespace Twisted_Treeline.Model
         // to the Game Controller's WorldObj list for the second screen of level 3
         public void SetUpLevelThreePtTwo()
         {
-
             Instance.Level = new World()
             {
                 Height = 24,
                 Width = 32,
                 Squares = new WorldObject[24, 32]
             };
-
-
+            
             int oldHP = Instance.Player.HitPoints;
+
             Player = new Character(Instance.GenderImg)
             {
                 Stick = new Stick(5),
@@ -406,6 +405,13 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(aolfy);
             Instance.Level.WorldObj.Add(bolfy);
             Instance.Level.WorldObj.Add(colfy);
+
+            Boost a = new Boost() { Spot = new Location() { Row = 22, Column = 1 } };
+            Boost b = new Boost() { Spot = new Location() { Row = 4, Column = 10 } };
+
+            Instance.Level.WorldObj.Add(a);
+            Instance.Level.WorldObj.Add(b);
+            
 
             WorldObject toRemove = new Bear();
             foreach (WorldObject obj in Instance.Level.WorldObj)
@@ -444,7 +450,6 @@ namespace Twisted_Treeline.Model
                 {
                     writer.WriteLine(obj.Serialize());
                 }
-
             }
         }
 
