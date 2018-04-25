@@ -15,9 +15,9 @@ namespace Twisted_Treeline.Model
         {
 
             HitPoints = 5 * GameController.Instance.Difficulty;
-            AttackSpeed = 50 * GameController.Instance.Difficulty * 0.5;
+            AttackSpeed = 60 * GameController.Instance.Difficulty;
             Speed = 20;
-            Damage = 1 * GameController.Instance.Difficulty;
+            Damage = 1 * GameController.Instance.Difficulty * Convert.ToInt32(GameController.Instance.LevelNum);
             Dead = false;
             AttackTime = 0;
             MoveTime = 0;

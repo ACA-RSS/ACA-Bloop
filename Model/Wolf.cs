@@ -17,9 +17,9 @@ namespace Twisted_Treeline.Model
         public Wolf()
         {
             HitPoints = 20 * GameController.Instance.Difficulty;
-            AttackSpeed = 80 * GameController.Instance.Difficulty * 0.5;
+            AttackSpeed = 100 * GameController.Instance.Difficulty;
             Speed = 30;
-            Damage = 1 * GameController.Instance.Difficulty;
+            Damage = 1 * GameController.Instance.Difficulty * Convert.ToInt32(GameController.Instance.LevelNum);
             Dead = false;
             MoveTime = 0;
             Image = "/Wolf.gif";
