@@ -19,7 +19,7 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Image = "/boost.png";
             Type = "Hittable";
-            Bonus = 20;
+            Bonus = 35;
         }
 
         //automatically adds bonus to players health and removes itself from the world
