@@ -1,4 +1,5 @@
-﻿using System;
+﻿//abstract class for all animals. contains attack and move information and methods
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,18 @@ namespace Twisted_Treeline.Model
 {
     public abstract class Animals : Animate
     {
+        //How many timer ticks between each attack
         public double AttackSpeed { get; set; }
+
+        //number of timer ticks for attack
         public int AttackTime { get; set; }
 
+        //number of timer ticks for move
         public double MoveTime { get; set; }
 
         //holds the name of the sound file to be played on animal attack
         public Stream Sound { get; set; }
-
+        //Shows
         public string AttackImage { get; set; }
 
 
@@ -44,6 +49,7 @@ namespace Twisted_Treeline.Model
             else return 0;
         }
 
+        //moves the animal every `speed` calls
         public void checkMove()
         {
             MoveTime++;
@@ -55,9 +61,10 @@ namespace Twisted_Treeline.Model
             }
         }
 
+        //defines how the animal will move and returns the location of the next square to move to
         public abstract Location Move();
 
-
+        //animal attacks player if in range and checks of move requirements are met
         public void CheckState()
         {
             for (int r = -1; r < 2; r++)

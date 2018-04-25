@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Wolf: not a nice doggy
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

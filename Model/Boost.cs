@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Boost: Gives you extra health when you hit it
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Twisted_Treeline.Model
             //how many health points to add to player
             Bonus = 20;
         }
-
+        //automatically adds 5 points to players health and removes itself from the world
         public override void TakeDamage(int damage)
         {
             Dead = true;

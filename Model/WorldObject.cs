@@ -1,4 +1,5 @@
-﻿using System;
+﻿//everything that shows up on the map. Contains an image and a location
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

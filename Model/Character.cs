@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Scotty! or Sue.. Contains information about the main player, move and attack information and methods
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,7 @@ namespace Twisted_Treeline.Model
                 toAttack.TakeDamage(Damage);
         }
 
+        //updates the image of the character when in attack mode
         public void AttackImage()
         {
             if (GameController.Instance.GenderImg == "/Scotty.gif")

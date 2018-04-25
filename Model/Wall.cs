@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Wall: A line of inpenetrable trees
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,7 +59,7 @@ namespace Twisted_Treeline.Model
                 }
             }
         }
-
+        //surrounds the sides of the map
         public static void BuildEdges()
         {
             Wall.WallBuilder(0, 0, 30, "Horz");

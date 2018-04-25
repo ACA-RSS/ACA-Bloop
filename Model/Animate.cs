@@ -1,4 +1,5 @@
-﻿using System;
+﻿//abstract class for animals that move. Contains direction and action information and attack method
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,16 @@ namespace Twisted_Treeline.Model
     public enum Direction { Up, Down, Left, Right }
     public abstract class Animate : Hittable
     {
+        //How many timer ticks before animal moves
         public int Speed { get; set; }
+
+        //how much damage the animal attack does to player
         public int Damage { get; set; }
+
+        //how many points an animal is worth
         public int PointValue { get; set; }
+
+        //the direction (left,right) the animal is facing
         public Direction DirFacing { get; set; }
         
         public abstract int Attack();

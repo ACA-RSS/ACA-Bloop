@@ -1,4 +1,5 @@
-﻿using System;
+﻿//makes a highscore with name and score
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,10 @@ namespace Twisted_Treeline.Model
 {
     class Highscore
     {
+        //the player's score
         public int Score;
+
+        //the players name
         public string Name;
 
         public Highscore(int score, string nickname)
@@ -19,25 +23,6 @@ namespace Twisted_Treeline.Model
             Name = nickname;
             Score = score;
         }
-
-        //private object GetRank()
-        //{
-        //    int max = 0;
-        //    foreach (Highscore hscore in manager.HighscoreList)
-        //    {
-        //        if (hscore.Score> max)
-        //        {
-        //            max = hscore.Score;
-        //        }
-        //    }
-        //    return max;
-        //}
-
-        /// <summary>
-        /// Searches Highscores for the location to insert `score`
-        /// </summary>
-        /// <param name="score"></param>
-        /// <returns>index in Highscores where to insert Highscore with score `score`. -1 if less than all scores</returns>
 
     }
 }

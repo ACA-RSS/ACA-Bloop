@@ -1,4 +1,5 @@
-﻿using System;
+﻿//manages the highscores, saves and loads them from a file
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,11 @@ namespace Twisted_Treeline.Model
 {
     class HighscoreManager
     {
+        //the most recent HighscoreManager created
         public static HighscoreManager Hm { get; set; }
+        //List of highscores
         public List<Highscore> HighscoreList;
+        //the filename where the highscores are located
         public string Filename { get; set; }
 
         public HighscoreManager(string filename)
@@ -18,8 +22,6 @@ namespace Twisted_Treeline.Model
             HighscoreList = new List<Highscore>();
             Filename = filename;
             Hm = this;
-            //FileStream file = new FileStream(filename, FileMode.Open ,FileAccess.Write);
-            //StreamWriter Writer = new StreamWriter(file);
         }
 
         /// <summary>

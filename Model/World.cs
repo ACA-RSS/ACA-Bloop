@@ -35,7 +35,7 @@ namespace Twisted_Treeline.Model
 
             WorldObj = new List<WorldObject>();
         }
-
+        //resets the world
         public void Reset()
         {
             for (int row = 0; row < Height; ++row)
@@ -48,7 +48,7 @@ namespace Twisted_Treeline.Model
             }
         }
     }
-
+    //contains row and column coordinates
     public struct Location
     {
         public int Row { get; set; }

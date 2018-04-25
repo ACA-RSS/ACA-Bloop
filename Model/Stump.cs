@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Stump: reveal the insides by hitting it
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

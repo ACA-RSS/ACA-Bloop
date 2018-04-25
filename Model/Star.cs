@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Star: everything a 12 year old could want in life
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Twisted_Treeline.Model
             Image = "/steer.png";
             Type = "Hittable";
         }
-
+        //adds a star to the players star count and removes it from the world
         public override void TakeDamage(int damage)
         {
             Dead = true;

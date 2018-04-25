@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Character's stick, weapon and best friend.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace Twisted_Treeline.Model
             Type = "Hittable";
             Image = "/Stick.png";
         }
-
+        //allows the player to pick up a stick and use it
         public override void TakeDamage(int damage)
         {
             GameController.Instance.Player.Stick = this;

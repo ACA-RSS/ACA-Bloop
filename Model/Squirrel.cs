@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Squirrel: annoying little guys that come in packs
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,10 +64,7 @@ namespace Twisted_Treeline.Model
             }
 
             Location potentialSpot = new Location { Row = potentialRow, Column = potentialCol };
-            //if (GameController.Instance.Level.Squares[potentialSpot.Row, potentialSpot.Column] == null)
-           // {
                 Spot = potentialSpot;
-            //}
             return Spot;
         }
 
