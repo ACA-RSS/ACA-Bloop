@@ -156,7 +156,7 @@ namespace Twisted_Treeline
         public void Abduction()
         {
             GameController.Instance.Difficulty = 0;
-            Squirrel ship = new Squirrel() { HitPoints = 5000, Speed = 5000, Damage = 0, Image = "/EpicSpaceship.png", Spot = new Location() { Row = GameController.Instance.Player.Spot.Row - 2, Column = GameController.Instance.Player.Spot.Column - 1 } };
+            Squirrel ship = new Squirrel() { HitPoints = 5000, Speed = 5000, Damage = 0, Image = "/SpaceShip.png", Spot = new Location() { Row = GameController.Instance.Player.Spot.Row - 2, Column = GameController.Instance.Player.Spot.Column - 1 } };
 
             GameController.Instance.Level.WorldObj.Add(ship);
 
@@ -232,7 +232,7 @@ namespace Twisted_Treeline
                     if (o.Type != "Wall")
                     {
                         i.Margin = new Thickness(o.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), o.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0);
-                        if (o.Image == "/EpicSpaceship.png")
+                        if (o.Image == "/SpaceShip.png")
                         {
                             i.Width = 80;
                         }

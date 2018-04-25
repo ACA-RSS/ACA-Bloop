@@ -188,6 +188,7 @@
     <Content Include="punch.wav" />
     <Resource Include="Scotty-Attack.png" />
     <Resource Include="Scotty-Left-Attack.png" />
+    <Resource Include="SpaceShip.png" />
     <Content Include="SquirrelSound.wav" />
     <Resource Include="Stick.png" />
     <Content Include="StickSound.wav" />
