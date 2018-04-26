@@ -5,14 +5,13 @@
 You start the game in the bottom left corner of the screen and use the WASD keys to navigate the map. To use your weapon, a stick, press the space bar. Wield this weapon to defend yourself from wildlife, break open stumps, hit stars to add them to your collection. Once you have collected all three stars for the level, return to your starting point to finish. 
 
 ## Work Completed:
-* Title screen runs with working links to an About page, a Help page, and High Scores page, and an option to select a difficulty, a gender, and to start a new game or load an old one.
+* Title screen runs with working links to an About page, a Help page, and High Scores page, and an option to select a difficulty, character selection, and to start a new game or load an old one.
 * The game screen opens and all creatures and walls are placed. There is a bar displaying the health, number of stars found, and points of the player, and another Menu button that pauses the game and has Save, About, and Help buttons.
-* Animals attack and can be defeated, and stars can be collected
-* Stumps store objects
-* The Third level is a multiscreen maze
+* Animals attack and can be defeated, and stars, sticks, and boosts can be collected
+* Stumps store objects that are released when it is broken
 * The Game can be saved and loaded from any level
 * High scores have been implemented 
-* There are multiple levels
+* There are multiple levels, and the Third level is a multiscreen maze
 
 ## Known Issues:
 
