@@ -30,4 +30,4 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 |------|--------------------|---------------------| ---------- |     
 |Alex Raddatz  |45 | 5 | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
 |Caroline Smith | 45 | 5 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
-|Amy Surrett | 45.5 | 4.5 | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
+|Amy Surrett | 49.5 | 0.5 | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
