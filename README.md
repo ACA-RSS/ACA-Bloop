@@ -28,5 +28,5 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 |Team Member | Hours Invested | Hours Remaining | Journal |     
 |------|--------------------|---------------------| ---------- |     
 |Alex Raddatz  |41 | 9 | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
-|Caroline Smith | 41 | 9 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
+|Caroline Smith | 45 | 5 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
 |Amy Surrett | 45.5 | 4.5 | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
