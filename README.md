@@ -22,10 +22,12 @@ You start the game in the bottom left corner of the screen and use the WASD keys
 
 [Link to a playthrough of our Release Candidate](https://drive.google.com/file/d/19h5qtX23wmGLNxmPvrUlWjObDvwtbAl0/view?usp=sharing)
 
+[Link to a playthrough of our Final Release](https://drive.google.com/file/d/1cumxH2XJplUzd8H3JRY0IzW4e9MJdGlL/view?usp=sharing)
+
 ## Expenses:
 
 |Team Member | Hours Invested | Hours Remaining | Journal |     
 |------|--------------------|---------------------| ---------- |     
 |Alex Raddatz  |45 | 5 | [Raddatz Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Raddatz-Journal) |      
 |Caroline Smith | 45 | 5 | [Smith Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Smith-Journal) |         
-|Amy Surrett | 45.5 | 4.5 | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
+|Amy Surrett | 49.5 | 0.5 | [Surrett Journal](https://github.com/ACA-RSS/ACA-Bloop/wiki/Surrett-Journal) |      
