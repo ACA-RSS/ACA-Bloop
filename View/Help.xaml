@@ -8,7 +8,7 @@
         Title="Help" Height="300" Width="300" Background="DarkGreen">
     <Grid>
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,241,0,0" Click="btnBack_Click"/>
-        <TextBox Background="DarkGray" FontWeight="Bold" HorizontalAlignment="Center" Height="137" TextWrapping="Wrap" VerticalAlignment="Center" Width="236" Margin="28,47,28,85" Text="Objective: Collect as many stars as you can in the maze and return to the spot where you began. Sound easy? Beasts are lurking in the maze. Defeat them, and you will succeed.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Controls: WASD to move, SPACE to attack"/>
+        <TextBox Background="DarkGray" FontWeight="Bold" HorizontalAlignment="Center" Height="161" TextWrapping="Wrap" VerticalAlignment="Center" Width="236" Margin="28,47,28,61" Text="Objective: Collect as many stars as you can in the maze and return to the spot where you began. Sound easy? Beasts are lurking in the maze. Defeat them, and you will succeed.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Controls: WASD to move, SPACE to attack"/>
 
     </Grid>
 </Window>

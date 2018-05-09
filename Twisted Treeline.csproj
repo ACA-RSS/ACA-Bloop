@@ -166,7 +166,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="EpicSpaceship.png" />
+    <Resource Include="Images\EpicSpaceship.png" />
     <Content Include="HighScores.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -181,55 +181,56 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Resource Include="boost.png" />
+    <Resource Include="Images\boost.png" />
     <Resource Include="Sitar.wav" />
-    <Resource Include="bigber-Attack.png" />
-    <Resource Include="bigber-Left-Attack.png" />
-    <Resource Include="bigber-Left.gif" />
+    <Resource Include="Images\bigber-Attack.png" />
+    <Resource Include="Images\bigber-Left-Attack.png" />
+    <Resource Include="Images\bigber-Left.gif" />
+    <Resource Include="Images\Scotty-Dead.png" />
+    <Resource Include="Images\house.png" />
     <Content Include="punch.wav" />
-    <Resource Include="Scotty-Attack.png" />
-    <Resource Include="Scotty-Left-Attack.png" />
-    <Resource Include="SpaceShip.png" />
+    <Resource Include="Images\Scotty-Attack.png" />
+    <Resource Include="Images\Scotty-Left-Attack.png" />
+    <Resource Include="Images\SpaceShip.png" />
     <Content Include="SquirrelSound.wav" />
-    <Resource Include="Stick.png" />
+    <Resource Include="Images\Stick.png" />
     <Content Include="StickSound.wav" />
-    <Resource Include="Tree_Dark.png" />
-    <Resource Include="Sue-Attack.png" />
-    <Resource Include="Sue-Dead.png" />
-    <Resource Include="Sue-Left-Attack.png" />
-    <Resource Include="Tree_Fake.png" />
-    <Resource Include="Wolf-Attack.png" />
-    <Resource Include="Wolf-Left-Attack.png" />
+    <Resource Include="Images\Tree_Dark.png" />
+    <Resource Include="Images\Sue-Attack.png" />
+    <Resource Include="Images\Sue-Dead.png" />
+    <Resource Include="Images\Sue-Left-Attack.png" />
+    <Resource Include="Images\Tree_Fake.png" />
+    <Resource Include="Images\Wolf-Attack.png" />
+    <Resource Include="Images\Wolf-Left-Attack.png" />
     <Content Include="WolfSound.wav" />
     <Content Include="wolf_attack.wav" />
-    <Resource Include="steer.png" />
-    <Resource Include="tree.png" />
+    <Resource Include="Images\steer.png" />
+    <Resource Include="Images\tree.png" />
     <EmbeddedResource Include="BerSound.wav" />
-    <Resource Include="squirrel-Left.gif" />
-    <Resource Include="squirrel.gif" />
-    <Resource Include="stump.png" />
-    <Resource Include="Sue-Left.gif" />
-    <Resource Include="Wolf-Left.gif" />
-    <Resource Include="Scot-Left.gif" />
-    <Resource Include="ster.png" />
-    <Resource Include="ber.png" />
-    <Resource Include="bigber.gif" />
-    <Resource Include="bigber.png" />
-    <Resource Include="Scotty.gif" />
-    <Resource Include="squirrel.png" />
-    <Resource Include="Star0.png" />
-    <Resource Include="Star1.png" />
-    <Resource Include="Star2.png" />
-    <Resource Include="Star3.png" />
-    <Resource Include="Sue.gif" />
-    <Resource Include="TTLine.png" />
-    <Resource Include="Wall.png" />
-    <Resource Include="Wolf.gif" />
+    <Resource Include="Images\squirrel-Left.gif" />
+    <Resource Include="Images\squirrel.gif" />
+    <Resource Include="Images\stump.png" />
+    <Resource Include="Images\Sue-Left.gif" />
+    <Resource Include="Images\Wolf-Left.gif" />
+    <Resource Include="Images\Scot-Left.gif" />
+    <Resource Include="Images\ster.png" />
+    <Resource Include="Images\ber.png" />
+    <Resource Include="Images\bigber.gif" />
+    <Resource Include="Images\bigber.png" />
+    <Resource Include="Images\Scotty.gif" />
+    <Resource Include="Images\squirrel.png" />
+    <Resource Include="Images\Star0.png" />
+    <Resource Include="Images\Star1.png" />
+    <Resource Include="Images\Star2.png" />
+    <Resource Include="Images\Star3.png" />
+    <Resource Include="Images\Sue.gif" />
+    <Resource Include="Images\TTLine.png" />
+    <Resource Include="Images\Wall.png" />
+    <Resource Include="Images\Wolf.gif" />
     <Resource Include="View\TTLine.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Graphicz\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -159,48 +159,21 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(bitey);
             Instance.Level.WorldObj.Add(growly);
 
+            Wall.LevelOne();
 
-            Wall.BuildEdges();
+            //Bottom Houses
 
-            //Edges of smaller map
+            for (int i = 0; i < 3; i++)
+            {
+                Instance.Level.WorldObj.Add(new Wall() { Spot = new Location { Row = 16, Column = 1 + (i * 12) }, WidthMultiple = 6, Image = "/house.png" });
 
-            Wall.WallBuilder(15, 1, 20, "Horz");
-            Wall.WallBuilder(1, 22, 13, "Vert");
+            }
 
-            //Swirl in top left
-            Wall.WallBuilder(4, 4, 2, "Horz");
-            Wall.WallBuilder(5, 4, 1, "Vert");
-            Wall.WallBuilder(6, 5, 3, "Horz");
-            Wall.WallBuilder(2, 8, 3, "Vert");
-            Wall.WallBuilder(2, 2, 5, "Horz");
-            Wall.WallBuilder(3, 2, 5, "Vert");
-            Wall.WallBuilder(8, 3, 7, "Horz");
-            Wall.WallBuilder(1, 10, 7, "Vert");
-
-            //Right Side
-
-            Wall.WallBuilder(2, 12, 8, "Horz");
-            Wall.WallBuilder(3, 12, 10, "Vert");
-            Wall.WallBuilder(11, 14, 2, "Vert");
-            Wall.WallBuilder(13, 15, 5, "Horz");
-            Wall.WallBuilder(4, 20, 8, "Vert");
-            Wall.WallBuilder(4, 14, 5, "Horz");
-            Wall.WallBuilder(5, 14, 4, "Vert");
-            Wall.WallBuilder(9, 15, 1, "Horz");
-            Wall.WallBuilder(10, 16, 1, "Vert");
-            Wall.WallBuilder(11, 17, 1, "Horz");
-            Wall.WallBuilder(6, 18, 4, "Vert");
-            Wall.WallBuilder(6, 16, 2, "Horz");
-            Wall.WallBuilder(7, 16, 0, "Vert");
-
-            //Bottom Left
-            Wall.WallBuilder(12, 10, 2, "Vert");
-            Wall.WallBuilder(11, 8, 2, "Vert");
-            Wall.WallBuilder(10, 2, 4, "Vert");
-            Wall.WallBuilder(10, 3, 8, "Horz");
-            Wall.WallBuilder(12, 6, 2, "Vert");
-            Wall.WallBuilder(12, 4, 1, "Horz");
-            Wall.WallBuilder(13, 4, 0, "Vert");
+            //Right Houses
+            for (int i = 0; i < 2; i++)
+            {
+                Instance.Level.WorldObj.Add(new Wall() { Spot = new Location { Row = i * 8, Column = 25 }, WidthMultiple = 6, Image = "/house.png" });
+            }
 
         }
 
@@ -216,7 +189,6 @@ namespace Twisted_Treeline.Model
                 Squares = new WorldObject[24, 32]
             };
 
-            Wall.BuildEdges();
 
             for (int i = 1; i < 5; i++)
             {
@@ -325,7 +297,7 @@ namespace Twisted_Treeline.Model
             Instance.Level.WorldObj.Add(eeary);
 
             Stump stumpy = new Stump(new Bear(), 20) { Spot = new Location { Row = 3, Column = 24 } };
-            Stump sneaky = new Stump(new Boost(), 15) { Spot = new Location { Row = 8, Column = 23 }, Image = "/steer.png" };
+            Stump sneaky = new Stump(new Boost(), 15) { Spot = new Location { Row = 8, Column = 23 }, Image = "/steer.png", HitPoints = 0 };
             Stump crumpy = new Stump(new Stick(15), 15) { Spot = new Location { Row = 7, Column = 11 } };
             Stump slump = new Stump(new Boost(), 25) { Spot = new Location { Row = 18, Column = 9 } };
             Stump arg = new Stump(new Boost(), 15) { Spot = new Location { Row = 1, Column = 19 } };
@@ -367,7 +339,7 @@ namespace Twisted_Treeline.Model
                 Width = 32,
                 Squares = new WorldObject[24, 32]
             };
-            
+
             int oldHP = Instance.Player.HitPoints;
 
             Player = new Character(Instance.GenderImg)
@@ -411,7 +383,7 @@ namespace Twisted_Treeline.Model
 
             Instance.Level.WorldObj.Add(a);
             Instance.Level.WorldObj.Add(b);
-            
+
 
             WorldObject toRemove = new Bear();
             foreach (WorldObject obj in Instance.Level.WorldObj)
@@ -430,10 +402,10 @@ namespace Twisted_Treeline.Model
             string title = "TwistedTLine";
 
             //Saves the player info
-             if(File.Exists(file))
-             {  
-                 File.Delete(file);
-             }
+            if (File.Exists(file))
+            {
+                File.Delete(file);
+            }
             var myfile = File.Open(file, FileMode.Create);
             myfile.Close();
 

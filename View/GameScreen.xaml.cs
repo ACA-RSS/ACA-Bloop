@@ -80,7 +80,7 @@ namespace Twisted_Treeline
                             GameController.Instance.SetUpLevelTwo();
                             GameController.Instance.InitialSetup();
                             GameController.Instance.LevelNum = 2;
-                            txtLevel.Text = "Level Two";
+                            BuildTheWall();
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
@@ -90,7 +90,7 @@ namespace Twisted_Treeline
                             GameController.Instance.SetUpLevelThreePtOne();
                             GameController.Instance.InitialSetup();
                             GameController.Instance.LevelNum = 3.1;
-                            txtLevel.Text = "Level Three";
+                            BuildTheWall();
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
@@ -101,6 +101,7 @@ namespace Twisted_Treeline
                             GameController.Instance.InitialSetup();
                             GameController.Instance.LevelNum = 3.2;
                             GameController.Instance.Level.Stars = 1;
+                            BuildTheWall();
                             UpdateScreen();
                             GameController.Instance.Update();
                             break;
@@ -109,6 +110,7 @@ namespace Twisted_Treeline
                             GameController.Instance.Player.HitPoints = 100;
                             GameController.Instance.Armageddon();
                             GameController.Instance.LevelNum = 4;
+                            BuildTheWall();
                             txtLevel.Text = "ARMAGEDDON";
                             WorldCanvas.Background = new SolidColorBrush(Colors.Red);
                             UpdateScreen();
@@ -128,22 +130,23 @@ namespace Twisted_Treeline
                 }
             }
         }
-        
+
         //Sets up all wall objects; only called at beginning of level setup
         private void BuildTheWall()
         {
-            foreach (WorldObject obj in GameController.Instance.Level.WorldObj)
+            foreach (WorldObject o in GameController.Instance.Level.WorldObj)
             {
-                if (obj.Type == "Wall")
+                if (o.Type == "Wall")
                 {
+                    Wall obj = o as Wall;
                     Image i = new Image()
                     {
                         Tag = obj,
-                        Source = new BitmapImage(new Uri(obj.Image, UriKind.Relative)),
+                        Source = new BitmapImage(new Uri(String.Format("/Images{0}", obj.Image), UriKind.Relative)),
                         HorizontalAlignment = HorizontalAlignment.Left,
                         VerticalAlignment = VerticalAlignment.Top,
                         Margin = new Thickness(obj.Spot.Column * (WorldCanvas.Width / GameController.Instance.Level.Width), obj.Spot.Row * (WorldCanvas.Height / GameController.Instance.Level.Height), 0, 0),
-                        Width = WorldCanvas.Width / GameController.Instance.Level.Width,
+                        Width = (WorldCanvas.Width / GameController.Instance.Level.Width) * obj.WidthMultiple,
                     };
 
                     WorldCanvas.Children.Add(i);
@@ -179,7 +182,7 @@ namespace Twisted_Treeline
             {
                 if (obj.Type != "Wall")
                 {
-                    var source = new BitmapImage(new Uri(obj.Image, UriKind.Relative));
+                    var source = new BitmapImage(new Uri(String.Format("/Images{0}", obj.Image), UriKind.Relative));
                     var img = new Image()
                     {
                         Tag = obj,
@@ -216,7 +219,7 @@ namespace Twisted_Treeline
 
             txtPoints.Text = String.Format("Points: {0}", Convert.ToString(GameController.Instance.Points));
             prgHealth.Value = GameController.Instance.Player.HitPoints;
-            imgStars.Source = new BitmapImage(new Uri(String.Format("/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
+            imgStars.Source = new BitmapImage(new Uri(String.Format("/Images/Star{0}.png", GameController.Instance.Level.Stars), UriKind.Relative));
             txtLevel.Text = String.Format("Level #{0}", Math.Floor(GameController.Instance.LevelNum));
             List<WorldObject> accounted = new List<WorldObject>();
 
@@ -236,7 +239,7 @@ namespace Twisted_Treeline
                         {
                             i.Width = 80;
                         }
-                        ImageBehavior.SetAnimatedSource(i, new BitmapImage(new Uri(o.Image, UriKind.Relative)));
+                        ImageBehavior.SetAnimatedSource(i, new BitmapImage(new Uri(String.Format("/Images{0}",o.Image), UriKind.Relative)));
                     }
                 }
                 else
@@ -267,7 +270,7 @@ namespace Twisted_Treeline
                         Width = 20
                     };
 
-                    ImageBehavior.SetAnimatedSource(img, new BitmapImage(new Uri(obj.Image, UriKind.Relative)));
+                    ImageBehavior.SetAnimatedSource(img, new BitmapImage(new Uri(String.Format("/Images/{0}", obj.Image), UriKind.Relative)));
 
                     WorldCanvas.Children.Add(img);
                 }
@@ -290,19 +293,19 @@ namespace Twisted_Treeline
         //Controls the user movements and attack
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.W)
+            if (e.Key == Key.W || e.Key == Key.Up)
             {
                 GameController.Instance.Player.PlayerMove("Up");
             }
-            else if (e.Key == Key.A)
+            else if (e.Key == Key.A || e.Key == Key.Left)
             {
                 GameController.Instance.Player.PlayerMove("Left");
             }
-            else if (e.Key == Key.S)
+            else if (e.Key == Key.S || e.Key == Key.Down)
             {
                 GameController.Instance.Player.PlayerMove("Down");
             }
-            else if (e.Key == Key.D)
+            else if (e.Key == Key.D || e.Key == Key.Right)
             {
                 GameController.Instance.Player.PlayerMove("Right");
             }

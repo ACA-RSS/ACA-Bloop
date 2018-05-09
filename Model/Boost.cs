@@ -19,14 +19,14 @@ namespace Twisted_Treeline.Model
             Dead = false;
             Image = "/boost.png";
             Type = "Hittable";
-            Bonus = 40;
+            Bonus = 20;
         }
 
         //automatically adds bonus to players health and removes itself from the world
         public override void TakeDamage(int damage)
         {
             Dead = true;
-            GameController.Instance.Player.HitPoints += 5;
+            GameController.Instance.Player.HitPoints += Bonus;
             GameController.Instance.Level.WorldObj.Remove(this);
         }
 

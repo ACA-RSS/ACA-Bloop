@@ -32,7 +32,7 @@
   <Class Name="Twisted_Treeline.Model.Character">
     <Position X="7.25" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIgQAAAAAAAgKBAAAAAACAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIgQAAAAAAAgKBAIAAAACAAAAAAAAA=</HashCode>
       <FileName>Model\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,14 +60,14 @@
   <Class Name="Twisted_Treeline.Model.Wall">
     <Position X="7.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAQAAAAEAAAAAAAAAAAAAAACACBAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAQAAAAEAAAAAAQAAEAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.GameController">
     <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AASAgIAAAAAAhQAACDAAAAKAAABACAABRAAAAQAAABA=</HashCode>
+      <HashCode>AASAgIAAAAAAhQAACDAAAAKAAABAAAAZRAAAAQAAABA=</HashCode>
       <FileName>Model\GameController.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -100,7 +100,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Twisted_Treeline.Model.Boost">
-    <Position X="14.5" Y="6.5" Width="1.5" />
+    <Position X="13.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAiBAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Model\Boost.cs</FileName>

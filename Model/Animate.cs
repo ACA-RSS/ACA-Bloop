@@ -42,7 +42,10 @@ namespace Twisted_Treeline.Model
         //Removes the object from the World's list of objects
         public virtual void Die()
         {
-            GameController.Instance.Level.WorldObj.Remove(this);
+            if (Type != "Character")
+            {
+                GameController.Instance.Level.WorldObj.Remove(this);
+            }
         }
     }
 }

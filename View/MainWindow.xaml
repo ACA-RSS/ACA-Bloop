@@ -28,12 +28,12 @@
 
         <Button x:Name="btnBoy" HorizontalAlignment="Center" Margin="0,209,200,0" VerticalAlignment="Top" Width="76" Click="btnBoy_Click" Height="75" Grid.Column="1">
             <StackPanel>
-                <Image gif:ImageBehavior.AnimatedSource="/Scotty.gif" Width="20" />
+                <Image gif:ImageBehavior.AnimatedSource="/Images/Scotty.gif" Width="20" />
             </StackPanel>
         </Button>
         <Button x:Name="btnGirl"  HorizontalAlignment="Center" Margin="200,209,0,0" VerticalAlignment="Top" Width="76" Height="75" Click="btnGirl_Click" RenderTransformOrigin="-0.28,0.5" Grid.Column="1">
             <StackPanel>
-                <Image gif:ImageBehavior.AnimatedSource="/Sue-Left.gif" Width="20" />
+                <Image gif:ImageBehavior.AnimatedSource="/Images/Sue-Left.gif" Width="20" />
             </StackPanel>
         </Button>
         <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="0,162,0,0" TextWrapping="Wrap" Text="Choose Your Player" VerticalAlignment="Top" Background="Green" Width="280" Height="28" TextAlignment="Center" Grid.Column="1"/>
