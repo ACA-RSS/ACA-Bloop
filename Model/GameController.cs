@@ -46,7 +46,7 @@ namespace Twisted_Treeline.Model
             Player = new Character(GenderImg);
             LevelNum = 1;
             CurrentSound = null;
-            GenderImg = "/Scotty.gif";
+            GenderImg = "Scotty";
         }
 
         //Returns true if the character is dead, or if the player has all three stars and is back at the starting
@@ -119,7 +119,7 @@ namespace Twisted_Treeline.Model
         //from level to level
         public void SetUpLevelOne()
         {
-            Instance.Player = new Character(Instance.GenderImg)
+            Instance.Player = new Character(String.Format("/{0}.gif", GameController.Instance.GenderImg))
             {
                 Stick = new Stick(5),
                 StartSpot = new Location { Row = 13, Column = 1 },

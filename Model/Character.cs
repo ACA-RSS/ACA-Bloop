@@ -55,29 +55,16 @@ namespace Twisted_Treeline.Model
         //updates the image of the character when in attack mode
         public void AttackImage()
         {
-            if (GameController.Instance.GenderImg == "/Scotty.gif")
+            if (Image == String.Format("/{0}.gif", GameController.Instance.GenderImg))
             {
-                if (DirFacing == Direction.Right)
-                {
-                    Image = "/Scotty-Attack.png";
-                }
-                else
-                {
-                    Image = "/Scotty-Left-Attack.png";
-                }
+                Image = String.Format("/{0}-Attack.png", GameController.Instance.GenderImg);
             }
             else
             {
-                if (DirFacing == Direction.Right)
-                {
-                    Image = "/Sue-Attack.png";
-                }
-                else
-                {
-                    Image = "/Sue-Left-Attack.png";
-                }
+                Image = String.Format("/{0}-Left-Attack.png", GameController.Instance.GenderImg);
             }
         }
+
 
         //Checks the direction the character is facing, then sees if there's an animal or stum (The hittable
         // sbstract class) one space in that direction. If so, it does damage to that object(See doDamage())
@@ -85,7 +72,7 @@ namespace Twisted_Treeline.Model
         {
             int down = 0;
             int right = 0;
-            
+
 
             GameController.Instance.CurrentSound = Properties.Resources.punch;
             switch (DirFacing)
@@ -144,14 +131,8 @@ namespace Twisted_Treeline.Model
             {
                 DirFacing = Direction.Left;
 
-                if (GameController.Instance.GenderImg == "/Scotty.gif")
-                {
-                    Image = "/Scot-Left.gif";
-                }
-                else
-                {
-                    Image = "/Sue-Left.gif";
-                }
+                Image = String.Format("/{0}-Left.gif", GameController.Instance.GenderImg);
+            
 
                 if (Spot.Column - 1 >= 0 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column - 1] == null)
                 {
@@ -163,7 +144,7 @@ namespace Twisted_Treeline.Model
             else if (Dir == "Right")
             {
 
-                Image = GameController.Instance.GenderImg;
+                Image = String.Format("/{0}.gif", GameController.Instance.GenderImg);
                 DirFacing = Direction.Right;
                 {
                     if (Spot.Column + 1 <= GameController.Instance.Level.Width - 1 && GameController.Instance.Level.Squares[Spot.Row, Spot.Column + 1] == null)
@@ -192,7 +173,7 @@ namespace Twisted_Treeline.Model
         public override void Die()
         {
             Dead = true;
-            Image = "/Scotty-Dead.png";
+            Image = String.Format("/{0}-Dead.png", GameController.Instance.GenderImg);
         }
         public override string Serialize()
         {

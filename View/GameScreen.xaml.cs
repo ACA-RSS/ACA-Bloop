@@ -75,7 +75,6 @@ namespace Twisted_Treeline
                     switch (GameController.Instance.LevelNum)
                     {
                         case 1:
-                            //Abduction();
                             GameController.Instance.Level = new World();
                             GameController.Instance.SetUpLevelTwo();
                             GameController.Instance.InitialSetup();
@@ -239,7 +238,7 @@ namespace Twisted_Treeline
                         {
                             i.Width = 80;
                         }
-                        ImageBehavior.SetAnimatedSource(i, new BitmapImage(new Uri(String.Format("/Images{0}",o.Image), UriKind.Relative)));
+                        ImageBehavior.SetAnimatedSource(i, new BitmapImage(new Uri(String.Format("/Images{0}", o.Image), UriKind.Relative)));
                     }
                 }
                 else
@@ -286,7 +285,14 @@ namespace Twisted_Treeline
             if (e.Key == Key.Space)
             {
                 GameController.Instance.Player.Attack();
-                GameController.Instance.Player.Image = GameController.Instance.GenderImg;
+                if (GameController.Instance.Player.DirFacing == Direction.Left)
+                {
+                    GameController.Instance.Player.Image = String.Format("/{0}-Left.gif", GameController.Instance.GenderImg);
+                }
+                else
+                {
+                    GameController.Instance.Player.Image = String.Format("/{0}.gif", GameController.Instance.GenderImg);
+                }
             }
         }
 
